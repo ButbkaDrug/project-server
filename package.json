@@ -1,0 +1,16 @@
+{
+  "name": "osc-go",
+  "version": "1.0.0",
+  "description": "good stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "build": "tailwindcss build -o static/css/tailwind.css",
+    "watch": "tailwindcss build -o static/css/tailwind.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
