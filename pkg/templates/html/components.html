@@ -1,0 +1,328 @@
+<!--NOTE: HERO COMPONENT-->
+{{ define "hero" }}
+<div id="{{ .ID }}" class="hero min-h-screen" style="background-image: url(/static/img/{{.Image}});">
+    <div class="hero-overlay bg-opacity-60"></div>
+    <div class="hero-content text-center text-neutral-content">
+        <div class="max-w-md">
+            <h1 class="mb-5 text-5xl font-bold">{{ .Name }}</h1>
+            <p id="{{.ID}}-0"></p>
+        </div>
+    </div>
+</div>
+{{ end }}
+
+
+
+
+
+
+<!--NOTE: AUTOSCROLL SECTION COMPONENT-->
+{{ define "autoscrollSection" }}
+{{ $id := .ID }}
+<div id="{{ $id }}" class="divider divider-primary">{{ .Name }}</div>
+{{range $idx, $line := .Text}}
+<p id="{{ $id }}-{{ $idx }}">{{ $line }}</p>
+{{ end }}
+{{ end }}
+
+
+
+
+
+
+{{ define "autoscroll" }}
+<article class="prose prose-xl lg:prose-2xl mx-auto prose-headings:text-center prose-p:uppercase prose-p:truncate">
+    <div class="grid grid-cols-1 gap-2 p-4">
+        {{range . }}
+        {{ if (eq .Type "hero") }}
+        {{ template "hero" . }}
+        {{ else }}
+        {{ template "autoscrollSection" . }}
+        {{ end }}
+        {{end}}
+    </div>
+</article>
+<script src="/static/js/index.js"></script>
+{{ end }}
+
+{{ define "back-to-top-button" }}
+
+<!-- Back to top button -->
+<button type="button" data-twe-ripple-init data-twe-ripple-color="light"
+    class="!fixed bottom-5 end-5 hidden rounded-full bg-info p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-success hover:shadow-lg focus:bg-error focus:shadow-lg focus:outline-none focus:ring-0 active:bg-success active:shadow-lg"
+    id="btn-back-to-top">
+    <span class="[&>svg]:w-4">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+        </svg>
+    </span>
+</button>
+
+<!-- Explanation -->
+<div class="container mx-auto mt-4 text-center dark:text-white" style="height: 2000px">
+    <p class="mb-4">
+        Start scrolling the page and a strong
+        <strong>"Back to top" button </strong> will appear in the
+        <strong>bottom right corner</strong> of the screen.
+    </p>
+    <p>Click this button and you will be taken to the top of the page.</p>
+</div>
+
+{{ end }}
+
+
+
+
+
+
+
+
+
+
+
+
+<!--NOTE: REGULAR SECTION COMPONENT-->
+
+{{ define "regularSection" }}
+
+{{ $id := .ID }}
+
+<div id="{{ $id }}" class="divider divider-primary">{{ .Name }}</div>
+
+<p>
+    {{range $idx, $line := .Text}}
+
+    <span id="{{ $id }}-{{ $idx }}">{{ $line }}</span><br />
+
+    {{ end }}
+</p>
+
+{{ end }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{ define "songs-table" }}
+<label class="input input-bordered flex items-center gap-2">
+    <input type="search" class="grow" placeholder="Search" name="search" hx-post="/songs?search" hx-push-url="true"
+        hx-trigger="input changed delay:200ms, search" hx-target="#search-results" hx-indicator=".htmx-indicator" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
+        <path fill-rule="evenodd"
+            d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+            clip-rule="evenodd" />
+    </svg>
+</label>
+<div class="overflow-x-hidden h-full">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NAME</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody id="search-results">
+            {{ template "songs-table-content" . }}
+        </tbody>
+    </table>
+</div>
+{{ end }}
+
+
+
+{{ define "songs-table-content" }}
+{{ range . }}
+<tr>
+    <td>
+        <a hx-post="/songs/{{ .ID }}" hx-target="#container" hx-push-url="true" href="/songs/{{ .ID }}"
+            class="link link-hover">{{ .Name }}</a>
+    </td>
+    <td>
+        <form hx-post="/add-to-setlist">
+            <input name="path" type=text hidden value="{{ .Path }}" />
+            <input type="submit" class="btn" value="add" />
+        </form>
+    </td>
+</tr>
+{{ end }}
+{{ end }}
+
+
+
+
+
+
+
+
+
+
+{{ define "stat" }}
+<div class="stat">
+    <div class="stat-title">{{ .Title }}</div>
+    <div class="stat-value">{{ .Value }}</div>
+    <div class="stat-desc">{{ .Desc }}</div>
+</div>
+{{ end }}
+
+
+
+
+
+{{ define "alert" }}
+
+<div role="alert" class="alert alert-error">
+    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <span>{{ . }}</span>
+</div>
+
+{{ end }}
+
+
+
+
+
+{{ define "htmx-422-listener" }}
+<script>
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+
+        document.body.addEventListener("htmx:beforeSwap", function (evt) {
+            if (evt.detail.xhr.status === 422) {
+                evt.detail.shouldSwap = true;
+                evt.detail.isError = false;
+            }
+        });
+    })
+
+</script>
+{{ end }}
+
+
+
+
+
+
+
+
+{{ define "song-master" }}
+<div id="master">
+    {{ $id := .ID }}
+
+    <h2 class="p-4">{{ .Name }}</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        {{ range .Lyrics.Sections }}
+        <div>
+
+            <form hx-post="/update-screen" hx-swap="none">
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">{{ .Name}}</h2>
+                        <p>
+                            {{ range .Text }}
+                            {{ . }}<br />
+                            {{end}}
+
+                        </p>
+                        <div class="card-actions">
+                            <input hidden name="id" value="{{ $id }}" />
+                            <input hidden name="section" value="{{ .Name }}" />
+                            <input type="submit" value="View" class="btn" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        {{ end }}
+
+
+
+    </div>
+</div>
+{{ end }}
+
+
+
+
+
+
+
+
+
+{{ define "project-search-results" }}
+{{range . }}
+<tr>
+    <td><a class="btn" href="/screen-master/{{.ID}}">{{.Name}}</a></td>
+</tr>
+{{ end }}
+{{ end }}
+
+
+
+
+
+
+
+{{ define "set" }}
+<table id="set" class="table">
+    {{ range . }}
+
+    {{ template "set-element" . }}
+
+    {{ end }}
+</table>
+
+{{ end }}
+
+{{ define "set-element" }}
+<tr>
+    <td>
+        {{ .ID }}
+    </td>
+    <td>
+        <form class="inline" hx-post="/update-setlist" hx-swap="outerHTML">
+            <label>{{ .Name }}</label>
+            <input name="delete" type=text hidden value={{ .ID }} />
+        </form>
+    </td>
+    <td>
+
+        <form class="inline" hx-post="/update-setlist" hx-target="#set" hx-swap="outerHTML">
+            <input name="up" type=text hidden value={{ .ID }} />
+            <input type="submit" value="▲" class="btn btn-sm print:hidden" />
+        </form>
+    </td>
+    <td>
+        <form class="inline" hx-post="/update-setlist" hx-target="#set" hx-swap="outerHTML">
+            <input name="down" type=text hidden value={{ .ID }} />
+            <input type="submit" value="▼" class="btn btn-sm print:hidden" />
+        </form>
+    </td>
+    <td>
+        <form class="inline" hx-post="/update-setlist" hx-target="#set" hx-swap="outerHTML">
+            <input name="delete" type=text hidden value={{ .ID }} />
+            <input type="submit" value="Del" class="btn btn-sm print:hidden" />
+        </form>
+    </td>
+</tr>
+{{ end }}
+
+{{ define "oob-set-element" }}
+<table id="set" class="table" hx-swap-oob="beforeend">
+    {{ template "set-element" . }}
+    </div>
+    {{ end }}

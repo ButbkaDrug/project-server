@@ -1,0 +1,19 @@
+{{ block "content" . }}
+<article class="prose prose-xl lg:prose-2xl mx-auto prose-headings:text-center prose-p:uppercase prose-p:truncate">
+
+    <div class="grid grid-cols-1 gap-2 p-4">
+    <h2>{{ .Name }}</h2>
+        {{ range .Lyrics.Sections }}
+
+        <h3>{{ .Name }}</h3>
+        <p>
+
+            {{ range .Text }}
+                {{ . }}<br />
+            {{ end }}
+
+        </p>
+        {{ end }}
+  </div>
+</article>
+{{ end }}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Webpage description goes here" />
+    <meta charset="utf-8">
+    <title>Welcome to the church</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="/static/css/tailwind.css" />
+    <script src="/static/js/theme-changer.js"></script>
+    <script src="/static/js/htmx.min.js"></script>
+    <script src="/static/js/sse.js"></script>
+
+</head>
+
+    {{ block "sceen" . }}
+
+<div class="
+min-w-full flex h-screen items-center justify-center">
+  <div hx-ext="sse" sse-connect="/screen-events" sse-swap="message" class="
+prose
+prose-xl
+mx-auto
+prose-headings:text-center
+prose-headings:uppercase
+prose-p:uppercase
+prose-p:truncate
+max-w-max
+  ">
+
+        {{ range . }}
+
+            <h1>{{ . }}</h1>
+
+        {{ end }}
+        </div>
+
+</div>
+    {{ end }}
+
+{{ define "screen-event" }}
+    {{ range . }}
+        <p>{{ . }}</p>
+    {{ end }}
+{{ end}}
