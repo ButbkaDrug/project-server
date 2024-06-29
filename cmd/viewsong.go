@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"net/http"
 )
 
@@ -22,8 +21,6 @@ func (app *app) viewsongHandler(w http.ResponseWriter, r *http.Request) {
 		},
 		Data: proj,
 	}
-
-	log.Println(proj)
 
 	switch r.Method {
 	case "POST":

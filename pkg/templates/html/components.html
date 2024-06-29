@@ -1,53 +1,41 @@
-<!--NOTE: HERO COMPONENT-->
-{{ define "hero" }}
-<div id="{{ .ID }}" class="hero min-h-screen" style="background-image: url(/static/img/{{.Image}});">
-    <div class="hero-overlay bg-opacity-60"></div>
-    <div class="hero-content text-center text-neutral-content">
-        <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">{{ .Name }}</h1>
-            <p id="{{.ID}}-0"></p>
-        </div>
-    </div>
-</div>
-{{ end }}
-
-
-
-
-
-
-<!--NOTE: AUTOSCROLL SECTION COMPONENT-->
-{{ define "autoscrollSection" }}
-{{ $id := .ID }}
-<div id="{{ $id }}" class="divider divider-primary">{{ .Name }}</div>
-{{range $idx, $line := .Text}}
-<p id="{{ $id }}-{{ $idx }}">{{ $line }}</p>
-{{ end }}
-{{ end }}
-
-
-
-
-
-
-{{ define "autoscroll" }}
-<article class="prose prose-xl lg:prose-2xl mx-auto prose-headings:text-center prose-p:uppercase prose-p:truncate">
-    <div class="grid grid-cols-1 gap-2 p-4">
+{{ define "scroll" }}
+<article class="prose prose-xl lg:prose-2xl mx-auto prose-headings:text-center prose-p:uppercase">
+    <div class="grid grid-cols-1 gap-y-10 p-4 md:text-4xl">
         {{range . }}
-        {{ if (eq .Type "hero") }}
-        {{ template "hero" . }}
-        {{ else }}
-        {{ template "autoscrollSection" . }}
-        {{ end }}
+        {{template "scrollSection" . }}
         {{end}}
     </div>
 </article>
 <script src="/static/js/index.js"></script>
 {{ end }}
 
+
+
+{{define "scrollSection"}}
+<div id="section-{{.ID}}" class="">
+    <div class="divider divider-primary py-10 truncate">{{ .Name.Name}}</div>
+    {{range .Comments}}
+    <div class="prose prose-stone text-right font-mono">{{.}}</div>
+    {{end}}
+    {{ range .Lines}}
+    <div id="line-{{ .ID }}">
+        <p>{{ .Text }}</p>
+    </div>
+    {{ end }}
+</div>
+{{end}}
+
+
+
+
+
+
+
+
+
 {{ define "back-to-top-button" }}
 
-<!-- Back to top button -->
+<!--NOTE: Back to top button -->
 <button type="button" data-twe-ripple-init data-twe-ripple-color="light"
     class="!fixed bottom-5 end-5 hidden rounded-full bg-info p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-success hover:shadow-lg focus:bg-error focus:shadow-lg focus:outline-none focus:ring-0 active:bg-success active:shadow-lg"
     id="btn-back-to-top">
@@ -57,51 +45,7 @@
         </svg>
     </span>
 </button>
-
-<!-- Explanation -->
-<div class="container mx-auto mt-4 text-center dark:text-white" style="height: 2000px">
-    <p class="mb-4">
-        Start scrolling the page and a strong
-        <strong>"Back to top" button </strong> will appear in the
-        <strong>bottom right corner</strong> of the screen.
-    </p>
-    <p>Click this button and you will be taken to the top of the page.</p>
-</div>
-
 {{ end }}
-
-
-
-
-
-
-
-
-
-
-
-
-<!--NOTE: REGULAR SECTION COMPONENT-->
-
-{{ define "regularSection" }}
-
-{{ $id := .ID }}
-
-<div id="{{ $id }}" class="divider divider-primary">{{ .Name }}</div>
-
-<p>
-    {{range $idx, $line := .Text}}
-
-    <span id="{{ $id }}-{{ $idx }}">{{ $line }}</span><br />
-
-    {{ end }}
-</p>
-
-{{ end }}
-
-
-
-
 
 
 

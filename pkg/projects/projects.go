@@ -3,11 +3,11 @@ package projects
 import (
 	"errors"
 	"log"
+	"lp"
+	"lp/pkg/lyrics"
 	"os"
 	"path/filepath"
 	"strings"
-
-	"github.com/butbkadrug/reaper-lyrics/pkg/parser"
 )
 
 type Library struct {
@@ -19,7 +19,7 @@ type Project struct {
 	ID     string
 	Name   string
 	Path   string
-	Lyrics parser.Lyrics
+	Lyrics lyrics.Lyrics
 }
 
 func NewLibrary(path string) *Library {
@@ -42,7 +42,7 @@ func generateID(name string) string {
 func ParseProjectDir(projectPath string) (Project, error) {
 
 	var proj Project
-    var filename string
+	var filename string
 
 	foldeName := filepath.Base(projectPath)
 	entries, err := os.ReadDir(projectPath)
@@ -58,12 +58,14 @@ func ParseProjectDir(projectPath string) (Project, error) {
 
 		if name := e.Name()[:len(e.Name())-4]; name == foldeName {
 			proj.Name = name
-            filename = e.Name()
+			filename = e.Name()
 		}
 
 		if e.Name() == "lyrics.txt" {
 
-			l, err := parser.ParseLyrics(filepath.Join(projectPath, e.Name()))
+			filename := filepath.Join(projectPath, e.Name())
+
+			l, err := lyricsparser.Parse(filename)
 
 			if err != nil {
 				log.Println(err)
@@ -85,7 +87,7 @@ func ParseProjectDir(projectPath string) (Project, error) {
 	return proj, nil
 }
 
-func (p *Project) GetSection(name string) (parser.Section, error) {
+func (p *Project) GetSection(name string) (lyrics.Section, error) {
 
 	for _, s := range p.Lyrics.Sections {
 		if s.Name == name {
@@ -93,7 +95,7 @@ func (p *Project) GetSection(name string) (parser.Section, error) {
 		}
 	}
 
-	return parser.Section{}, errors.New("section not found")
+	return lyrics.Section{}, errors.New("section not found")
 }
 
 func (l *Library) SearchProject(query string) []Project {

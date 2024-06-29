@@ -8,6 +8,7 @@ package main
 import (
 	"flag"
 	"log"
+	"log/slog"
 	"os"
 	"path/filepath"
 
@@ -16,19 +17,30 @@ import (
 
 func main() {
 
-    cfg, err := parseFlags()
+	cfg, err := parseFlags()
 
-    if err != nil {
-        log.Fatalf("faild parsing arguments: %v", err)
-    }
+	if err != nil {
+		log.Fatalf("faild parsing arguments: %v", err)
+	}
 
-    err = godotenv.Load()
+	logfile, _ := os.Create("project.log")
+	defer logfile.Close()
+
+	logger := slog.New(slog.NewTextHandler(logfile, &slog.HandlerOptions{
+		Level: slog.LevelDebug,
+	}))
+
+	cfg.logger = logger
+
+	err = godotenv.Load()
+
+	if err != nil {
+		logger.Error("failed to load evirement variables", "error", err.Error())
+	}
 
 	app := NewApp(&cfg)
 
-	err = app.serve()
-
-	if err != nil {
+	if err = app.serve(); err != nil {
 		log.Fatal("failed to start server: ", err)
 	}
 }
@@ -40,14 +52,14 @@ func parseFlags() (config, error) {
 
 	homeDir, err := os.UserHomeDir()
 	if err != nil {
-        return cfg, err
+		return cfg, err
 	}
 
-    cfg.defaultProjectDir= filepath.Join(
-        homeDir,
-        "Music",
-        "REAPER",
-    )
+	cfg.defaultProjectDir = filepath.Join(
+		homeDir,
+		"Music",
+		"REAPER",
+	)
 
 	cfg.projectPath = filepath.Join(
 		homeDir,
@@ -57,14 +69,13 @@ func parseFlags() (config, error) {
 		"BaseProject.rpp",
 	)
 
-    cfg.setlistPath = filepath.Join(
-        homeDir,
-        "Music",
-        "REAPER",
-        "BaseProject",
-        "setlist",
-    )
-
+	cfg.setlistPath = filepath.Join(
+		homeDir,
+		"Music",
+		"REAPER",
+		"BaseProject",
+		"setlist",
+	)
 
 	flag.StringVar(
 		&host,
@@ -103,5 +114,5 @@ func parseFlags() (config, error) {
 
 	flag.Parse()
 
-    return cfg, nil
+	return cfg, nil
 }

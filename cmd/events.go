@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 )
 
 func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
 	id := r.RemoteAddr
 	ch := app.SSEClients.AddClient(id)
+	app.logger.Debug("new listener added", "id", id)
 
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "text/event-stream")
@@ -26,12 +26,13 @@ func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
 	for {
 		select {
 		case <-r.Context().Done():
-			fmt.Println("connection closed", r.RemoteAddr)
+			app.logger.Debug("connection closed", "address", r.RemoteAddr)
 			return
 		case <-app.updateCh:
-			log.Println("file updated I'm ready to send an event!")
+			app.logger.Info("file updated I'm ready to send an event!")
 		default:
 			val := <-*ch
+			app.logger.Debug("EVENTS: defauilt case", "value", val)
 			var err error
 			switch val := val.(type) {
 			case bool:
@@ -41,32 +42,61 @@ func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
 				_, err = fmt.Fprintf(w, "data: %s\n\n", val)
 				flusher.Flush()
 			case float32:
-				item, _ := app.reaper.GetItem(float64(val))
-				marker, _ := app.reaper.GetMarker(float64(val))
-				section, _ := item.GetSection(marker.Name)
+				//NOTE: I want to confirm that client received line update. And while line doesn't
+				// change do not send more updates. Then start sending updates again until confirmation is received
 
-				numLines := len(section.Text)
-				length := marker.End - marker.Start
-				lineLengh := length / float64(numLines)
-				lineNumber := int((float64(val) - marker.Start) / lineLengh)
+				cursor := float64(val)
 
-				if lineNumber < 0 {
-					lineNumber = 0
+				app.logger.Debug("got cursor", "c", cursor)
+
+				app.reaper.Update(cursor)
+
+				app.logger.Debug("updates finished. dispatching event", "lineID", app.reaper.Line.ID)
+				_, err = fmt.Fprintf(w, "event: line\ndata:%d\n\n", app.reaper.Line.ID)
+				flusher.Flush()
+
+				if err != nil {
+					app.logger.Error("dispatching failed", "error", err.Error())
 				}
 
-				lastLine := fmt.Sprintf("%d-%d", marker.ID, lineNumber)
+				if app.reaper.Item.Length == 0 {
+					sendCountdownEvent(w, app.reaper.PeekItem.Name, app.reaper.PeekItem.Position-app.reaper.Cursor)
+				}
 
-				app.reaper.LastLine = lastLine
-
-				_, err = fmt.Fprintf(w, "event: cursor\ndata: {\"section\": %d, \"line\": %d}\n\n", marker.ID, lineNumber)
 			}
 
 			if err != nil {
 				break
 			}
 
-			flusher.Flush()
 		}
 
 	}
+}
+
+func sendAlertEvent(w http.ResponseWriter, msg string) error {
+
+	_, err := fmt.Fprintf(w, "event: alert\ndata:{\"message\":\"%s\"}\n\n", msg)
+	w.(http.Flusher).Flush()
+
+	return err
+}
+
+func sendCountdownEvent(w http.ResponseWriter, name string, time float64) error {
+
+	sec := int(time) % 60
+	min := int(time) / 60
+
+	if len(name) > 20 {
+		name = name[:20] + "..."
+	}
+
+	_, err := fmt.Fprintf(w, "event: cowntdown\ndata:{\"name\":\"%s\", \"min\":%v, \"sec\":%v}\n\n",
+		name,
+		min,
+		sec,
+	)
+	w.(http.Flusher).Flush()
+
+	return err
 }

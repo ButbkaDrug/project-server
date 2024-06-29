@@ -16,7 +16,7 @@
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col">
         <!-- Navbar -->
-        <div class="w-full navbar bg-base-300 sticky top-0">
+        <div class="w-full navbar bg-base-300 sticky top-0 z-50">
             <div class="flex-none lg:hidden">
                 <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -30,17 +30,20 @@
                 <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
                     <b>WTEAM</b>
                 </label>
+
+
+            </div>
+
+            <div>
+                <div id="countdown-title" class="text-clip overflow-hidden"></div>
+
+                <span class="countdown font-mono text-2xl">
+                    <span id="cowntdown-min" style="--value:0;"></span>m
+                    <span id="cowntdown-sec" style="--value:0;"></span>s
+                </span>
             </div>
             <div class="flex-none hidden lg:block">
                 <!-- Navbar menu content here -->
-                <ul class="menu menu-horizontal bg-base-200 rounded-box">
-                    <li>
-                        {{ template "tools-menu" }}
-                    </li>
-                    <li>
-                        {{ template "themes-menu" }}
-                    </li>
-                </ul>
             </div>
         </div>
 

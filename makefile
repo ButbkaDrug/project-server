@@ -6,5 +6,5 @@ build:
 
 run:
 	npm run build
-	go build -o ./tmp/main ./cmd/.
+	DEBUG=1 go build -o ./tmp/main ./cmd/.
 

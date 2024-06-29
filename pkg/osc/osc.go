@@ -2,37 +2,56 @@ package osc
 
 import (
 	"fmt"
+	"log/slog"
 
-	"github.com/butbkadrug/reaper-lyrics/pkg/sse"
 	"github.com/hypebeast/go-osc/osc"
+	"sse"
 )
 
-func NewClient(ip string, port int, clients *sse.SSE) *osc.Server{
-    if ip == "" {
-        ip = "127.0.0.1"
-    }
+type OSC struct {
+	Server  *osc.Server
+	Logger  *slog.Logger
+	Clients *sse.SSE
+}
 
-    if port == 0 {
-        port = 7400
-    }
+type OscCongin struct {
+	IP      string
+	Port    int
+	Logger  *slog.Logger
+	Clients *sse.SSE
+}
 
-    addr := fmt.Sprintf("%s:%d", ip, port)
-    d := osc.NewStandardDispatcher()
+func NewClient(cfg *OscCongin) *OSC {
+	if cfg.IP == "" {
+		cfg.IP = "127.0.0.1"
+	}
 
+	if cfg.Port == 0 {
+		cfg.Port = 7400
+	}
 
-    d.AddMsgHandler("/time", func(msg *osc.Message){
-        val, ok := msg.Arguments[0].(float32)
+	addr := fmt.Sprintf("%s:%d", cfg.IP, cfg.Port)
+	d := osc.NewStandardDispatcher()
 
-        if !ok {
-            return
-        }
+	d.AddMsgHandler("/time", func(msg *osc.Message) {
+		val, ok := msg.Arguments[0].(float32)
 
-        go clients.Broadcast(val)
+		cfg.Logger.Debug("OSC DISPATCHER: got /time message", "value", val)
 
-    })
+		if !ok {
+			return
+		}
 
-    return &osc.Server{
-        Addr:       addr,
-        Dispatcher: d,
-    }
+		go cfg.Clients.Broadcast(val)
+
+	})
+
+	return &OSC{
+		Server: &osc.Server{
+			Addr:       addr,
+			Dispatcher: d,
+		},
+		Logger:  cfg.Logger,
+		Clients: cfg.Clients,
+	}
 }

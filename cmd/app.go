@@ -2,36 +2,32 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"log/slog"
 	"net"
 	"net/http"
 	"strings"
-	"sync"
 	"time"
 
-	client "github.com/butbkadrug/reaper-lyrics/pkg/osc"
-	"github.com/butbkadrug/reaper-lyrics/pkg/parser"
+	"sse"
+
+	"github.com/butbkadrug/reaper-lyrics/pkg/osc"
 	"github.com/butbkadrug/reaper-lyrics/pkg/projects"
-	"github.com/butbkadrug/reaper-lyrics/pkg/screen"
-	"github.com/butbkadrug/reaper-lyrics/pkg/setlist"
-	"github.com/butbkadrug/reaper-lyrics/pkg/sse"
+	"github.com/butbkadrug/reaper-lyrics/pkg/reaper"
 	"github.com/butbkadrug/reaper-lyrics/pkg/templates"
-	"github.com/hypebeast/go-osc/osc"
 )
 
 type app struct {
 	server            *http.Server
 	renderer          *templates.Templates
-	oscClient         *osc.Server
+	oscClient         *osc.OSC
 	defaultProjectDir string
-	cursor            float64
-	mu                *sync.Mutex
 	SSEClients        *sse.SSE
 	startTime         time.Time
-	reaper            *parser.Project
-	setlist           *setlist.Setlist
+	reaper            *reaper.Project
 	library           *projects.Library
-	screen            *screen.Screen
 	updateCh          chan bool
+	logger            *slog.Logger
 }
 
 type config struct {
@@ -51,31 +47,48 @@ type config struct {
 	oscIP string
 	// osc port to listen to
 	oscPort int
+	//logger for the file
+	logger *slog.Logger
 }
 
 func NewApp(cfg *config) *app {
 
-	r := parser.NewProject()
-	r.Path = cfg.projectPath
-	s := setlist.NewSetlist(cfg.setlistPath)
+	r := reaper.NewProjectWithConfig(&reaper.ProjectConfig{
+		Path:    cfg.projectPath,
+		TrackID: 0,
+		Logger:  cfg.logger,
+	})
+
 	clients := sse.NewSSE()
+
+	renderer, err := templates.NewTemplate()
+
+	if err != nil {
+		log.Fatal("failed to start renderer. aborting...", err)
+	}
+	osc := osc.NewClient(&osc.OscCongin{
+		IP:      cfg.oscIP,
+		Port:    cfg.oscPort,
+		Clients: clients,
+		Logger:  cfg.logger,
+	})
+	lib := projects.NewLibrary(cfg.defaultProjectDir)
 
 	app := &app{
 		server: &http.Server{
 			Addr: fmt.Sprintf(":%d", cfg.port),
 		},
-		renderer:          templates.NewTemplate(),
-		oscClient:         client.NewClient(cfg.oscIP, cfg.oscPort, clients),
+		renderer:          renderer,
+		oscClient:         osc,
 		reaper:            r,
 		defaultProjectDir: cfg.defaultProjectDir,
-		cursor:            0,
-		mu:                &sync.Mutex{},
 		SSEClients:        clients,
 		startTime:         time.Now(),
-		setlist:           s,
-		library:           projects.NewLibrary(cfg.defaultProjectDir),
-		screen:            screen.NewScreen(),
+		library:           lib,
+		logger:            cfg.logger,
 	}
+
+	cfg.logger.Debug("about to return new app")
 
 	return app
 }
@@ -94,35 +107,26 @@ func (app *app) getIP() string {
 
 func (app *app) serve() error {
 
+	app.logger.Debug("app.go -> serve()")
 	app.server.Handler = app.routes()
-	err := app.reaper.ParseReaperFile()
-
-	if err != nil {
-		return fmt.Errorf("failed to parse project %s: %w", app.reaper.Path, err)
-	}
-
-	err = app.setlist.Read()
-
-	if err != nil {
-		return fmt.Errorf("failed to parse setlist %s: %w", app.setlist.Path, err)
-	}
 
 	go app.reaper.Watch(app.SSEClients)
 
 	go app.library.ParseLibrary()
 
-	go app.oscClient.ListenAndServe()
+	go app.oscClient.Server.ListenAndServe()
 
 	ip := app.getIP()
 
 	msg := fmt.Sprintf("|%s|\n", strings.Repeat("-", 44))
 	msg += fmt.Sprintf("|%s|\n", strings.Repeat(" ", 44))
 	msg += fmt.Sprintf("| http server serves at: %s%s |\n", ip, app.server.Addr)
-	msg += fmt.Sprintf("| osc client listens at: %s %s|\n", app.oscClient.Addr, strings.Repeat(" ", 5))
+	msg += fmt.Sprintf("| osc client listens at: %s %s|\n", app.oscClient.Server.Addr, strings.Repeat(" ", 5))
 	msg += fmt.Sprintf("|%s|\n", strings.Repeat(" ", 44))
 	msg += fmt.Sprintf("|%s|\n", strings.Repeat("-", 44))
 
 	fmt.Printf(msg)
 
+	app.logger.Debug("about to start listening and serving")
 	return app.server.ListenAndServe()
 }

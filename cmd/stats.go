@@ -16,9 +16,7 @@ func (app *app) statsHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
 	w.Header().Set("Cache-Control", "no-cache")
 
-
 	file := "stats.html"
-
 
 	data := []stat{
 
@@ -48,7 +46,7 @@ func (app *app) statsHandler(w http.ResponseWriter, r *http.Request) {
 
 		{
 			Title: "OSC Addres",
-			Value: app.oscClient.Addr,
+			Value: app.oscClient.Server.Addr,
 			Desc:  "address osc client listens on",
 		},
 
@@ -59,14 +57,14 @@ func (app *app) statsHandler(w http.ResponseWriter, r *http.Request) {
 		},
 	}
 
-    page := Page{
-        Page: Meta{
-        Title: "Server Statistics",
-        },
-        Data: data,
-    }
+	page := Page{
+		Page: Meta{
+			Title: "Server Statistics",
+		},
+		Data: data,
+	}
 
-    err := app.renderer.RenderPage(w, page, file)
+	err := app.renderer.RenderPage(w, page, file)
 
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)

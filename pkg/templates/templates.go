@@ -70,15 +70,17 @@ func prefixNames(args []string) []string {
 	return args
 }
 
-func NewTemplate() *Templates {
+func NewTemplate() (*Templates, error) {
+	log.Println("new template init")
+
 	tmpls, err := template.ParseFS(templates, "html/*")
 
 	if err != nil {
-		log.Fatal(err)
+		return &Templates{}, err
 	}
 	return &Templates{
 		templates: tmpls,
 		FS:        templates,
 		Static:    static,
-	}
+	}, nil
 }
