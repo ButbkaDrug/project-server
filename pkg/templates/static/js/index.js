@@ -1,33 +1,60 @@
 const activeLine = "font-bold"
-const activeSection = "font-bold"
+const activeSection = ["font-bold", "animate-pulse"]
 const scrollSettings = {behavior:"instant", block:"center", inline:"center"}
 
 let line = document.createElement("div");
+let e = document.createElement("div");
 let section = document.createElement("div");
+section.innerHTML = "<div></div>"
 
-const eventSource = new EventSource('/events');
+const eventSource = new EventSource('/events'});
+//maybe I shuld have a scroll event, which will contain the id of a desired element and we will scroll to it wether is's a line or a map??
+//
+//it will make my updates bigger and take additional bandwidth
 
-// we shell receive a json object with two fields
-// section and line. Which refer to current section id and approximate
-// current line number.
 eventSource.addEventListener("line", (event) => {
-    const data = event.data
-    try {
-    const lineID = `line-${data}`
+    const lineID = `line-${event.data}`
     const newLine = document.getElementById(lineID)
+    
 
+    try {
 
-
-    if (newLine && newLine != line) {
+    if (newLine != null && newLine != line) {
         line.classList = ""
         line = newLine
         line.classList = activeLine
         line.scrollIntoView(scrollSettings)
         if (scrollSettings.behavior !== "smooth") scrollSettings.behavior = "smooth"
+    } else { return }
+
+    if (newLine && newLine.parentElement && newLine.parentElement != section){
+            section.firstElementChild.classList.remove(...activeSection)
+            newLine.parentElement.firstElementChild.classList.add(...activeSection)
+            section.classList.toggle("active")
+            section = newLine.parentElement
+            section.classList.toggle("active")
     }
 
     }catch (e) {
-        console.error(e)
+        console.log(e)
+    }
+});
+
+eventSource.addEventListener("map", (event) => {
+    const eID = `map-${event.data}`
+    const newE = document.getElementById(eID)
+
+    try {
+
+    if (newE && newE != e) {
+        e = newE
+        line.scrollIntoView(scrollSettings)
+        if (scrollSettings.behavior !== "smooth") scrollSettings.behavior = "smooth"
+    }
+
+
+    }catch (e) {
+        console.log(e)
     }
 });
 

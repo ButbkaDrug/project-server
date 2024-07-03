@@ -13,4 +13,5 @@ type Meta struct {
 type Page struct {
 	Page Meta
 	Data interface{}
+	Map  interface{}
 }

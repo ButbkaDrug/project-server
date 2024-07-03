@@ -1,6 +1,6 @@
 {{ define "scroll" }}
 <article class="prose prose-xl lg:prose-2xl mx-auto prose-headings:text-center prose-p:uppercase">
-    <div class="grid grid-cols-1 gap-y-10 p-4 md:text-4xl">
+    <div class="grid grid-cols-1 gap-2 p-2 lg:gap-y-10 lg:p-4 md:text-4xl">
         {{range . }}
         {{template "scrollSection" . }}
         {{end}}
@@ -13,7 +13,11 @@
 
 {{define "scrollSection"}}
 <div id="section-{{.ID}}" class="">
-    <div class="divider divider-primary py-10 truncate">{{ .Name.Name}}</div>
+    <div class="divider divider-primary py-4 lg:py-10 truncate">
+        {{ .Name.Name}}
+        {{if (gt .Name.Number 0)}}{{.Name.Number}}{{end}}
+        {{ if .Name.Lang }}<span class="badge badge-secondary">{{.Name.Lang}}</span>{{end}}
+    </div>
     {{range .Comments}}
     <div class="prose prose-stone text-right font-mono">{{.}}</div>
     {{end}}
@@ -25,10 +29,35 @@
 </div>
 {{end}}
 
+{{ define "songmap" }}
+<div class="w-full bg-base-300 sticky bottom-0 z-50" hx-ext="sse" sse-connect="/events">
+    {{template "map" . }}
+</div>
+{{ end }}
 
+{{ define "map" }}
+<ul class="timeline max-w-full justify-center overflow-hidden" sse-swap="songmap">
+    {{ range . }}
+    <li id="map-{{.ID}}">
 
-
-
+        <hr {{if (or .Active .Elapsed)}} class="bg-primary" {{end}} />
+        <div class="timeline-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                class="h-5 w-5 {{if (or .Active .Elapsed)}}text-primary{{end}}">
+                <path fill-rule=" evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="timeline-end timeline-box">
+            {{if .Active }} <span class="text-primary font-bold">{{.Name.Name }}</span>{{else}}<a
+                href="#section-{{.ID}}">{{.ShortName}}</a>{{end}}
+        </div>
+        <hr {{if (or .Active .Elapsed)}} class="bg-primary" {{end}} />
+    </li>
+    {{ end }}
+</ul>
+{{end}}
 
 
 
@@ -266,7 +295,7 @@
 {{ end }}
 
 {{ define "oob-set-element" }}
-<table id="set" class="table" hx-swap-oob="beforeend">
+<table id="set" class="table" hx-swap-oob="beforeend animate-pulse">
     {{ template "set-element" . }}
     </div>
     {{ end }}

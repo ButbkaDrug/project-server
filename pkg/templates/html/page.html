@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
     <link rel="stylesheet" href="/static/css/tailwind.css" />
+    <link rel="stylesheet" href="/static/css/main.css" />
     <script src="/static/js/theme-changer.js"></script>
     <script src="/static/js/htmx.min.js"></script>
+    <script src="/static/js/sse.js"></script>
 
 </head>
 <div class="drawer">
@@ -100,6 +102,8 @@
 </div>
 
 {{ template "back-to-top-button" }}
+
+{{ if .Map }} {{ template "songmap" .Map }} {{ end }}
 <script>
 
     document.addEventListener("DOMContentLoaded", (event) => {

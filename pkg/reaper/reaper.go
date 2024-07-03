@@ -69,6 +69,26 @@ type Section struct {
 	Name     Name
 	Lines    Lines
 	Comments []string
+	//data needed to renderer
+	Elapsed bool
+	Active  bool
+}
+
+func (s *Section) ShortName() string {
+	name := fmt.Sprintf("%c", s.Name.Name[0])
+
+	if s.Name.Number > 0 {
+		name += fmt.Sprintf("%d", s.Name.Number)
+	}
+
+	return name
+}
+
+func (s *Section) Update(pos float64) Section {
+	s.Active = pos >= s.Position && pos < s.Position+s.Lenght
+	s.Elapsed = pos > s.Position+s.Lenght
+
+	return *s
 }
 
 type Name struct {
@@ -251,15 +271,73 @@ func (n *Name) GetFullName() string {
 }
 
 func GetLyricsForItem(i parser.Item) lyrics.Lyrics {
-	dir := path.Dir(i.SourceSection.Source.File)
-	fullpath := path.Join(dir, "lyrics.txt")
-	l, err := lp.Parse(fullpath)
+	return GetLyricsFromProjectDir(i.SourceSection.Source.File)
+}
+
+func GetNotesForItem(i parser.Item) lyrics.Lyrics {
+	return GetNotesFromProjectDir(i.SourceSection.Source.File)
+}
+
+func GetLyricsFromProjectDir(p string) lyrics.Lyrics {
+	dir := path.Dir(p)
+	l, err := getLyrics(dir)
 
 	if err != nil {
-		slog.Error("NEW PROJECT: failed to parse lyrics file.", "item", i.Name, "error", err.Error())
+		slog.Error("GetLyricsFromProjectDir(): failed to parse lyrics file", "path", dir, "error", err.Error())
 	}
 
 	return l
+}
+
+func GetNotesFromProjectDir(p string) lyrics.Lyrics {
+	dir := path.Dir(p)
+	l, err := getNotes(dir)
+
+	if err != nil {
+		slog.Error("GetLyricsFromProjectDir(): failed to parse lyrics file", "path", dir, "error", err.Error())
+	}
+
+	return l
+}
+
+func getLyrics(dirPath string) (lyrics.Lyrics, error) {
+	var err error
+	files := []string{"song.txt", "lyrics.txt", "lyrics-backup"}
+
+	for _, file := range files {
+		l, e := lp.Parse(path.Join(dirPath, file))
+
+		if e != nil {
+			err = e
+
+			continue
+		}
+
+		return l, nil
+
+	}
+
+	return lyrics.Lyrics{}, err
+}
+
+func getNotes(dirPath string) (lyrics.Lyrics, error) {
+	var err error
+	files := []string{"notes.txt", "notes"}
+
+	for _, file := range files {
+		l, e := lp.Parse(path.Join(dirPath, file))
+
+		if e != nil {
+			err = e
+
+			continue
+		}
+
+		return l, nil
+
+	}
+
+	return lyrics.Lyrics{}, err
 }
 
 func NewSectionFromMarker(m parser.Marker, end parser.Marker) Section {
@@ -301,6 +379,9 @@ func parseSectionName(name string) Name {
 
 }
 
+// NOTE: At the moment i assume that i would always get a host project, meaning the project, that
+// contains subprojects with actual songs. for the ease of use i want to be able to open a particular
+// song and have it behave normally. I would need to lookup words in current directory.
 func NewProject() *Project {
 	return NewProjectWithConfig(&ProjectConfig{})
 }
@@ -379,6 +460,7 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 			}
 
 			sec.Comments = section.Comments
+
 			offsets := GetOffsets(itemsLyrics[idx], section)
 
 			if offsets.Empty() {
@@ -428,9 +510,128 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 
 }
 
-func (p *Project) UpdateCursor(pos float64) {
-	p.Cursor = pos
+//FIXME:get notes with specific ID
+
+func GetNotesWithID(notes lyrics.Lyrics, ID int) []string {
+	var result []string
+	for _, note := range notes.Sections {
+		if note.Number == ID {
+			for _, line := range note.Text {
+				result = append(result, line.Text)
+			}
+		}
+	}
+
+	return result
+}
+
+func NewSongProjectWithConfig(cfg *ProjectConfig) *Project {
+
+	var lines Lines
+	var sections []Section
+
+	if cfg == nil {
+		cfg = &ProjectConfig{}
+	}
+
+	logger := cfg.Logger
+
+	if logger == nil {
+		logger = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{}))
+	}
+
+	proj, err := reaper.Parse(cfg.Path)
+
+	if err != nil {
+		logger.Error("SONG PROJECT: failed to parse project file", "error", err, "path", cfg.Path)
+		return &Project{
+			logger: logger,
+		}
+	}
+
+	projLyrics := GetLyricsFromProjectDir(cfg.Path)
+	projectNotes := GetNotesFromProjectDir(cfg.Path)
+
+	logger.Info("Notes loaded", "notes", projectNotes)
+
+	for i, m := range proj.Markers {
+		if !m.IsRegion {
+			continue
+		}
+
+		sec := NewSectionFromMarker(m, proj.Markers[i+1])
+		sec.Comments = GetNotesWithID(projectNotes, m.ID)
+
+		for _, section := range projLyrics.Sections {
+			if section.GetFullName() != m.Name {
+				continue
+			}
+
+			offsets := GetOffsets(projLyrics, section)
+
+			if offsets.Empty() {
+				offsets = CalculateOffsets(section.Text, proj.Markers, i)
+			}
+
+			section.Text = ApplyOffsets(section.Text, offsets)
+
+			ll := ConverToLyricLynes(lines, section.Text, m)
+
+			lines = append(lines, ll...)
+			sec.Lines = ll
+		}
+
+		//if section doesn't contain any text. we will add one empty line that will be whole section
+		//long.
+		if len(sec.Lines) == 0 {
+			ll := LyricLine{
+				ID:       len(lines),
+				Position: m.Position,
+				Length:   proj.Markers[i+1].Position - m.Position,
+				Text:     "",
+			}
+			sec.Lines = append(sec.Lines, ll)
+			lines = append(lines, ll)
+		}
+
+		sections = append(sections, sec)
+	}
+
+	p := &Project{
+		Path:     cfg.Path,
+		TrackID:  cfg.TrackID,
+		Project:  proj,
+		Track:    parser.Track{},
+		Lines:    lines,
+		Sections: sections,
+		logger:   logger,
+	}
+
+	stats, _ := p.getStats()
+
+	p.Stats = stats
+	p.Update(proj.Cursor)
+
+	return p
+}
+
+func (p *Project) GetMapForCurrentItem() []Section {
+	var result []Section
+
+	for _, s := range p.Sections {
+		if s.Position >= p.Item.Position && s.Position < p.Item.Position+p.Item.Length {
+			result = append(result, s)
+		}
+	}
+
+	return result
+}
+
+func (p *Project) UpdateCursor(pos float64) bool {
 	p.logger.Debug("UpdateCurosr()", "cursor", pos)
+	p.Cursor = pos
+
+	return true
 }
 
 // update cursor position and triggers the update of current item and marker and line
@@ -438,24 +639,43 @@ func (p *Project) Update(pos float64) {
 	p.logger.Debug("UPDATE()", "new position", pos)
 
 	//order is important!
-	p.UpdateCursor(pos)
-	p.UpdateItem()
-	p.UpdatePeekItem()
+	for i, s := range p.Sections {
+		p.Sections[i] = s.Update(pos)
+	}
+
 	p.UpdateMarker()
 	p.UpdatePeekMarker()
-	p.UpdateSection()
-	p.UpdateLine()
+
+	if !p.UpdateCursor(pos) {
+		return
+	}
+
+	if !p.UpdateLine() {
+		return
+	}
+	if !p.UpdateSection() {
+		return
+	}
+
+	if !p.UpdateItem() {
+		return
+	}
+	p.UpdatePeekItem()
 }
 
-func (p *Project) UpdateLine() {
+func (p *Project) UpdateLine() bool {
 	p.logger.Debug("UpdateLine()")
+
+	if p.Cursor >= p.Line.Position && p.Cursor < p.Line.Position+p.Line.Length {
+		return false
+	}
 
 	for i := len(p.Lines) - 1; i >= 0; i-- {
 		line := p.Lines[i]
 		if p.Cursor >= line.Position && p.Cursor < line.Position+line.Length {
 			p.Line = line
 			p.logger.Debug("UpdateLine()", "cursor", p.Cursor, "currentline", p.Line)
-			return
+			return true
 		}
 	}
 
@@ -467,27 +687,36 @@ func (p *Project) UpdateLine() {
 			p.logger.Debug("found close enough line", "cursor", p.Cursor, "lineID", line.ID, "Position", line.Position, "differance", line.Position-p.Cursor)
 
 			p.Line = line
-			return
+			return true
 		}
 	}
 
 	p.logger.Debug("line is not found", "cursor", p.Cursor)
+	p.Line = LyricLine{ID: -1}
+
+	return true
 }
 
 // assignes the first section with positions <= and position+length > cursor to a Project.section
 // if cursor still in current section no op
 // if no section found then empty section is assigned
-func (p *Project) UpdateSection() {
+func (p *Project) UpdateSection() bool {
 	p.logger.Debug("UpdateSection()")
+
+	if p.Cursor >= p.Section.Position && p.Cursor < p.Section.Position+p.Section.Lenght {
+		return false
+	}
 
 	for _, s := range p.Sections {
 		if p.Cursor >= s.Position && p.Cursor < s.Position+s.Lenght {
 			p.Section = s
-			return
+			return true
 		}
 	}
 
 	p.Section = Section{}
+
+	return true
 }
 
 // selects the track with given index. if track not exists no op
@@ -503,13 +732,13 @@ func (p *Project) UpdateTrack(idx int) {
 
 // if cursor is still in range of current item and peekItem no op. otherwise searches for the first item to
 // contain the cursor and "selects" it
-func (p *Project) UpdateItem() {
+func (p *Project) UpdateItem() bool {
 	p.logger.Debug("UpdateItem()")
 
 	//if cursor still within the current item we do nothing
 	if p.Cursor >= p.Item.Position && p.Cursor <= p.Item.Position+p.Item.Length {
 		p.logger.Debug("UpdateItem() item not changed")
-		return
+		return false
 	}
 
 	for _, item := range p.Track.Items {
@@ -517,12 +746,12 @@ func (p *Project) UpdateItem() {
 		//an active item
 		if p.Cursor >= item.Position && p.Cursor < item.Position+item.Length {
 			p.Item = item
-			return
+			return true
 		}
 	}
 
 	p.Item = parser.Item{}
-
+	return true
 }
 
 func (p *Project) UpdatePeekItem() {

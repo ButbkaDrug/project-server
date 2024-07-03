@@ -69,6 +69,8 @@ func parseFlags() (config, error) {
 		"BaseProject.rpp",
 	)
 
+	cfg.single = false
+
 	cfg.setlistPath = filepath.Join(
 		homeDir,
 		"Music",
@@ -103,6 +105,13 @@ func parseFlags() (config, error) {
 		"path",
 		cfg.projectPath,
 		"path to a rpp project to be parsed",
+	)
+
+	flag.BoolVar(
+		&cfg.single,
+		"single",
+		false,
+		"should be true if the project not a host containing subprojects as songs, but a song project on it's own",
 	)
 
 	flag.StringVar(

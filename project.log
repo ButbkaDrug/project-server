@@ -1,14 +1,14 @@
-time=2024-06-29T09:28:05.143+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"
-time=2024-06-29T09:28:05.149+04:00 level=DEBUG msg=UPDATE() "new position"=5436.148227712138
-time=2024-06-29T09:28:05.149+04:00 level=DEBUG msg=UpdateCurosr() cursor=5436.148227712138
-time=2024-06-29T09:28:05.149+04:00 level=DEBUG msg=UpdateItem()
-time=2024-06-29T09:28:05.149+04:00 level=DEBUG msg=UpdatePeekItem()
-time=2024-06-29T09:28:05.150+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-06-29T09:28:05.150+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-06-29T09:28:05.150+04:00 level=DEBUG msg=UpdateSection()
-time=2024-06-29T09:28:05.150+04:00 level=DEBUG msg=UpdateLine()
-time=2024-06-29T09:28:05.150+04:00 level=DEBUG msg=UpdateLine() cursor=5436.148227712138 currentline="{ID:179 Position:5436.148227712084 Length:6 Text:}"
-time=2024-06-29T09:28:05.150+04:00 level=DEBUG msg="about to return new app"
-time=2024-06-29T09:28:05.151+04:00 level=DEBUG msg="app.go -> serve()"
-time=2024-06-29T09:28:05.151+04:00 level=DEBUG msg="about to start listening and serving"
-time=2024-06-29T09:28:05.469+04:00 level=DEBUG msg="new listener added" id=[::1]:36074
+time=2024-07-03T21:45:04.678+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"
+time=2024-07-03T21:45:04.682+04:00 level=INFO msg="Notes loaded" notes="\n\n[ Note 2 ]\nAll Vocals & soft Pad\n\n[ Note 4 ]\nBreakdown to Kick Drum, Synth Bass & Acoustic Guitar\n\n[ Note 7 ]\nAll In\n\n[ Note 8 ]\nAdd Vocal melody & Synth line"
+time=2024-07-03T21:45:04.682+04:00 level=DEBUG msg=UPDATE() "new position"=0
+time=2024-07-03T21:45:04.682+04:00 level=DEBUG msg=UpdateMarker()
+time=2024-07-03T21:45:04.682+04:00 level=DEBUG msg=UpdatePeekMarker()
+time=2024-07-03T21:45:04.682+04:00 level=DEBUG msg=UpdateCurosr() cursor=0
+time=2024-07-03T21:45:04.682+04:00 level=DEBUG msg=UpdateLine()
+time=2024-07-03T21:45:04.682+04:00 level=DEBUG msg=UpdateLine() cursor=0 currentline="{ID:0 Position:0 Length:4.06779661016949 Text:}"
+time=2024-07-03T21:45:04.682+04:00 level=DEBUG msg=UpdateSection()
+time=2024-07-03T21:45:04.682+04:00 level=DEBUG msg=UpdateItem()
+time=2024-07-03T21:45:04.682+04:00 level=DEBUG msg="UpdateItem() item not changed"
+time=2024-07-03T21:45:04.683+04:00 level=DEBUG msg="about to return new app"
+time=2024-07-03T21:45:04.683+04:00 level=DEBUG msg="app.go -> serve()"
+time=2024-07-03T21:45:04.684+04:00 level=DEBUG msg="about to start listening and serving"

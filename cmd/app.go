@@ -35,6 +35,9 @@ type config struct {
 	port int
 	// path to a reaper project
 	projectPath string
+	// should be true if it's not a host project that contains subprojects as songs but rather
+	//song itself
+	single bool
 	// path to a setlist file
 	setlistPath string
 	// Where to look for a project folder/file if it is missing. In my case
@@ -53,11 +56,22 @@ type config struct {
 
 func NewApp(cfg *config) *app {
 
-	r := reaper.NewProjectWithConfig(&reaper.ProjectConfig{
-		Path:    cfg.projectPath,
-		TrackID: 0,
-		Logger:  cfg.logger,
-	})
+	r := reaper.NewProject()
+
+	if !cfg.single {
+		r = reaper.NewProjectWithConfig(&reaper.ProjectConfig{
+			Path:    cfg.projectPath,
+			TrackID: 0,
+			Logger:  cfg.logger,
+		})
+
+	} else {
+		r = reaper.NewSongProjectWithConfig(&reaper.ProjectConfig{
+			Path:    cfg.projectPath,
+			TrackID: 0,
+			Logger:  cfg.logger,
+		})
+	}
 
 	clients := sse.NewSSE()
 
