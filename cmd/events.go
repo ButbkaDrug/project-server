@@ -1,10 +1,8 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
 	"net/http"
-	"strings"
 )
 
 func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
@@ -76,21 +74,21 @@ func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
 					app.logger.Error("dispatching failed", "error", err.Error())
 				}
 
-				var data bytes.Buffer
-
-				app.renderer.RenderComponent(&data, app.reaper.GetMapForCurrentItem(), "map")
-
-				d := strings.ReplaceAll(data.String(), "\n", "")
-
-				fmt.Fprintf(w, "event:songmap\ndata:%s\n\n", d)
-				flusher.Flush()
-
-				fmt.Fprintf(w, "event: map\ndata:%d", app.reaper.Section.ID)
-				flusher.Flush()
-
-				if app.reaper.Item.Length == 0 {
-					sendCountdownEvent(w, app.reaper.PeekItem.Name, app.reaper.PeekItem.Position-app.reaper.Cursor)
-				}
+				// var data bytes.Buffer
+				//
+				// app.renderer.RenderComponent(&data, app.reaper.GetMapForCurrentItem(), "map")
+				//
+				// d := strings.ReplaceAll(data.String(), "\n", "")
+				//
+				// fmt.Fprintf(w, "event:songmap\ndata:%s\n\n", d)
+				// flusher.Flush()
+				//
+				// fmt.Fprintf(w, "event: map\ndata:%d", app.reaper.Section.ID)
+				// flusher.Flush()
+				//
+				// if app.reaper.Item.Length == 0 {
+				// 	sendCountdownEvent(w, app.reaper.PeekItem.Name, app.reaper.PeekItem.Position-app.reaper.Cursor)
+				// }
 
 			}
 

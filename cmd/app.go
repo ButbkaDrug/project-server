@@ -56,9 +56,10 @@ type config struct {
 
 func NewApp(cfg *config) *app {
 
-	r := reaper.NewProject()
+	r := &reaper.Project{}
 
 	if !cfg.single {
+		cfg.logger.Info("not a subproject", "config", cfg)
 		r = reaper.NewProjectWithConfig(&reaper.ProjectConfig{
 			Path:    cfg.projectPath,
 			TrackID: 0,

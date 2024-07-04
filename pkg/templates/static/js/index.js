@@ -7,7 +7,7 @@ let e = document.createElement("div");
 let section = document.createElement("div");
 section.innerHTML = "<div></div>"
 
-const eventSource = new EventSource('/events'});
+const eventSource = new EventSource('/events');
 //maybe I shuld have a scroll event, which will contain the id of a desired element and we will scroll to it wether is's a line or a map??
 //
 //it will make my updates bigger and take additional bandwidth

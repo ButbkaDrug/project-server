@@ -38,6 +38,8 @@ func main() {
 		logger.Error("failed to load evirement variables", "error", err.Error())
 	}
 
+	logger.Info("config for the project", "cfg", cfg)
+
 	app := NewApp(&cfg)
 
 	if err = app.serve(); err != nil {

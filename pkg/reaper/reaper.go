@@ -26,6 +26,18 @@ import (
 // TODO: Is it possible to have dynamic targets? So that I can replace only one line of text, not
 // the whole page.
 
+type Generator struct {
+	value int
+}
+
+func (g *Generator) Get() int {
+	v := g.value
+
+	g.value++
+
+	return v
+}
+
 type Project struct {
 	parser.Project
 	Stats  os.FileInfo
@@ -57,9 +69,11 @@ type LyricLine struct {
 type Lines []LyricLine
 
 type ProjectConfig struct {
-	Path    string
-	TrackID int
-	Logger  *slog.Logger
+	Path           string
+	TrackID        int
+	IDGen          *Generator
+	PositionOffset float64
+	Logger         *slog.Logger
 }
 
 type Section struct {
@@ -70,8 +84,9 @@ type Section struct {
 	Lines    Lines
 	Comments []string
 	//data needed to renderer
-	Elapsed bool
-	Active  bool
+	ParentName string
+	Elapsed    bool
+	Active     bool
 }
 
 func (s *Section) ShortName() string {
@@ -243,12 +258,12 @@ func ApplyOffsets(section []lyrics.TextLine, offsets OffsetMap) []lyrics.TextLin
 	return section
 }
 
-func ConverToLyricLynes(lines Lines, section []lyrics.TextLine, m parser.Marker) []LyricLine {
+func ConverToLyricLynes(section []lyrics.TextLine, m parser.Marker, gen *Generator) []LyricLine {
 	result := make([]LyricLine, len(section))
 	for i, line := range section {
 
 		result[i] = LyricLine{
-			ID:       len(lines) + i,
+			ID:       gen.Get(),
 			Position: m.Position + line.Offset,
 			Length:   line.Length,
 			Text:     line.Text,
@@ -340,12 +355,12 @@ func getNotes(dirPath string) (lyrics.Lyrics, error) {
 	return lyrics.Lyrics{}, err
 }
 
-func NewSectionFromMarker(m parser.Marker, end parser.Marker) Section {
+func NewSectionFromMarker(m parser.Marker, end float64) Section {
 
 	return Section{
 		ID:       m.ID,
 		Position: m.Position,
-		Lenght:   end.Position - m.Position,
+		Lenght:   end - m.Position,
 		Name:     parseSectionName(m.Name),
 	}
 }
@@ -400,7 +415,12 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	if logger == nil {
 		logger = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{}))
+
 	}
+	g := &Generator{value: 1}
+	cfg.IDGen = g
+
+	logger.Debug("checking out generator", "value", g.Get())
 
 	proj, err := reaper.Parse(cfg.Path)
 
@@ -418,77 +438,28 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 		track = proj.Tracks[cfg.TrackID]
 	}
 
-	itemsLyrics := make([]lyrics.Lyrics, len(track.Items))
+	subprojects := []*Project{}
 
-	for i, item := range track.Items {
-		itemsLyrics[i] = GetLyricsForItem(item)
+	for _, item := range track.Items {
+
+		logger.Warn("", "item", item.SourceSection.Source)
+
+		if source := item.SourceSection.Source; source.Format == "RPP_PROJECT" {
+
+			cfg.Path = source.File
+			cfg.PositionOffset = item.Position
+
+			subProject := NewSongProjectWithConfig(cfg)
+
+			subprojects = append(subprojects, subProject)
+
+		}
 	}
 
-	//NOTE: I want to build fuill map right at init. Every time project file changes, we will
-	//reparse it. No need to calculate what section we at. We should be able to use timestamp to
-	//to find active line and the just scroll to it. I should assing id's to the line right at this
-	//stage so that rendered will only have to render, and endpoint would only have to serve the
-	//data
+	for _, sub := range subprojects {
+		lines = append(lines, sub.Lines...)
+		sections = append(sections, sub.Sections...)
 
-	for i, m := range proj.Markers {
-		if !m.IsRegion {
-			continue
-		}
-
-		idx := -1
-		// Now I need to get item's id. So that i can match names and get the lyrics
-		for j, item := range track.Items {
-			if m.Position >= item.Position && m.Position < item.Position+item.Length {
-				idx = j
-				break
-			}
-		}
-
-		// if we didn't match any item. idex will remain negative
-		if idx < 0 {
-			continue
-		}
-
-		//NOTE: Maybe during the section constructon I should place native and alternative text into
-		//the section, so that if i'm changing the language on the fly, I don't have to re calculate
-		//anythins???
-		sec := NewSectionFromMarker(m, proj.Markers[i+1])
-
-		for _, section := range itemsLyrics[idx].Sections {
-			if section.GetFullName() != m.Name {
-				continue
-			}
-
-			sec.Comments = section.Comments
-
-			offsets := GetOffsets(itemsLyrics[idx], section)
-
-			if offsets.Empty() {
-				offsets = CalculateOffsets(section.Text, proj.Markers, i)
-			}
-
-			section.Text = ApplyOffsets(section.Text, offsets)
-
-			ll := ConverToLyricLynes(lines, section.Text, m)
-
-			lines = append(lines, ll...)
-			sec.Lines = ll
-		}
-
-		//if section doesn't contain any text. we will add one empty line that will be whole section
-		//long.
-		if len(sec.Lines) == 0 {
-			ll := LyricLine{
-				ID:       len(lines),
-				Position: m.Position,
-				Length:   proj.Markers[i+1].Position - m.Position,
-				Text:     "",
-			}
-			sec.Lines = append(sec.Lines, ll)
-			lines = append(lines, ll)
-		}
-
-		sections = append(sections, sec)
 	}
 
 	p := &Project{
@@ -542,6 +513,9 @@ func NewSongProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	proj, err := reaper.Parse(cfg.Path)
 
+	logger.Info("new subproject", "config", cfg)
+	logger.Debug("checkin generator in subproject", "value", cfg.IDGen.Get())
+
 	if err != nil {
 		logger.Error("SONG PROJECT: failed to parse project file", "error", err, "path", cfg.Path)
 		return &Project{
@@ -558,8 +532,9 @@ func NewSongProjectWithConfig(cfg *ProjectConfig) *Project {
 		if !m.IsRegion {
 			continue
 		}
+		m.Position += cfg.PositionOffset
 
-		sec := NewSectionFromMarker(m, proj.Markers[i+1])
+		sec := NewSectionFromMarker(m, proj.Markers[i+1].Position+cfg.PositionOffset)
 		sec.Comments = GetNotesWithID(projectNotes, m.ID)
 
 		for _, section := range projLyrics.Sections {
@@ -575,7 +550,8 @@ func NewSongProjectWithConfig(cfg *ProjectConfig) *Project {
 
 			section.Text = ApplyOffsets(section.Text, offsets)
 
-			ll := ConverToLyricLynes(lines, section.Text, m)
+			ll := ConverToLyricLynes(section.Text, m, cfg.IDGen)
+			logger.Debug("new ll", "ll", ll)
 
 			lines = append(lines, ll...)
 			sec.Lines = ll
@@ -585,7 +561,7 @@ func NewSongProjectWithConfig(cfg *ProjectConfig) *Project {
 		//long.
 		if len(sec.Lines) == 0 {
 			ll := LyricLine{
-				ID:       len(lines),
+				ID:       cfg.IDGen.Get(),
 				Position: m.Position,
 				Length:   proj.Markers[i+1].Position - m.Position,
 				Text:     "",
@@ -664,10 +640,9 @@ func (p *Project) Update(pos float64) {
 }
 
 func (p *Project) UpdateLine() bool {
-	p.logger.Debug("UpdateLine()")
-
-	if p.Cursor >= p.Line.Position && p.Cursor < p.Line.Position+p.Line.Length {
-		return false
+	p.logger.Debug("UpdateLine() initiated", "cursor", p.Cursor, "current line", p.Line)
+	if next := p.Line.ID + 1; next < len(p.Lines) {
+		p.logger.Debug("UpdateLine()", "next", p.Lines[next])
 	}
 
 	for i := len(p.Lines) - 1; i >= 0; i-- {
