@@ -559,11 +559,13 @@ func NewSongProjectWithConfig(cfg *ProjectConfig) *Project {
 
 		//if section doesn't contain any text. we will add one empty line that will be whole section
 		//long.
+
+		logger.Debug("subproject offsets", "pos", m.Position, "lenght", proj.Markers[i+1].Position+cfg.PositionOffset-m.Position, "i+1", proj.Markers[i+1], "m", m)
 		if len(sec.Lines) == 0 {
 			ll := LyricLine{
 				ID:       cfg.IDGen.Get(),
 				Position: m.Position,
-				Length:   proj.Markers[i+1].Position - m.Position,
+				Length:   proj.Markers[i+1].Position + cfg.PositionOffset - m.Position,
 				Text:     "",
 			}
 			sec.Lines = append(sec.Lines, ll)
@@ -663,6 +665,10 @@ func (p *Project) UpdateLine() bool {
 
 			p.Line = line
 			return true
+		}
+
+		if line.ID == 118 {
+			p.logger.Debug("found 118", "line", line)
 		}
 	}
 
