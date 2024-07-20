@@ -137,7 +137,7 @@ func TestAlternativeSection(t *testing.T) {
 	}
 
 	for i, test := range tests {
-		alt := GetAlternativeSection(OneThingRemains, OneThingRemains.Sections[i])
+		alt := OneThingRemains.GetAlternativeSection(OneThingRemains.Sections[i])
 		if test.GetFullName() != alt.GetFullName() {
 			t.Fatalf("test[%d] faild expected %s got %s", i, test.GetFullName(), OneThingRemains.Sections[i].GetFullName())
 		}
@@ -276,7 +276,7 @@ func TestRelativeSection(t *testing.T) {
 	}
 
 	for i, test := range tests {
-		alt := GetRelativeSection(OneThingRemains, OneThingRemains.Sections[i])
+		alt := OneThingRemains.GetRelativeSection(OneThingRemains.Sections[i])
 		if test.GetFullName() != alt.GetFullName() {
 			t.Fatalf("test[%d] faild expected %s got %s", i, test.GetFullName(), OneThingRemains.Sections[i].GetFullName())
 		}
@@ -415,7 +415,7 @@ func TestRelativeAlternativeSection(t *testing.T) {
 	}
 
 	for i, test := range tests {
-		alt := GetRelativeAlternativeSection(OneThingRemains, OneThingRemains.Sections[i])
+		alt := OneThingRemains.GetRelativeAlternativeSection(OneThingRemains.Sections[i])
 		if test.GetFullName() != alt.GetFullName() {
 			t.Fatalf("test[%d] faild expected %s got %s", i, test.GetFullName(), OneThingRemains.Sections[i].GetFullName())
 		}
@@ -558,7 +558,7 @@ func TestAllRelativeSections(t *testing.T) {
 	}
 
 	for i, test := range tests {
-		alt := GetAllRelativeSections(OneThingRemains, OneThingRemains.Sections[i])
+		alt := OneThingRemains.GetAllRelativeSections(OneThingRemains.Sections[i])
 		if test.Number != len(alt) {
 			t.Fatalf("test[%d] faild expected %v got %v %v", i, test, alt, len(alt))
 		}

@@ -18,6 +18,8 @@ import (
 )
 
 type app struct {
+	IP                string
+	Port              string
 	server            *http.Server
 	renderer          *templates.Templates
 	oscClient         *osc.OSC
@@ -67,7 +69,7 @@ func NewApp(cfg *config) *app {
 		})
 
 	} else {
-		r = reaper.NewSongProjectWithConfig(&reaper.ProjectConfig{
+		r = reaper.NewSubProjectWithConfig(&reaper.ProjectConfig{
 			Path:    cfg.projectPath,
 			TrackID: 0,
 			Logger:  cfg.logger,
@@ -131,11 +133,12 @@ func (app *app) serve() error {
 
 	go app.oscClient.Server.ListenAndServe()
 
-	ip := app.getIP()
+	app.IP = app.getIP()
+	app.Port = app.server.Addr
 
 	msg := fmt.Sprintf("|%s|\n", strings.Repeat("-", 44))
 	msg += fmt.Sprintf("|%s|\n", strings.Repeat(" ", 44))
-	msg += fmt.Sprintf("| http server serves at: %s%s |\n", ip, app.server.Addr)
+	msg += fmt.Sprintf("| http server serves at: %s%s |\n", app.IP, app.Port)
 	msg += fmt.Sprintf("| osc client listens at: %s %s|\n", app.oscClient.Server.Addr, strings.Repeat(" ", 5))
 	msg += fmt.Sprintf("|%s|\n", strings.Repeat(" ", 44))
 	msg += fmt.Sprintf("|%s|\n", strings.Repeat("-", 44))

@@ -1,33 +1,34 @@
 {{ define "scroll" }}
-<article class="prose prose-xl lg:prose-2xl mx-auto prose-headings:text-center prose-p:uppercase">
-    <div class="grid grid-cols-1 gap-2 p-2 lg:gap-y-10 lg:p-4 md:text-4xl">
-        {{range . }}
-        {{template "scrollSection" . }}
-        {{end}}
+<article
+    class="prose prose-xl lg:prose-2xl mx-auto prose-headings:text-center font-sans subpixel-antialiased leading-none">
+    <div
+        class="grid grid-cols-1 gap-2 p-2 lg:gap-y-10 lg:p-4 md:text-4xl [&_p]:relative [&_span]:absolute [&_.textless]:static [&_span]:-top-5 md:[&_span]:-top-10 [&_span]:font-bold [&_span]:tracking-tighter">
+        {{.Content}}
     </div>
 </article>
 <script src="/static/js/index.js"></script>
 {{ end }}
 
 
+{{ define "line" }}
+<p id="line-{{.ID}}">{{.Text}}</p>
+{{ end }}
 
-{{define "scrollSection"}}
-<div id="section-{{.ID}}" class="">
-    <div class="divider divider-primary py-4 lg:py-10 truncate">
-        {{ .Name.Name}}
-        {{if (gt .Name.Number 0)}}{{.Name.Number}}{{end}}
-        {{ if .Name.Lang }}<span class="badge badge-secondary">{{.Name.Lang}}</span>{{end}}
-    </div>
-    {{range .Comments}}
-    <div class="prose prose-stone text-right font-mono">{{.}}</div>
-    {{end}}
-    {{ range .Lines}}
-    <div id="line-{{ .ID }}">
-        <p>{{ .Text }}</p>
-    </div>
-    {{ end }}
+{{ define "title" }}
+<div class="divider divider-primary py-4 lg:py-10 truncate">
+    {{ .Name}}
+    {{if (gt .Number 0)}}{{.Number}}{{end}}
+
+    {{ if .Lang }}<span class="badge badge-secondary">{{.Lang}}</span>{{end}}
 </div>
+{{ end }}
+
+{{ define "comments" }}
+{{range .}}
+<div class="prose prose-stone text-right font-mono">{{.}}</div>
 {{end}}
+{{ end}}
+
 
 {{ define "songmap" }}
 <div class="w-full bg-base-300 sticky bottom-0 z-50" hx-ext="sse" sse-connect="/events">
@@ -243,7 +244,6 @@
 </tr>
 {{ end }}
 {{ end }}
-
 
 
 

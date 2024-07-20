@@ -8,6 +8,7 @@ type TableOfContentEntry struct {
 type Meta struct {
 	Title          string
 	TableOfContent []TableOfContentEntry
+	Stats          []stat
 }
 
 type Page struct {

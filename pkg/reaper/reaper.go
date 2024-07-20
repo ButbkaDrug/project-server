@@ -1,51 +1,37 @@
 package reaper
 
 import (
-	"fmt"
 	"log"
 	"log/slog"
-	lp "lp"
 	"lp/pkg/lyrics"
 	"os"
-	"path"
 	reaper "rpp-parser"
 	"rpp-parser/pkg/parser"
-	"strconv"
-	"strings"
+	"sse"
 	"time"
 
-	"sse"
+	"github.com/butbkadrug/reaper-lyrics/pkg/generator"
 )
 
-// FIXME: refactoring Project.
-// I want to make a list of all lines with all id's in it and then render them out.
-// Also, I would relly want to switch to HTMX sse processing. So that I can send over a state and
-// renew view on the client. So, that in case I'm doint any changes in reaper they would
-// immidiatly show throw on the client
+//TODO: join specific chords and notes into one file. Because they tent to go together anyway
+//TODO: also to keep offsets in a separate file, or parse them on load from the file
 
-// TODO: Is it possible to have dynamic targets? So that I can replace only one line of text, not
-// the whole page.
+//TODO: I fill like it will be better to have offsets in a separate file, or parse them off the porject on load entirely. Having offsets in the file with lyrics clutters it alot and makes it hard to do the chords and etc.
 
-type Generator struct {
-	value int
-}
-
-func (g *Generator) Get() int {
-	v := g.value
-
-	g.value++
-
-	return v
+type ProjectConfig struct {
+	Path           string
+	TrackID        int
+	ItemID         int
+	IDGen          *generator.Generator
+	PositionOffset float64
+	Logger         *slog.Logger
 }
 
 type Project struct {
 	parser.Project
-	Stats  os.FileInfo
-	Path   string
-	logger *slog.Logger
-
-	//NOTE:Refactoring section
-
+	Stats      os.FileInfo
+	Path       string
+	logger     *slog.Logger
 	Cursor     float64
 	TrackID    int
 	Track      parser.Track
@@ -54,349 +40,11 @@ type Project struct {
 	Marker     parser.Marker
 	PeekMarker parser.Marker
 	Section    Section
-	Line       LyricLine
-	Lines      Lines
+	Line       lyrics.LyricLine
+	Lines      lyrics.Lines
 	Sections   []Section
 }
 
-type LyricLine struct {
-	ID       int
-	Position float64
-	Length   float64
-	Text     string
-}
-
-type Lines []LyricLine
-
-type ProjectConfig struct {
-	Path           string
-	TrackID        int
-	IDGen          *Generator
-	PositionOffset float64
-	Logger         *slog.Logger
-}
-
-type Section struct {
-	ID       int
-	Position float64
-	Lenght   float64
-	Name     Name
-	Lines    Lines
-	Comments []string
-	//data needed to renderer
-	ParentName string
-	Elapsed    bool
-	Active     bool
-}
-
-func (s *Section) ShortName() string {
-	name := fmt.Sprintf("%c", s.Name.Name[0])
-
-	if s.Name.Number > 0 {
-		name += fmt.Sprintf("%d", s.Name.Number)
-	}
-
-	return name
-}
-
-func (s *Section) Update(pos float64) Section {
-	s.Active = pos >= s.Position && pos < s.Position+s.Lenght
-	s.Elapsed = pos > s.Position+s.Lenght
-
-	return *s
-}
-
-type Name struct {
-	Name   string
-	Number int
-	Lang   string
-}
-
-type Offset struct {
-	Offset float64
-	Length float64
-}
-
-type OffsetMap []Offset
-
-func (o OffsetMap) Empty() bool {
-
-	for _, offset := range o {
-		if offset.Offset != offset.Length {
-			return false
-		}
-	}
-
-	return true
-}
-
-func NewOffsetMap(s lyrics.Section) OffsetMap {
-	offsets := make([]Offset, len(s.Text))
-
-	for i, line := range s.Text {
-		offsets[i].Offset = line.Offset
-		offsets[i].Length = line.Length
-	}
-
-	return offsets
-}
-
-func GetOffsets(l lyrics.Lyrics, s lyrics.Section) OffsetMap {
-	offsets := NewOffsetMap(s)
-
-	if !offsets.Empty() {
-		return offsets
-	}
-
-	alt := GetAlternativeSection(l, s)
-
-	offsets = NewOffsetMap(alt)
-	if !offsets.Empty() {
-		return offsets
-	}
-
-	rel := GetRelativeSection(l, s)
-	offsets = NewOffsetMap(rel)
-	if !offsets.Empty() {
-		return offsets
-	}
-
-	relalt := GetRelativeAlternativeSection(l, s)
-	offsets = NewOffsetMap(relalt)
-	if !offsets.Empty() {
-		return offsets
-	}
-
-	all := GetAllRelativeSections(l, s)
-
-	for _, relative := range all {
-		offsets := NewOffsetMap(relative)
-
-		if !offsets.Empty() {
-			return offsets
-		}
-	}
-
-	return offsets
-
-}
-
-// looking for the first section with the same name and number, but not the language and returns it
-// if no matches found returns original section
-func GetAlternativeSection(l lyrics.Lyrics, s lyrics.Section) lyrics.Section {
-	for _, alt := range l.Sections {
-		if s.Name == alt.Name && s.Number == alt.Number && s.Lang != alt.Lang {
-			return alt
-		}
-	}
-
-	return s
-}
-
-// looking for the first section with the same name and language but not number returns it
-// if no matches found returns original section
-func GetRelativeSection(l lyrics.Lyrics, s lyrics.Section) lyrics.Section {
-	for _, alt := range l.Sections {
-		if s.Name == alt.Name && s.Number != alt.Number && s.Lang == alt.Lang {
-			return alt
-		}
-	}
-
-	return s
-}
-
-// lokking for a section with a same name but not the number and not the language
-func GetRelativeAlternativeSection(l lyrics.Lyrics, s lyrics.Section) lyrics.Section {
-	for _, alt := range l.Sections {
-		if s.Name == alt.Name && s.Number != alt.Number && s.Lang != alt.Lang {
-			return alt
-		}
-	}
-
-	return s
-}
-
-// looking for all section with a matching name
-func GetAllRelativeSections(l lyrics.Lyrics, s lyrics.Section) []lyrics.Section {
-	result := []lyrics.Section{}
-	for _, section := range l.Sections {
-		if section.Name == s.Name {
-			result = append(result, section)
-		}
-	}
-
-	return result
-}
-
-func CalculateOffsets(text []lyrics.TextLine, markers []parser.Marker, i int) OffsetMap {
-	offsets := make(OffsetMap, len(text))
-
-	for k := range text {
-		m := markers[i]
-
-		length := (markers[i+1].Position - m.Position) / float64(len(text))
-		offset := float64(k) * length
-
-		offsets[k] = Offset{offset, length}
-
-	}
-
-	return offsets
-}
-func ApplyOffsets(section []lyrics.TextLine, offsets OffsetMap) []lyrics.TextLine {
-	for i := range section {
-
-		if i >= len(offsets) {
-			continue
-		}
-
-		section[i].Offset = offsets[i].Offset
-		section[i].Length = offsets[i].Length
-
-	}
-
-	return section
-}
-
-func ConverToLyricLynes(section []lyrics.TextLine, m parser.Marker, gen *Generator) []LyricLine {
-	result := make([]LyricLine, len(section))
-	for i, line := range section {
-
-		result[i] = LyricLine{
-			ID:       gen.Get(),
-			Position: m.Position + line.Offset,
-			Length:   line.Length,
-			Text:     line.Text,
-		}
-	}
-	return result
-}
-
-func (n *Name) GetFullName() string {
-	name := n.Name
-	if n.Number > 0 {
-		name += fmt.Sprintf(" %d", n.Number)
-	}
-
-	if n.Lang != "" {
-		name += fmt.Sprintf(" %s", n.Lang)
-	}
-
-	return name
-}
-
-func GetLyricsForItem(i parser.Item) lyrics.Lyrics {
-	return GetLyricsFromProjectDir(i.SourceSection.Source.File)
-}
-
-func GetNotesForItem(i parser.Item) lyrics.Lyrics {
-	return GetNotesFromProjectDir(i.SourceSection.Source.File)
-}
-
-func GetLyricsFromProjectDir(p string) lyrics.Lyrics {
-	dir := path.Dir(p)
-	l, err := getLyrics(dir)
-
-	if err != nil {
-		slog.Error("GetLyricsFromProjectDir(): failed to parse lyrics file", "path", dir, "error", err.Error())
-	}
-
-	return l
-}
-
-func GetNotesFromProjectDir(p string) lyrics.Lyrics {
-	dir := path.Dir(p)
-	l, err := getNotes(dir)
-
-	if err != nil {
-		slog.Error("GetLyricsFromProjectDir(): failed to parse lyrics file", "path", dir, "error", err.Error())
-	}
-
-	return l
-}
-
-func getLyrics(dirPath string) (lyrics.Lyrics, error) {
-	var err error
-	files := []string{"song.txt", "lyrics.txt", "lyrics-backup"}
-
-	for _, file := range files {
-		l, e := lp.Parse(path.Join(dirPath, file))
-
-		if e != nil {
-			err = e
-
-			continue
-		}
-
-		return l, nil
-
-	}
-
-	return lyrics.Lyrics{}, err
-}
-
-func getNotes(dirPath string) (lyrics.Lyrics, error) {
-	var err error
-	files := []string{"notes.txt", "notes"}
-
-	for _, file := range files {
-		l, e := lp.Parse(path.Join(dirPath, file))
-
-		if e != nil {
-			err = e
-
-			continue
-		}
-
-		return l, nil
-
-	}
-
-	return lyrics.Lyrics{}, err
-}
-
-func NewSectionFromMarker(m parser.Marker, end float64) Section {
-
-	return Section{
-		ID:       m.ID,
-		Position: m.Position,
-		Lenght:   end - m.Position,
-		Name:     parseSectionName(m.Name),
-	}
-}
-
-func parseSectionName(name string) Name {
-	tokens := strings.Split(name, " ")
-	n := Name{}
-
-	for _, t := range tokens {
-		if len(t) > 2 {
-			if n.Name == "" {
-				n.Name = t
-				continue
-			}
-
-			n.Name += " " + t
-			continue
-		}
-
-		num, err := strconv.Atoi(t)
-
-		if err != nil && n.Lang == "" {
-			n.Lang = t
-			continue
-		}
-
-		n.Number = num
-	}
-
-	return n
-
-}
-
-// NOTE: At the moment i assume that i would always get a host project, meaning the project, that
-// contains subprojects with actual songs. for the ease of use i want to be able to open a particular
-// song and have it behave normally. I would need to lookup words in current directory.
 func NewProject() *Project {
 	return NewProjectWithConfig(&ProjectConfig{})
 }
@@ -404,7 +52,7 @@ func NewProject() *Project {
 func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 	//TODO: refactor this function into smaller chunks where possible
 
-	var lines Lines
+	var lines lyrics.Lines
 	var sections []Section
 
 	if cfg == nil {
@@ -417,10 +65,11 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 		logger = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{}))
 
 	}
-	g := &Generator{value: 1}
+
+	g := generator.NewGenerator()
 	cfg.IDGen = g
 
-	logger.Debug("checking out generator", "value", g.Get())
+	logger.Debug("NewProjectWithConfig()", "path", cfg.Path)
 
 	proj, err := reaper.Parse(cfg.Path)
 
@@ -440,16 +89,17 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	subprojects := []*Project{}
 
-	for _, item := range track.Items {
+	logger.Debug("subprojects", "total", len(subprojects))
 
-		logger.Warn("", "item", item.SourceSection.Source)
+	for i, item := range track.Items {
 
 		if source := item.SourceSection.Source; source.Format == "RPP_PROJECT" {
 
 			cfg.Path = source.File
 			cfg.PositionOffset = item.Position
+			cfg.ItemID = i
 
-			subProject := NewSongProjectWithConfig(cfg)
+			subProject := NewSubProjectWithConfig(cfg)
 
 			subprojects = append(subprojects, subProject)
 
@@ -481,24 +131,10 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 
 }
 
-//FIXME:get notes with specific ID
+func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
+	//TODO: refactor this mess
 
-func GetNotesWithID(notes lyrics.Lyrics, ID int) []string {
-	var result []string
-	for _, note := range notes.Sections {
-		if note.Number == ID {
-			for _, line := range note.Text {
-				result = append(result, line.Text)
-			}
-		}
-	}
-
-	return result
-}
-
-func NewSongProjectWithConfig(cfg *ProjectConfig) *Project {
-
-	var lines Lines
+	var lines lyrics.Lines
 	var sections []Section
 
 	if cfg == nil {
@@ -511,10 +147,8 @@ func NewSongProjectWithConfig(cfg *ProjectConfig) *Project {
 		logger = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{}))
 	}
 
+	logger.Debug("NewSubProject parsing:", "path", cfg.Path, "startOffset", cfg.PositionOffset)
 	proj, err := reaper.Parse(cfg.Path)
-
-	logger.Info("new subproject", "config", cfg)
-	logger.Debug("checkin generator in subproject", "value", cfg.IDGen.Get())
 
 	if err != nil {
 		logger.Error("SONG PROJECT: failed to parse project file", "error", err, "path", cfg.Path)
@@ -525,24 +159,40 @@ func NewSongProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	projLyrics := GetLyricsFromProjectDir(cfg.Path)
 	projectNotes := GetNotesFromProjectDir(cfg.Path)
+	projectChords := GetChordsFromProjectDir(cfg.Path)
 
-	logger.Info("Notes loaded", "notes", projectNotes)
-
+	logger.Debug("going through markers", "totoal", len(proj.Markers))
 	for i, m := range proj.Markers {
+		//skip marker if it's not a region
 		if !m.IsRegion {
 			continue
 		}
-		m.Position += cfg.PositionOffset
 
-		sec := NewSectionFromMarker(m, proj.Markers[i+1].Position+cfg.PositionOffset)
-		sec.Comments = GetNotesWithID(projectNotes, m.ID)
+		//NOTE: I already messed up position calculation couple of times. And at this moment it is imposibble to test it. Therefour we need a testable function for this reason
+		sec := Section{
+			ID:       m.ID,
+			Position: m.Position + cfg.PositionOffset,
+			Lenght:   proj.Markers[i+1].Position - m.Position,
+			Name:     parseSectionName(m.Name),
+		}
+		sec.ItemID = cfg.ItemID
+		sec.Comments = projectNotes.GetNotesWithID(m.ID)
+
+		logger.Debug("region", "ID", sec.ID, "Position", sec.Position, "name", sec.Name)
+
+		chords := projectChords.GetChordsWithID(m.ID)
 
 		for _, section := range projLyrics.Sections {
 			if section.GetFullName() != m.Name {
 				continue
 			}
 
-			offsets := GetOffsets(projLyrics, section)
+			logger.Debug("found matching section", "name", m.Name)
+
+			section.ID = m.ID
+			sec.Comments = append(sec.Comments, section.Comments...)
+
+			offsets := projLyrics.GetOffsets(section)
 
 			if offsets.Empty() {
 				offsets = CalculateOffsets(section.Text, proj.Markers, i)
@@ -550,8 +200,21 @@ func NewSongProjectWithConfig(cfg *ProjectConfig) *Project {
 
 			section.Text = ApplyOffsets(section.Text, offsets)
 
-			ll := ConverToLyricLynes(section.Text, m, cfg.IDGen)
-			logger.Debug("new ll", "ll", ll)
+			ll := MarkerToLyricLynes(section, m.Position+cfg.PositionOffset, cfg.IDGen)
+
+			if chords.Empty() {
+				chords = projLyrics.GetChordsForSection(section)
+			}
+
+			//FIXME: there should be a better way to do this
+			if chords.Empty() {
+				chords = projectChords.GetChordsForSection(section)
+
+			}
+
+			if !chords.Empty() {
+				ll = ApplyChords(ll, chords)
+			}
 
 			lines = append(lines, ll...)
 			sec.Lines = ll
@@ -560,16 +223,32 @@ func NewSongProjectWithConfig(cfg *ProjectConfig) *Project {
 		//if section doesn't contain any text. we will add one empty line that will be whole section
 		//long.
 
-		logger.Debug("subproject offsets", "pos", m.Position, "lenght", proj.Markers[i+1].Position+cfg.PositionOffset-m.Position, "i+1", proj.Markers[i+1], "m", m)
-		if len(sec.Lines) == 0 {
-			ll := LyricLine{
-				ID:       cfg.IDGen.Get(),
-				Position: m.Position,
-				Length:   proj.Markers[i+1].Position + cfg.PositionOffset - m.Position,
-				Text:     "",
+		if sec.Lines.Empty() {
+			logger.Debug("section has no lyrics", "s", sec.Name)
+			ll := []lyrics.LyricLine{}
+
+			if len(chords) < 1 {
+
+				ll = append(ll, lyrics.LyricLine{
+					ID:       cfg.IDGen.Get(),
+					Position: m.Position + cfg.PositionOffset,
+					Length:   proj.Markers[i+1].Position - m.Position,
+					Text:     "",
+				})
 			}
-			sec.Lines = append(sec.Lines, ll)
-			lines = append(lines, ll)
+			for _, c := range chords {
+				ll = append(ll, lyrics.LyricLine{
+					ID:       cfg.IDGen.Get(),
+					Position: m.Position + cfg.PositionOffset,
+					Length:   proj.Markers[i+1].Position - m.Position,
+					Chords:   c,
+					Text:     "",
+				})
+
+			}
+			logger.Debug("appending", "total", len(ll), "lines", ll)
+			sec.Lines = append(sec.Lines, ll...)
+			lines = append(lines, ll...)
 		}
 
 		sections = append(sections, sec)
@@ -588,7 +267,8 @@ func NewSongProjectWithConfig(cfg *ProjectConfig) *Project {
 	stats, _ := p.getStats()
 
 	p.Stats = stats
-	p.Update(proj.Cursor)
+
+	logger.Debug("done with this subproject", "lines", lines)
 
 	return p
 }
@@ -621,34 +301,26 @@ func (p *Project) Update(pos float64) {
 		p.Sections[i] = s.Update(pos)
 	}
 
-	p.UpdateMarker()
-	p.UpdatePeekMarker()
-
-	if !p.UpdateCursor(pos) {
-		return
-	}
-
-	if !p.UpdateLine() {
-		return
-	}
-	if !p.UpdateSection() {
-		return
-	}
-
+	p.UpdateCursor(pos)
+	p.UpdateLine()
+	p.UpdateSection()
 	if !p.UpdateItem() {
 		return
 	}
 	p.UpdatePeekItem()
+	p.UpdateMarker()
+	p.UpdatePeekMarker()
 }
 
 func (p *Project) UpdateLine() bool {
-	p.logger.Debug("UpdateLine() initiated", "cursor", p.Cursor, "current line", p.Line)
+	p.logger.Debug("UpdateLine() initiated", "cursor", p.Cursor, "current line", p.Line, "total lines", len(p.Lines))
 	if next := p.Line.ID + 1; next < len(p.Lines) {
 		p.logger.Debug("UpdateLine()", "next", p.Lines[next])
 	}
 
 	for i := len(p.Lines) - 1; i >= 0; i-- {
 		line := p.Lines[i]
+		p.logger.Debug("searching", "line", i, "total", len(p.Lines), "id", line.ID, "cursor", p.Cursor, "pos", line.Position, "len", line.Length)
 		if p.Cursor >= line.Position && p.Cursor < line.Position+line.Length {
 			p.Line = line
 			p.logger.Debug("UpdateLine()", "cursor", p.Cursor, "currentline", p.Line)
@@ -666,14 +338,10 @@ func (p *Project) UpdateLine() bool {
 			p.Line = line
 			return true
 		}
-
-		if line.ID == 118 {
-			p.logger.Debug("found 118", "line", line)
-		}
 	}
 
 	p.logger.Debug("line is not found", "cursor", p.Cursor)
-	p.Line = LyricLine{ID: -1}
+	p.Line = lyrics.LyricLine{ID: -1}
 
 	return true
 }
@@ -812,21 +480,10 @@ func (p *Project) Watch(clients *sse.SSE) error {
 				log.Println("parsing error: ", err)
 			}
 			p.Project = proj
-
 			p.Stats = info
 		}
 
 		time.Sleep(time.Second)
 
 	}
-}
-
-//WARNING: Reaper on windows and on linux save region info differently
-// current parser works for files saved under linux
-
-func GetImageName(n string) string {
-	toks := strings.Split(n, "-")
-	name := strings.Trim(toks[0], " \t\r\n")
-	name = strings.ReplaceAll(name, " ", "-")
-	return strings.ToLower(name) + ".jpg"
 }

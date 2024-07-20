@@ -1,463 +1,440 @@
-time=2024-07-05T20:39:21.796+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"
-time=2024-07-05T20:39:21.796+04:00 level=INFO msg="config for the project" cfg="{port:1234 projectPath:/home/butbkadrug/Music/REAPER/BaseProject/BaseProject.rpp single:false setlistPath:/home/butbkadrug/Music/REAPER/BaseProject/setlist defaultProjectDir:/home/butbkadrug/Music/REAPER oscIP: oscPort:0 logger:0xc0001101c0}"
-time=2024-07-05T20:39:21.796+04:00 level=INFO msg="not a subproject" config="&{port:1234 projectPath:/home/butbkadrug/Music/REAPER/BaseProject/BaseProject.rpp single:false setlistPath:/home/butbkadrug/Music/REAPER/BaseProject/setlist defaultProjectDir:/home/butbkadrug/Music/REAPER oscIP: oscPort:0 logger:0xc0001101c0}"
-time=2024-07-05T20:39:21.796+04:00 level=DEBUG msg="checking out generator" value=1
-time=2024-07-05T20:39:21.825+04:00 level=WARN msg="" item="{Format:RPP_PROJECT File:/mnt/media/Music/REAPER/Love Come Down - North Point Worship - A - 118 BPM/Love Come Down - North Point Worship - A - 118 BPM.rpp}"
-time=2024-07-05T20:39:22.144+04:00 level=INFO msg="new subproject" config="&{Path:/mnt/media/Music/REAPER/Love Come Down - North Point Worship - A - 118 BPM/Love Come Down - North Point Worship - A - 118 BPM.rpp TrackID:0 IDGen:0xc00012e260 PositionOffset:0 Logger:0xc0001101c0}"
-time=2024-07-05T20:39:22.144+04:00 level=DEBUG msg="checkin generator in subproject" value=2
-time=2024-07-05T20:39:22.190+04:00 level=INFO msg="Notes loaded" notes="\n\n[ Note 2 ]\nAll Vocals & soft Pad\n\n[ Note 4 ]\nBreakdown to Kick Drum, Synth Bass & Acoustic Guitar\n\n[ Note 7 ]\nAll In\n\n[ Note 8 ]\nAdd Vocal melody & Synth line"
-time=2024-07-05T20:39:22.190+04:00 level=DEBUG msg="subproject offsets" pos=0 lenght=4.06779661016949 i+1="{ID:1 Position:4.06779661016949 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:1 Position:0 Name:Love Come Down - North Point Worship - A - 118 BPM IsRegion:true Color:24471295 one:1 b:B GUID:D5F0792C-0D71-8500-E4C5-C1B044465500 IsEnd:false}"
-time=2024-07-05T20:39:22.190+04:00 level=DEBUG msg="new ll" ll="[{ID:4 Position:3.5593220338694893 Length:1.6708015465 Text:Буду вечно петь я} {ID:5 Position:5.23012358036949 Length:2.0560588306 Text:О Tвоей любви} {ID:6 Position:7.28618241096949 Length:2.0177709567 Text:Руки поднимая} {ID:7 Position:9.30395336766949 Length:2.2015527517 Text:Вознесу хвалу} {ID:8 Position:11.505506119369489 Length:1.952681571 Text:Был потерян я} {ID:9 Position:13.45818769036949 Length:1.9258800592 Text:Tы вытащил из тьмы} {ID:10 Position:15.384067749569489 Length:2.0637164055 Text:Буду вечно петь я} {ID:11 Position:17.447784155069492 Length:2.8911988957 Text:О Tвоей любви}]"
-time=2024-07-05T20:39:22.190+04:00 level=DEBUG msg="subproject offsets" pos=4.06779661016949 lenght=17.28813559322034 i+1="{ID:2 Position:21.35593220338983 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:2 Position:4.06779661016949 Name:Chorus R IsRegion:true Color:33317391 one:1 b:B GUID:B3B39495-394F-8699-A79C-F4CCA8CFA5C0 IsEnd:false}"
-time=2024-07-05T20:39:22.190+04:00 level=DEBUG msg="subproject offsets" pos=21.35593220338983 lenght=7.118644067796609 i+1="{ID:3 Position:28.47457627118644 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:3 Position:21.35593220338983 Name:Interlude IsRegion:true Color:19576253 one:1 b:B GUID:F3A69E43-F7FB-5497-3E2C-57BCA3F1946A IsEnd:false}"
-time=2024-07-05T20:39:22.190+04:00 level=DEBUG msg="subproject offsets" pos=28.47457627118644 lenght=4.067796610169491 i+1="{ID:4 Position:32.54237288135593 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:4 Position:28.47457627118644 Name:Intro IsRegion:true Color:19555773 one:1 b:B GUID:2630AA57-71F3-CCC9-0674-6CA8F8539BC4 IsEnd:false}"
-time=2024-07-05T20:39:22.190+04:00 level=DEBUG msg="new ll" ll="[{ID:14 Position:32.03389830505593 Length:4.0677966102 Text:Я был слеп, не видел я} {ID:15 Position:36.10169491525593 Length:4.0677966101 Text:В цепи грех сковал меня} {ID:16 Position:40.16949152535593 Length:4.0677966102 Text:Но Бог услышал мою мольбу} {ID:17 Position:44.23728813555593 Length:4.5762711864 Text:Иисус, Иисус, Ты спас меня} {ID:18 Position:32.54237288135593 Length:0 Text:Иисус, Иисус, Ты спас меня}]"
-time=2024-07-05T20:39:22.190+04:00 level=DEBUG msg="subproject offsets" pos=32.54237288135593 lenght=16.271186440677972 i+1="{ID:5 Position:48.8135593220339 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:5 Position:32.54237288135593 Name:Verse 1 R IsRegion:true Color:24471295 one:1 b:B GUID:A8B19213-DB02-707A-1C6E-1FFF986EF659 IsEnd:false}"
-time=2024-07-05T20:39:22.190+04:00 level=DEBUG msg="new ll" ll="[{ID:19 Position:48.8135593220339 Length:5.084745762711854 Text:Иисус, Иисус, Ты спас меня}]"
-time=2024-07-05T20:39:22.190+04:00 level=DEBUG msg="subproject offsets" pos=48.8135593220339 lenght=5.084745762711854 i+1="{ID:6 Position:53.89830508474576 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:6 Position:48.8135593220339 Name:Tag 1 R IsRegion:true Color:33317391 one:1 b:B GUID:DAD004F4-0BEC-03FA-C4BC-872B6D95810C IsEnd:false}"
-time=2024-07-05T20:39:22.190+04:00 level=DEBUG msg="new ll" ll="[{ID:20 Position:53.389830508445755 Length:1.6708015465 Text:Буду вечно петь я} {ID:21 Position:55.060632054945756 Length:2.0560588306 Text:О Tвоей любви} {ID:22 Position:57.11669088554576 Length:2.0177709567 Text:Руки поднимая} {ID:23 Position:59.134461842245756 Length:2.2015527517 Text:Вознесу хвалу} {ID:24 Position:61.336014593945755 Length:1.952681571 Text:Был потерян я} {ID:25 Position:63.28869616494576 Length:1.9258800592 Text:Tы вытащил из тьмы} {ID:26 Position:65.21457622414576 Length:2.0637164055 Text:Буду вечно петь я} {ID:27 Position:67.27829262964576 Length:2.8911988957 Text:О Tвоей любви}]"
-time=2024-07-05T20:39:22.190+04:00 level=DEBUG msg="subproject offsets" pos=53.89830508474576 lenght=16.271186440677965 i+1="{ID:7 Position:70.16949152542372 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:7 Position:53.89830508474576 Name:Chorus R IsRegion:true Color:33317391 one:1 b:B GUID:64D345D1-080E-FA95-0E5D-D6DE37301BCE IsEnd:false}"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="subproject offsets" pos=70.16949152542372 lenght=7.118644067796609 i+1="{ID:8 Position:77.28813559322033 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:8 Position:70.16949152542372 Name:Interlude IsRegion:true Color:19576253 one:1 b:B GUID:A284E74F-45F8-ADE7-8206-77E1996AB94F IsEnd:false}"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="subproject offsets" pos=77.28813559322033 lenght=4.067796610169495 i+1="{ID:9 Position:81.35593220338983 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:9 Position:77.28813559322033 Name:Intro IsRegion:true Color:19555773 one:1 b:B GUID:4D323847-A9A3-CF70-4AD7-70B8B2D486E5 IsEnd:false}"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="new ll" ll="[{ID:30 Position:80.84745762708982 Length:4.0677966102 Text:Благодать так сладка} {ID:31 Position:84.91525423728983 Length:4.0677966101 Text:Надежду вечную несёт} {ID:32 Position:88.98305084738983 Length:4.0677966102 Text:Мой долг оплачен на Кресте} {ID:33 Position:93.05084745758982 Length:4.5762711864 Text:Иисус, Иисус, Ты спас меня} {ID:34 Position:81.35593220338983 Length:0 Text:Иисус, Иисус, Ты спас меня}]"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="subproject offsets" pos=81.35593220338983 lenght=16.271186440677965 i+1="{ID:10 Position:97.62711864406779 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:10 Position:81.35593220338983 Name:Verse 2 R IsRegion:true Color:24471295 one:1 b:B GUID:6F14DD58-CA19-21DC-A992-F35B81BC3704 IsEnd:false}"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="new ll" ll="[{ID:35 Position:97.62711864406779 Length:5.084745762711854 Text:Иисус, Иисус, Ты спас меня}]"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="subproject offsets" pos=97.62711864406779 lenght=4.067796610169495 i+1="{ID:11 Position:101.69491525423729 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:11 Position:97.62711864406779 Name:Tag 1 R IsRegion:true Color:33317391 one:1 b:B GUID:768524CE-A75F-87C6-D574-803BE137BBDC IsEnd:false}"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="new ll" ll="[{ID:36 Position:101.18644067793728 Length:1.6708015465 Text:Буду вечно петь я} {ID:37 Position:102.85724222443729 Length:2.0560588306 Text:О Tвоей любви} {ID:38 Position:104.9133010550373 Length:2.0177709567 Text:Руки поднимая} {ID:39 Position:106.93107201173729 Length:2.2015527517 Text:Вознесу хвалу} {ID:40 Position:109.13262476343729 Length:1.952681571 Text:Был потерян я} {ID:41 Position:111.08530633443729 Length:1.9258800592 Text:Tы вытащил из тьмы} {ID:42 Position:113.01118639363729 Length:2.0637164055 Text:Буду вечно петь я} {ID:43 Position:115.07490279913729 Length:2.8911988957 Text:О Tвоей любви}]"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="subproject offsets" pos=101.69491525423729 lenght=16.271186440677965 i+1="{ID:12 Position:117.96610169491525 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:12 Position:101.69491525423729 Name:Chorus R IsRegion:true Color:33317391 one:1 b:B GUID:C11C537A-CAF8-18CC-7DC8-CCA677C7D0B2 IsEnd:false}"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="subproject offsets" pos=117.96610169491525 lenght=7.118644067796609 i+1="{ID:13 Position:125.08474576271186 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:13 Position:117.96610169491525 Name:Interlude IsRegion:true Color:19576253 one:1 b:B GUID:E6C16F55-0B29-A2B1-BCBE-263024C1B465 IsEnd:false}"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="subproject offsets" pos=125.08474576271186 lenght=4.067796610169495 i+1="{ID:14 Position:129.15254237288136 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:14 Position:125.08474576271186 Name:Intro IsRegion:true Color:19555773 one:1 b:B GUID:B1693136-62E3-5586-00E5-7CC03510E0FE IsEnd:false}"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="new ll" ll="[{ID:46 Position:128.64406779658137 Length:4.0677966102 Text:Well there's a home beyond the sky} {ID:47 Position:132.71186440678136 Length:4.0677966101 Text:A song we'll sing for all of time} {ID:48 Position:136.77966101688136 Length:4.0677966102 Text:The grave is empty I am free} {ID:49 Position:140.84745762708135 Length:4.5762711864 Text:'Cause Jesus Jesus rescued me}]"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="subproject offsets" pos=129.15254237288136 lenght=16.27118644067798 i+1="{ID:15 Position:145.42372881355934 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:15 Position:129.15254237288136 Name:Verse 3 IsRegion:true Color:24471295 one:1 b:B GUID:3D66E761-5989-31C4-1D1B-F04F876B1252 IsEnd:false}"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="new ll" ll="[{ID:50 Position:145.42372881355934 Length:5.084745762711854 Text:Yeah Jesus Jesus rescued me}]"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="subproject offsets" pos=145.42372881355934 lenght=4.0677966101694665 i+1="{ID:16 Position:149.4915254237288 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:16 Position:145.42372881355934 Name:Tag 1 IsRegion:true Color:33317391 one:1 b:B GUID:B1A8534E-6426-E05F-0CBE-16688AA7B6C8 IsEnd:false}"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="new ll" ll="[{ID:51 Position:148.9830508474288 Length:1.6708015465 Text:I will sing forever} {ID:52 Position:150.65385239392882 Length:2.0560588306 Text:Of Your love come down} {ID:53 Position:152.7099112245288 Length:2.0177709567 Text:With my hands to Heaven} {ID:54 Position:154.7276821812288 Length:2.2015527517 Text:Shout Your praises loud} {ID:55 Position:156.9292349329288 Length:1.952681571 Text:I was lost in darkness} {ID:56 Position:158.8819165039288 Length:1.9258800592 Text:When You pulled me out} {ID:57 Position:160.8077965631288 Length:2.0637164055 Text:I will sing forever} {ID:58 Position:162.8715129686288 Length:2.8911988957 Text:Of Your love come down}]"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="subproject offsets" pos=149.4915254237288 lenght=16.27118644067798 i+1="{ID:17 Position:165.76271186440678 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:17 Position:149.4915254237288 Name:Chorus IsRegion:true Color:33317391 one:1 b:B GUID:70D1A755-7CE1-7015-606B-0D3612733978 IsEnd:false}"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="new ll" ll="[{ID:59 Position:165.2542372881068 Length:1.6708015465 Text:I will sing forever} {ID:60 Position:166.9250388346068 Length:2.0560588306 Text:Of Your love come down} {ID:61 Position:168.9810976652068 Length:2.0177709567 Text:With my hands to Heaven} {ID:62 Position:170.99886862190678 Length:2.2015527517 Text:Shout Your praises loud} {ID:63 Position:173.2004213736068 Length:1.952681571 Text:I was lost in darkness} {ID:64 Position:175.1531029446068 Length:1.9258800592 Text:When You pulled me out} {ID:65 Position:177.07898300380677 Length:2.0637164055 Text:I will sing forever} {ID:66 Position:179.14269940930677 Length:2.8911988957 Text:Of Your love come down}]"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="subproject offsets" pos=165.76271186440678 lenght=16.27118644067795 i+1="{ID:18 Position:182.03389830508473 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:18 Position:165.76271186440678 Name:Chorus IsRegion:true Color:33317391 one:1 b:B GUID:E0E0DCA8-4E94-B616-04F9-0F1D5216B857 IsEnd:false}"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="new ll" ll="[{ID:67 Position:182.03389830508473 Length:5.084745762711854 Text:I will sing forever} {ID:68 Position:182.03389830508473 Length:0 Text:Of Your love come down}]"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="subproject offsets" pos=182.03389830508473 lenght=4.067796610169495 i+1="{ID:19 Position:186.10169491525423 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:19 Position:182.03389830508473 Name:Tag 2 IsRegion:true Color:33317391 one:1 b:B GUID:EBEB742E-1949-C32D-4C1D-3E29C257BE17 IsEnd:false}"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="new ll" ll="[{ID:69 Position:186.10169491525423 Length:5.084745762711854 Text:I will sing forever} {ID:70 Position:186.10169491525423 Length:0 Text:Of Your love come down}]"
-time=2024-07-05T20:39:22.191+04:00 level=DEBUG msg="subproject offsets" pos=186.10169491525423 lenght=4.067796610169495 i+1="{ID:20 Position:190.16949152542372 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:20 Position:186.10169491525423 Name:Tag 2 IsRegion:true Color:33317391 one:1 b:B GUID:74FAA9DE-9F93-C155-D2D5-32A89AE164A3 IsEnd:false}"
-time=2024-07-05T20:39:22.192+04:00 level=DEBUG msg="subproject offsets" pos=190.16949152542372 lenght=8.13559322033899 i+1="{ID:21 Position:198.3050847457627 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:21 Position:190.16949152542372 Name:Outro IsRegion:true Color:19576253 one:1 b:B GUID:2CBE4E05-9332-69FB-AFC2-2E55923B301F IsEnd:false}"
-time=2024-07-05T20:39:22.192+04:00 level=DEBUG msg="subproject offsets" pos=198.3050847457627 lenght=7.627118644067792 i+1="{ID:22 Position:205.9322033898305 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:22 Position:198.3050847457627 Name:Outro IsRegion:true Color:19576253 one:1 b:B GUID:CADAC62D-B650-E635-5872-C9FE38ECFC26 IsEnd:false}"
-time=2024-07-05T20:39:22.192+04:00 level=DEBUG msg="subproject offsets" pos=205.9322033898305 lenght=8.644067796610159 i+1="{ID:23 Position:214.57627118644066 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:23 Position:205.9322033898305 Name:Ending IsRegion:true Color:19576253 one:1 b:B GUID:B52F3290-DAE1-76A5-E6B5-5B36ADB2A1C9 IsEnd:false}"
-time=2024-07-05T20:39:22.192+04:00 level=DEBUG msg=UPDATE() "new position"=14.23728813559322
-time=2024-07-05T20:39:22.192+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:22.192+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:22.192+04:00 level=DEBUG msg=UpdateCurosr() cursor=14.23728813559322
-time=2024-07-05T20:39:22.192+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=14.23728813559322 "current line"="{ID:0 Position:0 Length:0 Text:}"
-time=2024-07-05T20:39:22.192+04:00 level=DEBUG msg=UpdateLine() next="{ID:4 Position:3.5593220338694893 Length:1.6708015465 Text:Буду вечно петь я}"
-time=2024-07-05T20:39:22.192+04:00 level=DEBUG msg=UpdateLine() cursor=14.23728813559322 currentline="{ID:9 Position:13.45818769036949 Length:1.9258800592 Text:Tы вытащил из тьмы}"
-time=2024-07-05T20:39:22.192+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:22.192+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:22.192+04:00 level=DEBUG msg=UpdatePeekItem()
-time=2024-07-05T20:39:22.192+04:00 level=WARN msg="" item="{Format:RPP_PROJECT File:/mnt/media/Music/REAPER/You Are The Rock - The Maranatha Singers - A - 106 BPM/You Are The Rock - The Maranatha Singers - A - 106 BPM.RPP}"
-time=2024-07-05T20:39:22.224+04:00 level=INFO msg="new subproject" config="&{Path:/mnt/media/Music/REAPER/You Are The Rock - The Maranatha Singers - A - 106 BPM/You Are The Rock - The Maranatha Singers - A - 106 BPM.RPP TrackID:0 IDGen:0xc00012e260 PositionOffset:1039.3220338983228 Logger:0xc0001101c0}"
-time=2024-07-05T20:39:22.224+04:00 level=DEBUG msg="checkin generator in subproject" value=74
-time=2024-07-05T20:39:22.249+04:00 level=INFO msg="Notes loaded" notes=""
-time=2024-07-05T20:39:22.249+04:00 level=DEBUG msg="subproject offsets" pos=1039.3220338983228 lenght=9.056603773584811 i+1="{ID:9 Position:9.05660377358491 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:9 Position:1039.3220338983228 Name:You Are The Rock IsRegion:true Color:25231359 one:1 b:B GUID:67CB687B-2850-47BA-8103-CCF0B3E21C6A IsEnd:false}"
-time=2024-07-05T20:39:22.249+04:00 level=DEBUG msg="subproject offsets" pos=1048.3786376719077 lenght=18.11320754716985 i+1="{ID:1 Position:27.1698113207547 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:1 Position:1048.3786376719077 Name:Intro IsRegion:true Color:16842751 one:1 b:B GUID:23D4AD36-CAC5-4E46-A8DD-A4B231959709 IsEnd:false}"
-time=2024-07-05T20:39:22.249+04:00 level=DEBUG msg="new ll" ll="[{ID:77 Position:1066.4918452190775 Length:4.52830188679246 Text:Ты - скала моего спасенья,} {ID:78 Position:1071.02014710587 Length:4.52830188679246 Text:Ты - крепость жизни моей,} {ID:79 Position:1075.5484489926623 Length:4.52830188679246 Text:Ты надежда и вдохновенье,} {ID:80 Position:1080.076750879455 Length:4.52830188679246 Text:Я жив любовью Твоей...}]"
-time=2024-07-05T20:39:22.249+04:00 level=DEBUG msg="subproject offsets" pos=1066.4918452190775 lenght=18.11320754716985 i+1="{ID:2 Position:45.28301886792454 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:2 Position:1066.4918452190775 Name:Verse R IsRegion:true Color:25166079 one:1 b:B GUID:E2382CE6-0614-4302-A510-90FAE1800B40 IsEnd:false}"
-time=2024-07-05T20:39:22.249+04:00 level=DEBUG msg="new ll" ll="[{ID:81 Position:1084.6050527662474 Length:4.52830188679246 Text:Ты - скала моего спасенья,} {ID:82 Position:1089.1333546530398 Length:4.52830188679246 Text:Ты - крепость жизни моей,} {ID:83 Position:1093.6616565398322 Length:4.52830188679246 Text:Ты надежда и вдохновенье,} {ID:84 Position:1098.1899584266248 Length:4.52830188679246 Text:Я жив любовью Твоей...}]"
-time=2024-07-05T20:39:22.249+04:00 level=DEBUG msg="subproject offsets" pos=1084.6050527662474 lenght=18.11320754716985 i+1="{ID:3 Position:63.39622641509435 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:3 Position:1084.6050527662474 Name:Verse R IsRegion:true Color:25166079 one:1 b:B GUID:A287CD53-B2EF-44D2-AFE3-0D490B6C4B68 IsEnd:false}"
-time=2024-07-05T20:39:22.249+04:00 level=DEBUG msg="new ll" ll="[{ID:85 Position:1102.7182603134172 Length:4.528301886792455 Text:Верю я Тебе! Тебе, Иисус!} {ID:86 Position:1107.2465622002096 Length:4.528301886792455 Text:Верен Ты в любви ко мне,} {ID:87 Position:1111.774864087002 Length:4.528301886792455 Text:Ты помощник в час нужды моей,} {ID:88 Position:1116.3031659737946 Length:4.528301886792455 Text:К Тебе, о Господь стремлюсь.}]"
-time=2024-07-05T20:39:22.249+04:00 level=DEBUG msg="subproject offsets" pos=1102.7182603134172 lenght=18.11320754716985 i+1="{ID:4 Position:81.50943396226417 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:4 Position:1102.7182603134172 Name:Chorus R IsRegion:true Color:33521728 one:1 b:B GUID:93392E7C-1363-41F5-B2AD-7FF06AABC9DB IsEnd:false}"
-time=2024-07-05T20:39:22.249+04:00 level=DEBUG msg="new ll" ll="[{ID:89 Position:1120.831467860587 Length:4.528301886792455 Text:Верю я Тебе! Тебе, Иисус!} {ID:90 Position:1125.3597697473795 Length:4.528301886792455 Text:Верен Ты в любви ко мне,} {ID:91 Position:1129.8880716341719 Length:4.528301886792455 Text:Ты помощник в час нужды моей,} {ID:92 Position:1134.4163735209645 Length:4.528301886792455 Text:К Тебе, о Господь стремлюсь.}]"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="subproject offsets" pos=1120.831467860587 lenght=18.11320754716985 i+1="{ID:10 Position:99.62264150943398 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:10 Position:1120.831467860587 Name:Chorus R IsRegion:true Color:33521728 one:1 b:B GUID:5F80F315-97A9-41F5-ACC9-3546A90EE020 IsEnd:false}"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="subproject offsets" pos=1138.944675407757 lenght=18.113207547169623 i+1="{ID:5 Position:117.73584905660377 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:5 Position:1138.944675407757 Name:Instrumenal IsRegion:true Color:16842560 one:1 b:B GUID:9BFD71B5-0127-4452-8DC9-8D94EB06A1DF IsEnd:false}"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="new ll" ll="[{ID:94 Position:1157.0578829549265 Length:4.52830188679246 Text:You are the rock of my salvation.} {ID:95 Position:1161.586184841719 Length:4.52830188679246 Text:You are the strength of my life.} {ID:96 Position:1166.1144867285113 Length:4.52830188679246 Text:You are my hope and my inspiration.} {ID:97 Position:1170.642788615304 Length:4.52830188679246 Text:Lord unto You will I cry.}]"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="subproject offsets" pos=1157.0578829549265 lenght=18.11320754716985 i+1="{ID:6 Position:135.8490566037736 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:6 Position:1157.0578829549265 Name:Verse IsRegion:true Color:20971648 one:1 b:B GUID:7FECCDC8-3EE1-4330-9012-4627FC1AF9B0 IsEnd:false}"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="new ll" ll="[{ID:98 Position:1175.1710905020964 Length:4.52830188679246 Text:You are the rock of my salvation.} {ID:99 Position:1179.6993923888888 Length:4.52830188679246 Text:You are the strength of my life.} {ID:100 Position:1184.2276942756812 Length:4.52830188679246 Text:You are my hope and my inspiration.} {ID:101 Position:1188.7559961624738 Length:4.52830188679246 Text:Lord unto You will I cry.}]"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="subproject offsets" pos=1175.1710905020964 lenght=18.11320754716985 i+1="{ID:11 Position:153.9622641509434 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:11 Position:1175.1710905020964 Name:Verse IsRegion:true Color:20971648 one:1 b:B GUID:BF60A757-1D1A-4020-B608-77F6DCB44233 IsEnd:false}"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="new ll" ll="[{ID:102 Position:1193.2842980492662 Length:4.528301886792455 Text:I believe in you, believe in you.} {ID:103 Position:1197.8125999360586 Length:4.528301886792455 Text:For your faithful love to me.} {ID:104 Position:1202.340901822851 Length:4.528301886792455 Text:You have been my help} {ID:105 Position:1206.8692037096437 Length:4.528301886792455 Text:in time of need.} {ID:106 Position:1193.2842980492662 Length:0 Text:Lord unto You will I cleave.}]"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="subproject offsets" pos=1193.2842980492662 lenght=18.11320754716985 i+1="{ID:7 Position:172.07547169811323 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:7 Position:1193.2842980492662 Name:Chorus IsRegion:true Color:33521728 one:1 b:B GUID:683B153F-DA2C-4519-B269-F138B1CEED66 IsEnd:false}"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="new ll" ll="[{ID:107 Position:1211.397505596436 Length:4.528301886792455 Text:I believe in you, believe in you.} {ID:108 Position:1215.9258074832285 Length:4.528301886792455 Text:For your faithful love to me.} {ID:109 Position:1220.454109370021 Length:4.528301886792455 Text:You have been my help} {ID:110 Position:1224.9824112568135 Length:4.528301886792455 Text:in time of need.} {ID:111 Position:1211.397505596436 Length:0 Text:Lord unto You will I cleave.}]"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="subproject offsets" pos=1211.397505596436 lenght=18.113207547169623 i+1="{ID:8 Position:190.1886792452829 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:8 Position:1211.397505596436 Name:Chorus IsRegion:true Color:33521728 one:1 b:B GUID:E5DC2A55-4B0D-4B12-B4E0-0ADCEBB492D8 IsEnd:false}"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="subproject offsets" pos=1229.510713143606 lenght=9.056603773584811 i+1="{ID:13 Position:199.24528301886792 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:13 Position:1229.510713143606 Name:Refrein IsRegion:true Color:16842496 one:1 b:B GUID:800A0F34-976D-47AA-9702-C86EA6007C38 IsEnd:false}"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="subproject offsets" pos=1238.5673169171907 lenght=9.056603773585039 i+1="{ID:12 Position:208.30188679245282 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:12 Position:1238.5673169171907 Name:Outro IsRegion:true Color:16842751 one:1 b:B GUID:DEED93B1-AE8B-4765-89D6-C1E40B6DC43E IsEnd:false}"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg=UPDATE() "new position"=140.37735849056602
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg=UpdateCurosr() cursor=140.37735849056602
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=140.37735849056602 "current line"="{ID:0 Position:0 Length:0 Text:}"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg=UpdateLine() next="{ID:76 Position:1048.3786376719077 Length:18.11320754716985 Text:}"
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg="line is not found" cursor=140.37735849056602
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:22.250+04:00 level=DEBUG msg=UpdatePeekItem()
-time=2024-07-05T20:39:22.250+04:00 level=WARN msg="" item="{Format:RPP_PROJECT File:/mnt/media/Music/REAPER/Verit i Lubit - Deti Boga - A - 123 BPM/Verit i Lubit - Deti Boga - A - 123 BPM.RPP}"
-time=2024-07-05T20:39:22.295+04:00 level=INFO msg="new subproject" config="&{Path:/mnt/media/Music/REAPER/Verit i Lubit - Deti Boga - A - 123 BPM/Verit i Lubit - Deti Boga - A - 123 BPM.RPP TrackID:0 IDGen:0xc00012e260 PositionOffset:2200.831467860611 Logger:0xc0001101c0}"
-time=2024-07-05T20:39:22.295+04:00 level=DEBUG msg="checkin generator in subproject" value=114
-time=2024-07-05T20:39:22.326+04:00 level=INFO msg="Notes loaded" notes=""
-time=2024-07-05T20:39:22.326+04:00 level=DEBUG msg="subproject offsets" pos=2200.831467860611 lenght=1.875 i+1="{ID:1 Position:1.875 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:1 Position:2200.831467860611 Name:Verit I Lubit - Deti Boga - A - 123 BPM IsRegion:true Color:0 one:1 b:B GUID:965EB963-5EC0-9751-AD6E-F76926E975FA IsEnd:false}"
-time=2024-07-05T20:39:22.326+04:00 level=DEBUG msg="subproject offsets" pos=2202.706467860611 lenght=7.5 i+1="{ID:2 Position:9.375 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:2 Position:2202.706467860611 Name:Intro IsRegion:true Color:0 one:1 b:B GUID:3BCAE9C4-FFA3-5318-2B9D-2833FDA8AD25 IsEnd:false}"
-time=2024-07-05T20:39:22.326+04:00 level=DEBUG msg="new ll" ll="[{ID:117 Position:2210.206467860611 Length:7.5 Text:Ты дал мне больше того, о чем я мечтаю.} {ID:118 Position:2217.706467860611 Length:7.1286144186 Text:Ты стал мне ближе, чем я ожидаю.} {ID:119 Position:2224.8350822792113 Length:7.6077900849 Text:Счастье есть, его не может не быть.} {ID:120 Position:2232.4428723641113 Length:7.7635954965 Text:Надо лишь верить и любить!}]"
-time=2024-07-05T20:39:22.326+04:00 level=DEBUG msg="subproject offsets" pos=2210.206467860611 lenght=30 i+1="{ID:3 Position:39.375 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:3 Position:2210.206467860611 Name:Verse 1 IsRegion:true Color:0 one:1 b:B GUID:900B2DAC-1C94-EB48-31DB-17E0C9F813C2 IsEnd:false}"
-time=2024-07-05T20:39:22.326+04:00 level=DEBUG msg="new ll" ll="[{ID:121 Position:2239.958057305611 Length:3.8949052612 Text:Верить и любить буду я всегда} {ID:122 Position:2243.852962566811 Length:3.7640219288 Text:Верить и любить в жару и в холода,} {ID:123 Position:2247.616984495611 Length:3.4450370195 Text:Верить и любить, если что-то вдруг} {ID:124 Position:2251.062021515111 Length:3.9522230252 Text:не так как ожидаешь}]"
-time=2024-07-05T20:39:22.326+04:00 level=DEBUG msg="subproject offsets" pos=2240.206467860611 lenght=15 i+1="{ID:4 Position:54.375 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:4 Position:2240.206467860611 Name:Chorus IsRegion:true Color:0 one:1 b:B GUID:0FAFF2AD-0BE0-5A1D-D956-B8F46E047C4A IsEnd:false}"
-time=2024-07-05T20:39:22.326+04:00 level=DEBUG msg="new ll" ll="[{ID:125 Position:2254.958057305611 Length:3.8949052612 Text:Верить и любить буду я всегда} {ID:126 Position:2258.852962566811 Length:3.7640219288 Text:Верить и любить в жару и в холода,} {ID:127 Position:2262.616984495611 Length:3.4450370195 Text:Верить и любить, если что-то вдруг} {ID:128 Position:2266.062021515111 Length:3.9522230252 Text:не так как ожидаешь}]"
-time=2024-07-05T20:39:22.326+04:00 level=DEBUG msg="subproject offsets" pos=2255.206467860611 lenght=15 i+1="{ID:5 Position:69.375 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:5 Position:2255.206467860611 Name:Chorus IsRegion:true Color:0 one:1 b:B GUID:C5505CD0-A98D-9A22-A262-6E39E0A419B2 IsEnd:false}"
-time=2024-07-05T20:39:22.326+04:00 level=DEBUG msg="subproject offsets" pos=2270.206467860611 lenght=7.5 i+1="{ID:6 Position:76.875 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:6 Position:2270.206467860611 Name:Intro IsRegion:true Color:0 one:1 b:B GUID:71F36C50-895B-EC82-BB09-135EC43F9088 IsEnd:false}"
-time=2024-07-05T20:39:22.326+04:00 level=DEBUG msg="new ll" ll="[{ID:130 Position:2277.5792370184113 Length:7.5057149139 Text:Бог Всемогущий нам жизнь подарил} {ID:131 Position:2285.084951932311 Length:7.4897656684 Text:Дал нам дыхание и небо открыл.} {ID:132 Position:2292.574717600711 Length:7.4642468757 Text:Он любовь на кресте доказал.} {ID:133 Position:2300.0389644764114 Length:5.1579859821 Text:Он за нас Свою жизнь отдал!} {ID:134 Position:2305.1969504585113 Length:2.5095174021 Text:Будем верить Ему!}]"
-time=2024-07-05T20:39:22.326+04:00 level=DEBUG msg="subproject offsets" pos=2277.706467860611 lenght=30 i+1="{ID:7 Position:106.875 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:7 Position:2277.706467860611 Name:Verse 2 IsRegion:true Color:0 one:1 b:B GUID:7DE05D90-1EB4-359E-C809-D34DF5A4F6EF IsEnd:false}"
-time=2024-07-05T20:39:22.326+04:00 level=DEBUG msg="new ll" ll="[{ID:135 Position:2307.458057305611 Length:3.8949052612 Text:Верить и любить буду я всегда} {ID:136 Position:2311.352962566811 Length:3.7640219288 Text:Верить и любить в жару и в холода,} {ID:137 Position:2315.116984495611 Length:3.4450370195 Text:Верить и любить, если что-то вдруг} {ID:138 Position:2318.562021515111 Length:3.9522230252 Text:не так как ожидаешь}]"
-time=2024-07-05T20:39:22.326+04:00 level=DEBUG msg="subproject offsets" pos=2307.706467860611 lenght=15 i+1="{ID:8 Position:121.875 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:8 Position:2307.706467860611 Name:Chorus IsRegion:true Color:0 one:1 b:B GUID:67228766-C850-AAE0-7525-9767DB87A206 IsEnd:false}"
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg="new ll" ll="[{ID:139 Position:2322.458057305611 Length:3.8949052612 Text:Верить и любить буду я всегда} {ID:140 Position:2326.352962566811 Length:3.7640219288 Text:Верить и любить в жару и в холода,} {ID:141 Position:2330.116984495611 Length:3.4450370195 Text:Верить и любить, если что-то вдруг} {ID:142 Position:2333.562021515111 Length:3.9522230252 Text:не так как ожидаешь}]"
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg="subproject offsets" pos=2322.706467860611 lenght=15 i+1="{ID:9 Position:136.875 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:9 Position:2322.706467860611 Name:Chorus IsRegion:true Color:0 one:1 b:B GUID:C446F933-0016-0252-50F1-49C4584D22F1 IsEnd:false}"
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg="subproject offsets" pos=2337.706467860611 lenght=7.5 i+1="{ID:10 Position:144.375 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:10 Position:2337.706467860611 Name:Instrumental IsRegion:true Color:0 one:1 b:B GUID:A292EF68-FD08-C035-6168-2E6A7EA947EF IsEnd:false}"
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg="subproject offsets" pos=2345.206467860611 lenght=7.5 i+1="{ID:11 Position:151.875 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:11 Position:2345.206467860611 Name:Interlude IsRegion:true Color:0 one:1 b:B GUID:EB19BF04-3082-671D-2BBC-82C184D31320 IsEnd:false}"
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg="new ll" ll="[{ID:145 Position:2352.458057305611 Length:3.8949052612 Text:Верить и любить буду я всегда} {ID:146 Position:2356.352962566811 Length:3.7640219288 Text:Верить и любить в жару и в холода,} {ID:147 Position:2360.116984495611 Length:3.4450370195 Text:Верить и любить, если что-то вдруг} {ID:148 Position:2363.562021515111 Length:3.9522230252 Text:не так как ожидаешь}]"
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg="subproject offsets" pos=2352.706467860611 lenght=15 i+1="{ID:12 Position:166.875 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:12 Position:2352.706467860611 Name:Chorus IsRegion:true Color:0 one:1 b:B GUID:03AC5D48-0894-B1CB-29A0-D258D505F216 IsEnd:false}"
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg="new ll" ll="[{ID:149 Position:2367.458057305611 Length:3.8949052612 Text:Верить и любить буду я всегда} {ID:150 Position:2371.352962566811 Length:3.7640219288 Text:Верить и любить в жару и в холода,} {ID:151 Position:2375.116984495611 Length:3.4450370195 Text:Верить и любить, если что-то вдруг} {ID:152 Position:2378.562021515111 Length:3.9522230252 Text:не так как ожидаешь}]"
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg="subproject offsets" pos=2367.706467860611 lenght=15 i+1="{ID:13 Position:181.875 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:13 Position:2367.706467860611 Name:Chorus IsRegion:true Color:0 one:1 b:B GUID:9EED9DB6-7F40-7FFF-675D-BEA998977A23 IsEnd:false}"
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg="subproject offsets" pos=2382.706467860611 lenght=7.5 i+1="{ID:14 Position:189.375 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:14 Position:2382.706467860611 Name:Ending IsRegion:true Color:0 one:1 b:B GUID:720C5E6E-5E5A-1F84-2B97-5301DEEFA2AA IsEnd:false}"
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg=UPDATE() "new position"=0
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg=UpdateCurosr() cursor=0
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=0 "current line"="{ID:0 Position:0 Length:0 Text:}"
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg=UpdateLine() next="{ID:116 Position:2202.706467860611 Length:7.5 Text:}"
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg="found 118" line="{ID:118 Position:2217.706467860611 Length:7.1286144186 Text:Ты стал мне ближе, чем я ожидаю.}"
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg="line is not found" cursor=0
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:22.327+04:00 level=DEBUG msg="UpdateItem() item not changed"
-time=2024-07-05T20:39:22.327+04:00 level=WARN msg="" item="{Format:RPP_PROJECT File:/mnt/media/Music/REAPER/Jesus Have It All - Jeremy Riddle - F - 80 BPM/Jesus Have It All - Jeremy Riddle - F - 80 BPM.RPP}"
-time=2024-07-05T20:39:22.362+04:00 level=INFO msg="new subproject" config="&{Path:/mnt/media/Music/REAPER/Jesus Have It All - Jeremy Riddle - F - 80 BPM/Jesus Have It All - Jeremy Riddle - F - 80 BPM.RPP TrackID:0 IDGen:0xc00012e260 PositionOffset:3454.709018880978 Logger:0xc0001101c0}"
-time=2024-07-05T20:39:22.362+04:00 level=DEBUG msg="checkin generator in subproject" value=154
-time=2024-07-05T20:39:22.410+04:00 level=INFO msg="Notes loaded" notes="\n\n[ Note 2 ]\nArpeggio Acoustic Guitar & Pad, Softly\n\n[ Note 5 ]\nAll in, softly\n\n[ Note 6 ]\nTwo bar vamp\n\n[ Note 9 ]\nSynth Bass in\n\n[ Note 11 ]\nIncrease dynamics\n\n[ Note 15 ]\nHuge energy\n\n[ Note 17 ]\nBreakdown Acoustic Guitar, Piano & Pad, Softly"
-time=2024-07-05T20:39:22.410+04:00 level=DEBUG msg="subproject offsets" pos=3454.709018880978 lenght=6 i+1="{ID:1 Position:6 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:1 Position:3454.709018880978 Name:Jesus Have It All - Jeremy Riddle - F - 80 BPM IsRegion:true Color:0 one:1 b:B GUID:3F6DD21C-90B9-20AF-447D-55CB9DFDFDF5 IsEnd:false}"
-time=2024-07-05T20:39:22.410+04:00 level=DEBUG msg="subproject offsets" pos=3460.709018880978 lenght=24 i+1="{ID:2 Position:30 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:2 Position:3460.709018880978 Name:Intro IsRegion:true Color:0 one:1 b:B GUID:62105378-AE82-1584-AED0-15D1A6B014AB IsEnd:false}"
-time=2024-07-05T20:39:22.410+04:00 level=DEBUG msg="new ll" ll="[{ID:157 Position:3482.459018880978 Length:2.6809570573 Text:Jesus have my heart} {ID:158 Position:3485.139975938278 Length:3.3111142527 Text:My will my soul} {ID:159 Position:3488.451090190978 Length:2.6953277606 Text:Jesus have my hopes} {ID:160 Position:3491.146417951578 Length:3.1950233566 Text:My dreams my world} {ID:161 Position:3494.3414413081778 Length:2.9224621224 Text:With joy I lay it down} {ID:162 Position:3497.263903430578 Length:3.2051182172 Text:With joy I cast my crowns} {ID:163 Position:3500.469021647778 Length:8.2399972332 Text:Jesus have it all}]"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="subproject offsets" pos=3484.709018880978 lenght=24 i+1="{ID:3 Position:54 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:3 Position:3484.709018880978 Name:Verse 1 IsRegion:true Color:0 one:1 b:B GUID:869C0CFF-68C5-BA7F-D528-40CA2CBA3297 IsEnd:false}"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="new ll" ll="[{ID:164 Position:3506.283661311078 Length:2.8509161685 Text:To You I bring my praise} {ID:165 Position:3509.134577479578 Length:3.1667354462 Text:My lips my song} {ID:166 Position:3512.301312925778 Length:2.8075160594 Text:A living sacrifice} {ID:167 Position:3515.1088289851778 Length:3.1769260671 Text:As one reborn} {ID:168 Position:3518.285755052278 Length:3 Text:Your life is now my own} {ID:169 Position:3521.285755052278 Length:3.114372543 Text:Your will is what I want} {ID:170 Position:3524.400127595278 Length:8.3088912857 Text:Jesus have it all}]"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="subproject offsets" pos=3508.709018880978 lenght=24 i+1="{ID:4 Position:78 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:4 Position:3508.709018880978 Name:Verse 2 IsRegion:true Color:0 one:1 b:B GUID:9372072A-841F-7671-A4B2-2CB4F5FE73DB IsEnd:false}"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="new ll" ll="[{ID:171 Position:3530.305592409778 Length:3.114480121 Text:Jesus have it all} {ID:172 Position:3533.420072530778 Length:2.8418107645 Text:Jesus have it all} {ID:173 Position:3536.261883295278 Length:3 Text:To You belongs the glory} {ID:174 Position:3539.261883295278 Length:3.1241021975 Text:The praise of all the world} {ID:175 Position:3542.3859854927778 Length:3.0194239373 Text:Jesus have it all} {ID:176 Position:3545.405409430078 Length:2.8062881299 Text:Jesus have it all} {ID:177 Position:3548.211697559978 Length:3.1046782602 Text:All blessing and all honor} {ID:178 Position:3551.316375820178 Length:5.3926430608 Text:All majesty and awe}]"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="subproject offsets" pos=3532.709018880978 lenght=24 i+1="{ID:5 Position:102 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:5 Position:3532.709018880978 Name:Chorus IsRegion:true Color:0 one:1 b:B GUID:0A44A63D-51A4-D3EB-59F0-3BE3094B2030 IsEnd:false}"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="subproject offsets" pos=3556.709018880978 lenght=6 i+1="{ID:6 Position:108 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:6 Position:3556.709018880978 Name:Vamp IsRegion:true Color:0 one:1 b:B GUID:89A186E9-2592-8934-64C3-4E18F85FA56B IsEnd:false}"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="new ll" ll="[{ID:180 Position:3560.381752158978 Length:2.5694087179 Text:Иисус прийди} {ID:181 Position:3562.951160876878 Length:3.3313039737 Text:Мы ждем Тебя} {ID:182 Position:3566.282464850578 Length:1.5848931027 Text:Нас освободил} {ID:183 Position:3567.867357953278 Length:4.4821180738 Text:Отдав себя} {ID:184 Position:3572.349476027078 Length:3.0839798908 Text:Одежды обновил} {ID:185 Position:3575.433455917878 Length:2.9981735764 Text:Омыл и освятил} {ID:186 Position:3578.431629494278 Length:8.2773893867 Text:Иисус мы ждем}]"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="subproject offsets" pos=3562.709018880978 lenght=24 i+1="{ID:7 Position:132 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:7 Position:3562.709018880978 Name:Verse 3 R IsRegion:true Color:0 one:1 b:B GUID:83DFB081-EBB5-4416-EEF6-3D96245B35E4 IsEnd:false}"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="new ll" ll="[{ID:187 Position:3584.407598794578 Length:2.7412770235 Text:Ииусть пусть} {ID:188 Position:3587.148875818078 Length:3.1500391642 Text:Воздадут Тебе} {ID:189 Position:3590.298914982278 Length:3.0478420449 Text:Хвалу народы все} {ID:190 Position:3593.346757027178 Length:2.9483786682 Text:По всей земле} {ID:191 Position:3596.295135695378 Length:3.0478420449 Text:Творение Твоё} {ID:192 Position:3599.342977740278 Length:3.0265284642 Text:Пусть славу воздает} {ID:193 Position:3602.369506204478 Length:8.3395126765 Text:Иисус Тебе}]"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="subproject offsets" pos=3586.709018880978 lenght=24 i+1="{ID:8 Position:156 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:8 Position:3586.709018880978 Name:Verse 4 R IsRegion:true Color:0 one:1 b:B GUID:2E6FA277-C90C-392A-D197-44ECF66AC964 IsEnd:false}"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="new ll" ll="[{ID:194 Position:3608.305592409778 Length:3.114480121 Text:Все я отдаю} {ID:195 Position:3611.420072530778 Length:2.8418107645 Text:Все я отдаю} {ID:196 Position:3614.261883295278 Length:3 Text:Тебе Иисус вся слава} {ID:197 Position:3617.261883295278 Length:3.1241021975 Text:Хвала Тебе, Иисус} {ID:198 Position:3620.3859854927778 Length:3.0194239373 Text:Все я отдаю} {ID:199 Position:3623.405409430078 Length:2.8062881299 Text:Все я отдаю} {ID:200 Position:3626.211697559978 Length:3.1046782602 Text:Тебе благоговенье} {ID:201 Position:3629.316375820178 Length:5.3926430608 Text:Величие и Честь}]"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="subproject offsets" pos=3610.709018880978 lenght=24 i+1="{ID:9 Position:180 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:9 Position:3610.709018880978 Name:Chorus R IsRegion:true Color:0 one:1 b:B GUID:78B1BE9B-C64C-EF28-0CB2-984C0BC00045 IsEnd:false}"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="new ll" ll="[{ID:202 Position:3632.305592409778 Length:3.114480121 Text:Все я отдаю} {ID:203 Position:3635.420072530778 Length:2.8418107645 Text:Все я отдаю} {ID:204 Position:3638.261883295278 Length:3 Text:Тебе Иисус вся слава} {ID:205 Position:3641.261883295278 Length:3.1241021975 Text:Хвала Тебе, Иисус} {ID:206 Position:3644.3859854927778 Length:3.0194239373 Text:Все я отдаю} {ID:207 Position:3647.405409430078 Length:2.8062881299 Text:Все я отдаю} {ID:208 Position:3650.211697559978 Length:3.1046782602 Text:Тебе благоговенье} {ID:209 Position:3653.316375820178 Length:5.3926430608 Text:Величие и Честь}]"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="subproject offsets" pos=3634.709018880978 lenght=24 i+1="{ID:10 Position:204 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:10 Position:3634.709018880978 Name:Chorus R IsRegion:true Color:0 one:1 b:B GUID:0F2C9F83-BECE-1F6F-9603-B889C81A1129 IsEnd:false}"
-time=2024-07-05T20:39:22.411+04:00 level=DEBUG msg="new ll" ll="[{ID:210 Position:3656.4290188809778 Length:5.89 Text:Всё я отдаю} {ID:211 Position:3662.319018880978 Length:5.508348128 Text:Всё я отдаю}]"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="subproject offsets" pos=3658.709018880978 lenght=12 i+1="{ID:11 Position:216 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:11 Position:3658.709018880978 Name:Refrain R IsRegion:true Color:0 one:1 b:B GUID:E091DF85-F13D-B5AB-8CA3-9B2C90EF5DAE IsEnd:false}"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="new ll" ll="[{ID:212 Position:3668.4290188809778 Length:5.89 Text:Всё я отдаю} {ID:213 Position:3674.319018880978 Length:5.508348128 Text:Всё я отдаю}]"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="subproject offsets" pos=3670.709018880978 lenght=12 i+1="{ID:12 Position:228 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:12 Position:3670.709018880978 Name:Refrain R IsRegion:true Color:0 one:1 b:B GUID:944DF790-26BB-3DF8-E4B6-3B691BBF6E2E IsEnd:false}"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="subproject offsets" pos=3682.709018880978 lenght=12 i+1="{ID:13 Position:240 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:13 Position:3682.709018880978 Name:Interlude IsRegion:true Color:0 one:1 b:B GUID:AB919594-B944-2938-E3C5-CDB21E83928F IsEnd:false}"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="subproject offsets" pos=3694.709018880978 lenght=12 i+1="{ID:14 Position:252 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:14 Position:3694.709018880978 Name:Interlude IsRegion:true Color:0 one:1 b:B GUID:C6D2E15A-6389-3687-666B-1A1882A5400D IsEnd:false}"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="new ll" ll="[{ID:216 Position:3704.004191744678 Length:6.3992959418 Text:Дни мои, жизнь мою} {ID:217 Position:3710.403487686478 Length:5.9436185217 Text:Отдаю} {ID:218 Position:3716.347106208178 Length:6.0426788304 Text:Дни мои, Жизнь мою} {ID:219 Position:3722.389785038578 Length:8.3192338424 Text:Отдаю}]"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="subproject offsets" pos=3706.709018880978 lenght=24 i+1="{ID:15 Position:276 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:15 Position:3706.709018880978 Name:Bridge R IsRegion:true Color:0 one:1 b:B GUID:1525EFE6-031A-2909-35DC-B7038600A643 IsEnd:false}"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="new ll" ll="[{ID:220 Position:3728.004191744678 Length:6.3992959418 Text:Дни мои, жизнь мою} {ID:221 Position:3734.403487686478 Length:5.9436185217 Text:Отдаю} {ID:222 Position:3740.347106208178 Length:6.0426788304 Text:Дни мои, Жизнь мою} {ID:223 Position:3746.389785038578 Length:8.3192338424 Text:Отдаю}]"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="subproject offsets" pos=3730.709018880978 lenght=24 i+1="{ID:20 Position:300 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:20 Position:3730.709018880978 Name:Bridge R IsRegion:true Color:0 one:1 b:B GUID:3848EA9D-699D-2556-6427-7C559008C75F IsEnd:false}"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="new ll" ll="[{ID:224 Position:3752.004191744678 Length:6.3992959418 Text:All my days all my life} {ID:225 Position:3758.403487686478 Length:5.9436185217 Text:Have it all} {ID:226 Position:3764.347106208178 Length:6.0426788304 Text:All my days all my life} {ID:227 Position:3770.389785038578 Length:8.3192338424 Text:Have it all}]"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="subproject offsets" pos=3754.709018880978 lenght=24 i+1="{ID:16 Position:324 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:16 Position:3754.709018880978 Name:Bridge IsRegion:true Color:0 one:1 b:B GUID:2FF91743-8162-DA6A-3D71-D3C927D72832 IsEnd:false}"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="new ll" ll="[{ID:228 Position:3778.709018880978 Length:12 Text:Jesus have it all}]"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="subproject offsets" pos=3778.709018880978 lenght=12 i+1="{ID:17 Position:336 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:17 Position:3778.709018880978 Name:Outro IsRegion:true Color:0 one:1 b:B GUID:4E1A09C5-C024-F5DF-0988-B490885CD374 IsEnd:false}"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="new ll" ll="[{ID:229 Position:3790.709018880978 Length:12 Text:Jesus have it all}]"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="subproject offsets" pos=3790.709018880978 lenght=9 i+1="{ID:18 Position:345 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:18 Position:3790.709018880978 Name:Outro IsRegion:true Color:0 one:1 b:B GUID:06281B13-D254-B3C9-705B-32D179DDBF48 IsEnd:false}"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg="subproject offsets" pos=3799.709018880978 lenght=12 i+1="{ID:19 Position:357 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:19 Position:3799.709018880978 Name:Ending IsRegion:true Color:0 one:1 b:B GUID:363DC418-1E82-8DF9-FFFF-156605981400 IsEnd:false}"
-time=2024-07-05T20:39:22.412+04:00 level=DEBUG msg=UPDATE() "new position"=312
-time=2024-07-05T20:39:22.413+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:22.413+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:22.413+04:00 level=DEBUG msg=UpdateCurosr() cursor=312
-time=2024-07-05T20:39:22.413+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=312 "current line"="{ID:0 Position:0 Length:0 Text:}"
-time=2024-07-05T20:39:22.413+04:00 level=DEBUG msg=UpdateLine() next="{ID:156 Position:3460.709018880978 Length:24 Text:}"
-time=2024-07-05T20:39:22.413+04:00 level=DEBUG msg="line is not found" cursor=312
-time=2024-07-05T20:39:22.413+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:22.413+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:22.413+04:00 level=DEBUG msg=UpdatePeekItem()
-time=2024-07-05T20:39:22.413+04:00 level=WARN msg="" item="{Format:RPP_PROJECT File:/mnt/media/Music/REAPER/10000 Reasons - Matt Radman - G - 72 BPM/10000 Reasons - Matt Radman - G - 72 BPM.rpp}"
-time=2024-07-05T20:39:22.459+04:00 level=INFO msg="new subproject" config="&{Path:/mnt/media/Music/REAPER/10000 Reasons - Matt Radman - G - 72 BPM/10000 Reasons - Matt Radman - G - 72 BPM.rpp TrackID:0 IDGen:0xc00012e260 PositionOffset:4990.70901888098 Logger:0xc0001101c0}"
-time=2024-07-05T20:39:22.459+04:00 level=DEBUG msg="checkin generator in subproject" value=231
-time=2024-07-05T20:39:22.480+04:00 level=INFO msg="Notes loaded" notes="\n\n[ Note 2 ]\nPiano only\n\n[ Note 4 ]\nBuild on last line\n\n[ Note 5 ]\nGuitar and Keys Enter\n\n[ Note 7 ]\nBass enters\n\n[ Note 9 ]\nBuild on last line\n\n[ Note 10 ]\nAll in"
-time=2024-07-05T20:39:22.480+04:00 level=DEBUG msg="subproject offsets" pos=4990.70901888098 lenght=6.6206896551721 i+1="{ID:1 Position:6.62068965517241 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:1 Position:4990.70901888098 Name:10,000 Reasons - Matt Radman - G - 72 BPM IsRegion:true Color:0 one:1 b:B GUID:1B30A7DE-8B6C-B864-4D7A-E7BC5B525FE9 IsEnd:false}"
-time=2024-07-05T20:39:22.480+04:00 level=DEBUG msg="subproject offsets" pos=4997.329708536152 lenght=13.24137931034511 i+1="{ID:2 Position:19.86206896551724 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:2 Position:4997.329708536152 Name:Intro IsRegion:true Color:16842751 one:1 b:B GUID:4BFDCFD7-4166-4DFA-8793-8C1967A2485A IsEnd:false}"
-time=2024-07-05T20:39:22.480+04:00 level=DEBUG msg="new ll" ll="[{ID:234 Position:5009.636711494497 Length:4.2447211796 Text:Bless the Lord O my soul} {ID:235 Position:5013.881432674097 Length:3.2154174655 Text:O my soul} {ID:236 Position:5017.096850139597 Length:5.7485736273 Text:Worship His Holy name} {ID:237 Position:5022.845423766897 Length:4.2290759126 Text:Sing like never before} {ID:238 Position:5027.074499679497 Length:3.2166131159 Text:O my soul} {ID:239 Position:5030.291112795397 Length:9.2454922925 Text:I'll worship Your Holy name}]"
-time=2024-07-05T20:39:22.480+04:00 level=DEBUG msg="subproject offsets" pos=5010.571087846497 lenght=29.79310344827627 i+1="{ID:3 Position:49.6551724137931 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:3 Position:5010.571087846497 Name:Chorus IsRegion:true Color:27469061 one:1 b:B GUID:FABFA270-B61F-47E7-92AD-B93AAE1BAB3B IsEnd:false}"
-time=2024-07-05T20:39:22.480+04:00 level=DEBUG msg="new ll" ll="[{ID:240 Position:5039.979448568273 Length:2.7944288151 Text:The sun comes up} {ID:241 Position:5042.7738773833735 Length:4.6101611543 Text:It's a new day dawning} {ID:242 Position:5047.384038537673 Length:5.7758614362 Text:It's time to sing Your song again} {ID:243 Position:5053.1598999738735 Length:2.9284292519 Text:Whatever may pass} {ID:244 Position:5056.088329225773 Length:6.0634921065 Text:And whatever lies before me} {ID:245 Position:5062.151821332273 Length:2.0137727906 Text:Let me be singing} {ID:246 Position:5064.165594122874 Length:5.1641144133 Text:When the evening comes}]"
-time=2024-07-05T20:39:22.480+04:00 level=DEBUG msg="subproject offsets" pos=5040.364191294773 lenght=33.10344827586141 i+1="{ID:4 Position:82.75862068965517 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:4 Position:5040.364191294773 Name:Verse 1 IsRegion:true Color:25198847 one:1 b:B GUID:BC8DB3E0-EAA0-4344-A632-DFA96698DCA2 IsEnd:false}"
-time=2024-07-05T20:39:22.481+04:00 level=DEBUG msg="new ll" ll="[{ID:247 Position:5072.533263218635 Length:4.2447211796 Text:Bless the Lord O my soul} {ID:248 Position:5076.777984398234 Length:3.2154174655 Text:O my soul} {ID:249 Position:5079.993401863735 Length:5.7485736273 Text:Worship His Holy name} {ID:250 Position:5085.741975491034 Length:4.2290759126 Text:Sing like never before} {ID:251 Position:5089.971051403635 Length:3.2166131159 Text:O my soul} {ID:252 Position:5093.187664519534 Length:9.2454922925 Text:I'll worship Your Holy name}]"
-time=2024-07-05T20:39:22.481+04:00 level=DEBUG msg="subproject offsets" pos=5073.467639570635 lenght=29.79310344827627 i+1="{ID:5 Position:112.55172413793103 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:5 Position:5073.467639570635 Name:Chorus IsRegion:true Color:27469061 one:1 b:B GUID:B033A3DE-6ED2-4207-8D87-EF215DB2BFFE IsEnd:false}"
-time=2024-07-05T20:39:22.481+04:00 level=DEBUG msg="new ll" ll="[{ID:253 Position:5102.784414774611 Length:2.7106906812 Text:Велик в любви} {ID:254 Position:5105.4951054558105 Length:4.3863272183 Text:И даёшь мне милость} {ID:255 Position:5109.881432674111 Length:6.1750190239 Text:Ты справедлив и так благ ко мне} {ID:256 Position:5116.056451698011 Length:2.9284292519 Text:За все Твои дела} {ID:257 Position:5118.984880949911 Length:5.7931034483 Text:Я хочу прославить} {ID:258 Position:5124.777984398211 Length:2.0606200734 Text:Чтоб петь Тебе} {ID:259 Position:5126.838604471611 Length:5.3876557887 Text:Есть десять тысяч причин!}]"
-time=2024-07-05T20:39:22.481+04:00 level=DEBUG msg="subproject offsets" pos=5103.260743018911 lenght=33.10344827586232 i+1="{ID:6 Position:145.6551724137931 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:6 Position:5103.260743018911 Name:Verse 2 R IsRegion:true Color:25198847 one:1 b:B GUID:5DA53091-6C5E-4B0E-ADC9-EEBCEE5DB748 IsEnd:false}"
-time=2024-07-05T20:39:22.482+04:00 level=DEBUG msg="new ll" ll="[{ID:260 Position:5135.429814942773 Length:4.2447211796 Text:Славь душа Господа} {ID:261 Position:5139.674536122373 Length:3.3103448276 Text:Cлавь душа} {ID:262 Position:5142.984880949974 Length:5.6536462652 Text:Имя святое его} {ID:263 Position:5148.638527215173 Length:4.2773882175 Text:Пой Ему, как никогда} {ID:264 Position:5152.9159154326735 Length:3.168300811 Text:Пой душа} {ID:265 Position:5156.084216243673 Length:9.2454922925 Text:Благослови Господа}]"
-time=2024-07-05T20:39:22.482+04:00 level=DEBUG msg="subproject offsets" pos=5136.364191294773 lenght=26.48275862068931 i+1="{ID:7 Position:172.13793103448276 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:7 Position:5136.364191294773 Name:Chorus R IsRegion:true Color:27469061 one:1 b:B GUID:28BB05B9-E662-45AB-BA1F-DA67E5224F5C IsEnd:false}"
-time=2024-07-05T20:39:22.482+04:00 level=DEBUG msg="subproject offsets" pos=5162.846949915463 lenght=26.48275862068931 i+1="{ID:8 Position:198.6206896551724 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:8 Position:5162.846949915463 Name:Instrumental IsRegion:true Color:21855490 one:1 b:B GUID:3C0C52F2-4E38-40A2-A361-CFF3DEEC3447 IsEnd:false}"
-time=2024-07-05T20:39:22.482+04:00 level=DEBUG msg="new ll" ll="[{ID:267 Position:5188.853380291852 Length:2.7106906812 Text:And on that day} {ID:268 Position:5191.5640709730515 Length:4.3863272183 Text:When my strength is failing} {ID:269 Position:5195.950398191352 Length:6.1750190239 Text:The end draws near and my time has come} {ID:270 Position:5202.125417215252 Length:2.9284292519 Text:Still my soul will} {ID:271 Position:5205.053846467152 Length:5.7931034483 Text:Sing Your praise unending} {ID:272 Position:5210.846949915452 Length:2.0606200734 Text:Ten thousand years} {ID:273 Position:5212.907569988852 Length:5.3876557887 Text:And then forevermore}]"
-time=2024-07-05T20:39:22.482+04:00 level=DEBUG msg="subproject offsets" pos=5189.329708536152 lenght=33.10344827586232 i+1="{ID:9 Position:231.72413793103448 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:9 Position:5189.329708536152 Name:Verse 3 IsRegion:true Color:25198847 one:1 b:B GUID:AEC98D6D-83DC-448D-BAC1-875E3F185D04 IsEnd:false}"
-time=2024-07-05T20:39:22.482+04:00 level=DEBUG msg="new ll" ll="[{ID:274 Position:5221.498780460014 Length:4.2447211796 Text:Bless the Lord O my soul} {ID:275 Position:5225.743501639614 Length:3.2154174655 Text:O my soul} {ID:276 Position:5228.958919105115 Length:5.7485736273 Text:Worship His Holy name} {ID:277 Position:5234.707492732414 Length:4.2290759126 Text:Sing like never before} {ID:278 Position:5238.936568645015 Length:3.2166131159 Text:O my soul} {ID:279 Position:5242.153181760914 Length:9.2454922925 Text:I'll worship Your Holy name}]"
-time=2024-07-05T20:39:22.482+04:00 level=DEBUG msg="subproject offsets" pos=5222.433156812014 lenght=26.48275862068931 i+1="{ID:10 Position:258.2068965517241 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:10 Position:5222.433156812014 Name:Chorus IsRegion:true Color:27469061 one:1 b:B GUID:DBF01A55-1292-42F0-931F-4D2F011D5D1B IsEnd:false}"
-time=2024-07-05T20:39:22.482+04:00 level=DEBUG msg="new ll" ll="[{ID:280 Position:5247.981539080703 Length:4.2447211796 Text:Bless the Lord O my soul} {ID:281 Position:5252.226260260303 Length:3.2154174655 Text:O my soul} {ID:282 Position:5255.441677725804 Length:5.7485736273 Text:Worship His Holy name} {ID:283 Position:5261.190251353103 Length:4.2290759126 Text:Sing like never before} {ID:284 Position:5265.419327265704 Length:3.2166131159 Text:O my soul} {ID:285 Position:5268.635940381603 Length:9.2454922925 Text:I'll worship Your Holy name}]"
-time=2024-07-05T20:39:22.482+04:00 level=DEBUG msg="subproject offsets" pos=5248.9159154327035 lenght=26.48275862069022 i+1="{ID:11 Position:284.6896551724138 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:11 Position:5248.9159154327035 Name:Chorus IsRegion:true Color:27469061 one:1 b:B GUID:3D54FED7-4C3F-4F82-BDDF-B1AA5B8DDF02 IsEnd:false}"
-time=2024-07-05T20:39:22.482+04:00 level=DEBUG msg="new ll" ll="[{ID:286 Position:5275.398674053394 Length:9.931034482758662 Text:I'll worship Your Holy name}]"
-time=2024-07-05T20:39:22.482+04:00 level=DEBUG msg="subproject offsets" pos=5275.398674053394 lenght=9.93103448275815 i+1="{ID:12 Position:294.62068965517244 Name: IsRegion:false Color:0 one:0 b: GUID: IsEnd:true}" m="{ID:12 Position:5275.398674053394 Name:Tag IsRegion:true Color:16842560 one:1 b:B GUID:05E77D80-FCF9-400F-AF7C-35EB57C97759 IsEnd:false}"
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg=UPDATE() "new position"=271.44827586206895
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg=UpdateCurosr() cursor=271.44827586206895
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=271.44827586206895 "current line"="{ID:0 Position:0 Length:0 Text:}"
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg=UpdateLine() next="{ID:233 Position:4997.329708536152 Length:13.24137931034511 Text:}"
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg="line is not found" cursor=271.44827586206895
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg=UpdatePeekItem()
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg=UPDATE() "new position"=0
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:22.483+04:00 level=DEBUG msg=UpdateCurosr() cursor=0
-time=2024-07-05T20:39:22.484+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=0 "current line"="{ID:0 Position:0 Length:0 Text:}"
-time=2024-07-05T20:39:22.484+04:00 level=DEBUG msg=UpdateLine() next="{ID:4 Position:3.5593220338694893 Length:1.6708015465 Text:Буду вечно петь я}"
-time=2024-07-05T20:39:22.484+04:00 level=DEBUG msg=UpdateLine() cursor=0 currentline="{ID:3 Position:0 Length:4.06779661016949 Text:}"
-time=2024-07-05T20:39:22.484+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:22.484+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:22.484+04:00 level=DEBUG msg="UpdateItem() item not changed"
-time=2024-07-05T20:39:22.486+04:00 level=DEBUG msg="about to return new app"
-time=2024-07-05T20:39:22.486+04:00 level=DEBUG msg="app.go -> serve()"
-time=2024-07-05T20:39:22.486+04:00 level=DEBUG msg="about to start listening and serving"
-time=2024-07-05T20:39:23.739+04:00 level=DEBUG msg="new listener added" id=[::1]:47286
-time=2024-07-05T20:39:23.739+04:00 level=DEBUG msg="events handler. client subscribed" params=map[]
-time=2024-07-05T20:39:25.156+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=0
-time=2024-07-05T20:39:25.156+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0
-time=2024-07-05T20:39:25.156+04:00 level=DEBUG msg="got cursor" c=0
-time=2024-07-05T20:39:25.156+04:00 level=DEBUG msg=UPDATE() "new position"=0
-time=2024-07-05T20:39:25.156+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:25.156+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:25.156+04:00 level=DEBUG msg=UpdateCurosr() cursor=0
-time=2024-07-05T20:39:25.156+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=0 "current line"="{ID:3 Position:0 Length:4.06779661016949 Text:}"
-time=2024-07-05T20:39:25.157+04:00 level=DEBUG msg=UpdateLine() next="{ID:7 Position:9.30395336766949 Length:2.2015527517 Text:Вознесу хвалу}"
-time=2024-07-05T20:39:25.157+04:00 level=DEBUG msg=UpdateLine() cursor=0 currentline="{ID:3 Position:0 Length:4.06779661016949 Text:}"
-time=2024-07-05T20:39:25.157+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:25.157+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=3
-time=2024-07-05T20:39:25.568+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1039.322021484375
-time=2024-07-05T20:39:25.569+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1039.322021484375
-time=2024-07-05T20:39:25.569+04:00 level=DEBUG msg="got cursor" c=1039.322021484375
-time=2024-07-05T20:39:25.569+04:00 level=DEBUG msg=UPDATE() "new position"=1039.322021484375
-time=2024-07-05T20:39:25.569+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:25.569+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:25.569+04:00 level=DEBUG msg=UpdateCurosr() cursor=1039.322021484375
-time=2024-07-05T20:39:25.569+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=1039.322021484375 "current line"="{ID:3 Position:0 Length:4.06779661016949 Text:}"
-time=2024-07-05T20:39:25.569+04:00 level=DEBUG msg=UpdateLine() next="{ID:7 Position:9.30395336766949 Length:2.2015527517 Text:Вознесу хвалу}"
-time=2024-07-05T20:39:25.569+04:00 level=DEBUG msg="found close enough line" cursor=1039.322021484375 lineID=75 Position=1039.3220338983228 differance=1.2413947843015194e-05
-time=2024-07-05T20:39:25.569+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:25.569+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:25.569+04:00 level=DEBUG msg=UpdatePeekItem()
-time=2024-07-05T20:39:25.569+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=75
-time=2024-07-05T20:39:26.055+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=2200.83154296875
-time=2024-07-05T20:39:26.055+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2200.83154296875
-time=2024-07-05T20:39:26.055+04:00 level=DEBUG msg="got cursor" c=2200.83154296875
-time=2024-07-05T20:39:26.055+04:00 level=DEBUG msg=UPDATE() "new position"=2200.83154296875
-time=2024-07-05T20:39:26.055+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:26.055+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:26.055+04:00 level=DEBUG msg=UpdateCurosr() cursor=2200.83154296875
-time=2024-07-05T20:39:26.055+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=2200.83154296875 "current line"="{ID:75 Position:1039.3220338983228 Length:9.056603773584811 Text:}"
-time=2024-07-05T20:39:26.055+04:00 level=DEBUG msg=UpdateLine() next="{ID:80 Position:1080.076750879455 Length:4.52830188679246 Text:Я жив любовью Твоей...}"
-time=2024-07-05T20:39:26.055+04:00 level=DEBUG msg=UpdateLine() cursor=2200.83154296875 currentline="{ID:115 Position:2200.831467860611 Length:1.875 Text:}"
-time=2024-07-05T20:39:26.055+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:26.056+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:26.056+04:00 level=DEBUG msg=UpdatePeekItem()
-time=2024-07-05T20:39:26.056+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=115
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=3454.708984375
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3454.708984375
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg="got cursor" c=3454.708984375
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg=UPDATE() "new position"=3454.708984375
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg=UpdateCurosr() cursor=3454.708984375
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=3454.708984375 "current line"="{ID:115 Position:2200.831467860611 Length:1.875 Text:}"
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg=UpdateLine() next="{ID:121 Position:2239.958057305611 Length:3.8949052612 Text:Верить и любить буду я всегда}"
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg="found 118" line="{ID:118 Position:2217.706467860611 Length:7.1286144186 Text:Ты стал мне ближе, чем я ожидаю.}"
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg="found close enough line" cursor=3454.708984375 lineID=155 Position=3454.709018880978 differance=3.450597796472721e-05
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg=UpdatePeekItem()
-time=2024-07-05T20:39:26.475+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=155
-time=2024-07-05T20:39:34.365+04:00 level=DEBUG msg="new listener added" id=[::1]:47270
-time=2024-07-05T20:39:34.365+04:00 level=DEBUG msg="events handler. client subscribed" params=map[]
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=585.7626953125
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg="EVENTS: defauilt case" value=585.7626953125
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg="got cursor" c=585.7626953125
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg=UPDATE() "new position"=585.7626953125
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg=UpdateCurosr() cursor=585.7626953125
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg="EVENTS: defauilt case" value=585.7626953125
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg="got cursor" c=585.7626953125
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg=UPDATE() "new position"=585.7626953125
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=585.7626953125 "current line"="{ID:155 Position:3454.709018880978 Length:6 Text:}"
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg=UpdateLine() next="{ID:162 Position:3497.263903430578 Length:3.2051182172 Text:With joy I cast my crowns}"
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg="found 118" line="{ID:118 Position:2217.706467860611 Length:7.1286144186 Text:Ты стал мне ближе, чем я ожидаю.}"
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg="line is not found" cursor=585.7626953125
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg=UpdateCurosr() cursor=585.7626953125
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=585.7626953125 "current line"="{ID:-1 Position:0 Length:0 Text:}"
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg=UpdateLine() next="{ID:3 Position:0 Length:4.06779661016949 Text:}"
-time=2024-07-05T20:39:35.947+04:00 level=DEBUG msg=UpdatePeekItem()
-time=2024-07-05T20:39:35.948+04:00 level=DEBUG msg="found 118" line="{ID:118 Position:2217.706467860611 Length:7.1286144186 Text:Ты стал мне ближе, чем я ожидаю.}"
-time=2024-07-05T20:39:35.948+04:00 level=DEBUG msg="line is not found" cursor=585.7626953125
-time=2024-07-05T20:39:35.948+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:35.948+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:35.948+04:00 level=DEBUG msg=UpdatePeekItem()
-time=2024-07-05T20:39:35.948+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=-1
-time=2024-07-05T20:39:35.948+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=-1
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1039.322021484375
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1039.322021484375
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg="got cursor" c=1039.322021484375
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UPDATE() "new position"=1039.322021484375
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UpdateCurosr() cursor=1039.322021484375
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1039.322021484375
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=1039.322021484375 "current line"="{ID:-1 Position:0 Length:0 Text:}"
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg="got cursor" c=1039.322021484375
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UpdateLine() next="{ID:3 Position:0 Length:4.06779661016949 Text:}"
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg="found close enough line" cursor=1039.322021484375 lineID=75 Position=1039.3220338983228 differance=1.2413947843015194e-05
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UpdatePeekItem()
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UPDATE() "new position"=1039.322021484375
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=75
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UpdateCurosr() cursor=1039.322021484375
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=1039.322021484375 "current line"="{ID:75 Position:1039.3220338983228 Length:9.056603773584811 Text:}"
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UpdateLine() next="{ID:80 Position:1080.076750879455 Length:4.52830188679246 Text:Я жив любовью Твоей...}"
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg="found close enough line" cursor=1039.322021484375 lineID=75 Position=1039.3220338983228 differance=1.2413947843015194e-05
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:37.236+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:37.237+04:00 level=DEBUG msg=UpdatePeekItem()
-time=2024-07-05T20:39:37.237+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=75
-time=2024-07-05T20:39:41.159+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1052.906982421875
-time=2024-07-05T20:39:41.159+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1052.906982421875
-time=2024-07-05T20:39:41.159+04:00 level=DEBUG msg="got cursor" c=1052.906982421875
-time=2024-07-05T20:39:41.159+04:00 level=DEBUG msg=UPDATE() "new position"=1052.906982421875
-time=2024-07-05T20:39:41.159+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1052.906982421875
-time=2024-07-05T20:39:41.159+04:00 level=DEBUG msg="got cursor" c=1052.906982421875
-time=2024-07-05T20:39:41.159+04:00 level=DEBUG msg=UPDATE() "new position"=1052.906982421875
-time=2024-07-05T20:39:41.159+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:41.159+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:41.159+04:00 level=DEBUG msg=UpdateCurosr() cursor=1052.906982421875
-time=2024-07-05T20:39:41.159+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=1052.906982421875 "current line"="{ID:75 Position:1039.3220338983228 Length:9.056603773584811 Text:}"
-time=2024-07-05T20:39:41.159+04:00 level=DEBUG msg=UpdateLine() next="{ID:80 Position:1080.076750879455 Length:4.52830188679246 Text:Я жив любовью Твоей...}"
-time=2024-07-05T20:39:41.160+04:00 level=DEBUG msg=UpdateLine() cursor=1052.906982421875 currentline="{ID:76 Position:1048.3786376719077 Length:18.11320754716985 Text:}"
-time=2024-07-05T20:39:41.160+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:41.160+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:41.160+04:00 level=DEBUG msg=UpdatePeekItem()
-time=2024-07-05T20:39:41.160+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=76
-time=2024-07-05T20:39:41.159+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:41.160+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:41.160+04:00 level=DEBUG msg=UpdateCurosr() cursor=1052.906982421875
-time=2024-07-05T20:39:41.160+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=1052.906982421875 "current line"="{ID:76 Position:1048.3786376719077 Length:18.11320754716985 Text:}"
-time=2024-07-05T20:39:41.160+04:00 level=DEBUG msg=UpdateLine() next="{ID:81 Position:1084.6050527662474 Length:4.52830188679246 Text:Ты - скала моего спасенья,}"
-time=2024-07-05T20:39:41.160+04:00 level=DEBUG msg=UpdateLine() cursor=1052.906982421875 currentline="{ID:76 Position:1048.3786376719077 Length:18.11320754716985 Text:}"
-time=2024-07-05T20:39:41.160+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:41.160+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=76
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1073.2843017578125
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1073.2843017578125
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg="got cursor" c=1073.2843017578125
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg=UPDATE() "new position"=1073.2843017578125
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg=UpdateCurosr() cursor=1073.2843017578125
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1073.2843017578125
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg="got cursor" c=1073.2843017578125
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg=UPDATE() "new position"=1073.2843017578125
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=1073.2843017578125 "current line"="{ID:76 Position:1048.3786376719077 Length:18.11320754716985 Text:}"
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg=UpdateCurosr() cursor=1073.2843017578125
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg=UpdateLine() next="{ID:81 Position:1084.6050527662474 Length:4.52830188679246 Text:Ты - скала моего спасенья,}"
-time=2024-07-05T20:39:46.593+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=1073.2843017578125 "current line"="{ID:76 Position:1048.3786376719077 Length:18.11320754716985 Text:}"
-time=2024-07-05T20:39:46.594+04:00 level=DEBUG msg=UpdateLine() next="{ID:83 Position:1093.6616565398322 Length:4.52830188679246 Text:Ты надежда и вдохновенье,}"
-time=2024-07-05T20:39:46.594+04:00 level=DEBUG msg=UpdateLine() cursor=1073.2843017578125 currentline="{ID:78 Position:1071.02014710587 Length:4.52830188679246 Text:Ты - крепость жизни моей,}"
-time=2024-07-05T20:39:46.594+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:46.594+04:00 level=DEBUG msg=UpdateLine() cursor=1073.2843017578125 currentline="{ID:78 Position:1071.02014710587 Length:4.52830188679246 Text:Ты - крепость жизни моей,}"
-time=2024-07-05T20:39:46.594+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:46.594+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=78
-time=2024-07-05T20:39:46.594+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:46.594+04:00 level=DEBUG msg="UpdateItem() item not changed"
-time=2024-07-05T20:39:46.594+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=78
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1082.3409423828125
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1082.3409423828125
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg="got cursor" c=1082.3409423828125
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UPDATE() "new position"=1082.3409423828125
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UpdateCurosr() cursor=1082.3409423828125
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=1082.3409423828125 "current line"="{ID:78 Position:1071.02014710587 Length:4.52830188679246 Text:Ты - крепость жизни моей,}"
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UpdateLine() next="{ID:83 Position:1093.6616565398322 Length:4.52830188679246 Text:Ты надежда и вдохновенье,}"
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UpdateLine() cursor=1082.3409423828125 currentline="{ID:80 Position:1080.076750879455 Length:4.52830188679246 Text:Я жив любовью Твоей...}"
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=80
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1082.3409423828125
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg="got cursor" c=1082.3409423828125
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UPDATE() "new position"=1082.3409423828125
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UpdateCurosr() cursor=1082.3409423828125
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=1082.3409423828125 "current line"="{ID:80 Position:1080.076750879455 Length:4.52830188679246 Text:Я жив любовью Твоей...}"
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UpdateLine() next="{ID:85 Position:1102.7182603134172 Length:4.528301886792455 Text:Верю я Тебе! Тебе, Иисус!}"
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UpdateLine() cursor=1082.3409423828125 currentline="{ID:80 Position:1080.076750879455 Length:4.52830188679246 Text:Я жив любовью Твоей...}"
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:48.137+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=80
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1091.3974609375
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1091.3974609375
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg="got cursor" c=1091.3974609375
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UPDATE() "new position"=1091.3974609375
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1091.3974609375
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg="got cursor" c=1091.3974609375
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UPDATE() "new position"=1091.3974609375
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UpdateCurosr() cursor=1091.3974609375
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UpdateCurosr() cursor=1091.3974609375
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=1091.3974609375 "current line"="{ID:80 Position:1080.076750879455 Length:4.52830188679246 Text:Я жив любовью Твоей...}"
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=1091.3974609375 "current line"="{ID:80 Position:1080.076750879455 Length:4.52830188679246 Text:Я жив любовью Твоей...}"
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UpdateLine() next="{ID:85 Position:1102.7182603134172 Length:4.528301886792455 Text:Верю я Тебе! Тебе, Иисус!}"
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UpdateLine() next="{ID:85 Position:1102.7182603134172 Length:4.528301886792455 Text:Верю я Тебе! Тебе, Иисус!}"
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UpdateLine() cursor=1091.3974609375 currentline="{ID:82 Position:1089.1333546530398 Length:4.52830188679246 Text:Ты - крепость жизни моей,}"
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg="UpdateItem() item not changed"
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=82
-time=2024-07-05T20:39:49.457+04:00 level=DEBUG msg=UpdateLine() cursor=1091.3974609375 currentline="{ID:82 Position:1089.1333546530398 Length:4.52830188679246 Text:Ты - крепость жизни моей,}"
-time=2024-07-05T20:39:49.458+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:39:49.458+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=82
-time=2024-07-05T20:40:15.629+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1073.2843017578125
-time=2024-07-05T20:40:15.629+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1073.2843017578125
-time=2024-07-05T20:40:15.629+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1073.2843017578125
-time=2024-07-05T20:40:15.629+04:00 level=DEBUG msg="got cursor" c=1073.2843017578125
-time=2024-07-05T20:40:15.629+04:00 level=DEBUG msg=UPDATE() "new position"=1073.2843017578125
-time=2024-07-05T20:40:15.629+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:40:15.629+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:40:15.629+04:00 level=DEBUG msg=UpdateCurosr() cursor=1073.2843017578125
-time=2024-07-05T20:40:15.629+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=1073.2843017578125 "current line"="{ID:82 Position:1089.1333546530398 Length:4.52830188679246 Text:Ты - крепость жизни моей,}"
-time=2024-07-05T20:40:15.629+04:00 level=DEBUG msg=UpdateLine() next="{ID:87 Position:1111.774864087002 Length:4.528301886792455 Text:Ты помощник в час нужды моей,}"
-time=2024-07-05T20:40:15.629+04:00 level=DEBUG msg="got cursor" c=1073.2843017578125
-time=2024-07-05T20:40:15.629+04:00 level=DEBUG msg=UpdateLine() cursor=1073.2843017578125 currentline="{ID:78 Position:1071.02014710587 Length:4.52830188679246 Text:Ты - крепость жизни моей,}"
-time=2024-07-05T20:40:15.630+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:40:15.630+04:00 level=DEBUG msg=UpdateItem()
-time=2024-07-05T20:40:15.630+04:00 level=DEBUG msg="UpdateItem() item not changed"
-time=2024-07-05T20:40:15.630+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=78
-time=2024-07-05T20:40:15.629+04:00 level=DEBUG msg=UPDATE() "new position"=1073.2843017578125
-time=2024-07-05T20:40:15.630+04:00 level=DEBUG msg=UpdateMarker()
-time=2024-07-05T20:40:15.630+04:00 level=DEBUG msg=UpdatePeekMarker()
-time=2024-07-05T20:40:15.630+04:00 level=DEBUG msg=UpdateCurosr() cursor=1073.2843017578125
-time=2024-07-05T20:40:15.630+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=1073.2843017578125 "current line"="{ID:78 Position:1071.02014710587 Length:4.52830188679246 Text:Ты - крепость жизни моей,}"
-time=2024-07-05T20:40:15.630+04:00 level=DEBUG msg=UpdateLine() next="{ID:83 Position:1093.6616565398322 Length:4.52830188679246 Text:Ты надежда и вдохновенье,}"
-time=2024-07-05T20:40:15.630+04:00 level=DEBUG msg=UpdateLine() cursor=1073.2843017578125 currentline="{ID:78 Position:1071.02014710587 Length:4.52830188679246 Text:Ты - крепость жизни моей,}"
-time=2024-07-05T20:40:15.630+04:00 level=DEBUG msg=UpdateSection()
-time=2024-07-05T20:40:15.630+04:00 level=DEBUG msg="updates finished. dispatching event" lineID=78
-time=2024-07-05T20:40:15.630+04:00 level=DEBUG msg="connection closed" address=[::1]:47270
-time=2024-07-06T10:19:14.980+04:00 level=DEBUG msg="new listener added" id=[::1]:38582
-time=2024-07-06T10:19:14.982+04:00 level=DEBUG msg="events handler. client subscribed" params=map[]
+time=2024-07-20T13:38:35.370+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"
+time=2024-07-20T13:38:35.370+04:00 level=INFO msg="config for the project" cfg="{port:1234 projectPath:/home/butbkadrug/Music/REAPER/BaseProject/BaseProject.rpp single:false setlistPath:/home/butbkadrug/Music/REAPER/BaseProject/setlist defaultProjectDir:/home/butbkadrug/Music/REAPER oscIP: oscPort:0 logger:0xc0000161e0}"
+time=2024-07-20T13:38:35.370+04:00 level=INFO msg="not a subproject" config="&{port:1234 projectPath:/home/butbkadrug/Music/REAPER/BaseProject/BaseProject.rpp single:false setlistPath:/home/butbkadrug/Music/REAPER/BaseProject/setlist defaultProjectDir:/home/butbkadrug/Music/REAPER oscIP: oscPort:0 logger:0xc0000161e0}"
+time=2024-07-20T13:38:35.370+04:00 level=DEBUG msg=NewProjectWithConfig() path=/home/butbkadrug/Music/REAPER/BaseProject/BaseProject.rpp
+time=2024-07-20T13:38:35.401+04:00 level=DEBUG msg=subprojects total=0
+time=2024-07-20T13:38:35.401+04:00 level=DEBUG msg="NewSubProject parsing:" path="/mnt/media/Music/REAPER/10000 Reasons - Matt Radman - G - 72 BPM/10000 Reasons - Matt Radman - G - 72 BPM.rpp" startOffset=0
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="going through markers" totoal=28
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=1 Position=0 name="10,000 Reasons Matt Radman BPM 72 -"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="section has no lyrics" s="10,000 Reasons Matt Radman BPM 72 -"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=appending total=1 lines="[{ID:1 Position:0 Length:6.62068965517241 Chords: Text:}]"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=2 Position=6.62068965517241 name=Intro
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="found matching section" name=Intro
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="section has no lyrics" s=Intro
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=appending total=2 lines="[{ID:2 Position:6.62068965517241 Length:13.24137931034483 Chords:4 1 5/7 6m Text:} {ID:3 Position:6.62068965517241 Length:13.24137931034483 Chords:4 1 5sus4 5 Text:}]"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=3 Position=19.86206896551724 name=Chorus
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=4 Position=49.6551724137931 name="Verse 1"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="found matching section" name="Verse 1"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=5 Position=82.75862068965517 name=Chorus
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=6 Position=112.55172413793103 name="Verse 2 R"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="found matching section" name="Verse 2 R"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=7 Position=145.6551724137931 name="Chorus R"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="found matching section" name="Chorus R"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=8 Position=172.13793103448276 name=Instrumental
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="found matching section" name=Instrumental
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="section has no lyrics" s=Instrumental
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=appending total=4 lines="[{ID:36 Position:172.13793103448276 Length:19.86206896551724 Chords:4 1 5 6m Text:} {ID:37 Position:172.13793103448276 Length:19.86206896551724 Chords:4 1 5sus4 5 Text:} {ID:38 Position:172.13793103448276 Length:19.86206896551724 Chords:4 6m Text:} {ID:39 Position:172.13793103448276 Length:19.86206896551724 Chords:4 5 6m Text:}]"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=9 Position=192 name=Breakdown
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="found matching section" name=Breakdown
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="section has no lyrics" s=Breakdown
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=appending total=1 lines="[{ID:40 Position:192 Length:6.620689655172413 Chords:4 5 1 Text:}]"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=10 Position=198.6206896551724 name="Verse 3"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="found matching section" name="Verse 3"
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=11 Position=231.72413793103442 name=Chorus
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=12 Position=258.2068965517241 name=Chorus
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=13 Position=284.6896551724138 name=Tag
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="found matching section" name=Tag
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg=region ID=14 Position=291.3103448275862 name=Ending
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="found matching section" name=Ending
+time=2024-07-20T13:38:35.458+04:00 level=DEBUG msg="done with this subproject" lines="[{ID:1 Position:0 Length:6.62068965517241 Chords: Text:} {ID:2 Position:6.62068965517241 Length:13.24137931034483 Chords:4 1 5/7 6m Text:} {ID:3 Position:6.62068965517241 Length:13.24137931034483 Chords:4 1 5sus4 5 Text:} {ID:4 Position:18.927692613517237 Length:4.2447211796 Chords:4 1 Text:Bless the L^ord O my s^oul} {ID:5 Position:23.172413793117236 Length:3.2154174655 Chords:5/7 6m Text:^O my ^soul} {ID:6 Position:26.38783125861724 Length:5.7485736273 Chords:4 1 5sus4 5 Text:W^orship His H^oly n^ame ^} {ID:7 Position:32.13640488591724 Length:4.2290759126 Chords:4 6m Text:Sing like n^ever be^fore} {ID:8 Position:36.36548079851724 Length:3.2166131159 Chords:4 5 6m Text:^O m^y ^soul} {ID:9 Position:39.58209391441724 Length:9.2454922925 Chords:4 5 1sus4 1 Text:I'll w^orship Your H^oly ^name ^} {ID:10 Position:49.2704296872931 Length:2.7944288151 Chords:4 1 Text:The s^un comes ^up} {ID:11 Position:52.0648585023931 Length:4.6101611543 Chords:5 6m Text:It's a n^ew day ^dawning} {ID:12 Position:56.6750196566931 Length:5.7758614362 Chords:4 1 5 6m Text:^It's time to s^ing Your s^ong a^gain} {ID:13 Position:62.450881092893106 Length:2.9284292519 Chords:4 1 Text:What^ever may p^ass} {ID:14 Position:65.3793103447931 Length:6.0634921065 Chords:5/7 6m Text:And wha^tever lies be^fore me} {ID:15 Position:71.4428024512931 Length:2.0137727906 Chords:4 1 Text:^Let me be s^inging} {ID:16 Position:73.4565752418931 Length:5.1641144133 Chords:5sus 5 1 1sus 1 Text:When the ^eve - n^ing c^omes} {ID:17 Position:81.82424433765517 Length:4.2447211796 Chords:4 1 Text:Bless the L^ord O my s^oul} {ID:18 Position:86.06896551725518 Length:3.2154174655 Chords:5/7 6m Text:^O my ^soul} {ID:19 Position:89.28438298275518 Length:5.7485736273 Chords:4 1 5sus4 5 Text:W^orship His H^oly n^ame ^} {ID:20 Position:95.03295661005518 Length:4.2290759126 Chords:4 6m Text:Sing like n^ever be^fore} {ID:21 Position:99.26203252265518 Length:3.2166131159 Chords:4 5 6m Text:^O m^y ^soul} {ID:22 Position:102.47864563855518 Length:9.2454922925 Chords:4 5 1sus4 1 Text:I'll w^orship Your H^oly ^name ^} {ID:23 Position:112.07539589363103 Length:2.7106906812 Chords:4 1 Text:Вел^ик в любв^и} {ID:24 Position:114.78608657483103 Length:4.3863272183 Chords:5 6m Text:И да^ёшь мне м^илость} {ID:25 Position:119.17241379313103 Length:6.1750190239 Chords:4 1 5 6m Text:^Ты справедл^ив и так бл^аг ко ^мне} {ID:26 Position:125.34743281703103 Length:2.9284292519 Chords:4 1 Text:За вс^е Твои дел^а} {ID:27 Position:128.27586206893102 Length:5.7931034483 Chords:5/7 6m Text:Я х^очу просл^авить} {ID:28 Position:134.06896551723102 Length:2.0606200734 Chords:4 1 Text:^Чтоб петь Теб^е} {ID:29 Position:136.12958559063102 Length:5.3876557887 Chords:5sus 5 1 1sus 1 Text:Есть десять ^ты - ^сяч прич^ин!} {ID:30 Position:144.72079606179312 Length:4.2447211796 Chords:4 1 Text:Славь душ^а Господ^а} {ID:31 Position:148.96551724139312 Length:3.3103448276 Chords:5/7 6m Text:C^лавь ду^ша} {ID:32 Position:152.27586206899312 Length:5.6536462652 Chords:4 1 5sus4 5 Text:^Имя свят^ое его} {ID:33 Position:157.92950833419312 Length:4.2773882175 Chords:4 6m Text:Пой Ем^у, как никогд^а} {ID:34 Position:162.20689655169312 Length:3.168300811 Chords:4 5 6m Text:П^ой д^у - ^ша} {ID:35 Position:165.37519736269311 Length:9.2454922925 Chords:4 5 1sus4 1 Text:Бл^агослов^и Господа} {ID:36 Position:172.13793103448276 Length:19.86206896551724 Chords:4 1 5 6m Text:} {ID:37 Position:172.13793103448276 Length:19.86206896551724 Chords:4 1 5sus4 5 Text:} {ID:38 Position:172.13793103448276 Length:19.86206896551724 Chords:4 6m Text:} {ID:39 Position:172.13793103448276 Length:19.86206896551724 Chords:4 5 6m Text:} {ID:40 Position:192 Length:6.620689655172413 Chords:4 5 1 Text:} {ID:41 Position:198.14436141087242 Length:2.7106906812 Chords:4 1 Text:And ^on that d^ay} {ID:42 Position:200.8550520920724 Length:4.3863272183 Chords:5 6m Text:When my str^ength is f^ailing} {ID:43 Position:205.24137931037242 Length:6.1750190239 Chords:4 1 5 6m Text:The ^end draws n^ear and my t^ime has ^come} {ID:44 Position:211.4163983342724 Length:2.9284292519 Chords:4 6m Text:St^ill my ^soul will} {ID:45 Position:214.3448275861724 Length:5.7931034483 Chords:5 6m Text:Sing Your p^raise u^nending} {ID:46 Position:220.13793103447242 Length:2.0606200734 Chords:4 1 Text:^Ten thousand y^ears} {ID:47 Position:222.19855110787242 Length:5.3876557887 Chords:5 1 Text:And then for^ever m^ore} {ID:48 Position:230.78976157903443 Length:4.2447211796 Chords:4 1 Text:Bless the L^ord O my s^oul} {ID:49 Position:235.03448275863443 Length:3.2154174655 Chords:5/7 6m Text:^O my ^soul} {ID:50 Position:238.24990022413442 Length:5.7485736273 Chords:4 1 5sus4 5 Text:W^orship His H^oly n^ame ^} {ID:51 Position:243.99847385143443 Length:4.2290759126 Chords:4 6m Text:Sing like n^ever be^fore} {ID:52 Position:248.22754976403442 Length:3.2166131159 Chords:4 5 6m Text:^O m^y ^soul} {ID:53 Position:251.44416287993442 Length:9.2454922925 Chords:4 5 1sus4 1 Text:I'll w^orship Your H^oly ^name ^} {ID:54 Position:257.2725201997241 Length:4.2447211796 Chords:4 1 Text:Bless the L^ord O my s^oul} {ID:55 Position:261.5172413793241 Length:3.2154174655 Chords:5/7 6m Text:^O my ^soul} {ID:56 Position:264.73265884482413 Length:5.7485736273 Chords:4 1 5sus4 5 Text:W^orship His H^oly n^ame ^} {ID:57 Position:270.48123247212413 Length:4.2290759126 Chords:4 6m Text:Sing like n^ever be^fore} {ID:58 Position:274.71030838472416 Length:3.2166131159 Chords:4 5 6m Text:^O m^y ^soul} {ID:59 Position:277.92692150062413 Length:9.2454922925 Chords:4 5 1sus4 1 Text:I'll w^orship Your H^oly ^name ^} {ID:60 Position:284.6896551724138 Length:6.620689655172441 Chords:4 5 6m Text:I'll w^orship Y^our Holy ^name} {ID:61 Position:291.3103448275862 Length:6.620689655172384 Chords:4 5 1 Text:I'll w^orship Y^our Holy n^ame}]"
+time=2024-07-20T13:38:35.459+04:00 level=DEBUG msg="NewSubProject parsing:" path="/mnt/media/Music/REAPER/O Come to the Altar - Elevation Worship - B - 70 BPM/O Come to the Altar - Elevation Worship - B - 70 BPM.RPP" startOffset=1693.6933183978877
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="going through markers" totoal=38
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=region ID=1 Position=1693.6933183978877 name="Come the Altar Elevation Worship BPM 70 O"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="section has no lyrics" s="Come the Altar Elevation Worship BPM 70 O"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=appending total=1 lines="[{ID:62 Position:1693.6933183978877 Length:5.14285714285714 Chords: Text:}]"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=region ID=2 Position=1698.8361755407448 name=Intro
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="found matching section" name=Intro
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="section has no lyrics" s=Intro
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=appending total=1 lines="[{ID:63 Position:1698.8361755407448 Length:10.285714285714292 Chords:1 4 1 4 Text:}]"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=region ID=3 Position=1709.121889826459 name="Verse 1"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="found matching section" name="Verse 1"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=region ID=4 Position=1724.5504612550305 name="Verse 2"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="found matching section" name="Verse 2"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=region ID=5 Position=1742.5504612550305 name=Chorus
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=region ID=6 Position=1763.121889826459 name=Interlude
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="section has no lyrics" s=Interlude
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=appending total=1 lines="[{ID:74 Position:1763.121889826459 Length:10.285714285714278 Chords:1 4 1 4 Text:}]"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=region ID=7 Position=1773.4076041121734 name="Verse 3 R"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="found matching section" name="Verse 3 R"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=region ID=20 Position=1788.8361755407448 name="Verse 4 R"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="found matching section" name="Verse 4 R"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=region ID=8 Position=1804.2647469693163 name="Chorus R"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="found matching section" name="Chorus R"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=region ID=9 Position=1824.8361755407448 name="Chorus R"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="found matching section" name="Chorus R"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=region ID=10 Position=1845.4076041121734 name=Interlude
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="section has no lyrics" s=Interlude
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=appending total=1 lines="[{ID:89 Position:1845.4076041121734 Length:15.428571428571416 Chords:1 6m 4 Text:}]"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=region ID=11 Position=1860.8361755407448 name="Bridge R"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="found matching section" name="Bridge R"
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg=region ID=12 Position=1901.9790326836019 name=Bridge
+time=2024-07-20T13:38:35.496+04:00 level=DEBUG msg="found matching section" name=Bridge
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg=region ID=13 Position=1943.121889826459 name=Chorus
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg=region ID=14 Position=1963.6933183978877 name=Chorus
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg=region ID=15 Position=1984.264746969316 name=Interlude
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg="section has no lyrics" s=Interlude
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg=appending total=1 lines="[{ID:110 Position:1984.264746969316 Length:10.285714285714278 Chords:1 2m 6m 4 Text:}]"
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg=region ID=16 Position=1994.5504612550305 name=Interlude
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg="section has no lyrics" s=Interlude
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg=appending total=1 lines="[{ID:111 Position:1994.5504612550305 Length:10.285714285714278 Chords:1 2m 6m 4 Text:}]"
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg=region ID=17 Position=2004.8361755407448 name=Interlude
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg="section has no lyrics" s=Interlude
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg=appending total=1 lines="[{ID:112 Position:2004.8361755407448 Length:10.285714285714278 Chords:1 Text:}]"
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg=region ID=19 Position=2015.1218898264592 name=Ending
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg="found matching section" name=Ending
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg="section has no lyrics" s=Ending
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg=appending total=1 lines="[{ID:113 Position:2015.1218898264592 Length:2.571428571428555 Chords:1 Text:}]"
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg="done with this subproject" lines="[{ID:62 Position:1693.6933183978877 Length:5.14285714285714 Chords: Text:} {ID:63 Position:1698.8361755407448 Length:10.285714285714292 Chords:1 4 1 4 Text:} {ID:64 Position:1710.703318397859 Length:5.18 Chords:1 4 1 Text:^Are you h^urting and broken with^in} {ID:65 Position:1715.883318397859 Length:4.38 Chords:4 6m Text:Overwh^elmed by the weight of your ^sin} {ID:66 Position:1720.263318397859 Length:4.2871428571 Chords:4 Text:Jesus is c^alling} {ID:67 Position:1725.9233183979306 Length:5.1563159601 Chords:1 4 1 Text:^Have you c^ome to the end of yours^elf} {ID:68 Position:1731.0796343580305 Length:4.6739204237 Chords:4 6m Text:Do you th^irst for a drink from the ^well} {ID:69 Position:1735.7535547817306 Length:4.1388928159 Chords:4 Text:Jesus is c^alling} {ID:70 Position:1743.1177555359304 Length:5.0726674145 Chords:1 2m Text:^O come to^ the altar} {ID:71 Position:1748.1904229504305 Length:5.1281891475 Chords:6m 4 Text:^The Father’s arms are ^open wide} {ID:72 Position:1753.3186120979306 Length:5.2240903225 Chords:1 2m Text:^Forgiveness^ was bought with} {ID:73 Position:1758.5427024204305 Length:4.5791874061 Chords:6m 4 Text:^The precious blood of J^esus Christ} {ID:74 Position:1763.121889826459 Length:10.285714285714278 Chords:1 4 1 4 Text:} {ID:75 Position:1774.7651432865734 Length:5.2089480317 Chords:1 4 1 Text:^Оставл^яя ошибки и гр^усть,} {ID:76 Position:1779.9740913182734 Length:4.6133512606 Chords:4 6m Text:Нет прич^ин, чтобы ждать - прихо^ди} {ID:77 Position:1784.5874425788734 Length:4.2487329619 Chords:4 Text:Иисус призыв^ает} {ID:78 Position:1790.2607541947448 Length:5.0979045659 Chords:1 4 1 Text:^Из печ^али ты в радость войд^и} {ID:79 Position:1795.3586587606449 Length:4.754679308 Chords:4 6m Text:С ним из п^епла рождается ^жизнь} {ID:80 Position:1800.1133380686447 Length:4.1514089006 Chords:4 Text:Иисус призыв^ает} {ID:81 Position:1804.8320412502162 Length:5.0726674145 Chords:1 2m Text:^Придите^ к престолу} {ID:82 Position:1809.9047086647163 Length:5.1281891475 Chords:6m 4 Text:^Скорей в объ^ятия отца} {ID:83 Position:1815.0328978122163 Length:5.2240903225 Chords:1 2m Text:^Прощен ты,^ искуплен} {ID:84 Position:1820.2569881347163 Length:4.5791874061 Chords:6m 4 Text:^Бесценной кр^овью Христа} {ID:85 Position:1825.4034698216446 Length:5.0726674145 Chords:1 2m Text:^Придите^ к престолу} {ID:86 Position:1830.4761372361447 Length:5.1281891475 Chords:6m 4 Text:^Скорей в объ^ятия отца} {ID:87 Position:1835.6043263836448 Length:5.2240903225 Chords:1 2m Text:^Прощен ты,^ искуплен} {ID:88 Position:1840.8284167061447 Length:4.5791874061 Chords:6m 4 Text:^Бесценной кр^овью Христа} {ID:89 Position:1845.4076041121734 Length:15.428571428571416 Chords:1 6m 4 Text:} {ID:90 Position:1860.8361755407448 Length:3.7200328375 Chords:1 Text:О наш спас^итель,} {ID:91 Position:1864.5562083782447 Length:4.9686630005 Chords:6m Text:Как ты прек^расен, Бог} {ID:92 Position:1869.5248713787448 Length:10.2751387829 Chords:4 1 Text:Пой аллил^уйя, воскрес спаситель} {ID:93 Position:1879.8000101616446 Length:5.0953427937 Chords:1 Text:Склонимся пр^ед ним} {ID:94 Position:1884.8953529553448 Length:5.2220225869 Chords:6m Text:Он есть Гос^подь всего} {ID:95 Position:1890.1173755422449 Length:11.8616571413 Chords:4 1 Text:Пой аллил^уйя, воскрес спас^итель} {ID:96 Position:1901.9790326836019 Length:3.7200328375 Chords:1 Text:Oh what a S^avior} {ID:97 Position:1905.6990655211018 Length:4.9686630005 Chords:6m Text:Isn’t He ^wonderful} {ID:98 Position:1910.667728521602 Length:10.2751387829 Chords:4 1 Text:Sing allel^uia Christ is risen} {ID:99 Position:1920.9428673045018 Length:5.0953427937 Chords:1 Text:Bow down bef^ore Him} {ID:100 Position:1926.038210098202 Length:5.2220225869 Chords:6m Text:For He is ^Lord of all} {ID:101 Position:1931.260232685102 Length:11.8616571413 Chords:4 1 Text:Sing allel^uia Christ is risen} {ID:102 Position:1943.6891841073589 Length:5.0726674145 Chords:1 2m Text:^O come to^ the altar} {ID:103 Position:1948.761851521859 Length:5.1281891475 Chords:6m 4 Text:^The Father’s arms are ^open wide} {ID:104 Position:1953.890040669359 Length:5.2240903225 Chords:1 2m Text:^Forgiveness^ was bought with} {ID:105 Position:1959.114130991859 Length:4.5791874061 Chords:6m 4 Text:^The precious blood of J^esus Christ} {ID:106 Position:1964.2606126787875 Length:5.0726674145 Chords:1 2m Text:^O come to^ the altar} {ID:107 Position:1969.3332800932876 Length:5.1281891475 Chords:6m 4 Text:^The Father’s arms are ^open wide} {ID:108 Position:1974.4614692407877 Length:5.2240903225 Chords:1 2m Text:^Forgiveness^ was bought with} {ID:109 Position:1979.6855595632876 Length:4.5791874061 Chords:6m 4 Text:^The precious blood of J^esus Christ} {ID:110 Position:1984.264746969316 Length:10.285714285714278 Chords:1 2m 6m 4 Text:} {ID:111 Position:1994.5504612550305 Length:10.285714285714278 Chords:1 2m 6m 4 Text:} {ID:112 Position:2004.8361755407448 Length:10.285714285714278 Chords:1 Text:} {ID:113 Position:2015.1218898264592 Length:2.571428571428555 Chords:1 Text:}]"
+time=2024-07-20T13:38:35.497+04:00 level=DEBUG msg="NewSubProject parsing:" path="/mnt/media/Music/REAPER/This Is Amazing Grace - Phil Wickham - Bb - 98 BPM/This Is Amazing Grace - Phil Wickham - Bb - 98 BPM.rpp" startOffset=2772.5344070721517
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="going through markers" totoal=24
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=region ID=1 Position=2772.5344070721517 name="This Amazing Grace Phil Wickham BPM 98 Is"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="section has no lyrics" s="This Amazing Grace Phil Wickham BPM 98 Is"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=appending total=1 lines="[{ID:114 Position:2772.5344070721517 Length:4.89795918367347 Chords: Text:}]"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=region ID=2 Position=2777.432366255825 name=Intro
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="found matching section" name=Intro
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="section has no lyrics" s=Intro
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=appending total=1 lines="[{ID:115 Position:2777.432366255825 Length:19.591836734693878 Chords:1 4 1 4 Text:}]"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=region ID=3 Position=2797.024202990519 name="Verse 1"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="found matching section" name="Verse 1"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=region ID=4 Position=2836.207876459907 name=Chorus
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=region ID=5 Position=2870.493590745621 name=Intro
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="found matching section" name=Intro
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="section has no lyrics" s=Intro
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=appending total=1 lines="[{ID:136 Position:2870.493590745621 Length:9.795918367346928 Chords:1 4 Text:}]"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=region ID=6 Position=2880.289509112968 name="Verse 2 R"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="found matching section" name="Verse 2 R"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=region ID=7 Position=2914.5752233986823 name="Chorus R"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="found matching section" name="Chorus R"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=region ID=8 Position=2953.75889686807 name="Bridge 1 R"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="found matching section" name="Bridge 1 R"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=region ID=9 Position=2973.3507336027637 name="Bridge 2"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="found matching section" name="Bridge 2"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=region ID=10 Position=2992.9425703374577 name=Chorus
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=region ID=11 Position=3027.228284623172 name=Outro
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="found matching section" name=Outro
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="section has no lyrics" s=Outro
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=appending total=1 lines="[{ID:173 Position:3027.228284623172 Length:19.591836734693857 Chords:1 4 1 4 Text:}]"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=region ID=12 Position=3046.820121357866 name=Ending
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="found matching section" name=Ending
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="section has no lyrics" s=Ending
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg=appending total=1 lines="[{ID:174 Position:3046.820121357866 Length:4.897959183673493 Chords:1 Text:}]"
+time=2024-07-20T13:38:35.545+04:00 level=DEBUG msg="done with this subproject" lines="[{ID:114 Position:2772.5344070721517 Length:4.89795918367347 Chords: Text:} {ID:115 Position:2777.432366255825 Length:19.591836734693878 Chords:1 4 1 4 Text:} {ID:116 Position:2797.024202990519 Length:2.4489795918 Chords:1 Text:^Who breaks the power} {ID:117 Position:2799.4731825823187 Length:2.4489795918 Chords: Text:Of sin and darkness} {ID:118 Position:2801.922162174119 Length:2.4111402554 Chords:4 Text:^Whose love is mighty} {ID:119 Position:2804.333302429519 Length:2.4478881886 Chords: Text:And so much stronger} {ID:120 Position:2806.781190618119 Length:2.3887604545 Chords:6m 5 Text:^The King of Glory} {ID:121 Position:2809.169951072619 Length:3.9418489349 Chords:4 Text:The King above all kings^} {ID:122 Position:2816.659464048819 Length:2.3335745694 Chords:1 Text:^Who shakes the whole Earth} {ID:123 Position:2818.993038618219 Length:2.5661436566 Chords: Text:With holy thunder} {ID:124 Position:2821.559182274819 Length:2.3848186056 Chords:4 Text:^Who leaves us breathless} {ID:125 Position:2823.944000880419 Length:2.4321207928 Chords: Text:In awe and wonder} {ID:126 Position:2826.376121673219 Length:2.4281789439 Chords:6m 5 Text:^The King of Glory} {ID:127 Position:2828.8043006171188 Length:4.2899477248 Chords:4 Text:The King above all kings^} {ID:128 Position:2833.743437332507 Length:4.8681834345 Chords:1 Text:This is amazing gr^ace} {ID:129 Position:2838.611620767007 Length:4.8760671324 Chords:4 Text:This is unfailing l^ove} {ID:130 Position:2843.487687899407 Length:4.9194274707 Chords:6m Text:That You would take my p^lace} {ID:131 Position:2848.407115370107 Length:4.8524160388 Chords:5 Text:That You would bear my cr^oss} {ID:132 Position:2853.2595314089067 Length:4.899718226 Chords:1 Text:You laid down Your l^ife} {ID:133 Position:2858.1592496349067 Length:6.5434692319 Chords:4 Text:That I would be set fr^ee} {ID:134 Position:2864.7027188668067 Length:3.2401998244 Chords:6m 5 Text:Oh^ Jesus I sing for} {ID:135 Position:2867.942918691207 Length:2.5506720544 Chords: Text:All that You've done for me} {ID:136 Position:2870.493590745621 Length:9.795918367346928 Chords:1 4 Text:} {ID:137 Position:2880.485748898068 Length:2.5194630277 Chords:1 Text:В порядок хаос} {ID:138 Position:2883.005211925768 Length:2.2881520625 Chords: Text:Кто превращает?} {ID:139 Position:2885.293363988268 Length:2.336984127 Chords:4 Text:Детьми своими} {ID:140 Position:2887.630348115268 Length:2.7307449682 Chords: Text:Кто называет?} {ID:141 Position:2890.361093083468 Length:2.373860907 Chords:6m Text:Это - Царь славы,} {ID:142 Position:2892.734953990468 Length:2.4319814494 Chords:5 Text:Это - Царь славы} {ID:143 Position:2895.166935439868 Length:2.3611470383 Chords:1 Text:Кто справедливо} {ID:144 Position:2897.528082478168 Length:2.4229001147 Chords: Text:В народах правит?} {ID:145 Position:2899.950982592868 Length:2.6317708142 Chords:4 Text:В великолепьи} {ID:146 Position:2902.582753407068 Length:2.2903126271 Chords: Text:Светом сияет?} {ID:147 Position:2904.873066034168 Length:2.5573038692 Chords:6m 5 Text:^Это - Царь славы,} {ID:148 Position:2907.430369903368 Length:3.5946548893 Chords:4 Text:Это - Царь всех цар^ей} {ID:149 Position:2912.1107842712822 Length:4.8681834345 Chords:1 Text:Чудесна благодать} {ID:150 Position:2916.9789677057825 Length:4.8760671324 Chords:4 Text:Верна Твоя любовь} {ID:151 Position:2921.8550348381823 Length:4.9194274707 Chords:6m Text:Ведь Ты тяжёлый крест} {ID:152 Position:2926.7744623088824 Length:4.8524160388 Chords:5 Text:Вместо меня понёс} {ID:153 Position:2931.626878347682 Length:4.899718226 Chords:1 Text:Свою Ты жизнь отдал,} {ID:154 Position:2936.526596573682 Length:6.5434692319 Chords:4 Text:Чтоб был свободен я.} {ID:155 Position:2943.070065805582 Length:3.2401998244 Chords:6m 5 Text:^О том, что сделал Ты,} {ID:156 Position:2946.3102656299825 Length:2.5506720544 Chords: Text:Я буду петь всегда.} {ID:157 Position:2953.50595226937 Length:4.9314739675 Chords:1 Text:Достоин Агнец, что заклан был.} {ID:158 Position:2958.43742623687 Length:4.8805133128 Chords:4 Text:Достоин Ты наш Царь, что смерть победил.} {ID:159 Position:2963.3179395496704 Length:4.887844401 Chords:1 Text:Достоин Агнец, что заклан был.} {ID:160 Position:2968.20578395067 Length:4.8368837462 Chords:4 Text:Достоин Ты наш Царь, что смерть победил.} {ID:161 Position:2973.1353880557635 Length:4.8165944031 Chords:1 Text:Worthy is the Lamb, who was slain} {ID:162 Position:2977.9519824588638 Length:4.8266786319 Chords:4 Text:Worthy is the King, who conquered the grave} {ID:163 Position:2982.7786610907638 Length:3.6063407878 Chords:6m 1 Text:^Worthy is the Lamb, who was sl^ain} {ID:164 Position:2986.385001878564 Length:4.1926476447 Chords:4 Text:Worthy w^orthy worthy} {ID:165 Position:2990.4781312100577 Length:4.8681834345 Chords:1 Text:This is amazing gr^ace} {ID:166 Position:2995.346314644558 Length:4.8760671324 Chords:4 Text:This is unfailing l^ove} {ID:167 Position:3000.2223817769577 Length:4.9194274707 Chords:6m Text:That You would take my p^lace} {ID:168 Position:3005.141809247658 Length:4.8524160388 Chords:5 Text:That You would bear my cr^oss} {ID:169 Position:3009.9942252864575 Length:4.899718226 Chords:1 Text:You laid down Your l^ife} {ID:170 Position:3014.8939435124576 Length:6.5434692319 Chords:4 Text:That I would be set fr^ee} {ID:171 Position:3021.4374127443575 Length:3.2401998244 Chords:6m 5 Text:Oh^ Jesus I sing for} {ID:172 Position:3024.677612568758 Length:2.5506720544 Chords: Text:All that You've done for me} {ID:173 Position:3027.228284623172 Length:19.591836734693857 Chords:1 4 1 4 Text:} {ID:174 Position:3046.820121357866 Length:4.897959183673493 Chords:1 Text:}]"
+time=2024-07-20T13:38:35.546+04:00 level=DEBUG msg="NewSubProject parsing:" path="/mnt/media/Music/REAPER/Run To The Father - Cody Carnes - C - 137 BPM/Run To The Father - Cody Carnes - C - 137 BPM.rpp" startOffset=4026.4119580925226
+time=2024-07-20T13:38:35.597+04:00 level=DEBUG msg="going through markers" totoal=38
+time=2024-07-20T13:38:35.597+04:00 level=DEBUG msg=region ID=1 Position=4026.4119580925226 name="Run The Father Cody Carnes 137 BPM To"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="section has no lyrics" s="Run The Father Cody Carnes 137 BPM To"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=appending total=1 lines="[{ID:175 Position:4026.4119580925226 Length:13.13868613138681 Chords: Text:}]"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=2 Position=4039.5506442239093 name=Intro
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name=Intro
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="section has no lyrics" s=Intro
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=appending total=2 lines="[{ID:176 Position:4039.5506442239093 Length:10.510948905109549 Chords:1 2m7 6m7 4 Text:} {ID:177 Position:4039.5506442239093 Length:10.510948905109549 Chords:1 2m7 6m7 4 Text:}]"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=3 Position=4050.061593129019 name="Verse 1"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name="Verse 1"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=4 Position=4071.083490939238 name="Verse 2"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name="Verse 2"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=5 Position=4092.105388749457 name=Chorus
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=6 Position=4113.127286559676 name=Refrain
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name=Refrain
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=7 Position=4123.638235464786 name="Verse 3 R"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name="Verse 3 R"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=8 Position=4144.660133275004 name="Verse 4 R"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name="Verse 4 R"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=9 Position=4165.682031085224 name="Chorus R"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name="Chorus R"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=10 Position=4186.703928895442 name=Refrain
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name=Refrain
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=11 Position=4197.214877800552 name=Refrain
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name=Refrain
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=12 Position=4207.725826705661 name="Bridge 1"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name="Bridge 1"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=13 Position=4228.747724515881 name="Bridge 2"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name="Bridge 2"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=14 Position=4249.769622326099 name=Chorus
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=15 Position=4270.7915201363185 name=Chorus
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=16 Position=4291.813417946537 name=Refrain
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name=Refrain
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=17 Position=4302.324366851647 name=Refrain
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name=Refrain
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=18 Position=4312.835315756756 name=Outro
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name=Outro
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="section has no lyrics" s=Outro
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=appending total=1 lines="[{ID:245 Position:4312.835315756756 Length:10.510948905109615 Chords:1 2m7 6m7 5 4 2m7 Text:}]"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=region ID=19 Position=4323.3462646618655 name=Ending
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="found matching section" name=Ending
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="section has no lyrics" s=Ending
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg=appending total=1 lines="[{ID:246 Position:4323.3462646618655 Length:5.255474452554779 Chords:1 Text:}]"
+time=2024-07-20T13:38:35.598+04:00 level=DEBUG msg="done with this subproject" lines="[{ID:175 Position:4026.4119580925226 Length:13.13868613138681 Chords: Text:} {ID:176 Position:4039.5506442239093 Length:10.510948905109549 Chords:1 2m7 6m7 4 Text:} {ID:177 Position:4039.5506442239093 Length:10.510948905109549 Chords:1 2m7 6m7 4 Text:} {ID:178 Position:4050.754261790019 Length:4.9668244001 Chords:1 2m7 Text:^>I've carried a ^burden} {ID:179 Position:4055.721086190119 Length:5.2554744526 Chords:6m7 4 Text:^>For too long on m^y own} {ID:180 Position:4060.976560642719 Length:5.8996132099 Chords:1 2m7 Text:^>I wasn't cr^eated} {ID:181 Position:4066.876173852619 Length:4.2073170866 Chords:6m7 4 Text:^>To bear it al^one} {ID:182 Position:4071.340370756338 Length:5.9774839897 Chords:1 2m7 Text:^>I hear Your invi^tation} {ID:183 Position:4077.317854746038 Length:2.6752753841 Chords:6m7 4 Text:^>To let it all g^o} {ID:184 Position:4079.993130130138 Length:2.6482524005 Chords:1 Text:And I see it n^ow} {ID:185 Position:4082.641382530638 Length:2.6752753842 Chords:2m7 Text:I'm laying it ^down} {ID:186 Position:4085.316657914838 Length:6.7887308346 Chords:6m7 5 4 Text:And I know that ^I - n^eed ^You} {ID:187 Position:4090.515879974557 Length:2.6277372263 Chords:1 Text:I run to the F^ather} {ID:188 Position:4093.1436172008566 Length:2.6277372263 Chords:2m7 Text:I fall into g^race} {ID:189 Position:4095.771354427157 Length:2.6277372262 Chords:6m7 Text:I'm done with the ^hiding} {ID:190 Position:4098.399091653357 Length:2.6277372263 Chords:4 Text:No reason to w^ait} {ID:191 Position:4101.026828879657 Length:2.6277372263 Chords:1 Text:My heart needs a s^urgeon} {ID:192 Position:4103.654566105957 Length:2.1897810219 Chords:2m7 Text:My soul needs a fr^iend} {ID:193 Position:4105.844347127857 Length:3.0656934306 Chords:6m7 Text:So I'll run to the ^Father} {ID:194 Position:4108.910040558457 Length:2.0730472542 Chords:4 Text:Again and ag^ain} {ID:195 Position:4110.983087812657 Length:2.1441987471 Chords: Text:And again and again} {ID:196 Position:4114.393388352775 Length:9.244847112 Chords:1 2m7 6m7 4 Text:^>Ohhh^> ohhh^> ohhh^} {ID:197 Position:4124.330904125786 Length:4.9668244001 Chords:1 2m7 Text:^>Отец, от на^чала} {ID:198 Position:4129.297728525886 Length:5.2554744526 Chords:6m7 4 Text:^>Как помочь мне Ты зн^ал} {ID:199 Position:4134.553202978485 Length:5.8996132099 Chords:1 2m7 Text:^>Твой Сын искупл^енье} {ID:200 Position:4140.452816188385 Length:4.2073170866 Chords:6m7 4 Text:^>Сердцам даров^ал} {ID:201 Position:4144.917013092104 Length:5.9774839897 Chords:1 2m7 Text:^>Осмыслить не в с^илах} {ID:202 Position:4150.894497081804 Length:2.6752753841 Chords:6m7 4 Text:^>Безмерной любв^и} {ID:203 Position:4153.569772465904 Length:2.6482524005 Chords:1 Text:Никак не пон^ять,} {ID:204 Position:4156.218024866404 Length:2.6752753842 Chords:2m7 Text:Умом не об^ъять} {ID:205 Position:4158.893300250605 Length:6.7887308346 Chords:6m7 5 4 Text:Лишь знаю, мне ^ну - ж^ен ^Ты!} {ID:206 Position:4164.092522310323 Length:2.6277372263 Chords:1 Text:К Отцу вновь бег^у я} {ID:207 Position:4166.720259536623 Length:2.6277372263 Chords:2m7 Text:В Его благо^дать} {ID:208 Position:4169.347996762924 Length:2.6277372262 Chords:6m7 Text:Нет силы скры^ваться} {ID:209 Position:4171.975733989124 Length:2.6277372263 Chords:4 Text:Причины нет жд^ать!} {ID:210 Position:4174.603471215423 Length:2.6277372263 Chords:1 Text:Нужен сердцу цел^итель} {ID:211 Position:4177.2312084417235 Length:2.1897810219 Chords:2m7 Text:Душе нужен д^руг} {ID:212 Position:4179.420989463623 Length:3.0656934306 Chords:6m7 Text:Так что снова и с^нова} {ID:213 Position:4182.486682894223 Length:2.0730472542 Chords:4 Text:К Отцу я бег^у,} {ID:214 Position:4184.559730148424 Length:2.1441987471 Chords: Text:Вновь к Отцу я бегу} {ID:215 Position:4187.970030688542 Length:9.244847112 Chords:1 2m7 6m7 4 Text:^>Ohhh^> ohhh^> ohhh^} {ID:216 Position:4198.480979593652 Length:9.244847112 Chords:1 2m7 6m7 4 Text:^>Ohhh^> ohhh^> ohhh^} {ID:217 Position:4205.731073185962 Length:5.5991622182 Chords:6m7 4 Text:My heart has been ^in Your s^ights} {ID:218 Position:4211.330235404162 Length:5.2586726238 Chords:1/3 5 Text:Long before ^my first br^eath} {ID:219 Position:4216.588908027961 Length:4.907373836 Chords:6m7 4 Text:Running in^to Your ^arms} {ID:220 Position:4221.4962818639615 Length:7.251442652 Chords:1/3 5 Text:Is running to ^life from d^eath} {ID:221 Position:4227.079230291881 Length:5.0262749642 Chords:6m7 4 Text:And I feel this ^rush deep in my ch^est} {ID:222 Position:4232.1055052560805 Length:5.6478035888 Chords:1/3 5 Text:Your mercy is ^calling ^out} {ID:223 Position:4237.753308844881 Length:5.2424588336 Chords:6m7 4 Text:Just as I ^am You pull me ^in} {ID:224 Position:4242.995767678481 Length:6.7738546476 Chords:1/3 5 Text:And I know I ^need You n^ow} {ID:225 Position:4248.180113551199 Length:2.6277372263 Chords:1 Text:I run to the F^ather} {ID:226 Position:4250.807850777499 Length:2.6277372263 Chords:2m7 Text:I fall into g^race} {ID:227 Position:4253.435588003799 Length:2.6277372262 Chords:6m7 Text:I'm done with the ^hiding} {ID:228 Position:4256.0633252299995 Length:2.6277372263 Chords:4 Text:No reason to w^ait} {ID:229 Position:4258.691062456299 Length:2.6277372263 Chords:1 Text:My heart needs a s^urgeon} {ID:230 Position:4261.318799682599 Length:2.1897810219 Chords:2m7 Text:My soul needs a fr^iend} {ID:231 Position:4263.508580704499 Length:3.0656934306 Chords:6m7 Text:So I'll run to the ^Father} {ID:232 Position:4266.574274135099 Length:2.0730472542 Chords:4 Text:Again and ag^ain} {ID:233 Position:4268.6473213893 Length:2.1441987471 Chords: Text:And again and again} {ID:234 Position:4269.202011361418 Length:2.6277372263 Chords:1 Text:I run to the F^ather} {ID:235 Position:4271.829748587718 Length:2.6277372263 Chords:2m7 Text:I fall into g^race} {ID:236 Position:4274.457485814019 Length:2.6277372262 Chords:6m7 Text:I'm done with the ^hiding} {ID:237 Position:4277.085223040219 Length:2.6277372263 Chords:4 Text:No reason to w^ait} {ID:238 Position:4279.712960266518 Length:2.6277372263 Chords:1 Text:My heart needs a s^urgeon} {ID:239 Position:4282.340697492818 Length:2.1897810219 Chords:2m7 Text:My soul needs a fr^iend} {ID:240 Position:4284.530478514718 Length:3.0656934306 Chords:6m7 Text:So I'll run to the ^Father} {ID:241 Position:4287.596171945318 Length:2.0730472542 Chords:4 Text:Again and ag^ain} {ID:242 Position:4289.669219199519 Length:2.1441987471 Chords: Text:And again and again} {ID:243 Position:4293.079519739636 Length:9.244847112 Chords:1 2m7 6m7 4 Text:^>Ohhh^> ohhh^> ohhh^} {ID:244 Position:4303.590468644747 Length:9.244847112 Chords:1 2m7 6m7 4 Text:^>Ohhh^> ohhh^> ohhh^} {ID:245 Position:4312.835315756756 Length:10.510948905109615 Chords:1 2m7 6m7 5 4 2m7 Text:} {ID:246 Position:4323.3462646618655 Length:5.255474452554779 Chords:1 Text:}]"
+time=2024-07-20T13:38:35.599+04:00 level=DEBUG msg="NewSubProject parsing:" path="/mnt/media/Music/REAPER/King Of My Heart - Bethel Music - A - 68 BPM/King Of My Heart - Bethel Music - A - 68 BPM.rpp" startOffset=5455.249167394862
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="going through markers" totoal=58
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=1 Position=5455.249167394862 name="King Heart Bethel Music BPM 68 Of"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="section has no lyrics" s="King Heart Bethel Music BPM 68 Of"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=appending total=1 lines="[{ID:247 Position:5455.249167394862 Length:7.05882352941176 Chords: Text:}]"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=2 Position=5462.307990924273 name=Intro
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name=Intro
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="section has no lyrics" s=Intro
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=appending total=2 lines="[{ID:248 Position:5462.307990924273 Length:14.117647058823469 Chords:1 4 1 Text:} {ID:249 Position:5462.307990924273 Length:14.117647058823469 Chords:6m 5 4 1 Text:}]"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=3 Position=5476.425637983097 name="Verse 1 R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name="Verse 1 R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=4 Position=5504.660932100744 name="Chorus R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name="Chorus R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=5 Position=5532.89622621839 name="Verse 2 R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name="Verse 2 R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=6 Position=5561.131520336038 name="Verse 2"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name="Verse 2"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=7 Position=5589.366814453685 name=Chorus
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=8 Position=5617.602108571332 name=Bridge
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name=Bridge
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=9 Position=5631.719755630155 name=Bridge
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name=Bridge
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=10 Position=5645.83740268898 name="Bridge R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name="Bridge R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=11 Position=5659.955049747803 name="Bridge R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name="Bridge R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=12 Position=5674.0726968066265 name="Chorus R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name="Chorus R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=13 Position=5702.307990924273 name="Bridge R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name="Bridge R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=14 Position=5716.425637983097 name="Bridge R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name="Bridge R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=15 Position=5730.54328504192 name="Outro R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name="Outro R"
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=region ID=16 Position=5744.6609321007445 name=Ending
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="found matching section" name=Ending
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg="section has no lyrics" s=Ending
+time=2024-07-20T13:38:35.630+04:00 level=DEBUG msg=appending total=1 lines="[{ID:314 Position:5744.6609321007445 Length:7.058823529411541 Chords:1 Text:}]"
+time=2024-07-20T13:38:35.631+04:00 level=DEBUG msg="done with this subproject" lines="[{ID:247 Position:5455.249167394862 Length:7.05882352941176 Chords: Text:} {ID:248 Position:5462.307990924273 Length:14.117647058823469 Chords:1 4 1 Text:} {ID:249 Position:5462.307990924273 Length:14.117647058823469 Chords:6m 5 4 1 Text:} {ID:250 Position:5475.987679210397 Length:3.0850175963 Chords:1 Text:Пусть Царь в с^ердце моём} {ID:251 Position:5479.0726968066965 Length:3.9705882353 Chords:4 1 Text:Будет дл^я меня скал^ой} {ID:252 Position:5483.043285041997 Length:3.0882352941 Chords:6m 5 Text:^Моей живой вод^ой} {ID:253 Position:5486.131520336096 Length:3.9705882353 Chords:4 1 Text:Он - п^еснь мо^я!} {ID:254 Position:5490.1021085713965 Length:3.0882352941 Chords:1 Text:Пусть Царь в с^ердце моём} {ID:255 Position:5493.190343865497 Length:3.9705882353 Chords:4 1 Text:Будет т^енью от жар^ы} {ID:256 Position:5497.160932100796 Length:3.0882352941 Chords:6m 5 Text:Спа^сеньем для душ^и} {ID:257 Position:5500.249167394897 Length:2.6470588235 Chords:4 1 Text:Он - п^еснь мо^я!} {ID:258 Position:5503.337402688943 Length:7.5 Chords:6m Text:Ты так б^лаг!} {ID:259 Position:5510.837402688943 Length:7.0588235294 Chords:54 4 1 Text:Бл^аг, ^О ^о о!} {ID:260 Position:5517.896226218343 Length:7.0588235294 Chords:6m Text:Ты так б^лаг!} {ID:261 Position:5524.955049747744 Length:7.0588235295 Chords:54 4 1 Text:Бл^аг, ^О ^о о!} {ID:262 Position:5532.45504974779 Length:3.0882352942 Chords:1 Text:Пусть Царь в с^ердце моём} {ID:263 Position:5535.54328504199 Length:3.9705882353 Chords:4 1 Text:Будет в^етром в парус^ах,} {ID:264 Position:5539.51387327729 Length:3.0882352941 Chords:6m 5 Text:^Якорем в мор^ях.} {ID:265 Position:5542.60210857139 Length:3.9705882353 Chords:4 1 Text:Он - п^еснь мо^я.} {ID:266 Position:5546.57269680669 Length:3.0882352941 Chords:1 Text:Пусть Царь в с^ердце моём} {ID:267 Position:5549.660932100791 Length:3.9705882353 Chords:4 1 Text:Будет пл^аменем внутр^и.} {ID:268 Position:5553.63152033609 Length:5.7352941176 Chords:6m 5 Text:В Н^ём все дни мо^и.} {ID:269 Position:5532.89622621839 Length:0 Chords:4 1 Text:Он - п^еснь мо^я.} {ID:270 Position:5560.690343865438 Length:3.0882352942 Chords:1 Text:And let the K^ing of my heart} {ID:271 Position:5563.778579159638 Length:3.9705882353 Chords:4 1 Text:Be the w^ind inside my s^ails} {ID:272 Position:5567.749167394938 Length:3.0882352941 Chords:6m 5 Text:The ^anchor in the w^aves} {ID:273 Position:5570.837402689038 Length:3.9705882353 Chords:4 1 Text:Oh oh H^e is my s^ong} {ID:274 Position:5574.807990924338 Length:3.0882352941 Chords:1 Text:Let the K^ing of my heart} {ID:275 Position:5577.896226218439 Length:3.9705882353 Chords:4 1 Text:Be the f^ire inside my v^eins} {ID:276 Position:5581.866814453738 Length:5.7352941176 Chords:6m 5 Text:The ^echo of my d^ays} {ID:277 Position:5561.131520336038 Length:0 Chords:4 1 Text:Oh oh He ^is my s^ong} {ID:278 Position:5588.043285041885 Length:7.5 Chords:6m Text:You are g^ood} {ID:279 Position:5595.543285041885 Length:7.0588235294 Chords:54 4 1 Text:You are ^good ^oh ^oh} {ID:280 Position:5602.602108571285 Length:7.0588235294 Chords:6m Text:You are g^ood} {ID:281 Position:5609.660932100685 Length:7.0588235295 Chords:54 4 1 Text:You are ^good ^oh ^oh} {ID:282 Position:5618.216317078032 Length:2.4740267874 Chords:1 Text:You're never gonna let} {ID:283 Position:5620.690343865432 Length:4.4117647059 Chords: Text:You're never gonna let me down} {ID:284 Position:5625.102108571332 Length:2.6470588235 Chords: Text:And You're never gonna let} {ID:285 Position:5627.749167394832 Length:3.9705882353 Chords: Text:You're never gonna let me down} {ID:286 Position:5632.333964136856 Length:2.4740267874 Chords:1 Text:You're never gonna let} {ID:287 Position:5634.807990924255 Length:4.4117647059 Chords: Text:You're never gonna let me down} {ID:288 Position:5639.219755630155 Length:2.6470588235 Chords: Text:And You're never gonna let} {ID:289 Position:5641.866814453655 Length:3.9705882353 Chords: Text:You're never gonna let me down} {ID:290 Position:5646.45161119568 Length:2.4740267874 Chords:1 Text:^Я знаю никогда} {ID:291 Position:5648.9256379830795 Length:4.4117647059 Chords: Text:Т^ы не подведёшь мен^я,} {ID:292 Position:5653.33740268898 Length:2.6470588235 Chords: Text:^Я зн^аю никогда} {ID:293 Position:5655.984461512479 Length:3.9705882353 Chords: Text:Т^ы не подведёшь мен^я!} {ID:294 Position:5660.569258254503 Length:2.4740267874 Chords:1 Text:^Я знаю никогда} {ID:295 Position:5663.043285041903 Length:4.4117647059 Chords:4 5 Text:Т^ы не подведёшь мен^я,} {ID:296 Position:5667.455049747803 Length:2.6470588235 Chords:6m 5 Text:^Я зн^аю никогда} {ID:297 Position:5670.102108571303 Length:3.9705882353 Chords:4 1 Text:Т^ы не подведёшь мен^я!} {ID:298 Position:5672.749167394826 Length:7.5 Chords:6m Text:Ты так б^лаг!} {ID:299 Position:5680.249167394826 Length:7.0588235294 Chords:54 4 1 Text:Бл^аг, ^О ^о о!} {ID:300 Position:5687.307990924226 Length:7.0588235294 Chords:6m Text:Ты так б^лаг!} {ID:301 Position:5694.366814453627 Length:7.0588235295 Chords:54 4 1 Text:Бл^аг, ^О ^о о!} {ID:302 Position:5702.922199430974 Length:2.4740267874 Chords:6m 54 Text:^Я знаю никогда} {ID:303 Position:5705.396226218373 Length:4.4117647059 Chords:4 1 Text:Т^ы не подведёшь мен^я,} {ID:304 Position:5709.807990924273 Length:2.6470588235 Chords:6m 54 Text:^Я зн^аю никогда} {ID:305 Position:5712.455049747773 Length:3.9705882353 Chords:4 1 Text:Т^ы не подведёшь мен^я!} {ID:306 Position:5717.039846489797 Length:2.4740267874 Chords:6m 54 Text:^Я знаю никогда} {ID:307 Position:5719.513873277197 Length:4.4117647059 Chords:4 1 Text:Т^ы не подведёшь мен^я,} {ID:308 Position:5723.925637983097 Length:2.6470588235 Chords:6m 54 Text:^Я зн^аю никогда} {ID:309 Position:5726.5726968065965 Length:3.9705882353 Chords:4 1 Text:Т^ы не подведёшь мен^я!} {ID:310 Position:5729.21975563012 Length:7.5 Chords:6m Text:Ты так б^лаг!} {ID:311 Position:5736.71975563012 Length:7.0588235294 Chords:54 4 1 Text:Бл^аг, ^О ^о о!} {ID:312 Position:5743.77857915952 Length:7.0588235294 Chords:6m Text:Ты так б^лаг!} {ID:313 Position:5750.8374026889205 Length:7.0588235295 Chords:54 4 1 Text:Бл^аг, ^О ^о о!} {ID:314 Position:5744.6609321007445 Length:7.058823529411541 Chords:1 Text:}]"
+time=2024-07-20T13:38:35.631+04:00 level=DEBUG msg="NewSubProject parsing:" path="/mnt/media/Music/REAPER/Verit i Lubit - Deti Boga - A - 123 BPM/Verit i Lubit - Deti Boga - A - 123 BPM.RPP" startOffset=8642.508203539415
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg="going through markers" totoal=28
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg=region ID=1 Position=8642.508203539415 name="Verit Lubit Deti Boga 123 BPM I"
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg="section has no lyrics" s="Verit Lubit Deti Boga 123 BPM I"
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg=appending total=1 lines="[{ID:315 Position:8642.508203539415 Length:1.875 Chords: Text:}]"
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg=region ID=2 Position=8644.383203539415 name=Intro
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg="section has no lyrics" s=Intro
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg=appending total=1 lines="[{ID:316 Position:8644.383203539415 Length:7.5 Chords: Text:}]"
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg=region ID=3 Position=8651.883203539415 name="Verse 1"
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg="found matching section" name="Verse 1"
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg=region ID=4 Position=8681.883203539415 name=Chorus
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg=region ID=5 Position=8696.883203539415 name=Chorus
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg=region ID=6 Position=8711.883203539415 name=Intro
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg="section has no lyrics" s=Intro
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg=appending total=1 lines="[{ID:329 Position:8711.883203539415 Length:7.5 Chords: Text:}]"
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg=region ID=7 Position=8719.383203539415 name="Verse 2"
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg="found matching section" name="Verse 2"
+time=2024-07-20T13:38:35.670+04:00 level=DEBUG msg=region ID=8 Position=8749.383203539415 name=Chorus
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg=region ID=9 Position=8764.383203539415 name=Chorus
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg=region ID=10 Position=8779.383203539415 name=Instrumental
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg="section has no lyrics" s=Instrumental
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg=appending total=1 lines="[{ID:343 Position:8779.383203539415 Length:7.5 Chords: Text:}]"
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg=region ID=11 Position=8786.883203539415 name=Interlude
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg="section has no lyrics" s=Interlude
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg=appending total=1 lines="[{ID:344 Position:8786.883203539415 Length:7.5 Chords: Text:}]"
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg=region ID=12 Position=8794.383203539415 name=Chorus
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg=region ID=13 Position=8809.383203539415 name=Chorus
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg="found matching section" name=Chorus
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg=region ID=14 Position=8824.383203539415 name=Ending
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg="section has no lyrics" s=Ending
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg=appending total=1 lines="[{ID:353 Position:8824.383203539415 Length:7.5 Chords: Text:}]"
+time=2024-07-20T13:38:35.671+04:00 level=DEBUG msg="done with this subproject" lines="[{ID:315 Position:8642.508203539415 Length:1.875 Chords: Text:} {ID:316 Position:8644.383203539415 Length:7.5 Chords: Text:} {ID:317 Position:8651.883203539415 Length:7.5 Chords: Text:Ты дал мне больше того, о чем я мечтаю.} {ID:318 Position:8659.383203539415 Length:7.1286144186 Chords: Text:Ты стал мне ближе, чем я ожидаю.} {ID:319 Position:8666.511817958015 Length:7.6077900849 Chords: Text:Счастье есть, его не может не быть.} {ID:320 Position:8674.119608042914 Length:7.7635954965 Chords: Text:Надо лишь верить и любить!} {ID:321 Position:8681.634792984416 Length:3.8949052612 Chords: Text:Верить и любить буду я всегда} {ID:322 Position:8685.529698245615 Length:3.7640219288 Chords: Text:Верить и любить в жару и в холода,} {ID:323 Position:8689.293720174415 Length:3.4450370195 Chords: Text:Верить и любить, если что-то вдруг} {ID:324 Position:8692.738757193914 Length:3.9522230252 Chords: Text:не так как ожидаешь} {ID:325 Position:8696.634792984416 Length:3.8949052612 Chords: Text:Верить и любить буду я всегда} {ID:326 Position:8700.529698245615 Length:3.7640219288 Chords: Text:Верить и любить в жару и в холода,} {ID:327 Position:8704.293720174415 Length:3.4450370195 Chords: Text:Верить и любить, если что-то вдруг} {ID:328 Position:8707.738757193914 Length:3.9522230252 Chords: Text:не так как ожидаешь} {ID:329 Position:8711.883203539415 Length:7.5 Chords: Text:} {ID:330 Position:8719.255972697216 Length:7.5057149139 Chords: Text:Бог Всемогущий нам жизнь подарил} {ID:331 Position:8726.761687611115 Length:7.4897656684 Chords: Text:Дал нам дыхание и небо открыл.} {ID:332 Position:8734.251453279516 Length:7.4642468757 Chords: Text:Он любовь на кресте доказал.} {ID:333 Position:8741.715700155215 Length:5.1579859821 Chords: Text:Он за нас Свою жизнь отдал!} {ID:334 Position:8746.873686137315 Length:2.5095174021 Chords: Text:Будем верить Ему!} {ID:335 Position:8749.134792984416 Length:3.8949052612 Chords: Text:Верить и любить буду я всегда} {ID:336 Position:8753.029698245615 Length:3.7640219288 Chords: Text:Верить и любить в жару и в холода,} {ID:337 Position:8756.793720174415 Length:3.4450370195 Chords: Text:Верить и любить, если что-то вдруг} {ID:338 Position:8760.238757193914 Length:3.9522230252 Chords: Text:не так как ожидаешь} {ID:339 Position:8764.134792984416 Length:3.8949052612 Chords: Text:Верить и любить буду я всегда} {ID:340 Position:8768.029698245615 Length:3.7640219288 Chords: Text:Верить и любить в жару и в холода,} {ID:341 Position:8771.793720174415 Length:3.4450370195 Chords: Text:Верить и любить, если что-то вдруг} {ID:342 Position:8775.238757193914 Length:3.9522230252 Chords: Text:не так как ожидаешь} {ID:343 Position:8779.383203539415 Length:7.5 Chords: Text:} {ID:344 Position:8786.883203539415 Length:7.5 Chords: Text:} {ID:345 Position:8794.134792984416 Length:3.8949052612 Chords: Text:Верить и любить буду я всегда} {ID:346 Position:8798.029698245615 Length:3.7640219288 Chords: Text:Верить и любить в жару и в холода,} {ID:347 Position:8801.793720174415 Length:3.4450370195 Chords: Text:Верить и любить, если что-то вдруг} {ID:348 Position:8805.238757193914 Length:3.9522230252 Chords: Text:не так как ожидаешь} {ID:349 Position:8809.134792984416 Length:3.8949052612 Chords: Text:Верить и любить буду я всегда} {ID:350 Position:8813.029698245615 Length:3.7640219288 Chords: Text:Верить и любить в жару и в холода,} {ID:351 Position:8816.793720174415 Length:3.4450370195 Chords: Text:Верить и любить, если что-то вдруг} {ID:352 Position:8820.238757193914 Length:3.9522230252 Chords: Text:не так как ожидаешь} {ID:353 Position:8824.383203539415 Length:7.5 Chords: Text:}]"
+time=2024-07-20T13:38:35.672+04:00 level=DEBUG msg=UPDATE() "new position"=4072.4584697204596
+time=2024-07-20T13:38:35.672+04:00 level=DEBUG msg=UpdateCurosr() cursor=4072.4584697204596
+time=2024-07-20T13:38:35.672+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=4072.4584697204596 "current line"="{ID:0 Position:0 Length:0 Chords: Text:}" "total lines"=353
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=UpdateLine() next="{ID:2 Position:6.62068965517241 Length:13.24137931034483 Chords:4 1 5/7 6m Text:}"
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=352 total=353 id=353 cursor=4072.4584697204596 pos=8824.383203539415 len=7.5
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=351 total=353 id=352 cursor=4072.4584697204596 pos=8820.238757193914 len=3.9522230252
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=350 total=353 id=351 cursor=4072.4584697204596 pos=8816.793720174415 len=3.4450370195
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=349 total=353 id=350 cursor=4072.4584697204596 pos=8813.029698245615 len=3.7640219288
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=348 total=353 id=349 cursor=4072.4584697204596 pos=8809.134792984416 len=3.8949052612
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=347 total=353 id=348 cursor=4072.4584697204596 pos=8805.238757193914 len=3.9522230252
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=346 total=353 id=347 cursor=4072.4584697204596 pos=8801.793720174415 len=3.4450370195
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=345 total=353 id=346 cursor=4072.4584697204596 pos=8798.029698245615 len=3.7640219288
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=344 total=353 id=345 cursor=4072.4584697204596 pos=8794.134792984416 len=3.8949052612
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=343 total=353 id=344 cursor=4072.4584697204596 pos=8786.883203539415 len=7.5
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=342 total=353 id=343 cursor=4072.4584697204596 pos=8779.383203539415 len=7.5
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=341 total=353 id=342 cursor=4072.4584697204596 pos=8775.238757193914 len=3.9522230252
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=340 total=353 id=341 cursor=4072.4584697204596 pos=8771.793720174415 len=3.4450370195
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=339 total=353 id=340 cursor=4072.4584697204596 pos=8768.029698245615 len=3.7640219288
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=338 total=353 id=339 cursor=4072.4584697204596 pos=8764.134792984416 len=3.8949052612
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=337 total=353 id=338 cursor=4072.4584697204596 pos=8760.238757193914 len=3.9522230252
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=336 total=353 id=337 cursor=4072.4584697204596 pos=8756.793720174415 len=3.4450370195
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=335 total=353 id=336 cursor=4072.4584697204596 pos=8753.029698245615 len=3.7640219288
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=334 total=353 id=335 cursor=4072.4584697204596 pos=8749.134792984416 len=3.8949052612
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=333 total=353 id=334 cursor=4072.4584697204596 pos=8746.873686137315 len=2.5095174021
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=332 total=353 id=333 cursor=4072.4584697204596 pos=8741.715700155215 len=5.1579859821
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=331 total=353 id=332 cursor=4072.4584697204596 pos=8734.251453279516 len=7.4642468757
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=330 total=353 id=331 cursor=4072.4584697204596 pos=8726.761687611115 len=7.4897656684
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=329 total=353 id=330 cursor=4072.4584697204596 pos=8719.255972697216 len=7.5057149139
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=328 total=353 id=329 cursor=4072.4584697204596 pos=8711.883203539415 len=7.5
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=327 total=353 id=328 cursor=4072.4584697204596 pos=8707.738757193914 len=3.9522230252
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=326 total=353 id=327 cursor=4072.4584697204596 pos=8704.293720174415 len=3.4450370195
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=325 total=353 id=326 cursor=4072.4584697204596 pos=8700.529698245615 len=3.7640219288
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=324 total=353 id=325 cursor=4072.4584697204596 pos=8696.634792984416 len=3.8949052612
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=323 total=353 id=324 cursor=4072.4584697204596 pos=8692.738757193914 len=3.9522230252
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=322 total=353 id=323 cursor=4072.4584697204596 pos=8689.293720174415 len=3.4450370195
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=321 total=353 id=322 cursor=4072.4584697204596 pos=8685.529698245615 len=3.7640219288
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=320 total=353 id=321 cursor=4072.4584697204596 pos=8681.634792984416 len=3.8949052612
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=319 total=353 id=320 cursor=4072.4584697204596 pos=8674.119608042914 len=7.7635954965
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=318 total=353 id=319 cursor=4072.4584697204596 pos=8666.511817958015 len=7.6077900849
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=317 total=353 id=318 cursor=4072.4584697204596 pos=8659.383203539415 len=7.1286144186
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=316 total=353 id=317 cursor=4072.4584697204596 pos=8651.883203539415 len=7.5
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=315 total=353 id=316 cursor=4072.4584697204596 pos=8644.383203539415 len=7.5
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=314 total=353 id=315 cursor=4072.4584697204596 pos=8642.508203539415 len=1.875
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=313 total=353 id=314 cursor=4072.4584697204596 pos=5744.6609321007445 len=7.058823529411541
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=312 total=353 id=313 cursor=4072.4584697204596 pos=5750.8374026889205 len=7.0588235295
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=311 total=353 id=312 cursor=4072.4584697204596 pos=5743.77857915952 len=7.0588235294
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=310 total=353 id=311 cursor=4072.4584697204596 pos=5736.71975563012 len=7.0588235294
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=309 total=353 id=310 cursor=4072.4584697204596 pos=5729.21975563012 len=7.5
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=308 total=353 id=309 cursor=4072.4584697204596 pos=5726.5726968065965 len=3.9705882353
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=307 total=353 id=308 cursor=4072.4584697204596 pos=5723.925637983097 len=2.6470588235
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=306 total=353 id=307 cursor=4072.4584697204596 pos=5719.513873277197 len=4.4117647059
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=305 total=353 id=306 cursor=4072.4584697204596 pos=5717.039846489797 len=2.4740267874
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=304 total=353 id=305 cursor=4072.4584697204596 pos=5712.455049747773 len=3.9705882353
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=303 total=353 id=304 cursor=4072.4584697204596 pos=5709.807990924273 len=2.6470588235
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=302 total=353 id=303 cursor=4072.4584697204596 pos=5705.396226218373 len=4.4117647059
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=301 total=353 id=302 cursor=4072.4584697204596 pos=5702.922199430974 len=2.4740267874
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=300 total=353 id=301 cursor=4072.4584697204596 pos=5694.366814453627 len=7.0588235295
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=299 total=353 id=300 cursor=4072.4584697204596 pos=5687.307990924226 len=7.0588235294
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=298 total=353 id=299 cursor=4072.4584697204596 pos=5680.249167394826 len=7.0588235294
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=297 total=353 id=298 cursor=4072.4584697204596 pos=5672.749167394826 len=7.5
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=296 total=353 id=297 cursor=4072.4584697204596 pos=5670.102108571303 len=3.9705882353
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=295 total=353 id=296 cursor=4072.4584697204596 pos=5667.455049747803 len=2.6470588235
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=294 total=353 id=295 cursor=4072.4584697204596 pos=5663.043285041903 len=4.4117647059
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=293 total=353 id=294 cursor=4072.4584697204596 pos=5660.569258254503 len=2.4740267874
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=292 total=353 id=293 cursor=4072.4584697204596 pos=5655.984461512479 len=3.9705882353
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=291 total=353 id=292 cursor=4072.4584697204596 pos=5653.33740268898 len=2.6470588235
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=290 total=353 id=291 cursor=4072.4584697204596 pos=5648.9256379830795 len=4.4117647059
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=289 total=353 id=290 cursor=4072.4584697204596 pos=5646.45161119568 len=2.4740267874
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=288 total=353 id=289 cursor=4072.4584697204596 pos=5641.866814453655 len=3.9705882353
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=287 total=353 id=288 cursor=4072.4584697204596 pos=5639.219755630155 len=2.6470588235
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=286 total=353 id=287 cursor=4072.4584697204596 pos=5634.807990924255 len=4.4117647059
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=285 total=353 id=286 cursor=4072.4584697204596 pos=5632.333964136856 len=2.4740267874
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=284 total=353 id=285 cursor=4072.4584697204596 pos=5627.749167394832 len=3.9705882353
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=283 total=353 id=284 cursor=4072.4584697204596 pos=5625.102108571332 len=2.6470588235
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=282 total=353 id=283 cursor=4072.4584697204596 pos=5620.690343865432 len=4.4117647059
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=281 total=353 id=282 cursor=4072.4584697204596 pos=5618.216317078032 len=2.4740267874
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=280 total=353 id=281 cursor=4072.4584697204596 pos=5609.660932100685 len=7.0588235295
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=279 total=353 id=280 cursor=4072.4584697204596 pos=5602.602108571285 len=7.0588235294
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=278 total=353 id=279 cursor=4072.4584697204596 pos=5595.543285041885 len=7.0588235294
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=277 total=353 id=278 cursor=4072.4584697204596 pos=5588.043285041885 len=7.5
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=276 total=353 id=277 cursor=4072.4584697204596 pos=5561.131520336038 len=0
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=275 total=353 id=276 cursor=4072.4584697204596 pos=5581.866814453738 len=5.7352941176
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=274 total=353 id=275 cursor=4072.4584697204596 pos=5577.896226218439 len=3.9705882353
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=273 total=353 id=274 cursor=4072.4584697204596 pos=5574.807990924338 len=3.0882352941
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=272 total=353 id=273 cursor=4072.4584697204596 pos=5570.837402689038 len=3.9705882353
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=271 total=353 id=272 cursor=4072.4584697204596 pos=5567.749167394938 len=3.0882352941
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=270 total=353 id=271 cursor=4072.4584697204596 pos=5563.778579159638 len=3.9705882353
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=269 total=353 id=270 cursor=4072.4584697204596 pos=5560.690343865438 len=3.0882352942
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=268 total=353 id=269 cursor=4072.4584697204596 pos=5532.89622621839 len=0
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=267 total=353 id=268 cursor=4072.4584697204596 pos=5553.63152033609 len=5.7352941176
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=266 total=353 id=267 cursor=4072.4584697204596 pos=5549.660932100791 len=3.9705882353
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=265 total=353 id=266 cursor=4072.4584697204596 pos=5546.57269680669 len=3.0882352941
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=264 total=353 id=265 cursor=4072.4584697204596 pos=5542.60210857139 len=3.9705882353
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=263 total=353 id=264 cursor=4072.4584697204596 pos=5539.51387327729 len=3.0882352941
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=262 total=353 id=263 cursor=4072.4584697204596 pos=5535.54328504199 len=3.9705882353
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=261 total=353 id=262 cursor=4072.4584697204596 pos=5532.45504974779 len=3.0882352942
+time=2024-07-20T13:38:35.673+04:00 level=DEBUG msg=searching line=260 total=353 id=261 cursor=4072.4584697204596 pos=5524.955049747744 len=7.0588235295
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=259 total=353 id=260 cursor=4072.4584697204596 pos=5517.896226218343 len=7.0588235294
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=258 total=353 id=259 cursor=4072.4584697204596 pos=5510.837402688943 len=7.0588235294
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=257 total=353 id=258 cursor=4072.4584697204596 pos=5503.337402688943 len=7.5
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=256 total=353 id=257 cursor=4072.4584697204596 pos=5500.249167394897 len=2.6470588235
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=255 total=353 id=256 cursor=4072.4584697204596 pos=5497.160932100796 len=3.0882352941
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=254 total=353 id=255 cursor=4072.4584697204596 pos=5493.190343865497 len=3.9705882353
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=253 total=353 id=254 cursor=4072.4584697204596 pos=5490.1021085713965 len=3.0882352941
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=252 total=353 id=253 cursor=4072.4584697204596 pos=5486.131520336096 len=3.9705882353
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=251 total=353 id=252 cursor=4072.4584697204596 pos=5483.043285041997 len=3.0882352941
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=250 total=353 id=251 cursor=4072.4584697204596 pos=5479.0726968066965 len=3.9705882353
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=249 total=353 id=250 cursor=4072.4584697204596 pos=5475.987679210397 len=3.0850175963
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=248 total=353 id=249 cursor=4072.4584697204596 pos=5462.307990924273 len=14.117647058823469
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=247 total=353 id=248 cursor=4072.4584697204596 pos=5462.307990924273 len=14.117647058823469
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=246 total=353 id=247 cursor=4072.4584697204596 pos=5455.249167394862 len=7.05882352941176
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=245 total=353 id=246 cursor=4072.4584697204596 pos=4323.3462646618655 len=5.255474452554779
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=244 total=353 id=245 cursor=4072.4584697204596 pos=4312.835315756756 len=10.510948905109615
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=243 total=353 id=244 cursor=4072.4584697204596 pos=4303.590468644747 len=9.244847112
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=242 total=353 id=243 cursor=4072.4584697204596 pos=4293.079519739636 len=9.244847112
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=241 total=353 id=242 cursor=4072.4584697204596 pos=4289.669219199519 len=2.1441987471
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=240 total=353 id=241 cursor=4072.4584697204596 pos=4287.596171945318 len=2.0730472542
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=239 total=353 id=240 cursor=4072.4584697204596 pos=4284.530478514718 len=3.0656934306
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=238 total=353 id=239 cursor=4072.4584697204596 pos=4282.340697492818 len=2.1897810219
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=237 total=353 id=238 cursor=4072.4584697204596 pos=4279.712960266518 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=236 total=353 id=237 cursor=4072.4584697204596 pos=4277.085223040219 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=235 total=353 id=236 cursor=4072.4584697204596 pos=4274.457485814019 len=2.6277372262
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=234 total=353 id=235 cursor=4072.4584697204596 pos=4271.829748587718 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=233 total=353 id=234 cursor=4072.4584697204596 pos=4269.202011361418 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=232 total=353 id=233 cursor=4072.4584697204596 pos=4268.6473213893 len=2.1441987471
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=231 total=353 id=232 cursor=4072.4584697204596 pos=4266.574274135099 len=2.0730472542
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=230 total=353 id=231 cursor=4072.4584697204596 pos=4263.508580704499 len=3.0656934306
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=229 total=353 id=230 cursor=4072.4584697204596 pos=4261.318799682599 len=2.1897810219
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=228 total=353 id=229 cursor=4072.4584697204596 pos=4258.691062456299 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=227 total=353 id=228 cursor=4072.4584697204596 pos=4256.0633252299995 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=226 total=353 id=227 cursor=4072.4584697204596 pos=4253.435588003799 len=2.6277372262
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=225 total=353 id=226 cursor=4072.4584697204596 pos=4250.807850777499 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=224 total=353 id=225 cursor=4072.4584697204596 pos=4248.180113551199 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=223 total=353 id=224 cursor=4072.4584697204596 pos=4242.995767678481 len=6.7738546476
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=222 total=353 id=223 cursor=4072.4584697204596 pos=4237.753308844881 len=5.2424588336
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=221 total=353 id=222 cursor=4072.4584697204596 pos=4232.1055052560805 len=5.6478035888
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=220 total=353 id=221 cursor=4072.4584697204596 pos=4227.079230291881 len=5.0262749642
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=219 total=353 id=220 cursor=4072.4584697204596 pos=4221.4962818639615 len=7.251442652
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=218 total=353 id=219 cursor=4072.4584697204596 pos=4216.588908027961 len=4.907373836
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=217 total=353 id=218 cursor=4072.4584697204596 pos=4211.330235404162 len=5.2586726238
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=216 total=353 id=217 cursor=4072.4584697204596 pos=4205.731073185962 len=5.5991622182
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=215 total=353 id=216 cursor=4072.4584697204596 pos=4198.480979593652 len=9.244847112
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=214 total=353 id=215 cursor=4072.4584697204596 pos=4187.970030688542 len=9.244847112
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=213 total=353 id=214 cursor=4072.4584697204596 pos=4184.559730148424 len=2.1441987471
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=212 total=353 id=213 cursor=4072.4584697204596 pos=4182.486682894223 len=2.0730472542
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=211 total=353 id=212 cursor=4072.4584697204596 pos=4179.420989463623 len=3.0656934306
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=210 total=353 id=211 cursor=4072.4584697204596 pos=4177.2312084417235 len=2.1897810219
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=209 total=353 id=210 cursor=4072.4584697204596 pos=4174.603471215423 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=208 total=353 id=209 cursor=4072.4584697204596 pos=4171.975733989124 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=207 total=353 id=208 cursor=4072.4584697204596 pos=4169.347996762924 len=2.6277372262
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=206 total=353 id=207 cursor=4072.4584697204596 pos=4166.720259536623 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=205 total=353 id=206 cursor=4072.4584697204596 pos=4164.092522310323 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=204 total=353 id=205 cursor=4072.4584697204596 pos=4158.893300250605 len=6.7887308346
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=203 total=353 id=204 cursor=4072.4584697204596 pos=4156.218024866404 len=2.6752753842
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=202 total=353 id=203 cursor=4072.4584697204596 pos=4153.569772465904 len=2.6482524005
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=201 total=353 id=202 cursor=4072.4584697204596 pos=4150.894497081804 len=2.6752753841
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=200 total=353 id=201 cursor=4072.4584697204596 pos=4144.917013092104 len=5.9774839897
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=199 total=353 id=200 cursor=4072.4584697204596 pos=4140.452816188385 len=4.2073170866
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=198 total=353 id=199 cursor=4072.4584697204596 pos=4134.553202978485 len=5.8996132099
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=197 total=353 id=198 cursor=4072.4584697204596 pos=4129.297728525886 len=5.2554744526
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=196 total=353 id=197 cursor=4072.4584697204596 pos=4124.330904125786 len=4.9668244001
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=195 total=353 id=196 cursor=4072.4584697204596 pos=4114.393388352775 len=9.244847112
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=194 total=353 id=195 cursor=4072.4584697204596 pos=4110.983087812657 len=2.1441987471
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=193 total=353 id=194 cursor=4072.4584697204596 pos=4108.910040558457 len=2.0730472542
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=192 total=353 id=193 cursor=4072.4584697204596 pos=4105.844347127857 len=3.0656934306
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=191 total=353 id=192 cursor=4072.4584697204596 pos=4103.654566105957 len=2.1897810219
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=190 total=353 id=191 cursor=4072.4584697204596 pos=4101.026828879657 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=189 total=353 id=190 cursor=4072.4584697204596 pos=4098.399091653357 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=188 total=353 id=189 cursor=4072.4584697204596 pos=4095.771354427157 len=2.6277372262
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=187 total=353 id=188 cursor=4072.4584697204596 pos=4093.1436172008566 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=186 total=353 id=187 cursor=4072.4584697204596 pos=4090.515879974557 len=2.6277372263
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=185 total=353 id=186 cursor=4072.4584697204596 pos=4085.316657914838 len=6.7887308346
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=184 total=353 id=185 cursor=4072.4584697204596 pos=4082.641382530638 len=2.6752753842
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=183 total=353 id=184 cursor=4072.4584697204596 pos=4079.993130130138 len=2.6482524005
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=182 total=353 id=183 cursor=4072.4584697204596 pos=4077.317854746038 len=2.6752753841
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=searching line=181 total=353 id=182 cursor=4072.4584697204596 pos=4071.340370756338 len=5.9774839897
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=UpdateLine() cursor=4072.4584697204596 currentline="{ID:182 Position:4071.340370756338 Length:5.9774839897 Chords:1 2m7 Text:^>I hear Your invi^tation}"
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=UpdateSection()
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=UpdateItem()
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=UpdatePeekItem()
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=UpdateMarker()
+time=2024-07-20T13:38:35.674+04:00 level=DEBUG msg=UpdatePeekMarker()
+time=2024-07-20T13:38:35.675+04:00 level=DEBUG msg="about to return new app"
+time=2024-07-20T13:38:35.675+04:00 level=DEBUG msg="app.go -> serve()"
+time=2024-07-20T13:38:35.675+04:00 level=DEBUG msg="about to start listening and serving"

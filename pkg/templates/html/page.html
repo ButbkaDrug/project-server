@@ -35,15 +35,28 @@
 
 
             </div>
-
-            <div>
-                <div id="countdown-title" class="text-clip overflow-hidden"></div>
-
-                <span class="countdown font-mono text-2xl">
-                    <span id="cowntdown-min" style="--value:0;"></span>m
-                    <span id="cowntdown-sec" style="--value:0;"></span>s
-                </span>
-            </div>
+            <!-- Open the modal using ID.showModal() method -->
+            <button class="btn" onclick="my_modal_2.showModal()">stats</button>
+            <dialog id="my_modal_2" class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box">
+                    <h3 class="text-lg font-bold">STATS:</h3>
+                    {{ range .Page.Stats }}
+                    {{ template "stat" .}}
+                    {{end}}
+                    <p class="py-4">Press ESC key or click outside to close</p>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
+            <!-- <div> -->
+            <!--     <div id="countdown-title" class="text-clip overflow-hid fen"></div> -->
+            <!---->
+            <!--     <span class="countdown font-mono text-2xl"> -->
+            <!--         <span id="cowntdown-min" style="--value:0;"></span>m -->
+            <!--         <span id="cowntdown-sec" style="--value:0;"></span>s -->
+            <!--     </span> -->
+            <!-- </div> -->
             <div class="flex-none hidden lg:block">
                 <!-- Navbar menu content here -->
             </div>

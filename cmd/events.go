@@ -27,6 +27,14 @@ func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// go func(w http.ResponseWriter, r *http.Request) {
+	// 	select {
+	// 	case <-time.After(200 * time.Millisecond):
+	// 		sendLineUpdate(w, app.reaper.Line.ID)
+	// 	}
+	//
+	// }(w, r)
+
 	for {
 		select {
 		case <-r.Context().Done():
@@ -66,8 +74,8 @@ func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
 				//TODO: Update shuld return a map\slice of updates that happened and base on those updates i can dispatch nessesery events
 				app.reaper.Update(cursor)
 
-				app.logger.Debug("updates finished. dispatching event", "lineID", app.reaper.Line.ID)
-				_, err = fmt.Fprintf(w, "event: line\ndata:%d\n\n", app.reaper.Line.ID)
+				app.logger.Debug("dispatching lineID event", "lineID", app.reaper.Line.ID)
+				_, err := fmt.Fprintf(w, "event: line\ndata:%d\n\n", app.reaper.Line.ID)
 				flusher.Flush()
 
 				if err != nil {
@@ -95,9 +103,7 @@ func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
 			if err != nil {
 				break
 			}
-
 		}
-
 	}
 }
 

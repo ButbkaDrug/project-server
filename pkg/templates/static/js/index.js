@@ -15,14 +15,15 @@ const eventSource = new EventSource('/events');
 eventSource.addEventListener("line", (event) => {
     const lineID = `line-${event.data}`
     const newLine = document.getElementById(lineID)
-    
 
     try {
 
     if (newLine != null && newLine != line) {
-        line.classList = ""
+        if (line.classList.contains(activeLine)) {
+                line.classList.remove(activeLine)
+            }
         line = newLine
-        line.classList = activeLine
+        line.classList.add(activeLine)
         line.scrollIntoView(scrollSettings)
         if (scrollSettings.behavior !== "smooth") scrollSettings.behavior = "smooth"
     } else { return }
