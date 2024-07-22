@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 )
 
 func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
@@ -27,13 +28,14 @@ func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// go func(w http.ResponseWriter, r *http.Request) {
-	// 	select {
-	// 	case <-time.After(200 * time.Millisecond):
-	// 		sendLineUpdate(w, app.reaper.Line.ID)
-	// 	}
-	//
-	// }(w, r)
+	go func(w http.ResponseWriter, flusher http.Flusher) {
+		select {
+		case <-time.After(200 * time.Millisecond):
+			fmt.Fprint(w, "event: ping\ndata:{}\n\n")
+			flusher.Flush()
+		}
+
+	}(w, flusher)
 
 	for {
 		select {

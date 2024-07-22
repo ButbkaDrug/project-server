@@ -1,18 +1,62 @@
 const activeLine = "font-bold"
 const activeSection = ["font-bold", "animate-pulse"]
 const scrollSettings = {behavior:"instant", block:"center", inline:"center"}
+const navbar = document.getElementById("navbar")
 
 let line = document.createElement("div");
 let e = document.createElement("div");
 let section = document.createElement("div");
+let scroll = true
+
+const scrollToggle = document.getElementById("scroll")
+
+try {
+    scrollToggle.addEventListener("click", (e)=>{
+        scroll = !scroll
+    })
+} catch (e) {
+    console.log(e)
+}
+
+
 section.innerHTML = "<div></div>"
 
+
 const eventSource = new EventSource('/events');
-//maybe I shuld have a scroll event, which will contain the id of a desired element and we will scroll to it wether is's a line or a map??
-//
-//it will make my updates bigger and take additional bandwidth
+eventSource.onopen = (e) => {
+navbar.classList.remove("bg-error")
+console.log("The connection has been established.");
+};
+
+eventSource.onerror = (err) => {
+navbar.classList.add("bg-error")
+console.error("EventSource failed:", err);
+};
+
+const playbackStopped = (element) => {
+    console.log("playback stopped!" )
+    navbar.classList.remove("bg-success")
+}
+
+
+var lastEvent = Date.now()
+var timeoutID = 0
 
 eventSource.addEventListener("line", (event) => {
+    if (!scroll) {
+        return 
+    }
+
+    if ((Date.now() - lastEvent) < 200 ){
+        clearTimeout(timeoutID)
+        timeoutID = setTimeout(playbackStopped, 200)
+        if (!navbar.classList.contains("bg-success")) {
+            navbar.classList.add("bg-success")
+        }
+    }
+    lastEvent = Date.now()
+
+
     const lineID = `line-${event.data}`
     const newLine = document.getElementById(lineID)
 
