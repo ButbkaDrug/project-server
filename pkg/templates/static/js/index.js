@@ -24,17 +24,14 @@ section.innerHTML = "<div></div>"
 
 const eventSource = new EventSource('/events');
 eventSource.onopen = (e) => {
-navbar.classList.remove("bg-error")
-console.log("The connection has been established.");
+    navbar.classList.remove("bg-error")
 };
 
 eventSource.onerror = (err) => {
-navbar.classList.add("bg-error")
-console.error("EventSource failed:", err);
+    navbar.classList.add("bg-error")
 };
 
 const playbackStopped = (element) => {
-    console.log("playback stopped!" )
     navbar.classList.remove("bg-success")
 }
 
