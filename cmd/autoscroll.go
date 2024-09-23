@@ -5,6 +5,7 @@ import (
 	"bytes"
 	"fmt"
 	"html/template"
+	"lp/pkg/comments"
 	"lp/pkg/lyrics"
 	"net/http"
 	"slices"
@@ -23,8 +24,6 @@ func (app *app) autoscrollHandler(w http.ResponseWriter, r *http.Request) {
 
 	displayChords := false
 
-	app.logger.Debug("autocrollHandler", "params", params)
-
 	if c, err := strconv.ParseBool(params.Get("chords")); err == nil {
 		displayChords = c
 	}
@@ -35,36 +34,23 @@ func (app *app) autoscrollHandler(w http.ResponseWriter, r *http.Request) {
 		displayLyrics = l
 	}
 
-	keys := make([]string, len(app.reaper.Track.Items))
-	if k := strings.Split(params.Get("keys"), ","); len(k) > 0 {
-		checklist := []string{
-			"A",
-			"Bb",
-			"B",
-			"C",
-			"Db",
-			"D",
-			"Eb",
-			"E",
-			"F",
-			"Gb",
-			"G",
-			"Ab",
-		}
+	cms := params.Get("comments")
 
-		for i, key := range k {
-			if i >= len(keys) {
-				break
-			}
-			if slices.Contains(checklist, strings.Title(key)) {
-				keys[i] = key
-				continue
-			}
-			keys[i] = ""
-		}
-	}
+	keys := app.ParseKeysArgument(params.Get("keys"))
+	capo := app.ParseCapoArgument(params.Get("capo"))
 
-	htmlString := RenderContent(app.reaper.Sections, keys, app.renderer, displayChords, displayLyrics)
+	htmlString := RenderContent(
+		&RenderContentConfig{
+			Data:         app.reaper.Sections,
+			Render:       app.renderer,
+			CommentsType: cms,
+			WithChords:   displayChords,
+			WithLyrics:   displayLyrics,
+			Keys:         keys,
+			Capo:         capo,
+		},
+	)
+
 	app.logger.Debug("rendering autoscroll", "chords", displayChords, "lyrics", displayLyrics)
 
 	page := Page{
@@ -73,7 +59,7 @@ func (app *app) autoscrollHandler(w http.ResponseWriter, r *http.Request) {
 			Stats: []stat{
 				{
 					Title: "IP address of the server",
-					Value: fmt.Sprintf("%s:%s", app.IP, app.Port),
+					Value: fmt.Sprintf("%s%s", app.IP, app.Port),
 					Desc:  "Make sure you are on the same local network and use this address",
 				},
 			},
@@ -99,25 +85,139 @@ func (app *app) autoscrollHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+}
+
+func (app *app) ParseCapoArgument(s string) []int {
+	capo := make([]int, len(app.reaper.Track.Items))
+
+	if c := strings.Split(s, ","); len(c) > 0 {
+		for i, entry := range c {
+
+			if i >= len(capo) {
+				break
+			}
+
+			if num, err := strconv.Atoi(entry); err != nil {
+				capo[i] = 0
+			} else {
+				capo[i] = num
+			}
+		}
+
+	}
+
+	fmt.Println("hello from app.ParseCapoArgument(): ", capo)
+
+	return capo
+}
+
+// parser song keys from a url params
+func (app *app) ParseKeysArgument(s string) []string {
+	keys := make([]string, len(app.reaper.Track.Items))
+
+	checklist := []string{
+		"A",
+		"Bb",
+		"B",
+		"C",
+		"Db",
+		"D",
+		"Eb",
+		"E",
+		"F",
+		"Gb",
+		"G",
+		"Ab",
+	}
+
+	if k := strings.Split(s, ","); len(k) > 0 {
+
+		for i, key := range k {
+			key = strings.ToUpper(key)
+			if i >= len(keys) {
+				break
+			}
+			if slices.Contains(checklist, key) {
+				keys[i] = key
+				continue
+			}
+			keys[i] = ""
+		}
+	}
+
+	return keys
+}
+
+func GetCommentsOfType(c []comments.Comment, t string) []comments.Comment {
+
+	t = strings.ToLower(t)
+
+	if t == "all" {
+		return c
+	}
+
+	if t == "" {
+		return comments.FilterComments(c, comments.GENERIC)
+	}
+
+	requestedTypes := strings.Split(t, " ")
+
+	requestedComments := []comments.Comment{}
+
+	for _, rt := range requestedTypes {
+
+		trueType := comments.GetCommentType(rt)
+
+		if trueType == comments.GENERIC && rt != "generic" {
+			continue
+		}
+
+		requestedComments = append(requestedComments, comments.FilterComments(c, trueType)...)
+	}
+
+	if slices.Contains(requestedTypes, "only") {
+		return requestedComments
+	}
+
+	//I want generic comments to be on top, that's why i reverse slices duren append
+	return append(comments.FilterComments(c, comments.GENERIC), requestedComments...)
 
 }
 
-func RenderContent(data []reaper.Section, keys []string, render *templates.Templates, withChords, withLyrics bool) string {
-	html := bytes.NewBufferString("")
+type RenderContentConfig struct {
+	Data         []reaper.Section
+	Render       *templates.Templates
+	CommentsType string
+	CommentsBig  bool
+	WithChords   bool
+	WithLyrics   bool
+	Keys         []string
+	Capo         []int
+}
 
-	for _, s := range data {
+func RenderContent(cfg *RenderContentConfig) string {
+	html := bytes.NewBufferString("")
+	render := cfg.Render
+
+	for _, s := range cfg.Data {
 		content := bytes.NewBufferString("")
 
 		render.RenderComponent(content, s.Name, "title")
 
-		render.RenderComponent(content, s.Comments, "comments")
+		commentsStyle := "comments"
 
-		if withChords && withLyrics {
-			RenderChorded(s.Lines, content, render, keys[s.ItemID])
-		} else if withLyrics {
+		if cfg.CommentsBig {
+			commentsStyle = "primer-comments"
+		}
+
+		render.RenderComponent(content, GetCommentsOfType(s.Comments, cfg.CommentsType), commentsStyle)
+
+		if cfg.WithChords && cfg.WithLyrics {
+			RenderChorded(s.Lines, content, render, cfg.Keys[s.ItemID])
+		} else if cfg.WithLyrics {
 			RenderChordless(s.Lines, content, render)
-		} else if withChords {
-			RenderChords(s.Lines, content, render, keys[s.ItemID])
+		} else if cfg.WithChords {
+			RenderChords(s.Lines, content, render, cfg.Keys[s.ItemID])
 		} else {
 			RenderNotes(s.Lines, content, render)
 		}

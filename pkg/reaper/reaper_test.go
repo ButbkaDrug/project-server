@@ -2,6 +2,7 @@ package reaper
 
 import (
 	"fmt"
+	"lp/pkg/comments"
 	"lp/pkg/lyrics"
 	"testing"
 )
@@ -583,7 +584,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Higher than the mountains that I face"},
 					{Offset: 0, Length: 0, Text: "Stronger than the power of the grave"},
@@ -595,7 +596,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -637,7 +638,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -663,7 +664,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Bridge",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -693,7 +694,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -719,7 +720,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -761,7 +762,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -787,7 +788,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Bridge",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -821,7 +822,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.934376352,
@@ -851,7 +852,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.4763282443,
@@ -885,7 +886,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.4763282443,
@@ -919,7 +920,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   3,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.4763282443,
@@ -953,7 +954,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Tag",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -963,7 +964,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.4763282443,
@@ -997,7 +998,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.4763282443,
@@ -1031,7 +1032,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   3,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.4763282443,
@@ -1065,7 +1066,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.934376352,
@@ -1098,7 +1099,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0.0157481992,
@@ -1120,7 +1121,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Chorus",
 				Number:   1,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.6976744186,
@@ -1138,7 +1139,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0.3488372093,
@@ -1160,7 +1161,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Chorus",
 				Number:   2,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.6976744186,
@@ -1178,7 +1179,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Bridge",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.6976744186,
@@ -1200,7 +1201,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0.0157481992,
@@ -1222,7 +1223,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0.3488372093,
@@ -1244,7 +1245,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Chorus",
 				Number:   1,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.6976744186,
@@ -1262,7 +1263,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Chorus",
 				Number:   2,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.6976744186,
@@ -1280,7 +1281,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Bridge",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.6976744186,
@@ -1306,7 +1307,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -1338,7 +1339,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.125749752,
@@ -1368,7 +1369,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -1386,7 +1387,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Bridge",
 				Number:   1,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.8108108108,
@@ -1404,7 +1405,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Bridge",
 				Number:   2,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.8108108108,
@@ -1418,7 +1419,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Tag",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -1428,7 +1429,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -1458,7 +1459,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -1488,7 +1489,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,
@@ -1506,7 +1507,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Bridge",
 				Number:   1,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.8108108108,
@@ -1524,7 +1525,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Bridge",
 				Number:   2,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: -0.8108108108,
@@ -1538,7 +1539,7 @@ func TestCalculateOffsets(t *testing.T) {
 				Name:     "Tag",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{
 						Offset: 0,

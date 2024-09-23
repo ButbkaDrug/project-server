@@ -63,6 +63,7 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	if logger == nil {
 		logger = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{}))
+		logger.Info("logger is nil: output to stdout")
 
 	}
 
@@ -131,6 +132,71 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 
 }
 
+func NewSingleProjectWithConfig(cfg *ProjectConfig) *Project {
+	//FIXME: In the mean time I just copied NewProjectWithConfig function but might be worth refactoring repeating stuff into a NewProject function and go from there.
+	//TODO: refactor this function into smaller chunks where possible
+
+	var lines lyrics.Lines
+	var sections []Section
+
+	if cfg == nil {
+		cfg = &ProjectConfig{}
+	}
+
+	logger := cfg.Logger
+
+	if logger == nil {
+		logger = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{}))
+		logger.Info("logger is nil: output to stdout")
+
+	}
+
+	g := generator.NewGenerator()
+	cfg.IDGen = g
+
+	logger.Debug("NewProjectWithConfig()", "path", cfg.Path)
+
+	proj := parser.Project{}
+	track := parser.Track{}
+
+	subprojects := []*Project{}
+
+	subProject := NewSubProjectWithConfig(&ProjectConfig{
+		Path:           cfg.Path,
+		IDGen:          g,
+		TrackID:        0,
+		ItemID:         1,
+		Logger:         logger,
+		PositionOffset: 0,
+	})
+
+	subprojects = append(subprojects, subProject)
+
+	for _, sub := range subprojects {
+		lines = append(lines, sub.Lines...)
+		sections = append(sections, sub.Sections...)
+
+	}
+
+	p := &Project{
+		Path:     cfg.Path,
+		TrackID:  cfg.TrackID,
+		Project:  proj,
+		Track:    track,
+		Lines:    lines,
+		Sections: sections,
+		logger:   logger,
+	}
+
+	stats, _ := p.getStats()
+
+	p.Stats = stats
+	p.Update(proj.Cursor)
+
+	return p
+
+}
+
 func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 	//TODO: refactor this mess
 
@@ -145,9 +211,9 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	if logger == nil {
 		logger = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{}))
+		logger.Info("logger is nil: output to stdout")
 	}
 
-	logger.Debug("NewSubProject parsing:", "path", cfg.Path, "startOffset", cfg.PositionOffset)
 	proj, err := reaper.Parse(cfg.Path)
 
 	if err != nil {
@@ -156,29 +222,35 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 			logger: logger,
 		}
 	}
+	//FIX: we shell check if there is a markers.rpp and parse it for offsets. If there are notes and chords they should have highest priority, then dedicated file with notes/chords. And then general file with all lyrics. Also maybe to put region specific notes and chords in the same place
+
+	//TODO: Get rid of chords and keep everyhting in notes.
+	//TODO: Merge projectNotes & projHelper.
+
+	projHelper := GetHelperProjectInProjectDir(cfg.Path)
 
 	projLyrics := GetLyricsFromProjectDir(cfg.Path)
 	projectNotes := GetNotesFromProjectDir(cfg.Path)
 	projectChords := GetChordsFromProjectDir(cfg.Path)
 
-	logger.Debug("going through markers", "totoal", len(proj.Markers))
 	for i, m := range proj.Markers {
 		//skip marker if it's not a region
 		if !m.IsRegion {
 			continue
 		}
 
-		//NOTE: I already messed up position calculation couple of times. And at this moment it is imposibble to test it. Therefour we need a testable function for this reason
+		//NOTE: I already messed up position calculation couple of times. And at this moment it is imposibble to test it. Therefour we need a testable function for this reason. I should use presicion math function for comparasment.
+
 		sec := Section{
 			ID:       m.ID,
 			Position: m.Position + cfg.PositionOffset,
 			Lenght:   proj.Markers[i+1].Position - m.Position,
 			Name:     parseSectionName(m.Name),
 		}
-		sec.ItemID = cfg.ItemID
-		sec.Comments = projectNotes.GetNotesWithID(m.ID)
 
-		logger.Debug("region", "ID", sec.ID, "Position", sec.Position, "name", sec.Name)
+		sec.ItemID = cfg.ItemID
+		sec.Comments = projectNotes.GetNotesWithNumber(m.ID)
+		sec.Comments = append(sec.Comments, projHelper.GetNotesWithID(m.ID)...)
 
 		chords := projectChords.GetChordsWithID(m.ID)
 
@@ -187,12 +259,10 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 				continue
 			}
 
-			logger.Debug("found matching section", "name", m.Name)
-
 			section.ID = m.ID
 			sec.Comments = append(sec.Comments, section.Comments...)
 
-			offsets := projLyrics.GetOffsets(section)
+			offsets := projHelper.GetOffsets(section)
 
 			if offsets.Empty() {
 				offsets = CalculateOffsets(section.Text, proj.Markers, i)

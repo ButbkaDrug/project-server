@@ -5,6 +5,6 @@ build:
 
 
 run:
-	npm run build
+#	npm run build
 	go build -o ./tmp/main ./cmd/.
 

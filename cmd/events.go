@@ -31,8 +31,10 @@ func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
 	go func(w http.ResponseWriter, flusher http.Flusher) {
 		select {
 		case <-time.After(200 * time.Millisecond):
-			fmt.Fprint(w, "event: ping\ndata:{}\n\n")
-			flusher.Flush()
+			if flusher != nil {
+				fmt.Fprint(w, "event: ping\ndata:{}\n\n")
+				flusher.Flush()
+			}
 		}
 
 	}(w, flusher)

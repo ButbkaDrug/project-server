@@ -69,7 +69,7 @@ func NewApp(cfg *config) *app {
 		})
 
 	} else {
-		r = reaper.NewSubProjectWithConfig(&reaper.ProjectConfig{
+		r = reaper.NewSingleProjectWithConfig(&reaper.ProjectConfig{
 			Path:    cfg.projectPath,
 			TrackID: 0,
 			Logger:  cfg.logger,

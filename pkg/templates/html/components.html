@@ -9,6 +9,14 @@
 <script src="/static/js/index.js"></script>
 {{ end }}
 
+{{ define "primer-comments" }}
+<ul class="list-disc">
+{{range .}}
+<li class="font-bold">{{.}}</li>
+{{end}}
+</ul>
+{{ end }}
+
 
 {{ define "line" }}
 <p id="line-{{.ID}}">{{.Text}}</p>
@@ -22,6 +30,10 @@
     {{ if .Lang }}<span class="badge badge-secondary">{{.Lang}}</span>{{end}}
 </div>
 {{ end }}
+
+{{define "capo"}}
+<bold>Capo on {{.}}</bold>
+{{end}}
 
 {{ define "comments" }}
 {{range .}}

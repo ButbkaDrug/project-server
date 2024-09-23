@@ -10,12 +10,19 @@ import (
 	"log"
 	"log/slog"
 	"os"
+	"path"
 	"path/filepath"
+	"slices"
 
 	"github.com/joho/godotenv"
 )
 
 func main() {
+
+	level := slog.LevelError
+	if slices.Contains(os.Args, "DEBUG") {
+		level = slog.LevelDebug
+	}
 
 	cfg, err := parseFlags()
 
@@ -27,7 +34,7 @@ func main() {
 	defer logfile.Close()
 
 	logger := slog.New(slog.NewTextHandler(logfile, &slog.HandlerOptions{
-		Level: slog.LevelDebug,
+		Level: level,
 	}))
 
 	cfg.logger = logger
@@ -92,38 +99,32 @@ func parseFlags() (config, error) {
 		&oscPort,
 		"op",
 		7400,
-		"port of OSC host",
+		"port of OSC host that we will listen on",
 	)
 
 	flag.IntVar(
 		&cfg.port,
 		"sp",
 		1234,
-		"port for http server to use",
-	)
-
-	flag.StringVar(
-		&cfg.projectPath,
-		"path",
-		cfg.projectPath,
-		"path to a rpp project to be parsed",
+		"port for http server to use for serving pages",
 	)
 
 	flag.BoolVar(
 		&cfg.single,
 		"single",
 		false,
-		"should be true if the project not a host containing subprojects as songs, but a song project on it's own",
-	)
-
-	flag.StringVar(
-		&cfg.setlistPath,
-		"setlist",
-		cfg.setlistPath,
-		"path to a rpp project to be parsed",
+		"should be set if the project is a '.rpp' regular project(without subprojects)",
 	)
 
 	flag.Parse()
+
+	for _, arg := range os.Args {
+		//NOTE: If any argument has .rpp extension we will assume that it is a desired project path.
+		if ext := path.Ext(arg); ext == ".rpp" || ext == ".RPP" {
+			log.Printf("Project provided by arguments: %v", arg)
+			cfg.projectPath = arg
+		}
+	}
 
 	return cfg, nil
 }

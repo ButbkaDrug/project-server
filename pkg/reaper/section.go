@@ -2,6 +2,7 @@ package reaper
 
 import (
 	"fmt"
+	"lp/pkg/comments"
 	"lp/pkg/lyrics"
 )
 
@@ -11,7 +12,7 @@ type Section struct {
 	Lenght   float64
 	Name     Name
 	Lines    lyrics.Lines
-	Comments []string
+	Comments []comments.Comment
 	//data needed to renderer
 	ParentName string
 	ItemID     int

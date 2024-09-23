@@ -1,6 +1,7 @@
 package reaper
 
 import (
+	"lp/pkg/comments"
 	"lp/pkg/lyrics"
 	"testing"
 )
@@ -13,7 +14,7 @@ func TestAlternativeSection(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Higher than the mountains that I face"},
 					{Offset: 0, Length: 0, Text: "Stronger than the power of the grave"},
@@ -25,7 +26,7 @@ func TestAlternativeSection(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Your love never fails"},
 					{Offset: 0, Length: 0, Text: "It never gives up"},
@@ -42,7 +43,7 @@ func TestAlternativeSection(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "On and on and on and on it goes"},
 					{Offset: 0, Length: 0, Text: "It overwhelms and satisfies my soul"},
@@ -55,7 +56,7 @@ func TestAlternativeSection(t *testing.T) {
 				Name:     "Bridge",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "In death In life"},
 					{Offset: 0, Length: 0, Text: "I'm confident and covered by"},
@@ -69,7 +70,7 @@ func TestAlternativeSection(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Выше всяких гор, что на пути."},
 					{Offset: 0, Length: 0, Text: "Сильнее силы смерти, власти тьмы."},
@@ -82,7 +83,7 @@ func TestAlternativeSection(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Любовь Твоя"},
 					{Offset: 0, Length: 0, Text: "Не подведёт"},
@@ -99,7 +100,7 @@ func TestAlternativeSection(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Вновь, и вновь, и вновь, и вновь она"},
 					{Offset: 0, Length: 0, Text: "Прольётся с неба, напоит меня"},
@@ -112,7 +113,7 @@ func TestAlternativeSection(t *testing.T) {
 				Name:     "Bridge",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "И я всегда"},
 					{Offset: 0, Length: 0, Text: "Уверен и наполнен силой"},
@@ -152,7 +153,7 @@ func TestRelativeSection(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Higher than the mountains that I face"},
 					{Offset: 0, Length: 0, Text: "Stronger than the power of the grave"},
@@ -164,7 +165,7 @@ func TestRelativeSection(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Your love never fails"},
 					{Offset: 0, Length: 0, Text: "It never gives up"},
@@ -181,7 +182,7 @@ func TestRelativeSection(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "On and on and on and on it goes"},
 					{Offset: 0, Length: 0, Text: "It overwhelms and satisfies my soul"},
@@ -194,7 +195,7 @@ func TestRelativeSection(t *testing.T) {
 				Name:     "Bridge",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "In death In life"},
 					{Offset: 0, Length: 0, Text: "I'm confident and covered by"},
@@ -208,7 +209,7 @@ func TestRelativeSection(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Выше всяких гор, что на пути."},
 					{Offset: 0, Length: 0, Text: "Сильнее силы смерти, власти тьмы."},
@@ -221,7 +222,7 @@ func TestRelativeSection(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Любовь Твоя"},
 					{Offset: 0, Length: 0, Text: "Не подведёт"},
@@ -238,7 +239,7 @@ func TestRelativeSection(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Вновь, и вновь, и вновь, и вновь она"},
 					{Offset: 0, Length: 0, Text: "Прольётся с неба, напоит меня"},
@@ -251,7 +252,7 @@ func TestRelativeSection(t *testing.T) {
 				Name:     "Bridge",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "И я всегда"},
 					{Offset: 0, Length: 0, Text: "Уверен и наполнен силой"},
@@ -291,7 +292,7 @@ func TestRelativeAlternativeSection(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Higher than the mountains that I face"},
 					{Offset: 0, Length: 0, Text: "Stronger than the power of the grave"},
@@ -303,7 +304,7 @@ func TestRelativeAlternativeSection(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Your love never fails"},
 					{Offset: 0, Length: 0, Text: "It never gives up"},
@@ -320,7 +321,7 @@ func TestRelativeAlternativeSection(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "On and on and on and on it goes"},
 					{Offset: 0, Length: 0, Text: "It overwhelms and satisfies my soul"},
@@ -333,7 +334,7 @@ func TestRelativeAlternativeSection(t *testing.T) {
 				Name:     "Bridge",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "In death In life"},
 					{Offset: 0, Length: 0, Text: "I'm confident and covered by"},
@@ -347,7 +348,7 @@ func TestRelativeAlternativeSection(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Выше всяких гор, что на пути."},
 					{Offset: 0, Length: 0, Text: "Сильнее силы смерти, власти тьмы."},
@@ -360,7 +361,7 @@ func TestRelativeAlternativeSection(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Любовь Твоя"},
 					{Offset: 0, Length: 0, Text: "Не подведёт"},
@@ -377,7 +378,7 @@ func TestRelativeAlternativeSection(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Вновь, и вновь, и вновь, и вновь она"},
 					{Offset: 0, Length: 0, Text: "Прольётся с неба, напоит меня"},
@@ -390,7 +391,7 @@ func TestRelativeAlternativeSection(t *testing.T) {
 				Name:     "Bridge",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "И я всегда"},
 					{Offset: 0, Length: 0, Text: "Уверен и наполнен силой"},
@@ -430,7 +431,7 @@ func TestAllRelativeSections(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Higher than the mountains that I face"},
 					{Offset: 0, Length: 0, Text: "Stronger than the power of the grave"},
@@ -442,7 +443,7 @@ func TestAllRelativeSections(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Your love never fails"},
 					{Offset: 0, Length: 0, Text: "It never gives up"},
@@ -459,7 +460,7 @@ func TestAllRelativeSections(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "On and on and on and on it goes"},
 					{Offset: 0, Length: 0, Text: "It overwhelms and satisfies my soul"},
@@ -472,7 +473,7 @@ func TestAllRelativeSections(t *testing.T) {
 				Name:     "Bridge",
 				Number:   0,
 				Lang:     "",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "In death In life"},
 					{Offset: 0, Length: 0, Text: "I'm confident and covered by"},
@@ -486,7 +487,7 @@ func TestAllRelativeSections(t *testing.T) {
 				Name:     "Verse",
 				Number:   1,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Выше всяких гор, что на пути."},
 					{Offset: 0, Length: 0, Text: "Сильнее силы смерти, власти тьмы."},
@@ -499,7 +500,7 @@ func TestAllRelativeSections(t *testing.T) {
 				Name:     "Chorus",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Любовь Твоя"},
 					{Offset: 0, Length: 0, Text: "Не подведёт"},
@@ -516,7 +517,7 @@ func TestAllRelativeSections(t *testing.T) {
 				Name:     "Verse",
 				Number:   2,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "Вновь, и вновь, и вновь, и вновь она"},
 					{Offset: 0, Length: 0, Text: "Прольётся с неба, напоит меня"},
@@ -529,7 +530,7 @@ func TestAllRelativeSections(t *testing.T) {
 				Name:     "Bridge",
 				Number:   0,
 				Lang:     "R",
-				Comments: []string(nil),
+				Comments: []comments.Comment{},
 				Text: []lyrics.TextLine{
 					{Offset: 0, Length: 0, Text: "И я всегда"},
 					{Offset: 0, Length: 0, Text: "Уверен и наполнен силой"},

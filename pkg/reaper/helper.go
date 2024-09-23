@@ -1,6 +1,7 @@
 package reaper
 
 import (
+	"fmt"
 	"log/slog"
 	lp "lp"
 	"lp/pkg/chords"
@@ -9,6 +10,7 @@ import (
 	"rpp-parser/pkg/parser"
 
 	"github.com/butbkadrug/reaper-lyrics/pkg/generator"
+	"github.com/butbkadrug/reaper-lyrics/pkg/helper"
 )
 
 // ranges through slice of lines with lyrics and adds chord lines of a same index. then returns new slice of lines
@@ -49,6 +51,25 @@ func GetLyricsForItem(i parser.Item) lyrics.Lyrics {
 
 func GetNotesForItem(i parser.Item) lyrics.Lyrics {
 	return GetNotesFromProjectDir(i.SourceSection.Source.File)
+}
+
+// expects path to a project file. With use path.Dir() from standart library to locat a directory and will search for a project files with the names markers.rpp, lyrics-markers.rpp. Or in the end will pare project itself to see if there is any helpful data in it
+func GetHelperProjectInProjectDir(p string) lyrics.Lyrics {
+
+	sources := []string{"markers.rpp", "markers.RPP", "lyrics-markers.rpp", "lyrics-markers.RPP", path.Base(p)}
+
+	for _, source := range sources {
+		h := helper.NewHelper(path.Join(path.Dir(p), source))
+
+		helper := h.Parse()
+
+		if !helper.Empty() {
+			fmt.Println("found helper project: ", path.Dir(p), source)
+			return helper
+		}
+	}
+
+	return lyrics.Lyrics{}
 }
 
 func GetLyricsFromProjectDir(p string) lyrics.Lyrics {
