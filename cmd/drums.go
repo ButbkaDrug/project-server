@@ -14,9 +14,9 @@ func (app *app) drumsHandler(w http.ResponseWriter, r *http.Request) {
 	templateFile := "autoscroll.html"
 	params := r.URL.Query()
 
-	withChords := false
-	withLyrics := false
-	commentsType := "drums"
+	var withChords bool
+	var withLyrics bool
+	var commentsType string = "drums"
 
 	if c, err := strconv.ParseBool(params.Get("chords")); err == nil {
 		withChords = c
@@ -26,7 +26,9 @@ func (app *app) drumsHandler(w http.ResponseWriter, r *http.Request) {
 		withLyrics = l
 	}
 
-	commentsType = params.Get("comments")
+	if ct := params.Get("comments"); ct != "" {
+		commentsType = ct
+	}
 
 	keys := app.ParseKeysArgument(params.Get("keys"))
 	capo := app.ParseCapoArgument(params.Get("capo"))

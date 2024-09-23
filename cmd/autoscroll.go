@@ -152,6 +152,8 @@ func GetCommentsOfType(c []comments.Comment, t string) []comments.Comment {
 
 	t = strings.ToLower(t)
 
+	fmt.Println("GetCommentsOfType", c, t)
+
 	if t == "all" {
 		return c
 	}
@@ -209,6 +211,8 @@ func RenderContent(cfg *RenderContentConfig) string {
 		if cfg.CommentsBig {
 			commentsStyle = "primer-comments"
 		}
+
+		fmt.Println(cfg.CommentsType)
 
 		render.RenderComponent(content, GetCommentsOfType(s.Comments, cfg.CommentsType), commentsStyle)
 

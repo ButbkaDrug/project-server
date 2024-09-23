@@ -6,6 +6,7 @@ import (
 	"log/slog"
 	"net"
 	"net/http"
+	"os"
 	"strings"
 	"time"
 
@@ -20,6 +21,7 @@ import (
 type app struct {
 	IP                string
 	Port              string
+	config            *config
 	server            *http.Server
 	renderer          *templates.Templates
 	oscClient         *osc.OSC
@@ -56,25 +58,25 @@ type config struct {
 	logger *slog.Logger
 }
 
-func NewApp(cfg *config) *app {
-
-	r := &reaper.Project{}
+func NewReaperProject(cfg *config) *reaper.Project {
 
 	if !cfg.single {
-		cfg.logger.Info("not a subproject", "config", cfg)
-		r = reaper.NewProjectWithConfig(&reaper.ProjectConfig{
-			Path:    cfg.projectPath,
-			TrackID: 0,
-			Logger:  cfg.logger,
-		})
-
-	} else {
-		r = reaper.NewSingleProjectWithConfig(&reaper.ProjectConfig{
+		return reaper.NewProjectWithConfig(&reaper.ProjectConfig{
 			Path:    cfg.projectPath,
 			TrackID: 0,
 			Logger:  cfg.logger,
 		})
 	}
+
+	return reaper.NewSingleProjectWithConfig(&reaper.ProjectConfig{
+		Path:    cfg.projectPath,
+		TrackID: 0,
+		Logger:  cfg.logger,
+	})
+
+}
+
+func NewApp(cfg *config) *app {
 
 	clients := sse.NewSSE()
 
@@ -92,12 +94,13 @@ func NewApp(cfg *config) *app {
 	lib := projects.NewLibrary(cfg.defaultProjectDir)
 
 	app := &app{
+		config: cfg,
 		server: &http.Server{
 			Addr: fmt.Sprintf(":%d", cfg.port),
 		},
 		renderer:          renderer,
 		oscClient:         osc,
-		reaper:            r,
+		reaper:            NewReaperProject(cfg),
 		defaultProjectDir: cfg.defaultProjectDir,
 		SSEClients:        clients,
 		startTime:         time.Now(),
@@ -105,9 +108,55 @@ func NewApp(cfg *config) *app {
 		logger:            cfg.logger,
 	}
 
-	cfg.logger.Debug("about to return new app")
-
 	return app
+}
+
+func (app *app) Restart() {
+	app.reaper = NewReaperProject(app.config)
+}
+
+func (app *app) getStats(path string) (os.FileInfo, error) {
+	info, err := os.Stat(path)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return info, nil
+}
+
+func (app *app) Watch(clients *sse.SSE) error {
+
+	for {
+
+		for _, file := range app.reaper.Watchlist {
+			info, err := app.getStats(file)
+
+			if err != nil {
+				app.logger.Error("Project.Watch(): failed to get stats of a project file", "error", err)
+				return err
+			}
+
+			if info.ModTime() != app.reaper.Stats[file] {
+
+				if app.reaper.Stats[file].IsZero() {
+					app.reaper.Stats[file] = info.ModTime()
+
+					continue
+
+				}
+				fmt.Println(app.reaper.Stats, "has been changed")
+				app.Restart()
+
+				go clients.Broadcast(true)
+
+				app.reaper.Stats[file] = info.ModTime()
+			}
+
+		}
+		time.Sleep(time.Second)
+
+	}
 }
 
 func (app *app) getIP() string {
@@ -127,7 +176,7 @@ func (app *app) serve() error {
 	app.logger.Debug("app.go -> serve()")
 	app.server.Handler = app.routes()
 
-	go app.reaper.Watch(app.SSEClients)
+	go app.Watch(app.SSEClients)
 
 	go app.library.ParseLibrary()
 

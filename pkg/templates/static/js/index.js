@@ -102,6 +102,7 @@ eventSource.addEventListener("map", (event) => {
 
 eventSource.addEventListener("update", (event) => {
     console.log(event.data)
+    window.location.reload()
     const toast = document.getElementById("toast")
 
 

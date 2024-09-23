@@ -1,1 +1,1 @@
-time=2024-09-23T19:58:57.595+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"
+time=2024-09-23T23:19:18.387+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"

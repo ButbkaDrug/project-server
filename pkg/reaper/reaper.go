@@ -1,13 +1,11 @@
 package reaper
 
 import (
-	"fmt"
 	"log/slog"
 	"lp/pkg/lyrics"
 	"os"
 	reaper "rpp-parser"
 	"rpp-parser/pkg/parser"
-	"sse"
 	"time"
 
 	"github.com/butbkadrug/reaper-lyrics/pkg/generator"
@@ -131,12 +129,6 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 		Watchlist: watchlist,
 	}
 
-	for _, file := range watchlist {
-		stats, _ := p.getStats(file)
-		p.Stats[file] = stats.ModTime()
-
-	}
-
 	p.Update(proj.Cursor)
 
 	return p
@@ -206,11 +198,6 @@ func NewSingleProjectWithConfig(cfg *ProjectConfig) *Project {
 		Stats:     make(map[string]time.Time),
 	}
 
-	for _, file := range watchlist {
-		stats, _ := p.getStats(file)
-		p.Stats[file] = stats.ModTime()
-
-	}
 	p.Update(proj.Cursor)
 
 	return p
@@ -372,12 +359,6 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 	}
 
 	return p
-}
-
-func (p *Project) Restart() {
-	//not implemented yet.
-
-	fmt.Println("NOW I SHOULD IMPLEMENT RESTART FUNCTIONALITY")
 }
 
 func (p *Project) GetMapForCurrentItem() []Section {
@@ -552,43 +533,4 @@ func (p *Project) UpdatePeekMarker() {
 	}
 
 	p.PeekMarker = parser.Marker{}
-}
-
-func (p *Project) getStats(path string) (os.FileInfo, error) {
-	info, err := os.Stat(path)
-
-	if err != nil {
-		return nil, err
-	}
-
-	return info, nil
-}
-
-// watching project file for changes
-// should be ran in separate go roteen as it contains infinite for loop
-func (p *Project) Watch(clients *sse.SSE) error {
-
-	for {
-
-		for _, file := range p.Watchlist {
-			info, err := p.getStats(file)
-
-			if err != nil {
-				p.logger.Error("Project.Watch(): failed to get stats of a project file", "error", err)
-				return err
-			}
-
-			if info.ModTime() != p.Stats[file] {
-
-				p.Restart()
-
-				go clients.Broadcast(true)
-
-				p.Stats[file] = info.ModTime()
-			}
-
-		}
-		time.Sleep(time.Second)
-
-	}
 }
