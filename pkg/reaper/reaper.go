@@ -230,10 +230,7 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 			logger: logger,
 		}
 	}
-	//FIX: we shell check if there is a markers.rpp and parse it for offsets. If there are notes and chords they should have highest priority, then dedicated file with notes/chords. And then general file with all lyrics. Also maybe to put region specific notes and chords in the same place
-
-	//TODO: Get rid of chords and keep everyhting in notes.
-	//TODO: Merge projectNotes & projHelper.
+	//TODO: saving notes?
 
 	projHelper := GetHelperProjectInProjectDir(cfg.Path)
 

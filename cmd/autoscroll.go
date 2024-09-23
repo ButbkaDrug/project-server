@@ -212,8 +212,6 @@ func RenderContent(cfg *RenderContentConfig) string {
 			commentsStyle = "primer-comments"
 		}
 
-		fmt.Println(cfg.CommentsType)
-
 		render.RenderComponent(content, GetCommentsOfType(s.Comments, cfg.CommentsType), commentsStyle)
 
 		if cfg.WithChords && cfg.WithLyrics {
