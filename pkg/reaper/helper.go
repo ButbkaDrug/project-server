@@ -59,11 +59,13 @@ func GetHelperProjectInProjectDir(p string) lyrics.Lyrics {
 	sources := []string{"markers.rpp", "markers.RPP", "lyrics-markers.rpp", "lyrics-markers.RPP", path.Base(p)}
 
 	for _, source := range sources {
-		h := helper.NewHelper(path.Join(path.Dir(p), source))
+		file := path.Join(path.Dir(p), source)
+		h := helper.NewHelper(file)
 
 		helper := h.Parse()
 
 		if !helper.Empty() {
+			helper.Path = file
 			fmt.Println("found helper project: ", path.Dir(p), source)
 			return helper
 		}
@@ -111,13 +113,16 @@ func getLyrics(dirPath string) (lyrics.Lyrics, error) {
 	files := []string{"song.txt", "lyrics.txt", "lyrics-backup"}
 
 	for _, file := range files {
-		l, e := lp.Parse(path.Join(dirPath, file))
+		p := path.Join(dirPath, file)
+		l, e := lp.Parse(p)
 
 		if e != nil {
 			err = e
 
 			continue
 		}
+
+		l.Path = p
 
 		return l, nil
 
@@ -131,13 +136,16 @@ func getNotes(dirPath string) (lyrics.Lyrics, error) {
 	files := []string{"notes.txt", "notes"}
 
 	for _, file := range files {
-		l, e := lp.Parse(path.Join(dirPath, file))
+		p := path.Join(dirPath, file)
+		l, e := lp.Parse(p)
 
 		if e != nil {
 			err = e
 
 			continue
 		}
+
+		l.Path = p
 
 		return l, nil
 	}
@@ -150,13 +158,16 @@ func getChordsFromDir(dirPath string) (lyrics.Lyrics, error) {
 	files := []string{"chords.txt", "chords"}
 
 	for _, file := range files {
-		l, e := lp.Parse(path.Join(dirPath, file))
+		p := path.Join(dirPath, file)
+		l, e := lp.Parse(p)
 
 		if e != nil {
 			err = e
 
 			continue
 		}
+
+		l.Path = p
 
 		return l, nil
 

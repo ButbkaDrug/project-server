@@ -1,7 +1,7 @@
 package reaper
 
 import (
-	"log"
+	"fmt"
 	"log/slog"
 	"lp/pkg/lyrics"
 	"os"
@@ -29,7 +29,7 @@ type ProjectConfig struct {
 
 type Project struct {
 	parser.Project
-	Stats      os.FileInfo
+	Stats      map[string]time.Time
 	Path       string
 	logger     *slog.Logger
 	Cursor     float64
@@ -43,6 +43,7 @@ type Project struct {
 	Line       lyrics.LyricLine
 	Lines      lyrics.Lines
 	Sections   []Section
+	Watchlist  []string
 }
 
 func NewProject() *Project {
@@ -72,6 +73,8 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	logger.Debug("NewProjectWithConfig()", "path", cfg.Path)
 
+	watchlist := []string{}
+	watchlist = append(watchlist, cfg.Path)
 	proj, err := reaper.Parse(cfg.Path)
 
 	if err != nil {
@@ -96,6 +99,8 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 
 		if source := item.SourceSection.Source; source.Format == "RPP_PROJECT" {
 
+			watchlist = append(watchlist, source.File)
+
 			cfg.Path = source.File
 			cfg.PositionOffset = item.Position
 			cfg.ItemID = i
@@ -103,6 +108,7 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 			subProject := NewSubProjectWithConfig(cfg)
 
 			subprojects = append(subprojects, subProject)
+			watchlist = append(watchlist, subProject.Watchlist...)
 
 		}
 	}
@@ -114,18 +120,23 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 	}
 
 	p := &Project{
-		Path:     cfg.Path,
-		TrackID:  cfg.TrackID,
-		Project:  proj,
-		Track:    track,
-		Lines:    lines,
-		Sections: sections,
-		logger:   logger,
+		Path:      cfg.Path,
+		TrackID:   cfg.TrackID,
+		Project:   proj,
+		Track:     track,
+		Lines:     lines,
+		Sections:  sections,
+		logger:    logger,
+		Stats:     make(map[string]time.Time),
+		Watchlist: watchlist,
 	}
 
-	stats, _ := p.getStats()
+	for _, file := range watchlist {
+		stats, _ := p.getStats(file)
+		p.Stats[file] = stats.ModTime()
 
-	p.Stats = stats
+	}
+
 	p.Update(proj.Cursor)
 
 	return p
@@ -138,6 +149,7 @@ func NewSingleProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	var lines lyrics.Lines
 	var sections []Section
+	var watchlist []string
 
 	if cfg == nil {
 		cfg = &ProjectConfig{}
@@ -161,6 +173,8 @@ func NewSingleProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	subprojects := []*Project{}
 
+	watchlist = append(watchlist, cfg.Path)
+
 	subProject := NewSubProjectWithConfig(&ProjectConfig{
 		Path:           cfg.Path,
 		IDGen:          g,
@@ -169,6 +183,8 @@ func NewSingleProjectWithConfig(cfg *ProjectConfig) *Project {
 		Logger:         logger,
 		PositionOffset: 0,
 	})
+
+	watchlist = append(watchlist, subProject.Watchlist...)
 
 	subprojects = append(subprojects, subProject)
 
@@ -179,18 +195,22 @@ func NewSingleProjectWithConfig(cfg *ProjectConfig) *Project {
 	}
 
 	p := &Project{
-		Path:     cfg.Path,
-		TrackID:  cfg.TrackID,
-		Project:  proj,
-		Track:    track,
-		Lines:    lines,
-		Sections: sections,
-		logger:   logger,
+		Path:      cfg.Path,
+		TrackID:   cfg.TrackID,
+		Project:   proj,
+		Track:     track,
+		Lines:     lines,
+		Sections:  sections,
+		logger:    logger,
+		Watchlist: watchlist,
+		Stats:     make(map[string]time.Time),
 	}
 
-	stats, _ := p.getStats()
+	for _, file := range watchlist {
+		stats, _ := p.getStats(file)
+		p.Stats[file] = stats.ModTime()
 
-	p.Stats = stats
+	}
 	p.Update(proj.Cursor)
 
 	return p
@@ -214,6 +234,7 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 		logger.Info("logger is nil: output to stdout")
 	}
 
+	watchlist := []string{}
 	proj, err := reaper.Parse(cfg.Path)
 
 	if err != nil {
@@ -229,9 +250,24 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	projHelper := GetHelperProjectInProjectDir(cfg.Path)
 
+	if projHelper.Path != "" {
+		watchlist = append(watchlist, projHelper.Path)
+	}
+
 	projLyrics := GetLyricsFromProjectDir(cfg.Path)
+	if projLyrics.Path != "" {
+		watchlist = append(watchlist, projLyrics.Path)
+	}
+
 	projectNotes := GetNotesFromProjectDir(cfg.Path)
+	if projectNotes.Path != "" {
+		watchlist = append(watchlist, projectNotes.Path)
+	}
+
 	projectChords := GetChordsFromProjectDir(cfg.Path)
+	if projectChords.Path != "" {
+		watchlist = append(watchlist, projectChords.Path)
+	}
 
 	for i, m := range proj.Markers {
 		//skip marker if it's not a region
@@ -325,22 +361,23 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 	}
 
 	p := &Project{
-		Path:     cfg.Path,
-		TrackID:  cfg.TrackID,
-		Project:  proj,
-		Track:    parser.Track{},
-		Lines:    lines,
-		Sections: sections,
-		logger:   logger,
+		Path:      cfg.Path,
+		TrackID:   cfg.TrackID,
+		Project:   proj,
+		Track:     parser.Track{},
+		Lines:     lines,
+		Sections:  sections,
+		logger:    logger,
+		Watchlist: watchlist,
 	}
 
-	stats, _ := p.getStats()
-
-	p.Stats = stats
-
-	logger.Debug("done with this subproject", "lines", lines)
-
 	return p
+}
+
+func (p *Project) Restart() {
+	//not implemented yet.
+
+	fmt.Println("NOW I SHOULD IMPLEMENT RESTART FUNCTIONALITY")
 }
 
 func (p *Project) GetMapForCurrentItem() []Section {
@@ -517,8 +554,8 @@ func (p *Project) UpdatePeekMarker() {
 	p.PeekMarker = parser.Marker{}
 }
 
-func (p *Project) getStats() (os.FileInfo, error) {
-	info, err := os.Stat(p.Path)
+func (p *Project) getStats(path string) (os.FileInfo, error) {
+	info, err := os.Stat(path)
 
 	if err != nil {
 		return nil, err
@@ -533,26 +570,24 @@ func (p *Project) Watch(clients *sse.SSE) error {
 
 	for {
 
-		info, err := p.getStats()
-
-		if err != nil {
-			p.logger.Error("Project.Watch(): failed to get stats of a project file", "error", err)
-			return err
-		}
-
-		if info.ModTime() != p.Stats.ModTime() && info.Size() != p.Stats.Size() {
-
-			go clients.Broadcast(true)
-
-			proj, err := reaper.Parse(p.Path)
+		for _, file := range p.Watchlist {
+			info, err := p.getStats(file)
 
 			if err != nil {
-				log.Println("parsing error: ", err)
+				p.logger.Error("Project.Watch(): failed to get stats of a project file", "error", err)
+				return err
 			}
-			p.Project = proj
-			p.Stats = info
-		}
 
+			if info.ModTime() != p.Stats[file] {
+
+				p.Restart()
+
+				go clients.Broadcast(true)
+
+				p.Stats[file] = info.ModTime()
+			}
+
+		}
 		time.Sleep(time.Second)
 
 	}

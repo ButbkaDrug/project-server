@@ -1,5 +1,1 @@
-time=2024-09-23T18:14:46.947+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"
-time=2024-09-23T18:14:50.541+04:00 level=ERROR msg="failed to execute template: " error="write tcp 127.0.0.1:1234->127.0.0.1:35790: write: broken pipe"
-time=2024-09-23T18:14:58.458+04:00 level=ERROR msg="failed to execute template: " error="write tcp 127.0.0.1:1234->127.0.0.1:35822: write: broken pipe"
-time=2024-09-23T18:15:20.006+04:00 level=ERROR msg="failed to execute template: " error="write tcp 127.0.0.1:1234->127.0.0.1:43826: write: broken pipe"
-time=2024-09-23T18:16:03.490+04:00 level=ERROR msg="failed to execute template: " error="write tcp 127.0.0.1:1234->127.0.0.1:35786: write: broken pipe"
+time=2024-09-23T19:58:57.595+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"

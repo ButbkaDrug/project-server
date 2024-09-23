@@ -28,7 +28,7 @@ func (app *app) statsHandler(w http.ResponseWriter, r *http.Request) {
 
 		{
 			Title: "Modified",
-			Value: time.Now().Sub(app.reaper.Stats.ModTime()),
+			Value: time.Now().Sub(app.reaper.Stats[app.reaper.Path]),
 			Desc:  "Since last changes were made",
 		},
 
