@@ -58,24 +58,6 @@ type config struct {
 	logger *slog.Logger
 }
 
-func NewReaperProject(cfg *config) *reaper.Project {
-
-	if !cfg.single {
-		return reaper.NewProjectWithConfig(&reaper.ProjectConfig{
-			Path:    cfg.projectPath,
-			TrackID: 0,
-			Logger:  cfg.logger,
-		})
-	}
-
-	return reaper.NewSingleProjectWithConfig(&reaper.ProjectConfig{
-		Path:    cfg.projectPath,
-		TrackID: 0,
-		Logger:  cfg.logger,
-	})
-
-}
-
 func NewApp(cfg *config) *app {
 
 	clients := sse.NewSSE()
@@ -109,6 +91,20 @@ func NewApp(cfg *config) *app {
 	}
 
 	return app
+}
+
+func NewReaperProject(c *config) *reaper.Project {
+	config, err := reaper.NewDefauiltConfig()
+
+	if err != nil {
+		c.logger.Error("NewReaperProject() failed to create default reaper config", "error", err.Error())
+		panic("NewReaperProject failed to creat defauilt config")
+	}
+	config.Path = c.projectPath
+	config.Single = c.single
+	config.Logger = c.logger
+
+	return reaper.NewProjectWithConfig(config)
 }
 
 func (app *app) Restart() {

@@ -15,7 +15,6 @@
 <li class="font-bold" hx-target="this" hx-swap="outerHTML">
         <div class="flex flex-row items-start gap-2">
     {{ template "primer-comment" $e }}
-    {{ template "delete-comment-button" . }}
         </div>
     </li>
 {{end}}
@@ -41,12 +40,6 @@
             </div>
 {{ end }}
 
-{{ define "delete-comment-button" }}
-<form ht-delete="/comments">
-    <input name="text" type="text" value="{{.ID}}" class="hidden" />
-        <button class="btn btn-xs btn-circli btn-outline">x</button>
-</form>
-{{ end }}
 
 
 {{define "add-comment"}}

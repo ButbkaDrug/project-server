@@ -1,8 +1,3 @@
-//NOTE: I think effective way to show the line is to know the offset since the
-// beginning of the section. Then We don't have to know the exact order. And
-// as long as we know which section we're in and what time. We can calculate
-// which line is played.
-
 package main
 
 import (
@@ -20,7 +15,7 @@ import (
 func main() {
 
 	level := slog.LevelInfo
-	if slices.Contains(os.Args, "DEBUG") {
+	if slices.Contains(os.Args, "DEBUG") || slices.Contains(os.Args, "debug") {
 		level = slog.LevelDebug
 	}
 

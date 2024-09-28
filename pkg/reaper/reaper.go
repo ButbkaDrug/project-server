@@ -14,6 +14,7 @@ import (
 
 type ProjectConfig struct {
 	Path           string
+	Single         bool
 	TrackID        int
 	ItemID         int
 	IDGen          *generator.Generator
@@ -22,23 +23,45 @@ type ProjectConfig struct {
 }
 
 type Project struct {
+	//parser project.rpp instance
 	parser.Project
-	Stats      map[string]time.Time
-	Path       string
-	logger     *slog.Logger
-	Cursor     float64
-	TrackID    int
-	Track      parser.Track
-	Item       parser.Item
-	PeekItem   parser.Item
-	Marker     parser.Marker
+	//path to a project itself
+	Path string
+	//point to a logger
+	logger *slog.Logger
+	//float represent current position of a cursor
+	Cursor float64
+	//Target track's id which will be used to determen
+	//which track we will scan for subprojects
+	TrackID int
+	//Shortcut to the target track for ease of use
+	Track parser.Track
+	//Shortcut to a current item under the cursor
+	Item parser.Item
+	//Shortcut to the upcoming item in the timeline order
+	PeekItem parser.Item
+	//Current marker under the cursor
+	Marker parser.Marker
+	//Upcoming marker in the timeline order
 	PeekMarker parser.Marker
-	Section    Section
-	Line       lyrics.LyricLine
-	Lines      lyrics.Lines
-	Sections   []Section
-	Comments   []*lyrics.Lyrics
-	Watchlist  []string
+	//Current section under the cursor
+	Section Section
+	//Current line uner the cursor
+	Line lyrics.LyricLine
+	//Slice of lines which will be rendered to a user
+	Lines lyrics.Lines
+	//slice of all section, of all subprojects
+	Sections []Section
+	//slice of pointers to a notes structures
+	//used for adding/deleting notes from the web interface
+	Comments []*lyrics.Lyrics
+	//WARN:Watchlist and stats does not belog here
+
+	//Slice of paths which will be tracked for changes
+	//for automatic reload on change
+	Watchlist []string
+	//map of info about files in the watchlist
+	Stats map[string]time.Time
 }
 
 func NewProject() *Project {
@@ -67,176 +90,121 @@ func NewDefauiltConfig() (*ProjectConfig, error) {
 
 	return &ProjectConfig{
 		Path:           path.Join(homeDir, "Music", "REAPER", "BaseProject", "BaseProject.rpp"),
-		TrackID:        1,
-		ItemID:         1,
+		TrackID:        0,
+		ItemID:         0,
 		PositionOffset: 0,
 		IDGen:          generator.New(),
 		Logger:         slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelDebug})),
 	}, nil
 }
 
-// unites common functionality between single project and host projecttypes
-func initNewProject() {
-}
-
-func NewProjectWithConfig(cfg *ProjectConfig) *Project {
-	//TODO: refactor this function into smaller chunks where possible
-
-	var lines lyrics.Lines
-	var sections []Section
-	var comments []*lyrics.Lyrics
-	watchlist := []string{}
+func ParseHostProject(config *ProjectConfig) ([]*Project, error) {
 	subprojects := []*Project{}
 	track := parser.Track{}
-
-	if cfg == nil {
-		defauiltConfig, err := NewDefauiltConfig()
-		if err != nil {
-			panic("NewProjectWithConfig received a nil. NewDefauiltProjectConfig() returned an error")
-		}
-
-		cfg = defauiltConfig
-	}
-
-	logger := cfg.Logger
-
-	if logger == nil {
-		logger = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{}))
-		logger.Info("logger is nil: output to stdout")
-
-	}
-
-	//WARN: why would I do it here????
-	g := generator.New()
-	cfg.IDGen = g
-
-	watchlist = append(watchlist, cfg.Path)
-	//NOTE: In --single case I'm not parsing
-	proj, err := reaper.Parse(cfg.Path)
+	proj, err := reaper.Parse(config.Path)
 
 	if err != nil {
-		logger.Error("PROJECT: failed to parse project file", "error", err, "path", cfg.Path)
-		return &Project{
-			logger: logger,
-		}
+		return []*Project{}, err
 	}
 
-	if cfg.TrackID >= len(proj.Tracks) {
-		logger.Error("PROJECT: failed to select track. TrackID is too high", "TrackID", cfg.TrackID, "Number of tracks", len(proj.Tracks))
+	if config.TrackID >= len(proj.Tracks) {
+		config.Logger.Error("PROJECT: failed to select track. TrackID is too high", "TrackID", config.TrackID, "Number of tracks", len(proj.Tracks))
 	} else {
-		track = proj.Tracks[cfg.TrackID]
+		track = proj.Tracks[config.TrackID]
 	}
 
 	for i, item := range track.Items {
 
 		if source := item.SourceSection.Source; source.Format == "RPP_PROJECT" {
 
-			watchlist = append(watchlist, source.File)
+			config.Path = source.File
+			config.PositionOffset = item.Position
+			config.ItemID = i
 
-			cfg.Path = source.File
-			cfg.PositionOffset = item.Position
-			cfg.ItemID = i
-
-			subProject := NewSubProjectWithConfig(cfg)
+			subProject := NewSubProjectWithConfig(config)
 
 			subprojects = append(subprojects, subProject)
 
 		}
 	}
-
-	for _, sub := range subprojects {
-		lines = append(lines, sub.Lines...)
-		sections = append(sections, sub.Sections...)
-		watchlist = append(watchlist, sub.Watchlist...)
-		comments = append(comments, sub.Comments...)
-	}
-
-	p := &Project{
-		Path:      cfg.Path,
-		TrackID:   cfg.TrackID,
-		Project:   proj,
-		Track:     track,
-		Lines:     lines,
-		Sections:  sections,
-		logger:    logger,
-		Stats:     make(map[string]time.Time),
-		Watchlist: watchlist,
-		Comments:  comments,
-	}
-
-	p.Update(proj.Cursor)
-
-	return p
-
+	return subprojects, nil
 }
 
-func NewSingleProjectWithConfig(cfg *ProjectConfig) *Project {
-	//FIXME: In the mean time I just copied NewProjectWithConfig function but might be worth refactoring repeating stuff into a NewProject function and go from there.
-
-	var lines lyrics.Lines
-	var sections []Section
-	var watchlist []string
-	var comments *lyrics.Lyrics
-	subprojects := []*Project{}
-	proj := parser.Project{}
-	track := parser.Track{}
-
+func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 	if cfg == nil {
-		cfg = &ProjectConfig{}
-	}
+		conf, err := NewDefauiltConfig()
+		if err != nil {
+			panic("no config provided and creation of a default config failed")
+		}
 
-	logger := cfg.Logger
-
-	if logger == nil {
-		logger = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{}))
-		logger.Info("logger is nil: output to stdout")
-
-	}
-
-	g := generator.New()
-	cfg.IDGen = g
-
-	watchlist = append(watchlist, cfg.Path)
-
-	subProject := NewSubProjectWithConfig(&ProjectConfig{
-		Path:           cfg.Path,
-		IDGen:          g,
-		TrackID:        0,
-		ItemID:         1,
-		Logger:         logger,
-		PositionOffset: 0,
-	})
-
-	//WARN: Why do I do this? In case of the single project, subproject is a host and thus already in the watchlist
-	watchlist = append(watchlist, subProject.Watchlist...)
-
-	subprojects = append(subprojects, subProject)
-
-	for _, sub := range subprojects {
-		lines = append(lines, sub.Lines...)
-		sections = append(sections, sub.Sections...)
-
+		cfg = conf
 	}
 
 	p := &Project{
-		Path:      cfg.Path,
-		TrackID:   cfg.TrackID,
-		Project:   proj,
-		Track:     track,
-		Lines:     lines,
-		Sections:  sections,
-		logger:    logger,
-		Watchlist: watchlist,
-		Stats:     make(map[string]time.Time),
+		Project:    parser.Project{},
+		Path:       cfg.Path,
+		logger:     cfg.Logger,
+		Cursor:     0,
+		TrackID:    cfg.TrackID,
+		Track:      parser.Track{},
+		Item:       parser.Item{},
+		PeekItem:   parser.Item{},
+		Marker:     parser.Marker{},
+		PeekMarker: parser.Marker{},
+		Section:    Section{},
+		Line:       lyrics.LyricLine{},
+		Lines:      lyrics.Lines{},
+		Sections:   []Section{},
+		Comments:   []*lyrics.Lyrics{},
+		Watchlist:  []string{},
+		Stats:      make(map[string]time.Time),
 	}
 
-	p.Update(proj.Cursor)
+	subprojects := []*Project{}
+
+	cfg.Logger.Debug("reading host project", "path", cfg.Path, "single", cfg.Single)
+
+	if cfg.Single {
+		config, err := NewDefauiltConfig()
+		if err != nil {
+			cfg.Logger.Error("NewProjectWithConfig() failed to creat a default config", "branch", "single", "error", err.Error())
+			panic("NewProjectWithConfig failed to creat default project config")
+		}
+
+		config.Path = cfg.Path
+		config.IDGen = cfg.IDGen
+		config.Logger = cfg.Logger
+
+		subProject := NewSubProjectWithConfig(config)
+		subprojects = append(subprojects, subProject)
+
+	} else {
+		p.Watchlist = append(p.Watchlist, cfg.Path)
+		s, err := ParseHostProject(cfg)
+		if err != nil {
+			slog.Error("NewHostProject() failed to parse host project", "error", err.Error())
+			panic("failed to parse host project!")
+		}
+		subprojects = append(subprojects, s...)
+	}
+
+	p.logger.Debug("finished reading subprojects", "len", len(subprojects))
+
+	for _, sub := range subprojects {
+		p.Lines = append(p.Lines, sub.Lines...)
+		p.Sections = append(p.Sections, sub.Sections...)
+		p.Watchlist = append(p.Watchlist, sub.Watchlist...)
+		p.Comments = append(p.Comments, sub.Comments...)
+	}
+
+	p.Update(p.Cursor)
 
 	return p
 
 }
 
 func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
+	cfg.Logger.Debug("reading subproject", "path", cfg.Path)
 	//TODO: refactor this mess
 
 	var lines lyrics.Lines
