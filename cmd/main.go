@@ -19,7 +19,7 @@ import (
 
 func main() {
 
-	level := slog.LevelError
+	level := slog.LevelInfo
 	if slices.Contains(os.Args, "DEBUG") {
 		level = slog.LevelDebug
 	}

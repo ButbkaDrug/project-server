@@ -9,8 +9,6 @@ import (
 
 func (app *app) drumsHandler(w http.ResponseWriter, r *http.Request) {
 
-	fmt.Println("hello from drums route")
-
 	templateFile := "autoscroll.html"
 	params := r.URL.Query()
 
@@ -35,6 +33,7 @@ func (app *app) drumsHandler(w http.ResponseWriter, r *http.Request) {
 
 	htmlString := RenderContent(
 		&RenderContentConfig{
+			logger:       app.logger,
 			Data:         app.reaper.Sections,
 			Render:       app.renderer,
 			CommentsType: commentsType,

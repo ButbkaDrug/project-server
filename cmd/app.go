@@ -145,12 +145,12 @@ func (app *app) Watch(clients *sse.SSE) error {
 					continue
 
 				}
-				fmt.Println(app.reaper.Stats, "has been changed")
+				app.reaper.Stats[file] = info.ModTime()
+				app.logger.Debug("cmd/app.go: change detected. Restarting", "changed file", file)
 				app.Restart()
 
 				go clients.Broadcast(true)
 
-				app.reaper.Stats[file] = info.ModTime()
 			}
 
 		}

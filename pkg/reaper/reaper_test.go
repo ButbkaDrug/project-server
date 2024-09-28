@@ -1,15 +1,18 @@
 package reaper
 
 import (
-	"fmt"
 	"lp/pkg/comments"
 	"lp/pkg/lyrics"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestNewProjectWithConfig(t *testing.T) {
+
 	//first let's try empty config
 	config := ProjectConfig{}
+	assert.NotNil(t, config)
 
 	reaper := NewProjectWithConfig(&config)
 
@@ -1546,7 +1549,7 @@ func TestCalculateOffsets(t *testing.T) {
 						Length: 0,
 						Text:   "Иисус, иисус,"}}}}}
 
-	fmt.Print(OneThingRemains.Name, WhoYouSayIAm.Name, BlessTheLord.Name)
+	// fmt.Print(OneThingRemains.Name, WhoYouSayIAm.Name, BlessTheLord.Name)
 
 	section := Tremble.Sections[6]
 	// tests := OffsetMap{

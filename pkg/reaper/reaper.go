@@ -4,17 +4,13 @@ import (
 	"log/slog"
 	"lp/pkg/lyrics"
 	"os"
+	"path"
 	reaper "rpp-parser"
 	"rpp-parser/pkg/parser"
 	"time"
 
 	"github.com/butbkadrug/reaper-lyrics/pkg/generator"
 )
-
-//TODO: join specific chords and notes into one file. Because they tent to go together anyway
-//TODO: also to keep offsets in a separate file, or parse them on load from the file
-
-//TODO: I fill like it will be better to have offsets in a separate file, or parse them off the porject on load entirely. Having offsets in the file with lyrics clutters it alot and makes it hard to do the chords and etc.
 
 type ProjectConfig struct {
 	Path           string
@@ -41,6 +37,7 @@ type Project struct {
 	Line       lyrics.LyricLine
 	Lines      lyrics.Lines
 	Sections   []Section
+	Comments   []*lyrics.Lyrics
 	Watchlist  []string
 }
 
@@ -48,14 +45,57 @@ func NewProject() *Project {
 	return NewProjectWithConfig(&ProjectConfig{})
 }
 
+// returns new projectConfig with saint default values. Returns an error if fails to get access to the project file
+//
+// Defauilt values:
+//
+// Path = ~/Music/REAPER/BaseProject/BaseProject.rpp
+//
+// TrackID = 1
+//
+// ItemID = 1
+//
+// PositionOffset = 0
+//
+// New Generator and NewLogger that outputs to os.Stdout.
+func NewDefauiltConfig() (*ProjectConfig, error) {
+	homeDir, err := os.UserHomeDir()
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &ProjectConfig{
+		Path:           path.Join(homeDir, "Music", "REAPER", "BaseProject", "BaseProject.rpp"),
+		TrackID:        1,
+		ItemID:         1,
+		PositionOffset: 0,
+		IDGen:          generator.New(),
+		Logger:         slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelDebug})),
+	}, nil
+}
+
+// unites common functionality between single project and host projecttypes
+func initNewProject() {
+}
+
 func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 	//TODO: refactor this function into smaller chunks where possible
 
 	var lines lyrics.Lines
 	var sections []Section
+	var comments []*lyrics.Lyrics
+	watchlist := []string{}
+	subprojects := []*Project{}
+	track := parser.Track{}
 
 	if cfg == nil {
-		cfg = &ProjectConfig{}
+		defauiltConfig, err := NewDefauiltConfig()
+		if err != nil {
+			panic("NewProjectWithConfig received a nil. NewDefauiltProjectConfig() returned an error")
+		}
+
+		cfg = defauiltConfig
 	}
 
 	logger := cfg.Logger
@@ -66,13 +106,12 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	}
 
-	g := generator.NewGenerator()
+	//WARN: why would I do it here????
+	g := generator.New()
 	cfg.IDGen = g
 
-	logger.Debug("NewProjectWithConfig()", "path", cfg.Path)
-
-	watchlist := []string{}
 	watchlist = append(watchlist, cfg.Path)
+	//NOTE: In --single case I'm not parsing
 	proj, err := reaper.Parse(cfg.Path)
 
 	if err != nil {
@@ -82,16 +121,11 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 		}
 	}
 
-	track := parser.Track{}
 	if cfg.TrackID >= len(proj.Tracks) {
 		logger.Error("PROJECT: failed to select track. TrackID is too high", "TrackID", cfg.TrackID, "Number of tracks", len(proj.Tracks))
 	} else {
 		track = proj.Tracks[cfg.TrackID]
 	}
-
-	subprojects := []*Project{}
-
-	logger.Debug("subprojects", "total", len(subprojects))
 
 	for i, item := range track.Items {
 
@@ -106,7 +140,6 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 			subProject := NewSubProjectWithConfig(cfg)
 
 			subprojects = append(subprojects, subProject)
-			watchlist = append(watchlist, subProject.Watchlist...)
 
 		}
 	}
@@ -114,7 +147,8 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 	for _, sub := range subprojects {
 		lines = append(lines, sub.Lines...)
 		sections = append(sections, sub.Sections...)
-
+		watchlist = append(watchlist, sub.Watchlist...)
+		comments = append(comments, sub.Comments...)
 	}
 
 	p := &Project{
@@ -127,6 +161,7 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 		logger:    logger,
 		Stats:     make(map[string]time.Time),
 		Watchlist: watchlist,
+		Comments:  comments,
 	}
 
 	p.Update(proj.Cursor)
@@ -137,11 +172,14 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 
 func NewSingleProjectWithConfig(cfg *ProjectConfig) *Project {
 	//FIXME: In the mean time I just copied NewProjectWithConfig function but might be worth refactoring repeating stuff into a NewProject function and go from there.
-	//TODO: refactor this function into smaller chunks where possible
 
 	var lines lyrics.Lines
 	var sections []Section
 	var watchlist []string
+	var comments *lyrics.Lyrics
+	subprojects := []*Project{}
+	proj := parser.Project{}
+	track := parser.Track{}
 
 	if cfg == nil {
 		cfg = &ProjectConfig{}
@@ -155,15 +193,8 @@ func NewSingleProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	}
 
-	g := generator.NewGenerator()
+	g := generator.New()
 	cfg.IDGen = g
-
-	logger.Debug("NewProjectWithConfig()", "path", cfg.Path)
-
-	proj := parser.Project{}
-	track := parser.Track{}
-
-	subprojects := []*Project{}
 
 	watchlist = append(watchlist, cfg.Path)
 
@@ -176,6 +207,7 @@ func NewSingleProjectWithConfig(cfg *ProjectConfig) *Project {
 		PositionOffset: 0,
 	})
 
+	//WARN: Why do I do this? In case of the single project, subproject is a host and thus already in the watchlist
 	watchlist = append(watchlist, subProject.Watchlist...)
 
 	subprojects = append(subprojects, subProject)
@@ -222,6 +254,7 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 	}
 
 	watchlist := []string{}
+	comments := []*lyrics.Lyrics{}
 	proj, err := reaper.Parse(cfg.Path)
 
 	if err != nil {
@@ -230,7 +263,6 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 			logger: logger,
 		}
 	}
-	//TODO: saving notes?
 
 	projHelper := GetHelperProjectInProjectDir(cfg.Path)
 
@@ -244,9 +276,11 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 	}
 
 	projectNotes := GetNotesFromProjectDir(cfg.Path)
+
 	if projectNotes.Path != "" {
 		watchlist = append(watchlist, projectNotes.Path)
 	}
+	comments = append(comments, &projectNotes)
 
 	projectChords := GetChordsFromProjectDir(cfg.Path)
 	if projectChords.Path != "" {
@@ -267,6 +301,10 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 			Lenght:   proj.Markers[i+1].Position - m.Position,
 			Name:     parseSectionName(m.Name),
 		}
+
+		//PERF: Maybe instead of mergin comments into one slice. I should keep then in their own structure and check if there is comment on render. Then I will preserve a original structure and if I want to update and save it, it shuld be hips easier because structure knows how and where to save itself!
+
+		//TODO: refactor this pice to keep notes structure within section
 
 		sec.ItemID = cfg.ItemID
 		sec.Comments = projectNotes.GetNotesWithNumber(m.ID)
@@ -353,6 +391,7 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 		Sections:  sections,
 		logger:    logger,
 		Watchlist: watchlist,
+		Comments:  comments,
 	}
 
 	return p

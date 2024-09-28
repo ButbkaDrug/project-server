@@ -11,11 +11,70 @@
 
 {{ define "primer-comments" }}
 <ul class="list-disc">
-{{range .}}
-<li class="font-bold">{{.}}</li>
+{{range $index, $e := .Comments}}
+<li class="font-bold" hx-target="this" hx-swap="outerHTML">
+        <div class="flex flex-row items-start gap-2">
+    {{ template "primer-comment" $e }}
+    {{ template "delete-comment-button" . }}
+        </div>
+    </li>
 {{end}}
+    {{ template "add-comment-button" . }}
 </ul>
 {{ end }}
+
+{{ define "add-comment-button" }}
+    <li hx-target="this" hx-swap="outerHTML">
+        <div>
+            <form hx-get="/comments" >
+                <input name="itemID" type="text" value="{{.ItemID}}" class="hidden" />
+                <input name="sectionID" type="text" value="{{.SectionID}}" class="hidden" />
+            <button class="btn primary">+</button>
+            </form>
+        </div>
+    </li>
+{{ end }}
+
+{{ define "primer-comment" }}
+            <div>
+                    {{.}}
+            </div>
+{{ end }}
+
+{{ define "delete-comment-button" }}
+<form ht-delete="/comments">
+    <input name="text" type="text" value="{{.ID}}" class="hidden" />
+        <button class="btn btn-xs btn-circli btn-outline">x</button>
+</form>
+{{ end }}
+
+
+{{define "add-comment"}}
+<li hx-target="this" hx-swap="outerHTML">
+<form hx-put="/comments">
+<div class="join">
+            <div>
+                <div>
+                    <input name="itemID" type="text" value="{{.ItemID}}" class="hidden" />
+                    <input name="sectionID" type="text" value="{{.SectionID}}" class="hidden" />
+                  <input class="input input-bordered join-item" placeholder="text" type="text" name="text"/>
+                </div>
+            </div>
+            <select class="select select-bordered join-item" name="type">
+                <option disabled selected>Type:</option>
+                <option>generic</option>
+                <option>drums</option>
+                <option>guitar</option>
+                <option>piano</option>
+                <option>bass</option>
+          </select>
+            <div>
+  <button class="btn join-item rounded-r-full">Add</button>
+            </div>
+</div>
+</form>
+</li>
+{{end}}
 
 
 {{ define "line" }}
@@ -36,7 +95,7 @@
 {{end}}
 
 {{ define "comments" }}
-{{range .}}
+{{range .Comments}}
 <div class="prose prose-stone text-right font-mono">{{.}}</div>
 {{end}}
 {{ end}}

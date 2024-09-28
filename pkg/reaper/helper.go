@@ -1,11 +1,11 @@
 package reaper
 
 import (
-	"fmt"
 	"log/slog"
 	lp "lp"
 	"lp/pkg/chords"
 	"lp/pkg/lyrics"
+	"os"
 	"path"
 	"rpp-parser/pkg/parser"
 
@@ -66,7 +66,6 @@ func GetHelperProjectInProjectDir(p string) lyrics.Lyrics {
 
 		if !helper.Empty() {
 			helper.Path = file
-			fmt.Println("found helper project: ", path.Dir(p), source)
 			return helper
 		}
 	}
@@ -133,24 +132,37 @@ func getLyrics(dirPath string) (lyrics.Lyrics, error) {
 
 func getNotes(dirPath string) (lyrics.Lyrics, error) {
 	var err error
-	files := []string{"notes.txt", "notes"}
+	var p string
+	var l lyrics.Lyrics
+
+	files := []string{"notes.txt"}
 
 	for _, file := range files {
-		p := path.Join(dirPath, file)
-		l, e := lp.Parse(p)
+		p = path.Join(dirPath, file)
+		l, err = lp.Parse(p)
 
-		if e != nil {
-			err = e
-
+		if err != nil {
 			continue
 		}
-
-		l.Path = p
-
-		return l, nil
 	}
 
-	return lyrics.Lyrics{}, err
+	if err != nil {
+		p = path.Join(dirPath, files[0])
+		if _, err := os.Create(p); err != nil {
+			return lyrics.Lyrics{}, err
+		}
+
+		l, err = lp.Parse(p)
+
+		if err != nil {
+			return lyrics.Lyrics{}, err
+		}
+
+	}
+	l.Path = p
+
+	return l, nil
+
 }
 
 func getChordsFromDir(dirPath string) (lyrics.Lyrics, error) {

@@ -1,1 +1,4 @@
-time=2024-09-24T00:02:00.139+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"
+time=2024-09-28T08:13:45.993+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"
+time=2024-09-28T08:13:45.993+04:00 level=INFO msg="config for the project" cfg="{port:1234 projectPath:/home/butbkadrug/Music/REAPER/Who You Say I Am - G - 84 BPM/Who You Say I Am - G - 84 BPM.rpp single:true setlistPath:/home/butbkadrug/Music/REAPER/BaseProject/setlist defaultProjectDir:/home/butbkadrug/Music/REAPER oscIP: oscPort:0 logger:0xc000028310}"
+time=2024-09-28T08:13:55.285+04:00 level=ERROR msg="cmd/comment: itemID is too big" itemID=1 len(Comments)=0
+time=2024-09-28T08:13:59.368+04:00 level=ERROR msg="cmd/comment: itemID is too big" itemID=1 len(Comments)=0

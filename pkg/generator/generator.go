@@ -6,7 +6,7 @@ type Generator struct {
 }
 
 // returns a new generator with value staring with 1
-func NewGenerator() *Generator {
+func New() *Generator {
 	return &Generator{
 		value: 1,
 	}

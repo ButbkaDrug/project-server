@@ -95,57 +95,6 @@ func (h *helper) ParseLyricsFile() (lyrics.Lyrics, error) {
 	return lyrics.Lyrics{}, err
 }
 
-// func Run() {
-
-// 	h := NewHelper(projPath)
-//
-// 	defer h.logfile.Close()
-//
-// 	proj, err := rp.Parse(projPath)
-//
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-//
-// 	h.logger.Debug("file parsed successfully", "markers found", len(proj.Markers))
-//
-// 	//loading lyris
-// 	lyrics, err := h.ParseLyricsFile()
-//
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-//
-// 	h.logger.Debug("lyrics parsed successfully", "sections found", len(lyrics.Sections))
-//
-// 	lyrics = h.Parse(lyrics)
-//
-// 	//NOTE: saving into a file
-// 	if err := WriteToFile(lyrics, path.Join(h.Path.Base, "song.txt")); err != nil {
-// 		h.logger.Error("failed to write to a file", "error", err.Error())
-// 		log.Fatal(err)
-// 	}
-//
-// 	fmt.Println("song offsets successfully saved ", path.Join(h.Path.Base, "song.txt"))
-//
-// 	notes := h.parseNotes()
-//
-// 	if err := WriteToFile(notes, path.Join(h.Path.Base, "notes.txt")); err != nil {
-// 		h.logger.Error("failed to write to a file", "error", err.Error())
-// 		log.Fatal(err)
-// 	}
-//
-// 	fmt.Println("song notes successfully saved ", path.Join(h.Path.Base, "notes.txt"))
-//
-// 	chords := h.parseChords()
-// 	if err := WriteToFile(chords, path.Join(h.Path.Base, "chords.txt")); err != nil {
-// 		h.logger.Error("failed to write to a file", "error", err.Error())
-// 		log.Fatal(err)
-// 	}
-//
-// 	fmt.Println("chords successfully saved ", path.Join(h.Path.Base, "chords.txt"))
-// }
-
 func (h *helper) Parse() lyrics.Lyrics {
 	h.ParseOffsets()
 	h.parseChords()

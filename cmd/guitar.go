@@ -7,7 +7,6 @@ import (
 )
 
 func (app *app) guitarHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("hello from guitar route")
 	templateFile := "autoscroll.html"
 	params := r.URL.Query()
 
