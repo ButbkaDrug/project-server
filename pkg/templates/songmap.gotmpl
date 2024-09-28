@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <title>Welcome to the church</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+    <link rel="stylesheet" href="/static/css/tailwind.css"/>
+</head>
+<body>
+<div class="container mx-auto">
+    <div class="grid grid-cols-1 gap-2">
+        {{range .}}
+        <div id="{{.ID}}" class="my-10">
+            <h2 class="font-bold text-6xl p-4 uppercase bg-slate-400">{{.Name}}</h2>
+            <div class="text-5xl antialiased font-light leading-tight uppercase">
+                {{range .Text}}
+                   <p class="my-4">{{.}}</p>
+                {{end}}
+            </div>
+        </div>
+        {{end}}
+    </div>
+</div>
+<script>
+    const eventSource = new EventSource('/events');
+    eventSource.onmessage = function(event) {
+        console.log(event)
+        const element = document.getElementById(event.data)
+        try {
+            if( element !== null ){
+                element.scrollIntoView();
+            }
+        } catch(error) {
+            console.error(error)
+        }
+        // const dataElement = document.getElementById('sse-data');
+        // dataElement.innerHTML = event.data + '<br>';
+    };
+</script>
+</body>
