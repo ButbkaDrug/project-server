@@ -4,30 +4,47 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"strconv"
 )
 
 func (app *app) guitarHandler(w http.ResponseWriter, r *http.Request) {
 	templateFile := "autoscroll.html"
 	params := r.URL.Query()
 
-	capo := app.ParseCapoArgument(params.Get("capo"))
+	var withChords = true
+	var withLyrics = true
+	var commentsType string = "guitar"
+
+	if c, err := strconv.ParseBool(params.Get("chords")); err == nil {
+		withChords = c
+	}
+
+	if l, err := strconv.ParseBool(params.Get("lyrics")); err == nil {
+		withLyrics = l
+	}
+
+	if ct := params.Get("comments"); ct != "" {
+		commentsType = ct
+	}
+
 	keys := app.ParseKeysArgument(params.Get("keys"))
 
 	htmlString := RenderContent(
 		&RenderContentConfig{
+			logger:       app.logger,
 			Data:         app.reaper.Sections,
 			Render:       app.renderer,
-			CommentsType: "Guitar",
-			WithChords:   true,
-			WithLyrics:   true,
+			CommentsType: commentsType,
+			CommentsBig:  false,
+			WithChords:   withChords,
+			WithLyrics:   withLyrics,
 			Keys:         keys,
-			Capo:         capo,
 		},
 	)
 
 	page := Page{
 		Page: Meta{
-			Title: "Lyrics will scroll automatically",
+			Title: "Drummer page has no lyrics or chords, but have big comments instead",
 			Stats: []stat{
 				{
 					Title: "IP address of the server",
@@ -59,4 +76,5 @@ func (app *app) guitarHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+
 }

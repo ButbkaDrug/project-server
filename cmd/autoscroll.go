@@ -8,6 +8,7 @@ import (
 )
 
 func (app *app) autoscrollHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("cmd/autoscroll.go invoked")
 	var err error
 
 	file := "autoscroll.html"
@@ -30,6 +31,7 @@ func (app *app) autoscrollHandler(w http.ResponseWriter, r *http.Request) {
 	keys := app.ParseKeysArgument(params.Get("keys"))
 	capo := app.ParseCapoArgument(params.Get("capo"))
 
+	fmt.Println("about to render content")
 	htmlString := RenderContent(
 		&RenderContentConfig{
 			Data:         app.reaper.Sections,

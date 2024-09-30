@@ -1,423 +1,741 @@
-time=2024-09-28T20:40:43.310+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"
-time=2024-09-28T20:40:43.311+04:00 level=INFO msg="config for the project" cfg="{port:1234 projectPath:/home/butbkadrug/Music/REAPER/BaseProject/BaseProject.rpp single:false setlistPath:/home/butbkadrug/Music/REAPER/BaseProject/setlist defaultProjectDir:/home/butbkadrug/Music/REAPER oscIP: oscPort:0 logger:0xc000184040}"
-time=2024-09-28T20:40:43.312+04:00 level=DEBUG msg="reading host project" path=/home/butbkadrug/Music/REAPER/BaseProject/BaseProject.rpp single=false
-time=2024-09-28T20:40:43.330+04:00 level=DEBUG msg="reading subproject" path="/home/butbkadrug/Music/REAPER/Blessed Be Your Name - Matt Redman - G - 116 BPM(Original)/Blessed Be Your Name - Matt Redman - G - 116 BPM(Original).RPP"
-time=2024-09-28T20:40:43.415+04:00 level=DEBUG msg="section has no lyrics" s="Blessed Your Name Matt Redman 116 BPM Be"
-time=2024-09-28T20:40:43.415+04:00 level=DEBUG msg=appending total=1 lines="[{ID:1 Position:0 Length:8.27586206896552 Chords: Text:}]"
-time=2024-09-28T20:40:43.415+04:00 level=DEBUG msg="section has no lyrics" s=Intro
-time=2024-09-28T20:40:43.415+04:00 level=DEBUG msg=appending total=1 lines="[{ID:2 Position:8.27586206896552 Length:8.27586206896552 Chords:1 Text:}]"
-time=2024-09-28T20:40:43.415+04:00 level=DEBUG msg="section has no lyrics" s=Vamp
-time=2024-09-28T20:40:43.416+04:00 level=DEBUG msg=appending total=1 lines="[{ID:19 Position:82.75862068965517 Length:2.068965517241381 Chords: Text:}]"
-time=2024-09-28T20:40:43.416+04:00 level=DEBUG msg="section has no lyrics" s=Vamp
-time=2024-09-28T20:40:43.416+04:00 level=DEBUG msg=appending total=1 lines="[{ID:40 Position:167.58620689655172 Length:2.068965517241395 Chords: Text:}]"
-time=2024-09-28T20:40:43.416+04:00 level=DEBUG msg="section has no lyrics" s=Vamp
-time=2024-09-28T20:40:43.416+04:00 level=DEBUG msg=appending total=1 lines="[{ID:49 Position:202.75862068965517 Length:2.0689655172413666 Chords: Text:}]"
-time=2024-09-28T20:40:43.416+04:00 level=DEBUG msg="section has no lyrics" s=Vamp
-time=2024-09-28T20:40:43.416+04:00 level=DEBUG msg=appending total=1 lines="[{ID:58 Position:237.93103448275863 Length:2.0689655172413666 Chords: Text:}]"
-time=2024-09-28T20:40:43.416+04:00 level=DEBUG msg="section has no lyrics" s=Vamp
-time=2024-09-28T20:40:43.416+04:00 level=DEBUG msg=appending total=1 lines="[{ID:71 Position:289.6551724137931 Length:2.0689655172412813 Chords: Text:}]"
-time=2024-09-28T20:40:43.416+04:00 level=DEBUG msg="section has no lyrics" s=Ending
-time=2024-09-28T20:40:43.416+04:00 level=DEBUG msg=appending total=1 lines="[{ID:80 Position:324.82758620689657 Length:6.206896551724185 Chords: Text:}]"
-time=2024-09-28T20:40:43.416+04:00 level=DEBUG msg="reading subproject" path="/home/butbkadrug/Music/REAPER/Our God - Chris Tomlin - B - 105 BPM/Our God - Chris Tomlin - B - 105 BPM.RPP"
-time=2024-09-28T20:40:43.477+04:00 level=DEBUG msg="section has no lyrics" s="Our God Chris Tomlin 105 BPM -"
-time=2024-09-28T20:40:43.477+04:00 level=DEBUG msg=appending total=1 lines="[{ID:81 Position:1024 Length:4.57142857142857 Chords: Text:}]"
-time=2024-09-28T20:40:43.477+04:00 level=DEBUG msg="section has no lyrics" s=Intro
-time=2024-09-28T20:40:43.477+04:00 level=DEBUG msg=appending total=2 lines="[{ID:82 Position:1028.5714285714287 Length:18.285714285714292 Chords:6m 4 1 3m Text:} {ID:83 Position:1028.5714285714287 Length:18.285714285714292 Chords:6m 4 1 5/7 Text:}]"
-time=2024-09-28T20:40:43.477+04:00 level=DEBUG msg="section has no lyrics" s=Intro
-time=2024-09-28T20:40:43.477+04:00 level=DEBUG msg=appending total=1 lines="[{ID:98 Position:1099.4285714285713 Length:11.42857142857143 Chords:6m 4 1 3m Text:}]"
-time=2024-09-28T20:40:43.477+04:00 level=DEBUG msg="section has no lyrics" s=Bridge
-time=2024-09-28T20:40:43.477+04:00 level=DEBUG msg=appending total=1 lines="[{ID:119 Position:1184 Length:18.285714285714278 Chords: Text:}]"
-time=2024-09-28T20:40:43.477+04:00 level=DEBUG msg="section has no lyrics" s=Ending
-time=2024-09-28T20:40:43.477+04:00 level=DEBUG msg=appending total=1 lines="[{ID:162 Position:1309.7142857142858 Length:11.428571428571388 Chords:4 Text:}]"
-time=2024-09-28T20:40:43.477+04:00 level=DEBUG msg="reading subproject" path="/home/butbkadrug/Music/REAPER/Reckless Love - Cory Asbury - Gb - 83 BPM/Reckless Love - Cory Asbury - Gb - 83 BPM.rpp"
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg="section has no lyrics" s="Reckless Love Cory Asbury BPM 83 -"
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg=appending total=1 lines="[{ID:163 Position:3072 Length:8.67469879518072 Chords: Text:}]"
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg="section has no lyrics" s=Intro
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg=appending total=2 lines="[{ID:164 Position:3080.6746987951806 Length:17.34939759036145 Chords:6m 5 4 1 Text:} {ID:165 Position:3080.6746987951806 Length:17.34939759036145 Chords:6m 5 4 1 Text:}]"
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg="section has no lyrics" s=Intro
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg=appending total=2 lines="[{ID:166 Position:3098.024096385542 Length:17.349397590361438 Chords:6m 5 4 1 Text:} {ID:167 Position:3098.024096385542 Length:17.349397590361438 Chords:6m 5 4 1 Text:}]"
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg="section has no lyrics" s=Interlude
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg=appending total=2 lines="[{ID:186 Position:3184.7710843373493 Length:17.349397590361434 Chords:6m 5 4 1 Text:} {ID:187 Position:3184.7710843373493 Length:17.349397590361434 Chords:6m 5 4 1 Text:}]"
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg="section has no lyrics" s=Instrumental
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg=appending total=2 lines="[{ID:206 Position:3271.5180722891564 Length:17.349397590361434 Chords:6m 5 4 1 Text:} {ID:207 Position:3271.5180722891564 Length:17.349397590361434 Chords:6m 5 4 1 Text:}]"
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg="section has no lyrics" s=Outro
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg=appending total=1 lines="[{ID:256 Position:3427.6626506024095 Length:15.18072289156629 Chords:6m 5 4 1 Text:}]"
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg="section has no lyrics" s=Ending
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg=appending total=1 lines="[{ID:257 Position:3442.843373493976 Length:11.566265060240937 Chords:1 Text:}]"
-time=2024-09-28T20:40:43.533+04:00 level=DEBUG msg="reading subproject" path="/home/butbkadrug/Music/REAPER/You Are My Peace - Housefires - A - 76 BPM/You Are My Peace - Housefires - A - 76 BPM.rpp"
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg="section has no lyrics" s="You Are Peace Housefires BPM 76 My"
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg=appending total=1 lines="[{ID:258 Position:4096 Length:6.31578947368421 Chords: Text:}]"
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg="section has no lyrics" s=Intro
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg=appending total=1 lines="[{ID:259 Position:4102.315789473684 Length:12.631578947368443 Chords:1 Text:}]"
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg="section has no lyrics" s=Interlude
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg=appending total=1 lines="[{ID:268 Position:4152.8421052631575 Length:6.3157894736841556 Chords: Text:}]"
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg="section has no lyrics" s=End
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg=appending total=1 lines="[{ID:353 Position:4487.578947368421 Length:3.157894736842195 Chords: Text:}]"
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg="finished reading subprojects" len=4
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg=UPDATE() "new position"=0
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg=UpdateCurosr() cursor=0
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg="UpdateLine() initiated" cursor=0 "current line"="{ID:0 Position:0 Length:0 Chords: Text:}" "total lines"=353
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg=UpdateLine() next="{ID:2 Position:8.27586206896552 Length:8.27586206896552 Chords:1 Text:}"
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg=searching line=352 total=353 id=353 cursor=0 pos=4487.578947368421 len=3.157894736842195
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg=searching line=351 total=353 id=352 cursor=0 pos=4483.518771131453 len=4.060176237
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg=searching line=350 total=353 id=351 cursor=0 pos=4480.410861892053 len=3.1079092394
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg=searching line=349 total=353 id=350 cursor=0 pos=4477.263556620052 len=3.147305272
-time=2024-09-28T20:40:44.527+04:00 level=DEBUG msg=searching line=348 total=353 id=349 cursor=0 pos=4474.155647380652 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=347 total=353 id=348 cursor=0 pos=4470.887192184085 len=4.060176237
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=346 total=353 id=347 cursor=0 pos=4467.779282944684 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=345 total=353 id=346 cursor=0 pos=4464.631977672684 len=3.147305272
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=344 total=353 id=345 cursor=0 pos=4461.524068433284 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=343 total=353 id=344 cursor=0 pos=4458.255613236716 len=4.060176237
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=342 total=353 id=343 cursor=0 pos=4455.147703997316 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=341 total=353 id=342 cursor=0 pos=4452.000398725316 len=3.147305272
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=340 total=353 id=341 cursor=0 pos=4448.892489485916 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=339 total=353 id=340 cursor=0 pos=4445.624034289348 len=4.060176237
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=338 total=353 id=339 cursor=0 pos=4442.516125049948 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=337 total=353 id=338 cursor=0 pos=4439.3688197779475 len=3.147305272
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=336 total=353 id=337 cursor=0 pos=4436.260910538547 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=335 total=353 id=336 cursor=0 pos=4432.992455341979 len=4.060176237
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=334 total=353 id=335 cursor=0 pos=4429.8845461025785 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=333 total=353 id=334 cursor=0 pos=4426.737240830578 len=3.147305272
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=332 total=353 id=333 cursor=0 pos=4423.629331591178 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=331 total=353 id=332 cursor=0 pos=4420.36087639461 len=4.060176237
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=330 total=353 id=331 cursor=0 pos=4417.25296715521 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=329 total=353 id=330 cursor=0 pos=4414.10566188321 len=3.147305272
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=328 total=353 id=329 cursor=0 pos=4410.99775264381 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=327 total=353 id=328 cursor=0 pos=4405.473684210526 len=6.3157894736841484
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=326 total=353 id=327 cursor=0 pos=4399.157894736842 len=6.3157894736841484
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=325 total=353 id=326 cursor=0 pos=4392.8421052631575 len=6.3157894736841484
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=324 total=353 id=325 cursor=0 pos=4386.526315789473 len=6.3157894736841484
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=323 total=353 id=324 cursor=0 pos=4382.466139552505 len=4.060176237
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=322 total=353 id=323 cursor=0 pos=4379.358230313105 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=321 total=353 id=322 cursor=0 pos=4376.210925041105 len=3.147305272
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=320 total=353 id=321 cursor=0 pos=4373.103015801705 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=319 total=353 id=320 cursor=0 pos=4369.834560605137 len=4.060176237
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=318 total=353 id=319 cursor=0 pos=4366.726651365737 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=317 total=353 id=318 cursor=0 pos=4363.579346093737 len=3.147305272
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=316 total=353 id=317 cursor=0 pos=4360.471436854336 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=315 total=353 id=316 cursor=0 pos=4354.9473684210525 len=6.3157894736841484
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=314 total=353 id=315 cursor=0 pos=4348.631578947368 len=6.3157894736841484
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=313 total=353 id=314 cursor=0 pos=4342.315789473684 len=6.3157894736841484
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=312 total=353 id=313 cursor=0 pos=4336 len=6.3157894736841484
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=311 total=353 id=312 cursor=0 pos=4325.664449410531 len=4.5403792724
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=310 total=353 id=311 cursor=0 pos=4323.945512634932 len=1.7189367756
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=309 total=353 id=310 cursor=0 pos=4313.032870463163 len=4.5403792724
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=308 total=353 id=309 cursor=0 pos=4311.313933687564 len=1.7189367756
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=307 total=353 id=308 cursor=0 pos=4300.401291515794 len=4.5403792724
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=306 total=353 id=307 cursor=0 pos=4298.682354740195 len=1.7189367756
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=305 total=353 id=306 cursor=0 pos=4287.769712568425 len=4.5403792724
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=304 total=353 id=305 cursor=0 pos=4286.050775792826 len=1.7189367756
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=303 total=353 id=304 cursor=0 pos=4281.413507973558 len=4.060176237
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=302 total=353 id=303 cursor=0 pos=4278.305598734158 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=301 total=353 id=302 cursor=0 pos=4275.158293462157 len=3.147305272
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=300 total=353 id=301 cursor=0 pos=4272.050384222757 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=299 total=353 id=300 cursor=0 pos=4268.78192902619 len=4.060176237
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=298 total=353 id=299 cursor=0 pos=4265.674019786789 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=297 total=353 id=298 cursor=0 pos=4262.526714514789 len=3.147305272
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=296 total=353 id=297 cursor=0 pos=4259.418805275389 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=295 total=353 id=296 cursor=0 pos=4256.212951364052 len=3.0666892604
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=294 total=353 id=295 cursor=0 pos=4253.064513182452 len=3.1484381816
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=293 total=353 id=294 cursor=0 pos=4249.840954370553 len=3.2235588119
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=292 total=353 id=293 cursor=0 pos=4246.652746443552 len=3.188207927
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=291 total=353 id=292 cursor=0 pos=4243.614779777053 len=3.0379666665
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=290 total=353 id=291 cursor=0 pos=4240.263074007653 len=3.3517057694
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=289 total=353 id=290 cursor=0 pos=4237.121264116952 len=3.1418098907
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=288 total=353 id=289 cursor=0 pos=4234.125276626252 len=2.9959874907
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=287 total=353 id=288 cursor=0 pos=4230.949793469315 len=3.0666892604
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=286 total=353 id=287 cursor=0 pos=4227.8013552877155 len=3.1484381816
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=285 total=353 id=286 cursor=0 pos=4224.577796475816 len=3.2235588119
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=284 total=353 id=285 cursor=0 pos=4221.3895885488155 len=3.188207927
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=283 total=353 id=284 cursor=0 pos=4218.351621882316 len=3.0379666665
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=282 total=353 id=283 cursor=0 pos=4214.999916112916 len=3.3517057694
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=281 total=353 id=282 cursor=0 pos=4211.858106222216 len=3.1418098907
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=280 total=353 id=281 cursor=0 pos=4208.862118731516 len=2.9959874907
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=279 total=353 id=280 cursor=0 pos=4205.624034289348 len=4.060176237
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=278 total=353 id=279 cursor=0 pos=4202.516125049948 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=277 total=353 id=278 cursor=0 pos=4199.3688197779475 len=3.147305272
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=276 total=353 id=277 cursor=0 pos=4196.260910538547 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=275 total=353 id=276 cursor=0 pos=4192.99245534198 len=4.060176237
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=274 total=353 id=275 cursor=0 pos=4189.884546102579 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=273 total=353 id=274 cursor=0 pos=4186.737240830579 len=3.147305272
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=272 total=353 id=273 cursor=0 pos=4183.629331591179 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=271 total=353 id=272 cursor=0 pos=4178.429055286341 len=4.9026173917
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=270 total=353 id=271 cursor=0 pos=4172.1388220793415 len=6.290233207
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=269 total=353 id=270 cursor=0 pos=4165.739155448342 len=6.399666631
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=268 total=353 id=269 cursor=0 pos=4159.333183760242 len=6.4059716881
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=267 total=353 id=268 cursor=0 pos=4152.8421052631575 len=6.3157894736841556
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=266 total=353 id=267 cursor=0 pos=4148.78192902619 len=4.060176237
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=265 total=353 id=266 cursor=0 pos=4145.674019786789 len=3.1079092394
-time=2024-09-28T20:40:44.528+04:00 level=DEBUG msg=searching line=264 total=353 id=265 cursor=0 pos=4142.526714514789 len=3.147305272
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=263 total=353 id=264 cursor=0 pos=4139.418805275389 len=3.1079092394
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=262 total=353 id=263 cursor=0 pos=4134.218528970552 len=4.9026173917
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=261 total=353 id=262 cursor=0 pos=4127.928295763552 len=6.290233207
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=260 total=353 id=261 cursor=0 pos=4121.528629132553 len=6.399666631
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=259 total=353 id=260 cursor=0 pos=4115.122657444453 len=6.4059716881
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=258 total=353 id=259 cursor=0 pos=4102.315789473684 len=12.631578947368443
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=257 total=353 id=258 cursor=0 pos=4096 len=6.31578947368421
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=256 total=353 id=257 cursor=0 pos=3442.843373493976 len=11.566265060240937
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=255 total=353 id=256 cursor=0 pos=3427.6626506024095 len=15.18072289156629
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=254 total=353 id=255 cursor=0 pos=3422.8088052891867 len=4.8538453132
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=253 total=353 id=254 cursor=0 pos=3417.5421686746868 len=5.2666366145
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=252 total=353 id=253 cursor=0 pos=3413.2048192770867 len=4.3373493976
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=251 total=353 id=252 cursor=0 pos=3411.037960822887 len=2.1668584542
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=250 total=353 id=251 cursor=0 pos=3409.0288733163866 len=2.0090875065
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=249 total=353 id=250 cursor=0 pos=3405.748754473687 len=3.2801188427
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=248 total=353 id=249 cursor=0 pos=3403.5329948364865 len=2.2157596372
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=247 total=353 id=248 cursor=0 pos=3400.1927710843865 len=3.3402237521
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=246 total=353 id=247 cursor=0 pos=3396.963113679187 len=3.2296574052
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=245 total=353 id=246 cursor=0 pos=3391.518072289187 len=5.44504139
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=244 total=353 id=245 cursor=0 pos=3388.110010108464 len=4.8538453132
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=243 total=353 id=244 cursor=0 pos=3382.843373493964 len=5.2666366145
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=242 total=353 id=243 cursor=0 pos=3378.506024096364 len=4.3373493976
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=241 total=353 id=242 cursor=0 pos=3376.339165642164 len=2.1668584542
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=240 total=353 id=241 cursor=0 pos=3374.330078135664 len=2.0090875065
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=239 total=353 id=240 cursor=0 pos=3371.049959292964 len=3.2801188427
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=238 total=353 id=239 cursor=0 pos=3368.8341996557638 len=2.2157596372
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=237 total=353 id=238 cursor=0 pos=3365.493975903664 len=3.3402237521
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=236 total=353 id=237 cursor=0 pos=3362.264318498464 len=3.2296574052
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=235 total=353 id=236 cursor=0 pos=3356.819277108464 len=5.44504139
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=234 total=353 id=235 cursor=0 pos=3356.0963855421687 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=233 total=353 id=234 cursor=0 pos=3353.9277108433735 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=232 total=353 id=233 cursor=0 pos=3351.759036144578 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=231 total=353 id=232 cursor=0 pos=3349.590361445783 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=230 total=353 id=231 cursor=0 pos=3347.4216867469877 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=229 total=353 id=230 cursor=0 pos=3345.253012048193 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=228 total=353 id=229 cursor=0 pos=3343.0843373493976 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=227 total=353 id=228 cursor=0 pos=3340.9156626506024 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=226 total=353 id=227 cursor=0 pos=3338.746987951807 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=225 total=353 id=226 cursor=0 pos=3336.578313253012 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=224 total=353 id=225 cursor=0 pos=3334.4096385542166 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=223 total=353 id=224 cursor=0 pos=3332.2409638554213 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=222 total=353 id=223 cursor=0 pos=3330.072289156626 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=221 total=353 id=222 cursor=0 pos=3327.9036144578313 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=220 total=353 id=221 cursor=0 pos=3325.734939759036 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=219 total=353 id=220 cursor=0 pos=3323.5662650602408 len=2.1686746987951793
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=218 total=353 id=219 cursor=0 pos=3316.9700692000797 len=1.0057470467
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=217 total=353 id=218 cursor=0 pos=3315.3938702411797 len=1.5761989589
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=216 total=353 id=217 cursor=0 pos=3311.5463496718794 len=3.8475205693
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=215 total=353 id=216 cursor=0 pos=3309.3666215269795 len=2.1797281449
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=214 total=353 id=215 cursor=0 pos=3308.1999549527795 len=1.1666665742
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=213 total=353 id=214 cursor=0 pos=3306.7397377173797 len=1.4602172354
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=212 total=353 id=213 cursor=0 pos=3299.620671609718 len=1.0057470467
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=211 total=353 id=212 cursor=0 pos=3298.044472650818 len=1.5761989589
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=210 total=353 id=211 cursor=0 pos=3294.196952081518 len=3.8475205693
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=209 total=353 id=210 cursor=0 pos=3292.017223936618 len=2.1797281449
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=208 total=353 id=209 cursor=0 pos=3290.850557362418 len=1.1666665742
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=207 total=353 id=208 cursor=0 pos=3289.390340127018 len=1.4602172354
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=206 total=353 id=207 cursor=0 pos=3271.5180722891564 len=17.349397590361434
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=205 total=353 id=206 cursor=0 pos=3271.5180722891564 len=17.349397590361434
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=204 total=353 id=205 cursor=0 pos=3266.6642269759336 len=4.8538453132
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=203 total=353 id=204 cursor=0 pos=3261.3975903614337 len=5.2666366145
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=202 total=353 id=203 cursor=0 pos=3257.0602409638336 len=4.3373493976
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=201 total=353 id=202 cursor=0 pos=3254.8933825096337 len=2.1668584542
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=200 total=353 id=201 cursor=0 pos=3252.8842950031335 len=2.0090875065
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=199 total=353 id=200 cursor=0 pos=3249.604176160434 len=3.2801188427
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=198 total=353 id=199 cursor=0 pos=3247.3884165232334 len=2.2157596372
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=197 total=353 id=198 cursor=0 pos=3244.0481927711335 len=3.3402237521
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=196 total=353 id=197 cursor=0 pos=3240.8185353659337 len=3.2296574052
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=195 total=353 id=196 cursor=0 pos=3235.373493975934 len=5.44504139
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=194 total=353 id=195 cursor=0 pos=3230.674698795211 len=6.1445783132
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=193 total=353 id=194 cursor=0 pos=3228.8674698795107 len=1.8072289157
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=192 total=353 id=193 cursor=0 pos=3222.361445783111 len=6.5060240964
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=191 total=353 id=192 cursor=0 pos=3220.192771084311 len=2.1686746988
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=190 total=353 id=191 cursor=0 pos=3213.325301204811 len=6.8674698795
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=189 total=353 id=190 cursor=0 pos=3211.518072289211 len=1.8072289156
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=188 total=353 id=189 cursor=0 pos=3205.012048192811 len=6.5060240964
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=187 total=353 id=188 cursor=0 pos=3202.843373494011 len=2.1686746988
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=186 total=353 id=187 cursor=0 pos=3184.7710843373493 len=17.349397590361434
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=185 total=353 id=186 cursor=0 pos=3184.7710843373493 len=17.349397590361434
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=184 total=353 id=185 cursor=0 pos=3179.9172390241265 len=4.8538453132
-time=2024-09-28T20:40:44.529+04:00 level=DEBUG msg=searching line=183 total=353 id=184 cursor=0 pos=3174.6506024096266 len=5.2666366145
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=182 total=353 id=183 cursor=0 pos=3170.3132530120265 len=4.3373493976
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=181 total=353 id=182 cursor=0 pos=3168.1463945578266 len=2.1668584542
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=180 total=353 id=181 cursor=0 pos=3166.1373070513264 len=2.0090875065
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=179 total=353 id=180 cursor=0 pos=3162.8571882086267 len=3.2801188427
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=178 total=353 id=179 cursor=0 pos=3160.6414285714263 len=2.2157596372
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=177 total=353 id=178 cursor=0 pos=3157.3012048193264 len=3.3402237521
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=176 total=353 id=177 cursor=0 pos=3154.0715474141266 len=3.2296574052
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=175 total=353 id=176 cursor=0 pos=3148.6265060241267 len=5.44504139
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=174 total=353 id=175 cursor=0 pos=3144.650602409604 len=5.421686747
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=173 total=353 id=174 cursor=0 pos=3142.1204819277036 len=2.5301204819
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=172 total=353 id=173 cursor=0 pos=3135.6144578313038 len=6.5060240964
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=171 total=353 id=172 cursor=0 pos=3133.084337349404 len=2.5301204819
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=170 total=353 id=171 cursor=0 pos=3126.9397590361036 len=6.1445783133
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=169 total=353 id=170 cursor=0 pos=3124.771084337304 len=2.1686746988
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=168 total=353 id=169 cursor=0 pos=3118.265060241004 len=6.5060240963
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=167 total=353 id=168 cursor=0 pos=3115.373493975904 len=2.8915662651
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=166 total=353 id=167 cursor=0 pos=3098.024096385542 len=17.349397590361438
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=165 total=353 id=166 cursor=0 pos=3098.024096385542 len=17.349397590361438
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=164 total=353 id=165 cursor=0 pos=3080.6746987951806 len=17.34939759036145
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=163 total=353 id=164 cursor=0 pos=3080.6746987951806 len=17.34939759036145
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=162 total=353 id=163 cursor=0 pos=3072 len=8.67469879518072
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=161 total=353 id=162 cursor=0 pos=1309.7142857142858 len=11.428571428571388
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=160 total=353 id=161 cursor=0 pos=1293.7142857142858 len=0
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=159 total=353 id=160 cursor=0 pos=1300.5714285713857 len=6.8571428572
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=158 total=353 id=159 cursor=0 pos=1293.7142857142858 len=4.5714285714
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=157 total=353 id=158 cursor=0 pos=1291.4285714285713 len=2.2857142857142776
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=156 total=353 id=157 cursor=0 pos=1289.1428571428569 len=2.2857142857142776
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=155 total=353 id=156 cursor=0 pos=1286.8571428571427 len=2.2857142857142776
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=154 total=353 id=155 cursor=0 pos=1284.5714285714284 len=2.2857142857142776
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=153 total=353 id=154 cursor=0 pos=1282.2857142857144 len=2.2857142857142776
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=152 total=353 id=153 cursor=0 pos=1280 len=2.2857142857142776
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=151 total=353 id=152 cursor=0 pos=1277.7142857142858 len=2.2857142857142776
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=150 total=353 id=151 cursor=0 pos=1275.4285714285716 len=2.2857142857142776
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=149 total=353 id=150 cursor=0 pos=1269.997668344557 len=5.430903084
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=148 total=353 id=149 cursor=0 pos=1268.571428571357 len=1.4262397732
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=147 total=353 id=148 cursor=0 pos=1266.2857142856571 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=146 total=353 id=147 cursor=0 pos=1261.7142857142571 len=4.5714285714
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=145 total=353 id=146 cursor=0 pos=1259.428571428557 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=144 total=353 id=145 cursor=0 pos=1257.142857142857 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=143 total=353 id=144 cursor=0 pos=1251.7119540588428 len=5.430903084
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=142 total=353 id=143 cursor=0 pos=1250.2857142856428 len=1.4262397732
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=141 total=353 id=142 cursor=0 pos=1247.999999999943 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=140 total=353 id=141 cursor=0 pos=1243.428571428543 len=4.5714285714
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=139 total=353 id=140 cursor=0 pos=1241.1428571428428 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=138 total=353 id=139 cursor=0 pos=1238.857142857143 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=137 total=353 id=138 cursor=0 pos=1220.5714285714284 len=0
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=136 total=353 id=137 cursor=0 pos=1227.4285714286284 len=6.8571428571
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=135 total=353 id=136 cursor=0 pos=1220.5714285714284 len=4
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=134 total=353 id=135 cursor=0 pos=1211.4285714285713 len=0
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=133 total=353 id=134 cursor=0 pos=1211.4285714285713 len=0
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=132 total=353 id=133 cursor=0 pos=1211.4285714285713 len=0
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=131 total=353 id=132 cursor=0 pos=1211.4285714285713 len=0
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=130 total=353 id=131 cursor=0 pos=1218.2857142857713 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=129 total=353 id=130 cursor=0 pos=1215.9999999999714 len=2.2857142858
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=128 total=353 id=129 cursor=0 pos=1213.7153888254713 len=2.2846111745
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=127 total=353 id=128 cursor=0 pos=1211.4285714285713 len=2.2868173969
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=126 total=353 id=127 cursor=0 pos=1202.2857142857142 len=0
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=125 total=353 id=126 cursor=0 pos=1202.2857142857142 len=0
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=124 total=353 id=125 cursor=0 pos=1202.2857142857142 len=0
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=123 total=353 id=124 cursor=0 pos=1202.2857142857142 len=0
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=122 total=353 id=123 cursor=0 pos=1209.1428571429142 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=121 total=353 id=122 cursor=0 pos=1206.8571428571142 len=2.2857142858
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=120 total=353 id=121 cursor=0 pos=1204.5725316826142 len=2.2846111745
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=119 total=353 id=120 cursor=0 pos=1202.2857142857142 len=2.2868173969
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=118 total=353 id=119 cursor=0 pos=1184 len=18.285714285714278
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=117 total=353 id=118 cursor=0 pos=1178.5690969159857 len=5.430903084
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=116 total=353 id=117 cursor=0 pos=1177.1428571427857 len=1.4262397732
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=115 total=353 id=116 cursor=0 pos=1174.8571428570858 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=114 total=353 id=115 cursor=0 pos=1170.2857142856858 len=4.5714285714
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=113 total=353 id=114 cursor=0 pos=1167.9999999999857 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=112 total=353 id=113 cursor=0 pos=1165.7142857142858 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=111 total=353 id=112 cursor=0 pos=1160.2833826302713 len=5.430903084
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=110 total=353 id=111 cursor=0 pos=1158.8571428570713 len=1.4262397732
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=109 total=353 id=110 cursor=0 pos=1156.5714285713714 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=108 total=353 id=109 cursor=0 pos=1151.9999999999714 len=4.5714285714
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=107 total=353 id=108 cursor=0 pos=1149.7142857142712 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=106 total=353 id=107 cursor=0 pos=1147.4285714285713 len=2.2857142857
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=105 total=353 id=106 cursor=0 pos=1141.7154562564428 len=5.7131151722
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=104 total=353 id=105 cursor=0 pos=1136.5761862106428 len=5.1392700458
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=103 total=353 id=104 cursor=0 pos=1133.706760435143 len=2.8694257755
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=102 total=353 id=103 cursor=0 pos=1129.145658269543 len=4.5611021656
-time=2024-09-28T20:40:44.530+04:00 level=DEBUG msg=searching line=101 total=353 id=102 cursor=0 pos=1123.4257655638428 len=3.9942816729
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=100 total=353 id=101 cursor=0 pos=1118.2968955751428 len=5.1288699887
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=99 total=353 id=100 cursor=0 pos=1115.4239321791429 len=2.872963396
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=98 total=353 id=99 cursor=0 pos=1110.857142857143 len=4.566789322
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=97 total=353 id=98 cursor=0 pos=1099.4285714285713 len=11.42857142857143
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=96 total=353 id=97 cursor=0 pos=1096.2833826302713 len=5.430903084
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=95 total=353 id=96 cursor=0 pos=1094.8571428570713 len=1.4262397732
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=94 total=353 id=95 cursor=0 pos=1092.5714285713714 len=2.2857142857
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=93 total=353 id=94 cursor=0 pos=1087.9999999999714 len=4.5714285714
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=92 total=353 id=93 cursor=0 pos=1085.7142857142712 len=2.2857142857
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=91 total=353 id=92 cursor=0 pos=1083.4285714285713 len=2.2857142857
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=90 total=353 id=91 cursor=0 pos=1078.857142857143 len=4.571428571428571
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=89 total=353 id=90 cursor=0 pos=1074.2857142857142 len=4.571428571428571
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=88 total=353 id=89 cursor=0 pos=1069.7142857142858 len=4.571428571428571
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=87 total=353 id=88 cursor=0 pos=1065.142857142857 len=4.571428571428571
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=86 total=353 id=87 cursor=0 pos=1060.5714285714287 len=4.571428571428571
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=85 total=353 id=86 cursor=0 pos=1056 len=4.571428571428571
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=84 total=353 id=85 cursor=0 pos=1051.4285714285716 len=4.571428571428571
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=83 total=353 id=84 cursor=0 pos=1046.857142857143 len=4.571428571428571
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=82 total=353 id=83 cursor=0 pos=1028.5714285714287 len=18.285714285714292
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=81 total=353 id=82 cursor=0 pos=1028.5714285714287 len=18.285714285714292
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=80 total=353 id=81 cursor=0 pos=1024 len=4.57142857142857
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=79 total=353 id=80 cursor=0 pos=324.82758620689657 len=6.206896551724185
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=78 total=353 id=79 cursor=0 pos=319.1379310344655 len=5.6896551725
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=77 total=353 id=78 cursor=0 pos=315.00000000006554 len=4.1379310344
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=76 total=353 id=77 cursor=0 pos=310.8620689655655 len=4.1379310345
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=75 total=353 id=76 cursor=0 pos=306.7241379310655 len=4.1379310345
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=74 total=353 id=75 cursor=0 pos=302.58620689653446 len=5.6896551725
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=73 total=353 id=74 cursor=0 pos=298.4482758621345 len=4.1379310344
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=72 total=353 id=73 cursor=0 pos=294.3103448276345 len=4.1379310345
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=71 total=353 id=72 cursor=0 pos=290.17241379313447 len=4.1379310345
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=70 total=353 id=71 cursor=0 pos=289.6551724137931 len=2.0689655172412813
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=69 total=353 id=70 cursor=0 pos=284.4827586206621 len=5.1724137931
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=68 total=353 id=69 cursor=0 pos=280.34482758616207 len=4.1379310345
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=67 total=353 id=68 cursor=0 pos=276.2068965517621 len=4.1379310344
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=66 total=353 id=67 cursor=0 pos=272.5862068965621 len=3.6206896552
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=65 total=353 id=66 cursor=0 pos=267.93103448273104 len=5.1724137931
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=64 total=353 id=65 cursor=0 pos=263.793103448231 len=4.1379310345
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=63 total=353 id=64 cursor=0 pos=259.65517241383105 len=4.1379310344
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=62 total=353 id=63 cursor=0 pos=256.03448275863104 len=3.6206896552
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=61 total=353 id=62 cursor=0 pos=251.3793103448 len=5.1724137931
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=60 total=353 id=61 cursor=0 pos=247.2413793103 len=4.1379310345
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=59 total=353 id=60 cursor=0 pos=243.1034482759 len=4.1379310344
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=58 total=353 id=59 cursor=0 pos=239.4827586207 len=3.6206896552
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=57 total=353 id=58 cursor=0 pos=237.93103448275863 len=2.0689655172413666
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=56 total=353 id=57 cursor=0 pos=232.2413793103276 len=5.6896551725
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=55 total=353 id=56 cursor=0 pos=228.10344827592758 len=4.1379310344
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=54 total=353 id=55 cursor=0 pos=223.9655172414276 len=4.1379310345
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=53 total=353 id=54 cursor=0 pos=219.82758620692758 len=4.1379310345
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=52 total=353 id=53 cursor=0 pos=211.54367103699653 len=4.4438793837
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=51 total=353 id=52 cursor=0 pos=211.46077939969655 len=0.0828916373
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=50 total=353 id=51 cursor=0 pos=207.65853557679654 len=3.8022438229
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=49 total=353 id=50 cursor=0 pos=203.51942533089655 len=4.1391102459
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=48 total=353 id=49 cursor=0 pos=202.75862068965517 len=2.0689655172413666
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=47 total=353 id=48 cursor=0 pos=198.10344827592414 len=4.6551724138
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=46 total=353 id=47 cursor=0 pos=193.44827586212412 len=4.6551724138
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=45 total=353 id=46 cursor=0 pos=189.31034482762414 len=4.1379310345
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=44 total=353 id=45 cursor=0 pos=185.68965517242412 len=3.6206896552
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=43 total=353 id=44 cursor=0 pos=181.55172413799312 len=4.6551724138
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=42 total=353 id=43 cursor=0 pos=176.8965517241931 len=4.6551724138
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=41 total=353 id=42 cursor=0 pos=172.75862068969312 len=4.1379310345
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=40 total=353 id=41 cursor=0 pos=169.1379310344931 len=3.6206896552
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=39 total=353 id=40 cursor=0 pos=167.58620689655172 len=2.068965517241395
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=38 total=353 id=39 cursor=0 pos=157.75056758872068 len=4.4438793837
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=37 total=353 id=38 cursor=0 pos=157.6676759514207 len=0.0828916373
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=36 total=353 id=37 cursor=0 pos=153.8654321285207 len=3.8022438229
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=35 total=353 id=36 cursor=0 pos=149.7263218826207 len=4.1391102459
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=34 total=353 id=35 cursor=0 pos=141.19884345078964 len=4.4438793837
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=33 total=353 id=34 cursor=0 pos=141.11595181348966 len=0.0828916373
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=32 total=353 id=33 cursor=0 pos=137.31370799058965 len=3.8022438229
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=31 total=353 id=32 cursor=0 pos=133.17459774468966 len=4.1391102459
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=30 total=353 id=31 cursor=0 pos=130.3448275862069 len=4.137931034482758
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=29 total=353 id=30 cursor=0 pos=126.20689655172413 len=4.137931034482758
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=28 total=353 id=29 cursor=0 pos=122.06896551724138 len=4.137931034482758
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=27 total=353 id=28 cursor=0 pos=117.93103448275862 len=4.137931034482758
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=26 total=353 id=27 cursor=0 pos=101.37931034482759 len=0
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=25 total=353 id=26 cursor=0 pos=113.37344758982759 len=4.557586893
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=24 total=353 id=25 cursor=0 pos=105.17552887712759 len=8.1979187127
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=23 total=353 id=24 cursor=0 pos=101.94937952462759 len=3.2261493525
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=22 total=353 id=23 cursor=0 pos=96.84400094369656 len=4.5353094011
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=21 total=353 id=22 cursor=0 pos=92.71620537619656 len=4.1277955675
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=20 total=353 id=21 cursor=0 pos=88.60657892969655 len=4.1096264465
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=19 total=353 id=20 cursor=0 pos=85.46592272519655 len=3.1406562045
-time=2024-09-28T20:40:44.531+04:00 level=DEBUG msg=searching line=18 total=353 id=19 cursor=0 pos=82.75862068965517 len=2.068965517241381
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=17 total=353 id=18 cursor=0 pos=77.06896551722414 len=5.6896551725
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=16 total=353 id=17 cursor=0 pos=72.93103448282415 len=4.1379310344
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=15 total=353 id=16 cursor=0 pos=68.79310344832415 len=4.1379310345
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=14 total=353 id=15 cursor=0 pos=64.65517241382415 len=4.1379310345
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=13 total=353 id=14 cursor=0 pos=49.6551724137931 len=0
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=12 total=353 id=13 cursor=0 pos=62.06896551719311 len=4.1379310345
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=11 total=353 id=12 cursor=0 pos=57.9310344827931 len=4.1379310344
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=10 total=353 id=11 cursor=0 pos=53.7931034482931 len=4.1379310345
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=9 total=353 id=10 cursor=0 pos=44.99999999996207 len=4.6551724138
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=8 total=353 id=9 cursor=0 pos=40.86206896546207 len=4.1379310345
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=7 total=353 id=8 cursor=0 pos=36.72413793096207 len=4.1379310345
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=6 total=353 id=7 cursor=0 pos=33.620689655162074 len=3.1034482758
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=5 total=353 id=6 cursor=0 pos=28.44827586213104 len=4.6551724138
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=4 total=353 id=5 cursor=0 pos=24.310344827631038 len=4.1379310345
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=3 total=353 id=4 cursor=0 pos=20.17241379313104 len=4.1379310345
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=2 total=353 id=3 cursor=0 pos=17.06896551723104 len=3.1034482759
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=1 total=353 id=2 cursor=0 pos=8.27586206896552 len=8.27586206896552
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=searching line=0 total=353 id=1 cursor=0 pos=0 len=8.27586206896552
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=UpdateLine() cursor=0 currentline="{ID:1 Position:0 Length:8.27586206896552 Chords: Text:}"
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=UpdateSection()
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg=UpdateItem()
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg="UpdateItem() item not changed"
-time=2024-09-28T20:40:44.532+04:00 level=DEBUG msg="app.go -> serve()"
-time=2024-09-28T20:40:44.536+04:00 level=DEBUG msg="about to start listening and serving"
-time=2024-09-28T20:40:53.397+04:00 level=DEBUG msg="new listener added" id=127.0.0.1:58644
-time=2024-09-28T20:40:53.397+04:00 level=DEBUG msg="events handler. client subscribed" params=map[]
-time=2024-09-28T20:40:53.836+04:00 level=DEBUG msg="rendering autoscroll" chords=false lyrics=true
-time=2024-09-28T20:40:53.837+04:00 level=ERROR msg="failed to execute template: " error="write tcp 127.0.0.1:1234->127.0.0.1:58652: write: broken pipe"
+time=2024-09-30T12:15:52.670+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"
+time=2024-09-30T12:15:52.670+04:00 level=INFO msg="config for the project" cfg="{port:1234 projectPath:/home/butbkadrug/Music/REAPER/BaseProject/BaseProject.rpp single:false setlistPath:/home/butbkadrug/Music/REAPER/BaseProject/setlist defaultProjectDir:/home/butbkadrug/Music/REAPER oscIP: oscPort:0 logger:0xc0000282f0}"
+time=2024-09-30T12:15:54.117+04:00 level=DEBUG msg="about to start listening and serving"
+time=2024-09-30T12:15:58.872+04:00 level=DEBUG msg="new listener added" id=127.0.0.1:37864
+time=2024-09-30T12:15:58.872+04:00 level=DEBUG msg="events handler. client subscribed" params=map[]
+time=2024-09-30T12:15:58.874+04:00 level=DEBUG msg="new listener added" id=127.0.0.1:37866
+time=2024-09-30T12:15:58.874+04:00 level=DEBUG msg="events handler. client subscribed" params=map[]
+time=2024-09-30T12:26:23.177+04:00 level=DEBUG msg="new listener added" id=127.0.0.1:49724
+time=2024-09-30T12:26:23.177+04:00 level=DEBUG msg="events handler. client subscribed" params=map[]
+time=2024-09-30T12:27:09.173+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=-0.14756250381469727
+time=2024-09-30T12:27:09.173+04:00 level=DEBUG msg="EVENTS: defauilt case" value=-0.14756250381469727
+time=2024-09-30T12:27:09.173+04:00 level=DEBUG msg="got cursor" c=-0.14756250381469727
+time=2024-09-30T12:27:09.174+04:00 level=DEBUG msg="EVENTS: defauilt case" value=-0.14756250381469727
+time=2024-09-30T12:27:09.174+04:00 level=DEBUG msg="EVENTS: defauilt case" value=-0.14756250381469727
+time=2024-09-30T12:27:09.174+04:00 level=DEBUG msg="got cursor" c=-0.14756250381469727
+time=2024-09-30T12:27:09.174+04:00 level=DEBUG msg="dispatching lineID event" lineID=-1
+time=2024-09-30T12:27:09.174+04:00 level=DEBUG msg="got cursor" c=-0.14756250381469727
+time=2024-09-30T12:27:09.174+04:00 level=DEBUG msg="dispatching lineID event" lineID=-1
+time=2024-09-30T12:27:09.174+04:00 level=DEBUG msg="connection closed" address=127.0.0.1:37864
+time=2024-09-30T12:27:09.174+04:00 level=DEBUG msg="dispatching lineID event" lineID=-1
+time=2024-09-30T12:27:09.270+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=-0.041479166597127914
+time=2024-09-30T12:27:09.270+04:00 level=DEBUG msg="EVENTS: defauilt case" value=-0.041479166597127914
+time=2024-09-30T12:27:09.270+04:00 level=DEBUG msg="got cursor" c=-0.041479166597127914
+time=2024-09-30T12:27:09.270+04:00 level=DEBUG msg="EVENTS: defauilt case" value=-0.041479166597127914
+time=2024-09-30T12:27:09.270+04:00 level=DEBUG msg="dispatching lineID event" lineID=-1
+time=2024-09-30T12:27:09.270+04:00 level=DEBUG msg="got cursor" c=-0.041479166597127914
+time=2024-09-30T12:27:09.271+04:00 level=DEBUG msg="dispatching lineID event" lineID=-1
+time=2024-09-30T12:27:09.365+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=0.054229166358709335
+time=2024-09-30T12:27:09.366+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.054229166358709335
+time=2024-09-30T12:27:09.366+04:00 level=DEBUG msg="got cursor" c=0.054229166358709335
+time=2024-09-30T12:27:09.366+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.054229166358709335
+time=2024-09-30T12:27:09.366+04:00 level=DEBUG msg="got cursor" c=0.054229166358709335
+time=2024-09-30T12:27:09.366+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:09.366+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:09.463+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=0.14897917211055756
+time=2024-09-30T12:27:09.463+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.14897917211055756
+time=2024-09-30T12:27:09.463+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.14897917211055756
+time=2024-09-30T12:27:09.463+04:00 level=DEBUG msg="got cursor" c=0.14897917211055756
+time=2024-09-30T12:27:09.463+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:09.463+04:00 level=DEBUG msg="got cursor" c=0.14897917211055756
+time=2024-09-30T12:27:09.463+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:09.552+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=0.24295833706855774
+time=2024-09-30T12:27:09.552+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.24295833706855774
+time=2024-09-30T12:27:09.552+04:00 level=DEBUG msg="got cursor" c=0.24295833706855774
+time=2024-09-30T12:27:09.552+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:09.552+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.24295833706855774
+time=2024-09-30T12:27:09.552+04:00 level=DEBUG msg="got cursor" c=0.24295833706855774
+time=2024-09-30T12:27:09.553+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:09.618+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=0.3109374940395355
+time=2024-09-30T12:27:09.619+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.3109374940395355
+time=2024-09-30T12:27:09.619+04:00 level=DEBUG msg="got cursor" c=0.3109374940395355
+time=2024-09-30T12:27:09.619+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:09.619+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.3109374940395355
+time=2024-09-30T12:27:09.619+04:00 level=DEBUG msg="got cursor" c=0.3109374940395355
+time=2024-09-30T12:27:09.619+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:09.714+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=0.4038749933242798
+time=2024-09-30T12:27:09.714+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.4038749933242798
+time=2024-09-30T12:27:09.714+04:00 level=DEBUG msg="got cursor" c=0.4038749933242798
+time=2024-09-30T12:27:09.714+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.4038749933242798
+time=2024-09-30T12:27:09.714+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:09.714+04:00 level=DEBUG msg="got cursor" c=0.4038749933242798
+time=2024-09-30T12:27:09.714+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:09.810+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=0.4987500011920929
+time=2024-09-30T12:27:09.810+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.4987500011920929
+time=2024-09-30T12:27:09.810+04:00 level=DEBUG msg="got cursor" c=0.4987500011920929
+time=2024-09-30T12:27:09.810+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:09.810+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.4987500011920929
+time=2024-09-30T12:27:09.810+04:00 level=DEBUG msg="got cursor" c=0.4987500011920929
+time=2024-09-30T12:27:09.810+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:09.905+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=0.5943750143051147
+time=2024-09-30T12:27:09.906+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.5943750143051147
+time=2024-09-30T12:27:09.906+04:00 level=DEBUG msg="got cursor" c=0.5943750143051147
+time=2024-09-30T12:27:09.906+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:09.906+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.5943750143051147
+time=2024-09-30T12:27:09.906+04:00 level=DEBUG msg="got cursor" c=0.5943750143051147
+time=2024-09-30T12:27:09.906+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.001+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=0.6903958320617676
+time=2024-09-30T12:27:10.002+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.6903958320617676
+time=2024-09-30T12:27:10.002+04:00 level=DEBUG msg="got cursor" c=0.6903958320617676
+time=2024-09-30T12:27:10.002+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.002+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.6903958320617676
+time=2024-09-30T12:27:10.002+04:00 level=DEBUG msg="got cursor" c=0.6903958320617676
+time=2024-09-30T12:27:10.002+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.098+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=0.7861875295639038
+time=2024-09-30T12:27:10.098+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.7861875295639038
+time=2024-09-30T12:27:10.098+04:00 level=DEBUG msg="got cursor" c=0.7861875295639038
+time=2024-09-30T12:27:10.098+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.098+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.7861875295639038
+time=2024-09-30T12:27:10.098+04:00 level=DEBUG msg="got cursor" c=0.7861875295639038
+time=2024-09-30T12:27:10.098+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.193+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=0.882979154586792
+time=2024-09-30T12:27:10.194+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.882979154586792
+time=2024-09-30T12:27:10.194+04:00 level=DEBUG msg="got cursor" c=0.882979154586792
+time=2024-09-30T12:27:10.194+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.194+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.882979154586792
+time=2024-09-30T12:27:10.194+04:00 level=DEBUG msg="got cursor" c=0.882979154586792
+time=2024-09-30T12:27:10.194+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.290+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=0.9793958067893982
+time=2024-09-30T12:27:10.291+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.9793958067893982
+time=2024-09-30T12:27:10.291+04:00 level=DEBUG msg="got cursor" c=0.9793958067893982
+time=2024-09-30T12:27:10.291+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.291+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0.9793958067893982
+time=2024-09-30T12:27:10.291+04:00 level=DEBUG msg="got cursor" c=0.9793958067893982
+time=2024-09-30T12:27:10.291+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.386+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1.0746458768844604
+time=2024-09-30T12:27:10.386+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.0746458768844604
+time=2024-09-30T12:27:10.386+04:00 level=DEBUG msg="got cursor" c=1.0746458768844604
+time=2024-09-30T12:27:10.386+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.386+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.0746458768844604
+time=2024-09-30T12:27:10.387+04:00 level=DEBUG msg="got cursor" c=1.0746458768844604
+time=2024-09-30T12:27:10.387+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.481+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1.170729160308838
+time=2024-09-30T12:27:10.481+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.170729160308838
+time=2024-09-30T12:27:10.481+04:00 level=DEBUG msg="got cursor" c=1.170729160308838
+time=2024-09-30T12:27:10.481+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.170729160308838
+time=2024-09-30T12:27:10.481+04:00 level=DEBUG msg="got cursor" c=1.170729160308838
+time=2024-09-30T12:27:10.481+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.481+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.576+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1.266770839691162
+time=2024-09-30T12:27:10.577+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.266770839691162
+time=2024-09-30T12:27:10.577+04:00 level=DEBUG msg="got cursor" c=1.266770839691162
+time=2024-09-30T12:27:10.577+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.577+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.266770839691162
+time=2024-09-30T12:27:10.577+04:00 level=DEBUG msg="got cursor" c=1.266770839691162
+time=2024-09-30T12:27:10.577+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.672+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1.3620624542236328
+time=2024-09-30T12:27:10.672+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.3620624542236328
+time=2024-09-30T12:27:10.672+04:00 level=DEBUG msg="got cursor" c=1.3620624542236328
+time=2024-09-30T12:27:10.673+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.672+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.3620624542236328
+time=2024-09-30T12:27:10.673+04:00 level=DEBUG msg="got cursor" c=1.3620624542236328
+time=2024-09-30T12:27:10.673+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.777+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1.4505000114440918
+time=2024-09-30T12:27:10.777+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.4505000114440918
+time=2024-09-30T12:27:10.777+04:00 level=DEBUG msg="got cursor" c=1.4505000114440918
+time=2024-09-30T12:27:10.777+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.777+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.4505000114440918
+time=2024-09-30T12:27:10.777+04:00 level=DEBUG msg="got cursor" c=1.4505000114440918
+time=2024-09-30T12:27:10.777+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.870+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1.5490208864212036
+time=2024-09-30T12:27:10.870+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.5490208864212036
+time=2024-09-30T12:27:10.870+04:00 level=DEBUG msg="got cursor" c=1.5490208864212036
+time=2024-09-30T12:27:10.870+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.870+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.5490208864212036
+time=2024-09-30T12:27:10.870+04:00 level=DEBUG msg="got cursor" c=1.5490208864212036
+time=2024-09-30T12:27:10.870+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.961+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1.6451457738876343
+time=2024-09-30T12:27:10.961+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.6451457738876343
+time=2024-09-30T12:27:10.962+04:00 level=DEBUG msg="got cursor" c=1.6451457738876343
+time=2024-09-30T12:27:10.962+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:10.962+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.6451457738876343
+time=2024-09-30T12:27:10.962+04:00 level=DEBUG msg="got cursor" c=1.6451457738876343
+time=2024-09-30T12:27:10.962+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.057+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1.7396249771118164
+time=2024-09-30T12:27:11.057+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.7396249771118164
+time=2024-09-30T12:27:11.057+04:00 level=DEBUG msg="got cursor" c=1.7396249771118164
+time=2024-09-30T12:27:11.057+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.057+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.7396249771118164
+time=2024-09-30T12:27:11.057+04:00 level=DEBUG msg="got cursor" c=1.7396249771118164
+time=2024-09-30T12:27:11.058+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.153+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1.837416648864746
+time=2024-09-30T12:27:11.153+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.837416648864746
+time=2024-09-30T12:27:11.153+04:00 level=DEBUG msg="got cursor" c=1.837416648864746
+time=2024-09-30T12:27:11.153+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.837416648864746
+time=2024-09-30T12:27:11.153+04:00 level=DEBUG msg="got cursor" c=1.837416648864746
+time=2024-09-30T12:27:11.154+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.153+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.249+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1.931333303451538
+time=2024-09-30T12:27:11.249+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.931333303451538
+time=2024-09-30T12:27:11.249+04:00 level=DEBUG msg="got cursor" c=1.931333303451538
+time=2024-09-30T12:27:11.249+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.931333303451538
+time=2024-09-30T12:27:11.249+04:00 level=DEBUG msg="got cursor" c=1.931333303451538
+time=2024-09-30T12:27:11.249+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.249+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.315+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=1.9970624446868896
+time=2024-09-30T12:27:11.315+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.9970624446868896
+time=2024-09-30T12:27:11.315+04:00 level=DEBUG msg="got cursor" c=1.9970624446868896
+time=2024-09-30T12:27:11.315+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.315+04:00 level=DEBUG msg="EVENTS: defauilt case" value=1.9970624446868896
+time=2024-09-30T12:27:11.315+04:00 level=DEBUG msg="got cursor" c=1.9970624446868896
+time=2024-09-30T12:27:11.315+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.411+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=2.0912082195281982
+time=2024-09-30T12:27:11.412+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.0912082195281982
+time=2024-09-30T12:27:11.412+04:00 level=DEBUG msg="got cursor" c=2.0912082195281982
+time=2024-09-30T12:27:11.412+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.412+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.0912082195281982
+time=2024-09-30T12:27:11.412+04:00 level=DEBUG msg="got cursor" c=2.0912082195281982
+time=2024-09-30T12:27:11.412+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.506+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=2.1870625019073486
+time=2024-09-30T12:27:11.507+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.1870625019073486
+time=2024-09-30T12:27:11.507+04:00 level=DEBUG msg="got cursor" c=2.1870625019073486
+time=2024-09-30T12:27:11.507+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.507+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.1870625019073486
+time=2024-09-30T12:27:11.507+04:00 level=DEBUG msg="got cursor" c=2.1870625019073486
+time=2024-09-30T12:27:11.507+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.602+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=2.2820208072662354
+time=2024-09-30T12:27:11.602+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.2820208072662354
+time=2024-09-30T12:27:11.602+04:00 level=DEBUG msg="got cursor" c=2.2820208072662354
+time=2024-09-30T12:27:11.602+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.602+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.2820208072662354
+time=2024-09-30T12:27:11.602+04:00 level=DEBUG msg="got cursor" c=2.2820208072662354
+time=2024-09-30T12:27:11.602+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.668+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=2.350770950317383
+time=2024-09-30T12:27:11.669+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.350770950317383
+time=2024-09-30T12:27:11.669+04:00 level=DEBUG msg="got cursor" c=2.350770950317383
+time=2024-09-30T12:27:11.669+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.669+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.350770950317383
+time=2024-09-30T12:27:11.669+04:00 level=DEBUG msg="got cursor" c=2.350770950317383
+time=2024-09-30T12:27:11.669+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.764+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=2.4442083835601807
+time=2024-09-30T12:27:11.764+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.4442083835601807
+time=2024-09-30T12:27:11.764+04:00 level=DEBUG msg="got cursor" c=2.4442083835601807
+time=2024-09-30T12:27:11.764+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.4442083835601807
+time=2024-09-30T12:27:11.765+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.765+04:00 level=DEBUG msg="got cursor" c=2.4442083835601807
+time=2024-09-30T12:27:11.765+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.861+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=2.540416717529297
+time=2024-09-30T12:27:11.861+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.540416717529297
+time=2024-09-30T12:27:11.861+04:00 level=DEBUG msg="got cursor" c=2.540416717529297
+time=2024-09-30T12:27:11.861+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.861+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.540416717529297
+time=2024-09-30T12:27:11.861+04:00 level=DEBUG msg="got cursor" c=2.540416717529297
+time=2024-09-30T12:27:11.861+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.956+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=2.6362082958221436
+time=2024-09-30T12:27:11.956+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.6362082958221436
+time=2024-09-30T12:27:11.956+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.6362082958221436
+time=2024-09-30T12:27:11.957+04:00 level=DEBUG msg="got cursor" c=2.6362082958221436
+time=2024-09-30T12:27:11.957+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:11.957+04:00 level=DEBUG msg="got cursor" c=2.6362082958221436
+time=2024-09-30T12:27:11.957+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.022+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=2.701145887374878
+time=2024-09-30T12:27:12.022+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.701145887374878
+time=2024-09-30T12:27:12.022+04:00 level=DEBUG msg="got cursor" c=2.701145887374878
+time=2024-09-30T12:27:12.022+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.022+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.701145887374878
+time=2024-09-30T12:27:12.022+04:00 level=DEBUG msg="got cursor" c=2.701145887374878
+time=2024-09-30T12:27:12.022+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.118+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=2.7974166870117188
+time=2024-09-30T12:27:12.118+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.7974166870117188
+time=2024-09-30T12:27:12.118+04:00 level=DEBUG msg="got cursor" c=2.7974166870117188
+time=2024-09-30T12:27:12.118+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.7974166870117188
+time=2024-09-30T12:27:12.118+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.118+04:00 level=DEBUG msg="got cursor" c=2.7974166870117188
+time=2024-09-30T12:27:12.118+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.183+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=2.8647499084472656
+time=2024-09-30T12:27:12.184+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.8647499084472656
+time=2024-09-30T12:27:12.184+04:00 level=DEBUG msg="got cursor" c=2.8647499084472656
+time=2024-09-30T12:27:12.184+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.184+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.8647499084472656
+time=2024-09-30T12:27:12.184+04:00 level=DEBUG msg="got cursor" c=2.8647499084472656
+time=2024-09-30T12:27:12.184+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.279+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=2.9732916355133057
+time=2024-09-30T12:27:12.279+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.9732916355133057
+time=2024-09-30T12:27:12.279+04:00 level=DEBUG msg="got cursor" c=2.9732916355133057
+time=2024-09-30T12:27:12.279+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.280+04:00 level=DEBUG msg="EVENTS: defauilt case" value=2.9732916355133057
+time=2024-09-30T12:27:12.280+04:00 level=DEBUG msg="got cursor" c=2.9732916355133057
+time=2024-09-30T12:27:12.280+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.375+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=3.0700416564941406
+time=2024-09-30T12:27:12.375+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.0700416564941406
+time=2024-09-30T12:27:12.375+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.0700416564941406
+time=2024-09-30T12:27:12.375+04:00 level=DEBUG msg="got cursor" c=3.0700416564941406
+time=2024-09-30T12:27:12.376+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.375+04:00 level=DEBUG msg="got cursor" c=3.0700416564941406
+time=2024-09-30T12:27:12.376+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.471+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=3.166062593460083
+time=2024-09-30T12:27:12.471+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.166062593460083
+time=2024-09-30T12:27:12.471+04:00 level=DEBUG msg="got cursor" c=3.166062593460083
+time=2024-09-30T12:27:12.471+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.471+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.166062593460083
+time=2024-09-30T12:27:12.471+04:00 level=DEBUG msg="got cursor" c=3.166062593460083
+time=2024-09-30T12:27:12.471+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.568+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=3.2612082958221436
+time=2024-09-30T12:27:12.568+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.2612082958221436
+time=2024-09-30T12:27:12.568+04:00 level=DEBUG msg="got cursor" c=3.2612082958221436
+time=2024-09-30T12:27:12.568+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.568+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.2612082958221436
+time=2024-09-30T12:27:12.568+04:00 level=DEBUG msg="got cursor" c=3.2612082958221436
+time=2024-09-30T12:27:12.568+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.665+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=3.357229232788086
+time=2024-09-30T12:27:12.665+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.357229232788086
+time=2024-09-30T12:27:12.665+04:00 level=DEBUG msg="got cursor" c=3.357229232788086
+time=2024-09-30T12:27:12.665+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.357229232788086
+time=2024-09-30T12:27:12.665+04:00 level=DEBUG msg="got cursor" c=3.357229232788086
+time=2024-09-30T12:27:12.665+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.665+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.760+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=3.452458381652832
+time=2024-09-30T12:27:12.760+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.452458381652832
+time=2024-09-30T12:27:12.760+04:00 level=DEBUG msg="got cursor" c=3.452458381652832
+time=2024-09-30T12:27:12.761+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.761+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.452458381652832
+time=2024-09-30T12:27:12.761+04:00 level=DEBUG msg="got cursor" c=3.452458381652832
+time=2024-09-30T12:27:12.761+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.858+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=3.5492916107177734
+time=2024-09-30T12:27:12.858+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.5492916107177734
+time=2024-09-30T12:27:12.859+04:00 level=DEBUG msg="got cursor" c=3.5492916107177734
+time=2024-09-30T12:27:12.859+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.859+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.5492916107177734
+time=2024-09-30T12:27:12.859+04:00 level=DEBUG msg="got cursor" c=3.5492916107177734
+time=2024-09-30T12:27:12.859+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.954+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=3.644458293914795
+time=2024-09-30T12:27:12.954+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.644458293914795
+time=2024-09-30T12:27:12.954+04:00 level=DEBUG msg="got cursor" c=3.644458293914795
+time=2024-09-30T12:27:12.955+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:12.955+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.644458293914795
+time=2024-09-30T12:27:12.955+04:00 level=DEBUG msg="got cursor" c=3.644458293914795
+time=2024-09-30T12:27:12.955+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.019+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=3.7095625400543213
+time=2024-09-30T12:27:13.019+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.7095625400543213
+time=2024-09-30T12:27:13.019+04:00 level=DEBUG msg="got cursor" c=3.7095625400543213
+time=2024-09-30T12:27:13.020+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.020+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.7095625400543213
+time=2024-09-30T12:27:13.020+04:00 level=DEBUG msg="got cursor" c=3.7095625400543213
+time=2024-09-30T12:27:13.020+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.115+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=3.809520721435547
+time=2024-09-30T12:27:13.115+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.809520721435547
+time=2024-09-30T12:27:13.115+04:00 level=DEBUG msg="got cursor" c=3.809520721435547
+time=2024-09-30T12:27:13.115+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.809520721435547
+time=2024-09-30T12:27:13.115+04:00 level=DEBUG msg="got cursor" c=3.809520721435547
+time=2024-09-30T12:27:13.115+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.115+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.181+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=3.874187469482422
+time=2024-09-30T12:27:13.181+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.874187469482422
+time=2024-09-30T12:27:13.181+04:00 level=DEBUG msg="got cursor" c=3.874187469482422
+time=2024-09-30T12:27:13.181+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.181+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.874187469482422
+time=2024-09-30T12:27:13.181+04:00 level=DEBUG msg="got cursor" c=3.874187469482422
+time=2024-09-30T12:27:13.181+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.276+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=3.9720208644866943
+time=2024-09-30T12:27:13.276+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.9720208644866943
+time=2024-09-30T12:27:13.277+04:00 level=DEBUG msg="got cursor" c=3.9720208644866943
+time=2024-09-30T12:27:13.277+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.277+04:00 level=DEBUG msg="EVENTS: defauilt case" value=3.9720208644866943
+time=2024-09-30T12:27:13.277+04:00 level=DEBUG msg="got cursor" c=3.9720208644866943
+time=2024-09-30T12:27:13.277+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.372+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=4.071208477020264
+time=2024-09-30T12:27:13.372+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.071208477020264
+time=2024-09-30T12:27:13.372+04:00 level=DEBUG msg="got cursor" c=4.071208477020264
+time=2024-09-30T12:27:13.372+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.372+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.071208477020264
+time=2024-09-30T12:27:13.372+04:00 level=DEBUG msg="got cursor" c=4.071208477020264
+time=2024-09-30T12:27:13.372+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.467+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=4.16462516784668
+time=2024-09-30T12:27:13.468+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.16462516784668
+time=2024-09-30T12:27:13.468+04:00 level=DEBUG msg="got cursor" c=4.16462516784668
+time=2024-09-30T12:27:13.468+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.16462516784668
+time=2024-09-30T12:27:13.468+04:00 level=DEBUG msg="got cursor" c=4.16462516784668
+time=2024-09-30T12:27:13.468+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.468+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.541+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=4.2279582023620605
+time=2024-09-30T12:27:13.541+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.2279582023620605
+time=2024-09-30T12:27:13.541+04:00 level=DEBUG msg="got cursor" c=4.2279582023620605
+time=2024-09-30T12:27:13.541+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.542+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.2279582023620605
+time=2024-09-30T12:27:13.542+04:00 level=DEBUG msg="got cursor" c=4.2279582023620605
+time=2024-09-30T12:27:13.542+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.631+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=4.327104091644287
+time=2024-09-30T12:27:13.631+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.327104091644287
+time=2024-09-30T12:27:13.631+04:00 level=DEBUG msg="got cursor" c=4.327104091644287
+time=2024-09-30T12:27:13.631+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.327104091644287
+time=2024-09-30T12:27:13.631+04:00 level=DEBUG msg="got cursor" c=4.327104091644287
+time=2024-09-30T12:27:13.631+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.631+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.727+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=4.428333282470703
+time=2024-09-30T12:27:13.727+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.428333282470703
+time=2024-09-30T12:27:13.728+04:00 level=DEBUG msg="got cursor" c=4.428333282470703
+time=2024-09-30T12:27:13.728+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.428333282470703
+time=2024-09-30T12:27:13.728+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.728+04:00 level=DEBUG msg="got cursor" c=4.428333282470703
+time=2024-09-30T12:27:13.728+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.823+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=4.523250102996826
+time=2024-09-30T12:27:13.823+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.523250102996826
+time=2024-09-30T12:27:13.824+04:00 level=DEBUG msg="got cursor" c=4.523250102996826
+time=2024-09-30T12:27:13.824+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.823+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.523250102996826
+time=2024-09-30T12:27:13.824+04:00 level=DEBUG msg="got cursor" c=4.523250102996826
+time=2024-09-30T12:27:13.824+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.920+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=4.619645595550537
+time=2024-09-30T12:27:13.920+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.619645595550537
+time=2024-09-30T12:27:13.920+04:00 level=DEBUG msg="got cursor" c=4.619645595550537
+time=2024-09-30T12:27:13.920+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.619645595550537
+time=2024-09-30T12:27:13.921+04:00 level=DEBUG msg="got cursor" c=4.619645595550537
+time=2024-09-30T12:27:13.921+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:13.920+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.019+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=4.715416431427002
+time=2024-09-30T12:27:14.019+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.715416431427002
+time=2024-09-30T12:27:14.020+04:00 level=DEBUG msg="got cursor" c=4.715416431427002
+time=2024-09-30T12:27:14.020+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.020+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.715416431427002
+time=2024-09-30T12:27:14.020+04:00 level=DEBUG msg="got cursor" c=4.715416431427002
+time=2024-09-30T12:27:14.020+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.115+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=4.812812328338623
+time=2024-09-30T12:27:14.115+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.812812328338623
+time=2024-09-30T12:27:14.115+04:00 level=DEBUG msg="got cursor" c=4.812812328338623
+time=2024-09-30T12:27:14.115+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.115+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.812812328338623
+time=2024-09-30T12:27:14.115+04:00 level=DEBUG msg="got cursor" c=4.812812328338623
+time=2024-09-30T12:27:14.115+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.207+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=4.909229278564453
+time=2024-09-30T12:27:14.207+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.909229278564453
+time=2024-09-30T12:27:14.208+04:00 level=DEBUG msg="got cursor" c=4.909229278564453
+time=2024-09-30T12:27:14.208+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.208+04:00 level=DEBUG msg="EVENTS: defauilt case" value=4.909229278564453
+time=2024-09-30T12:27:14.208+04:00 level=DEBUG msg="got cursor" c=4.909229278564453
+time=2024-09-30T12:27:14.208+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.303+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=5.004395961761475
+time=2024-09-30T12:27:14.303+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.004395961761475
+time=2024-09-30T12:27:14.303+04:00 level=DEBUG msg="got cursor" c=5.004395961761475
+time=2024-09-30T12:27:14.303+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.004395961761475
+time=2024-09-30T12:27:14.303+04:00 level=DEBUG msg="got cursor" c=5.004395961761475
+time=2024-09-30T12:27:14.303+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.303+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.400+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=5.101729393005371
+time=2024-09-30T12:27:14.400+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.101729393005371
+time=2024-09-30T12:27:14.400+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.101729393005371
+time=2024-09-30T12:27:14.400+04:00 level=DEBUG msg="got cursor" c=5.101729393005371
+time=2024-09-30T12:27:14.400+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.400+04:00 level=DEBUG msg="got cursor" c=5.101729393005371
+time=2024-09-30T12:27:14.400+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.496+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=5.1953125
+time=2024-09-30T12:27:14.496+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.1953125
+time=2024-09-30T12:27:14.496+04:00 level=DEBUG msg="got cursor" c=5.1953125
+time=2024-09-30T12:27:14.496+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.496+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.1953125
+time=2024-09-30T12:27:14.496+04:00 level=DEBUG msg="got cursor" c=5.1953125
+time=2024-09-30T12:27:14.496+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.561+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=5.262499809265137
+time=2024-09-30T12:27:14.561+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.262499809265137
+time=2024-09-30T12:27:14.561+04:00 level=DEBUG msg="got cursor" c=5.262499809265137
+time=2024-09-30T12:27:14.561+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.561+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.262499809265137
+time=2024-09-30T12:27:14.561+04:00 level=DEBUG msg="got cursor" c=5.262499809265137
+time=2024-09-30T12:27:14.561+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.657+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=5.356916904449463
+time=2024-09-30T12:27:14.657+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.356916904449463
+time=2024-09-30T12:27:14.657+04:00 level=DEBUG msg="got cursor" c=5.356916904449463
+time=2024-09-30T12:27:14.657+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.657+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.356916904449463
+time=2024-09-30T12:27:14.657+04:00 level=DEBUG msg="got cursor" c=5.356916904449463
+time=2024-09-30T12:27:14.657+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.722+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=5.421249866485596
+time=2024-09-30T12:27:14.722+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.421249866485596
+time=2024-09-30T12:27:14.722+04:00 level=DEBUG msg="got cursor" c=5.421249866485596
+time=2024-09-30T12:27:14.722+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.722+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.421249866485596
+time=2024-09-30T12:27:14.722+04:00 level=DEBUG msg="got cursor" c=5.421249866485596
+time=2024-09-30T12:27:14.723+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.818+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=5.518249988555908
+time=2024-09-30T12:27:14.818+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.518249988555908
+time=2024-09-30T12:27:14.818+04:00 level=DEBUG msg="got cursor" c=5.518249988555908
+time=2024-09-30T12:27:14.818+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.818+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.518249988555908
+time=2024-09-30T12:27:14.818+04:00 level=DEBUG msg="got cursor" c=5.518249988555908
+time=2024-09-30T12:27:14.818+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.914+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=5.617666721343994
+time=2024-09-30T12:27:14.914+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.617666721343994
+time=2024-09-30T12:27:14.914+04:00 level=DEBUG msg="got cursor" c=5.617666721343994
+time=2024-09-30T12:27:14.915+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:14.914+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.617666721343994
+time=2024-09-30T12:27:14.915+04:00 level=DEBUG msg="got cursor" c=5.617666721343994
+time=2024-09-30T12:27:14.915+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.010+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=5.711249828338623
+time=2024-09-30T12:27:15.010+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.711249828338623
+time=2024-09-30T12:27:15.010+04:00 level=DEBUG msg="got cursor" c=5.711249828338623
+time=2024-09-30T12:27:15.010+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.011+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.711249828338623
+time=2024-09-30T12:27:15.011+04:00 level=DEBUG msg="got cursor" c=5.711249828338623
+time=2024-09-30T12:27:15.011+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.079+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=5.778562545776367
+time=2024-09-30T12:27:15.079+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.778562545776367
+time=2024-09-30T12:27:15.079+04:00 level=DEBUG msg="got cursor" c=5.778562545776367
+time=2024-09-30T12:27:15.079+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.778562545776367
+time=2024-09-30T12:27:15.079+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.079+04:00 level=DEBUG msg="got cursor" c=5.778562545776367
+time=2024-09-30T12:27:15.079+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.175+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=5.874729156494141
+time=2024-09-30T12:27:15.175+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.874729156494141
+time=2024-09-30T12:27:15.175+04:00 level=DEBUG msg="got cursor" c=5.874729156494141
+time=2024-09-30T12:27:15.175+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.175+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.874729156494141
+time=2024-09-30T12:27:15.175+04:00 level=DEBUG msg="got cursor" c=5.874729156494141
+time=2024-09-30T12:27:15.175+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.271+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=5.971187591552734
+time=2024-09-30T12:27:15.271+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.971187591552734
+time=2024-09-30T12:27:15.271+04:00 level=DEBUG msg="got cursor" c=5.971187591552734
+time=2024-09-30T12:27:15.272+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.271+04:00 level=DEBUG msg="EVENTS: defauilt case" value=5.971187591552734
+time=2024-09-30T12:27:15.272+04:00 level=DEBUG msg="got cursor" c=5.971187591552734
+time=2024-09-30T12:27:15.272+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.367+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=6.066208362579346
+time=2024-09-30T12:27:15.367+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.066208362579346
+time=2024-09-30T12:27:15.367+04:00 level=DEBUG msg="got cursor" c=6.066208362579346
+time=2024-09-30T12:27:15.367+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.367+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.066208362579346
+time=2024-09-30T12:27:15.367+04:00 level=DEBUG msg="got cursor" c=6.066208362579346
+time=2024-09-30T12:27:15.367+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.463+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=6.161645889282227
+time=2024-09-30T12:27:15.463+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.161645889282227
+time=2024-09-30T12:27:15.463+04:00 level=DEBUG msg="got cursor" c=6.161645889282227
+time=2024-09-30T12:27:15.463+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.161645889282227
+time=2024-09-30T12:27:15.463+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.463+04:00 level=DEBUG msg="got cursor" c=6.161645889282227
+time=2024-09-30T12:27:15.463+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.560+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=6.259041786193848
+time=2024-09-30T12:27:15.560+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.259041786193848
+time=2024-09-30T12:27:15.560+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.259041786193848
+time=2024-09-30T12:27:15.560+04:00 level=DEBUG msg="got cursor" c=6.259041786193848
+time=2024-09-30T12:27:15.560+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.560+04:00 level=DEBUG msg="got cursor" c=6.259041786193848
+time=2024-09-30T12:27:15.560+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.656+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=6.355687618255615
+time=2024-09-30T12:27:15.656+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.355687618255615
+time=2024-09-30T12:27:15.656+04:00 level=DEBUG msg="got cursor" c=6.355687618255615
+time=2024-09-30T12:27:15.656+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.656+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.355687618255615
+time=2024-09-30T12:27:15.656+04:00 level=DEBUG msg="got cursor" c=6.355687618255615
+time=2024-09-30T12:27:15.656+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.753+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=6.450479030609131
+time=2024-09-30T12:27:15.753+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.450479030609131
+time=2024-09-30T12:27:15.753+04:00 level=DEBUG msg="got cursor" c=6.450479030609131
+time=2024-09-30T12:27:15.753+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.753+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.450479030609131
+time=2024-09-30T12:27:15.753+04:00 level=DEBUG msg="got cursor" c=6.450479030609131
+time=2024-09-30T12:27:15.753+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.849+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=6.549833297729492
+time=2024-09-30T12:27:15.849+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.549833297729492
+time=2024-09-30T12:27:15.849+04:00 level=DEBUG msg="got cursor" c=6.549833297729492
+time=2024-09-30T12:27:15.849+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.549833297729492
+time=2024-09-30T12:27:15.849+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.849+04:00 level=DEBUG msg="got cursor" c=6.549833297729492
+time=2024-09-30T12:27:15.849+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.944+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=6.646500110626221
+time=2024-09-30T12:27:15.944+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.646500110626221
+time=2024-09-30T12:27:15.945+04:00 level=DEBUG msg="got cursor" c=6.646500110626221
+time=2024-09-30T12:27:15.945+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.646500110626221
+time=2024-09-30T12:27:15.945+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:15.945+04:00 level=DEBUG msg="got cursor" c=6.646500110626221
+time=2024-09-30T12:27:15.945+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.040+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=6.741687297821045
+time=2024-09-30T12:27:16.040+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.741687297821045
+time=2024-09-30T12:27:16.040+04:00 level=DEBUG msg="got cursor" c=6.741687297821045
+time=2024-09-30T12:27:16.040+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.741687297821045
+time=2024-09-30T12:27:16.040+04:00 level=DEBUG msg="got cursor" c=6.741687297821045
+time=2024-09-30T12:27:16.040+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.040+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.137+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=6.838145732879639
+time=2024-09-30T12:27:16.137+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.838145732879639
+time=2024-09-30T12:27:16.137+04:00 level=DEBUG msg="got cursor" c=6.838145732879639
+time=2024-09-30T12:27:16.138+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.138+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.838145732879639
+time=2024-09-30T12:27:16.138+04:00 level=DEBUG msg="got cursor" c=6.838145732879639
+time=2024-09-30T12:27:16.138+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.235+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=6.9342498779296875
+time=2024-09-30T12:27:16.235+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.9342498779296875
+time=2024-09-30T12:27:16.235+04:00 level=DEBUG msg="got cursor" c=6.9342498779296875
+time=2024-09-30T12:27:16.235+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.235+04:00 level=DEBUG msg="EVENTS: defauilt case" value=6.9342498779296875
+time=2024-09-30T12:27:16.235+04:00 level=DEBUG msg="got cursor" c=6.9342498779296875
+time=2024-09-30T12:27:16.235+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.331+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=7.032437324523926
+time=2024-09-30T12:27:16.331+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.032437324523926
+time=2024-09-30T12:27:16.331+04:00 level=DEBUG msg="got cursor" c=7.032437324523926
+time=2024-09-30T12:27:16.331+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.032437324523926
+time=2024-09-30T12:27:16.331+04:00 level=DEBUG msg="got cursor" c=7.032437324523926
+time=2024-09-30T12:27:16.331+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.331+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.426+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=7.128791809082031
+time=2024-09-30T12:27:16.426+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.128791809082031
+time=2024-09-30T12:27:16.426+04:00 level=DEBUG msg="got cursor" c=7.128791809082031
+time=2024-09-30T12:27:16.426+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.426+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.128791809082031
+time=2024-09-30T12:27:16.426+04:00 level=DEBUG msg="got cursor" c=7.128791809082031
+time=2024-09-30T12:27:16.426+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.521+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=7.221875190734863
+time=2024-09-30T12:27:16.521+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.221875190734863
+time=2024-09-30T12:27:16.521+04:00 level=DEBUG msg="got cursor" c=7.221875190734863
+time=2024-09-30T12:27:16.521+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.221875190734863
+time=2024-09-30T12:27:16.522+04:00 level=DEBUG msg="got cursor" c=7.221875190734863
+time=2024-09-30T12:27:16.522+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.521+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.619+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=7.3182501792907715
+time=2024-09-30T12:27:16.619+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.3182501792907715
+time=2024-09-30T12:27:16.619+04:00 level=DEBUG msg="got cursor" c=7.3182501792907715
+time=2024-09-30T12:27:16.619+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.619+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.3182501792907715
+time=2024-09-30T12:27:16.619+04:00 level=DEBUG msg="got cursor" c=7.3182501792907715
+time=2024-09-30T12:27:16.619+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.714+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=7.405729293823242
+time=2024-09-30T12:27:16.714+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.405729293823242
+time=2024-09-30T12:27:16.714+04:00 level=DEBUG msg="got cursor" c=7.405729293823242
+time=2024-09-30T12:27:16.714+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.714+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.405729293823242
+time=2024-09-30T12:27:16.714+04:00 level=DEBUG msg="got cursor" c=7.405729293823242
+time=2024-09-30T12:27:16.714+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.806+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=7.502416610717773
+time=2024-09-30T12:27:16.806+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.502416610717773
+time=2024-09-30T12:27:16.807+04:00 level=DEBUG msg="got cursor" c=7.502416610717773
+time=2024-09-30T12:27:16.807+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.806+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.502416610717773
+time=2024-09-30T12:27:16.807+04:00 level=DEBUG msg="got cursor" c=7.502416610717773
+time=2024-09-30T12:27:16.807+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.901+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=7.598062515258789
+time=2024-09-30T12:27:16.902+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.598062515258789
+time=2024-09-30T12:27:16.902+04:00 level=DEBUG msg="got cursor" c=7.598062515258789
+time=2024-09-30T12:27:16.902+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.902+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.598062515258789
+time=2024-09-30T12:27:16.902+04:00 level=DEBUG msg="got cursor" c=7.598062515258789
+time=2024-09-30T12:27:16.902+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.981+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=7.664021015167236
+time=2024-09-30T12:27:16.981+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.664021015167236
+time=2024-09-30T12:27:16.981+04:00 level=DEBUG msg="got cursor" c=7.664021015167236
+time=2024-09-30T12:27:16.981+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.664021015167236
+time=2024-09-30T12:27:16.981+04:00 level=DEBUG msg="got cursor" c=7.664021015167236
+time=2024-09-30T12:27:16.981+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:16.981+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:17.076+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=7.768624782562256
+time=2024-09-30T12:27:17.076+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.768624782562256
+time=2024-09-30T12:27:17.077+04:00 level=DEBUG msg="got cursor" c=7.768624782562256
+time=2024-09-30T12:27:17.077+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:17.077+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.768624782562256
+time=2024-09-30T12:27:17.077+04:00 level=DEBUG msg="got cursor" c=7.768624782562256
+time=2024-09-30T12:27:17.077+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:17.172+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=7.865166664123535
+time=2024-09-30T12:27:17.172+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.865166664123535
+time=2024-09-30T12:27:17.172+04:00 level=DEBUG msg="got cursor" c=7.865166664123535
+time=2024-09-30T12:27:17.172+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.865166664123535
+time=2024-09-30T12:27:17.172+04:00 level=DEBUG msg="got cursor" c=7.865166664123535
+time=2024-09-30T12:27:17.172+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:17.172+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:17.268+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=7.961874961853027
+time=2024-09-30T12:27:17.268+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.961874961853027
+time=2024-09-30T12:27:17.268+04:00 level=DEBUG msg="got cursor" c=7.961874961853027
+time=2024-09-30T12:27:17.268+04:00 level=DEBUG msg="EVENTS: defauilt case" value=7.961874961853027
+time=2024-09-30T12:27:17.268+04:00 level=DEBUG msg="got cursor" c=7.961874961853027
+time=2024-09-30T12:27:17.268+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:17.268+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:17.364+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=8.057833671569824
+time=2024-09-30T12:27:17.364+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.057833671569824
+time=2024-09-30T12:27:17.364+04:00 level=DEBUG msg="got cursor" c=8.057833671569824
+time=2024-09-30T12:27:17.364+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.057833671569824
+time=2024-09-30T12:27:17.364+04:00 level=DEBUG msg="got cursor" c=8.057833671569824
+time=2024-09-30T12:27:17.364+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:17.364+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:17.426+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=8.121146202087402
+time=2024-09-30T12:27:17.427+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.121146202087402
+time=2024-09-30T12:27:17.427+04:00 level=DEBUG msg="got cursor" c=8.121146202087402
+time=2024-09-30T12:27:17.428+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:17.427+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.121146202087402
+time=2024-09-30T12:27:17.429+04:00 level=DEBUG msg="got cursor" c=8.121146202087402
+time=2024-09-30T12:27:17.430+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:17.522+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=8.219854354858398
+time=2024-09-30T12:27:17.522+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.219854354858398
+time=2024-09-30T12:27:17.522+04:00 level=DEBUG msg="got cursor" c=8.219854354858398
+time=2024-09-30T12:27:17.522+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:17.522+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.219854354858398
+time=2024-09-30T12:27:17.522+04:00 level=DEBUG msg="got cursor" c=8.219854354858398
+time=2024-09-30T12:27:17.522+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:17.619+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=8.315145492553711
+time=2024-09-30T12:27:17.620+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.315145492553711
+time=2024-09-30T12:27:17.620+04:00 level=DEBUG msg="got cursor" c=8.315145492553711
+time=2024-09-30T12:27:17.620+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:17.620+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.315145492553711
+time=2024-09-30T12:27:17.620+04:00 level=DEBUG msg="got cursor" c=8.315145492553711
+time=2024-09-30T12:27:17.620+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:17.715+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=8.413854598999023
+time=2024-09-30T12:27:17.715+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.413854598999023
+time=2024-09-30T12:27:17.715+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.413854598999023
+time=2024-09-30T12:27:17.716+04:00 level=DEBUG msg="got cursor" c=8.413854598999023
+time=2024-09-30T12:27:17.716+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:17.715+04:00 level=DEBUG msg="got cursor" c=8.413854598999023
+time=2024-09-30T12:27:17.716+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:17.812+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=8.510396003723145
+time=2024-09-30T12:27:17.812+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.510396003723145
+time=2024-09-30T12:27:17.812+04:00 level=DEBUG msg="got cursor" c=8.510396003723145
+time=2024-09-30T12:27:17.812+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:17.812+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.510396003723145
+time=2024-09-30T12:27:17.812+04:00 level=DEBUG msg="got cursor" c=8.510396003723145
+time=2024-09-30T12:27:17.812+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:17.907+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=8.602478981018066
+time=2024-09-30T12:27:17.907+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.602478981018066
+time=2024-09-30T12:27:17.907+04:00 level=DEBUG msg="got cursor" c=8.602478981018066
+time=2024-09-30T12:27:17.907+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:17.907+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.602478981018066
+time=2024-09-30T12:27:17.907+04:00 level=DEBUG msg="got cursor" c=8.602478981018066
+time=2024-09-30T12:27:17.907+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.004+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=8.696645736694336
+time=2024-09-30T12:27:18.004+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.696645736694336
+time=2024-09-30T12:27:18.004+04:00 level=DEBUG msg="got cursor" c=8.696645736694336
+time=2024-09-30T12:27:18.004+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.696645736694336
+time=2024-09-30T12:27:18.004+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.004+04:00 level=DEBUG msg="got cursor" c=8.696645736694336
+time=2024-09-30T12:27:18.004+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.093+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=8.791916847229004
+time=2024-09-30T12:27:18.094+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.791916847229004
+time=2024-09-30T12:27:18.094+04:00 level=DEBUG msg="got cursor" c=8.791916847229004
+time=2024-09-30T12:27:18.094+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.791916847229004
+time=2024-09-30T12:27:18.094+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.094+04:00 level=DEBUG msg="got cursor" c=8.791916847229004
+time=2024-09-30T12:27:18.094+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.164+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=8.857542037963867
+time=2024-09-30T12:27:18.164+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.857542037963867
+time=2024-09-30T12:27:18.164+04:00 level=DEBUG msg="got cursor" c=8.857542037963867
+time=2024-09-30T12:27:18.164+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.857542037963867
+time=2024-09-30T12:27:18.164+04:00 level=DEBUG msg="got cursor" c=8.857542037963867
+time=2024-09-30T12:27:18.164+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.164+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.260+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=8.947750091552734
+time=2024-09-30T12:27:18.260+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.947750091552734
+time=2024-09-30T12:27:18.260+04:00 level=DEBUG msg="got cursor" c=8.947750091552734
+time=2024-09-30T12:27:18.260+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.260+04:00 level=DEBUG msg="EVENTS: defauilt case" value=8.947750091552734
+time=2024-09-30T12:27:18.260+04:00 level=DEBUG msg="got cursor" c=8.947750091552734
+time=2024-09-30T12:27:18.260+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.355+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=9.043999671936035
+time=2024-09-30T12:27:18.356+04:00 level=DEBUG msg="EVENTS: defauilt case" value=9.043999671936035
+time=2024-09-30T12:27:18.356+04:00 level=DEBUG msg="got cursor" c=9.043999671936035
+time=2024-09-30T12:27:18.356+04:00 level=DEBUG msg="EVENTS: defauilt case" value=9.043999671936035
+time=2024-09-30T12:27:18.356+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.356+04:00 level=DEBUG msg="got cursor" c=9.043999671936035
+time=2024-09-30T12:27:18.356+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.453+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=9.139062881469727
+time=2024-09-30T12:27:18.453+04:00 level=DEBUG msg="EVENTS: defauilt case" value=9.139062881469727
+time=2024-09-30T12:27:18.453+04:00 level=DEBUG msg="got cursor" c=9.139062881469727
+time=2024-09-30T12:27:18.453+04:00 level=DEBUG msg="EVENTS: defauilt case" value=9.139062881469727
+time=2024-09-30T12:27:18.453+04:00 level=DEBUG msg="got cursor" c=9.139062881469727
+time=2024-09-30T12:27:18.453+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.454+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.548+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=9.235395431518555
+time=2024-09-30T12:27:18.548+04:00 level=DEBUG msg="EVENTS: defauilt case" value=9.235395431518555
+time=2024-09-30T12:27:18.548+04:00 level=DEBUG msg="got cursor" c=9.235395431518555
+time=2024-09-30T12:27:18.548+04:00 level=DEBUG msg="EVENTS: defauilt case" value=9.235395431518555
+time=2024-09-30T12:27:18.549+04:00 level=DEBUG msg="got cursor" c=9.235395431518555
+time=2024-09-30T12:27:18.549+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.548+04:00 level=DEBUG msg="dispatching lineID event" lineID=2
+time=2024-09-30T12:27:18.663+04:00 level=DEBUG msg="OSC DISPATCHER: got /time message" value=0
+time=2024-09-30T12:27:18.663+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0
+time=2024-09-30T12:27:18.663+04:00 level=DEBUG msg="got cursor" c=0
+time=2024-09-30T12:27:18.663+04:00 level=DEBUG msg="EVENTS: defauilt case" value=0
+time=2024-09-30T12:27:18.663+04:00 level=DEBUG msg="got cursor" c=0
+time=2024-09-30T12:27:18.663+04:00 level=DEBUG msg="dispatching lineID event" lineID=1
+time=2024-09-30T12:27:18.663+04:00 level=DEBUG msg="dispatching lineID event" lineID=1

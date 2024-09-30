@@ -9,6 +9,7 @@
 <script src="/static/js/index.js"></script>
 {{ end }}
 
+
 {{ define "primer-comments" }}
 <ul class="list-disc">
 {{range $index, $e := .Comments}}
@@ -18,55 +19,57 @@
         </div>
     </li>
 {{end}}
-    {{ template "add-comment-button" . }}
 </ul>
 {{ end }}
 
+
+
+
+
+
+{{ define "comments" }}
+{{range .Comments}}
+<div class="prose prose-stone text-right font-mono">{{.}}</div>
+{{end}}
+{{ end}}
+
 {{ define "add-comment-button" }}
-    <li hx-target="this" hx-swap="outerHTML">
-        <div>
-            <form hx-get="/comments" >
-                <input name="itemID" type="text" value="{{.ItemID}}" class="hidden" />
-                <input name="sectionID" type="text" value="{{.SectionID}}" class="hidden" />
-            <button class="btn primary">+</button>
-            </form>
-        </div>
-    </li>
+<div hx-target="next div" hx-swap="outerHTML">
+        <form hx-get="/comments" >
+            <input name="itemID" type="text" value="{{.ItemID}}" class="hidden" />
+            <input name="sectionID" type="text" value="{{.ID}}" class="hidden" />
+        <button class="btn primary btn-xs">+</button>
+        </form>
+</div>
 {{ end }}
 
 {{ define "primer-comment" }}
-            <div>
-                    {{.}}
-            </div>
+<div>
+{{.}}
+</div>
 {{ end }}
 
 
 
 {{define "add-comment"}}
-<li hx-target="this" hx-swap="outerHTML">
+<div hx-target="this" hx-swap="outerHTML">
 <form hx-put="/comments">
-<div class="join">
-            <div>
-                <div>
-                    <input name="itemID" type="text" value="{{.ItemID}}" class="hidden" />
-                    <input name="sectionID" type="text" value="{{.SectionID}}" class="hidden" />
-                  <input class="input input-bordered join-item" placeholder="text" type="text" name="text"/>
-                </div>
-            </div>
-            <select class="select select-bordered join-item" name="type">
+<div class="join sm:join-horizontal join-vertical">
+<input class="input input-bordered join-item" placeholder="text" type="text" name="text"/>
+<select class="select select-bordered join-item" name="type">
                 <option disabled selected>Type:</option>
                 <option>generic</option>
                 <option>drums</option>
                 <option>guitar</option>
                 <option>piano</option>
                 <option>bass</option>
-          </select>
-            <div>
-  <button class="btn join-item rounded-r-full">Add</button>
-            </div>
+</select>
+<button class="btn join-item rounded-r-full">Add</button>
 </div>
+    <input name="itemID" type="text" value="{{.ItemID}}" class="hidden" />
+    <input name="sectionID" type="text" value="{{.SectionID}}" class="hidden" />
 </form>
-</li>
+</div>
 {{end}}
 
 
@@ -75,11 +78,17 @@
 {{ end }}
 
 {{ define "title" }}
-<div class="divider divider-primary py-4 lg:py-10 truncate">
-    {{ .Name}}
-    {{if (gt .Number 0)}}{{.Number}}{{end}}
+<div class="flex-col">
+        <div class="divider divider-primary py-4 lg:py-10 truncate">
+            {{ .Name.Name}}
+            {{if (gt .Name.Number 0)}}{{.Name.Number}}{{end}}
 
-    {{ if .Lang }}<span class="badge badge-secondary">{{.Lang}}</span>{{end}}
+            {{ if .Name.Lang }}<span class="badge badge-secondary">{{.Name.Lang}}</span>{{end}}
+            <div>
+                {{ template "add-comment-button" . }}
+            </div>
+        </div>
+    <div></div>
 </div>
 {{ end }}
 
@@ -87,11 +96,6 @@
 <bold>Capo on {{.}}</bold>
 {{end}}
 
-{{ define "comments" }}
-{{range .Comments}}
-<div class="prose prose-stone text-right font-mono">{{.}}</div>
-{{end}}
-{{ end}}
 
 
 {{ define "songmap" }}

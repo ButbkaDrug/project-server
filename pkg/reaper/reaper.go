@@ -1,6 +1,7 @@
 package reaper
 
 import (
+	"log"
 	"log/slog"
 	"lp/pkg/lyrics"
 	"os"
@@ -64,8 +65,42 @@ type Project struct {
 	Stats map[string]time.Time
 }
 
+//TODO: widthdraw all functionality related to tracking changes into it's onw pkg
+//probobly all we want to store is a list of files found. Or maybe not even that.
+//maybe to pass any file found to teh watcher pkg immidiately
+
+//TODO: find functionality that I do not use and remove it.
+
+//TODO: Mesure how much network I ocupy? Is it me who ruined network on sunday?
+
 func NewProject() *Project {
-	return NewProjectWithConfig(&ProjectConfig{})
+	log.Println("NewProject invoked")
+	config, err := NewDefauiltConfig()
+
+	if err != nil {
+		panic("NewProject failed to create a config: " + err.Error())
+	}
+
+	return &Project{
+		Project:    parser.Project{},
+		Path:       config.Path,
+		logger:     config.Logger,
+		Cursor:     0,
+		TrackID:    config.TrackID,
+		Track:      parser.Track{},
+		Item:       parser.Item{},
+		PeekItem:   parser.Item{},
+		Marker:     parser.Marker{},
+		PeekMarker: parser.Marker{},
+		Section:    Section{},
+		Line:       lyrics.LyricLine{},
+		Lines:      lyrics.Lines{},
+		Sections:   []Section{},
+		Comments:   []*lyrics.Lyrics{},
+		Watchlist:  []string{},
+		Stats:      make(map[string]time.Time),
+	}
+
 }
 
 // returns new projectConfig with saint default values. Returns an error if fails to get access to the project file
@@ -82,6 +117,7 @@ func NewProject() *Project {
 //
 // New Generator and NewLogger that outputs to os.Stdout.
 func NewDefauiltConfig() (*ProjectConfig, error) {
+	log.Println("NewDefaultConfig invoked")
 	homeDir, err := os.UserHomeDir()
 
 	if err != nil {
@@ -131,38 +167,21 @@ func ParseHostProject(config *ProjectConfig) ([]*Project, error) {
 }
 
 func NewProjectWithConfig(cfg *ProjectConfig) *Project {
+	log.Println("NewProjectWithConfig invoked")
+	p := NewProject()
+	log.Println("NewProejct returned", p.Stats == nil)
+
 	if cfg == nil {
-		conf, err := NewDefauiltConfig()
-		if err != nil {
-			panic("no config provided and creation of a default config failed")
+		p.logger.Error("pkg/reaper/reaper.go NewProjectWithConfig()", "error", "cfg == nil")
+	} else {
+		p = &Project{
+			Path:    cfg.Path,
+			logger:  cfg.Logger,
+			TrackID: cfg.TrackID,
 		}
-
-		cfg = conf
-	}
-
-	p := &Project{
-		Project:    parser.Project{},
-		Path:       cfg.Path,
-		logger:     cfg.Logger,
-		Cursor:     0,
-		TrackID:    cfg.TrackID,
-		Track:      parser.Track{},
-		Item:       parser.Item{},
-		PeekItem:   parser.Item{},
-		Marker:     parser.Marker{},
-		PeekMarker: parser.Marker{},
-		Section:    Section{},
-		Line:       lyrics.LyricLine{},
-		Lines:      lyrics.Lines{},
-		Sections:   []Section{},
-		Comments:   []*lyrics.Lyrics{},
-		Watchlist:  []string{},
-		Stats:      make(map[string]time.Time),
 	}
 
 	subprojects := []*Project{}
-
-	cfg.Logger.Debug("reading host project", "path", cfg.Path, "single", cfg.Single)
 
 	if cfg.Single {
 		config, err := NewDefauiltConfig()
@@ -188,8 +207,6 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 		subprojects = append(subprojects, s...)
 	}
 
-	p.logger.Debug("finished reading subprojects", "len", len(subprojects))
-
 	for _, sub := range subprojects {
 		p.Lines = append(p.Lines, sub.Lines...)
 		p.Sections = append(p.Sections, sub.Sections...)
@@ -203,58 +220,60 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 
 }
 
+// parses .rpp project specified in the confin. Also, will look for the notes,
+// chords, lyrics and helper .rpp files. In the project directory.
 func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
-	cfg.Logger.Debug("reading subproject", "path", cfg.Path)
-	//TODO: refactor this mess
 
-	var lines lyrics.Lines
-	var sections []Section
+	p := NewProject()
 
 	if cfg == nil {
-		cfg = &ProjectConfig{}
+		p.logger.Error("pkg/reaper/reaper.go NewProjectWithConfig()", "error", "cfg == nil")
+		panic("NewSubProject invoked with nil config!")
 	}
 
-	logger := cfg.Logger
-
-	if logger == nil {
-		logger = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{}))
-		logger.Info("logger is nil: output to stdout")
+	p = &Project{
+		Path:    cfg.Path,
+		logger:  cfg.Logger,
+		TrackID: cfg.TrackID,
 	}
 
-	watchlist := []string{}
-	comments := []*lyrics.Lyrics{}
 	proj, err := reaper.Parse(cfg.Path)
 
 	if err != nil {
-		logger.Error("SONG PROJECT: failed to parse project file", "error", err, "path", cfg.Path)
-		return &Project{
-			logger: logger,
-		}
+		p.logger.Error("SONG PROJECT: failed to parse project file", "error", err, "path", cfg.Path)
+		return p
 	}
+
+	p.Project = proj
+
+	//NOTE: Getting helper project, notes, lyrics, chords
 
 	projHelper := GetHelperProjectInProjectDir(cfg.Path)
 
 	if projHelper.Path != "" {
-		watchlist = append(watchlist, projHelper.Path)
+		p.Watchlist = append(p.Watchlist, projHelper.Path)
 	}
 
 	projLyrics := GetLyricsFromProjectDir(cfg.Path)
 	if projLyrics.Path != "" {
-		watchlist = append(watchlist, projLyrics.Path)
+		p.Watchlist = append(p.Watchlist, projLyrics.Path)
 	}
 
 	projectNotes := GetNotesFromProjectDir(cfg.Path)
 
 	if projectNotes.Path != "" {
-		watchlist = append(watchlist, projectNotes.Path)
+		p.Watchlist = append(p.Watchlist, projectNotes.Path)
 	}
-	comments = append(comments, &projectNotes)
+	p.Comments = append(p.Comments, &projectNotes)
 
 	projectChords := GetChordsFromProjectDir(cfg.Path)
 	if projectChords.Path != "" {
-		watchlist = append(watchlist, projectChords.Path)
+		p.Watchlist = append(p.Watchlist, projectChords.Path)
 	}
 
+	// END
+
+	//NOTE: Start mergins all separate pices of data into one data structure
 	for i, m := range proj.Markers {
 		//skip marker if it's not a region
 		if !m.IsRegion {
@@ -312,7 +331,7 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 				ll = ApplyChords(ll, chords)
 			}
 
-			lines = append(lines, ll...)
+			p.Lines = append(p.Lines, ll...)
 			sec.Lines = ll
 		}
 
@@ -320,7 +339,6 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 		//long.
 
 		if sec.Lines.Empty() {
-			logger.Debug("section has no lyrics", "s", sec.Name)
 			ll := []lyrics.LyricLine{}
 
 			if len(chords) < 1 {
@@ -342,24 +360,11 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 				})
 
 			}
-			logger.Debug("appending", "total", len(ll), "lines", ll)
 			sec.Lines = append(sec.Lines, ll...)
-			lines = append(lines, ll...)
+			p.Lines = append(p.Lines, ll...)
 		}
 
-		sections = append(sections, sec)
-	}
-
-	p := &Project{
-		Path:      cfg.Path,
-		TrackID:   cfg.TrackID,
-		Project:   proj,
-		Track:     parser.Track{},
-		Lines:     lines,
-		Sections:  sections,
-		logger:    logger,
-		Watchlist: watchlist,
-		Comments:  comments,
+		p.Sections = append(p.Sections, sec)
 	}
 
 	return p
@@ -378,7 +383,6 @@ func (p *Project) GetMapForCurrentItem() []Section {
 }
 
 func (p *Project) UpdateCursor(pos float64) bool {
-	p.logger.Debug("UpdateCurosr()", "cursor", pos)
 	p.Cursor = pos
 
 	return true
@@ -386,7 +390,6 @@ func (p *Project) UpdateCursor(pos float64) bool {
 
 // update cursor position and triggers the update of current item and marker and line
 func (p *Project) Update(pos float64) {
-	p.logger.Debug("UPDATE()", "new position", pos)
 
 	//order is important!
 	for i, s := range p.Sections {
@@ -405,17 +408,11 @@ func (p *Project) Update(pos float64) {
 }
 
 func (p *Project) UpdateLine() bool {
-	p.logger.Debug("UpdateLine() initiated", "cursor", p.Cursor, "current line", p.Line, "total lines", len(p.Lines))
-	if next := p.Line.ID + 1; next < len(p.Lines) {
-		p.logger.Debug("UpdateLine()", "next", p.Lines[next])
-	}
 
 	for i := len(p.Lines) - 1; i >= 0; i-- {
 		line := p.Lines[i]
-		p.logger.Debug("searching", "line", i, "total", len(p.Lines), "id", line.ID, "cursor", p.Cursor, "pos", line.Position, "len", line.Length)
 		if p.Cursor >= line.Position && p.Cursor < line.Position+line.Length {
 			p.Line = line
-			p.logger.Debug("UpdateLine()", "cursor", p.Cursor, "currentline", p.Line)
 			return true
 		}
 	}
@@ -425,16 +422,11 @@ func (p *Project) UpdateLine() bool {
 	//rarly, and i don't need to do this check every loop. only if no lines found, just to make sure
 	for _, line := range p.Lines {
 		if line.Position-p.Cursor < 0.001 && line.Position-p.Cursor > -0.001 {
-			p.logger.Debug("found close enough line", "cursor", p.Cursor, "lineID", line.ID, "Position", line.Position, "differance", line.Position-p.Cursor)
-
 			p.Line = line
 			return true
 		}
 	}
-
-	p.logger.Debug("line is not found", "cursor", p.Cursor)
 	p.Line = lyrics.LyricLine{ID: -1}
-
 	return true
 }
 
@@ -442,7 +434,6 @@ func (p *Project) UpdateLine() bool {
 // if cursor still in current section no op
 // if no section found then empty section is assigned
 func (p *Project) UpdateSection() bool {
-	p.logger.Debug("UpdateSection()")
 
 	if p.Cursor >= p.Section.Position && p.Cursor < p.Section.Position+p.Section.Lenght {
 		return false
@@ -474,11 +465,8 @@ func (p *Project) UpdateTrack(idx int) {
 // if cursor is still in range of current item and peekItem no op. otherwise searches for the first item to
 // contain the cursor and "selects" it
 func (p *Project) UpdateItem() bool {
-	p.logger.Debug("UpdateItem()")
-
 	//if cursor still within the current item we do nothing
 	if p.Cursor >= p.Item.Position && p.Cursor <= p.Item.Position+p.Item.Length {
-		p.logger.Debug("UpdateItem() item not changed")
 		return false
 	}
 
@@ -496,8 +484,6 @@ func (p *Project) UpdateItem() bool {
 }
 
 func (p *Project) UpdatePeekItem() {
-	p.logger.Debug("UpdatePeekItem()")
-
 	for _, item := range p.Track.Items {
 		if item.Position > p.Cursor {
 			p.PeekItem = item
@@ -510,8 +496,6 @@ func (p *Project) UpdatePeekItem() {
 // looking for a first marker to contain a cursor and selects it. If cursor still in range of the
 // current marker no op
 func (p *Project) UpdateMarker() {
-	p.logger.Debug("UpdateMarker()")
-
 	for i, m := range p.Markers {
 		if !m.IsEnd {
 			continue
@@ -524,7 +508,6 @@ func (p *Project) UpdateMarker() {
 }
 
 func (p *Project) UpdatePeekMarker() {
-	p.logger.Debug("UpdatePeekMarker()")
 	for _, m := range p.Markers {
 		if !m.IsRegion {
 			continue

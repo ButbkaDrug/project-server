@@ -59,6 +59,7 @@ type config struct {
 }
 
 func NewApp(cfg *config) *app {
+	log.Println("NewApp invoked")
 
 	clients := sse.NewSSE()
 
@@ -94,6 +95,7 @@ func NewApp(cfg *config) *app {
 }
 
 func NewReaperProject(c *config) *reaper.Project {
+	log.Println("NewReaperProject invoked")
 	config, err := reaper.NewDefauiltConfig()
 
 	if err != nil {
@@ -108,6 +110,7 @@ func NewReaperProject(c *config) *reaper.Project {
 }
 
 func (app *app) Restart() {
+	log.Println("Restart invoked")
 	app.reaper = NewReaperProject(app.config)
 }
 
@@ -123,8 +126,16 @@ func (app *app) getStats(path string) (os.FileInfo, error) {
 
 func (app *app) Watch(clients *sse.SSE) error {
 
-	for {
+	//FIXME: I should swap the map to a slice. But still figure out why it is the case...
 
+	//BUG: I'm getting nil map sometimes which actually should not be possible
+	// so temporarly i leave this fix in place. But I want to figure out why
+	// I'm getting a nil.
+	if app.reaper.Stats == nil {
+		app.reaper.Stats = make(map[string]time.Time)
+	}
+
+	for {
 		for _, file := range app.reaper.Watchlist {
 			info, err := app.getStats(file)
 
@@ -136,11 +147,21 @@ func (app *app) Watch(clients *sse.SSE) error {
 			if info.ModTime() != app.reaper.Stats[file] {
 
 				if app.reaper.Stats[file].IsZero() {
+					if app.reaper.Stats == nil {
+						//BUG: I'm also getting a nil map here even though I should not!
+						//Suspect that is connected with having this functionality in separate go rooteen
+						//But I don't understand why yet???
+						app.reaper.Stats = make(map[string]time.Time)
+					}
 					app.reaper.Stats[file] = info.ModTime()
 
 					continue
 
 				}
+				if app.reaper.Stats == nil {
+					app.reaper.Stats = make(map[string]time.Time)
+				}
+
 				app.reaper.Stats[file] = info.ModTime()
 				app.logger.Debug("cmd/app.go: change detected. Restarting", "changed file", file)
 				app.Restart()
@@ -169,9 +190,9 @@ func (app *app) getIP() string {
 
 func (app *app) serve() error {
 
-	app.logger.Debug("app.go -> serve()")
 	app.server.Handler = app.routes()
 
+	//invoking watch to early. I should start watching only after I finished parsing
 	go app.Watch(app.SSEClients)
 
 	go app.library.ParseLibrary()

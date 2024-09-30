@@ -123,13 +123,20 @@ type RenderContentConfig struct {
 }
 
 func RenderContent(cfg *RenderContentConfig) string {
+
+	if cfg == nil {
+		panic("RenderContent invoket with nil config!")
+	}
+
 	html := bytes.NewBufferString("")
 	render := cfg.Render
 
 	for _, s := range cfg.Data {
 		content := bytes.NewBufferString("")
 
-		render.RenderComponent(content, s.Name, "title")
+		if err := render.RenderComponent(content, s, "title"); err != nil {
+			cfg.logger.Error("cmd/helper.go RenderContent() failed", "error", err.Error(), "config", cfg)
+		}
 
 		commentsStyle := "comments"
 
@@ -147,17 +154,14 @@ func RenderContent(cfg *RenderContentConfig) string {
 			Comments:  GetCommentsOfType(s.Comments, cfg.CommentsType),
 		}
 
-		err := render.RenderComponent(content, comments, commentsStyle)
+		if err := render.RenderComponent(content, comments, commentsStyle); err != nil {
 
-		if err != nil {
-			if cfg.logger != nil {
-				cfg.logger.Error("cmd/helper.go -> renderComponent() *comments failed", "error", err.Error())
-			}
-			fmt.Println("cmd/helper.go -> renderComponent() *comments failed", "error", err.Error())
+			cfg.logger.Error("cmd/helper.go -> renderComponent() *comments failed", "error", err.Error())
 		}
 
 		if cfg.WithChords && cfg.WithLyrics {
-			RenderChorded(s.Lines, content, render, cfg.Keys[s.ItemID])
+			//BUG: cfg.keys are broken!!
+			RenderChorded(s.Lines, content, render, "")
 		} else if cfg.WithLyrics {
 			RenderChordless(s.Lines, content, render)
 		} else if cfg.WithChords {
