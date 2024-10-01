@@ -10,7 +10,13 @@
   },
   "author": "",
   "license": "ISC",
+<<<<<<< HEAD
   "dependencies": {
     "tailwindcss": "^3.4.1"
+=======
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "daisyui": "^4.12.10"
+>>>>>>> advanced-switching
   }
 }
