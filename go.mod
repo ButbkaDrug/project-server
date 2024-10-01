@@ -1,10 +1,7 @@
 module github.com/butbkadrug/reaper-lyrics
 
-go 1.21.1
+go 1.23.1
 
-<<<<<<< HEAD
-require github.com/hypebeast/go-osc v0.0.0-20220308234300-cec5a8a1e5f5
-=======
 require (
 	github.com/hypebeast/go-osc v0.0.0-20220308234300-cec5a8a1e5f5
 	github.com/joho/godotenv v1.5.1
@@ -17,4 +14,3 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
->>>>>>> advanced-switching

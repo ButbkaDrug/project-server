@@ -1,5 +1,7 @@
-time=2024-10-01T07:46:11.621+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"
-time=2024-10-01T07:46:11.622+04:00 level=INFO msg="config for the project" cfg="{port:1234 projectPath:/home/butbkadrug/Music/REAPER/BaseProject/BaseProject.rpp single:false setlistPath:/home/butbkadrug/Music/REAPER/BaseProject/setlist defaultProjectDir:/home/butbkadrug/Music/REAPER oscIP: oscPort:0 logger:0xc0000282f0}"
-time=2024-10-01T07:46:13.088+04:00 level=DEBUG msg="about to start listening and serving"
-time=2024-10-01T07:46:14.324+04:00 level=DEBUG msg="new listener added" id=127.0.0.1:40552
-time=2024-10-01T07:46:14.324+04:00 level=DEBUG msg="events handler. client subscribed" params=map[]
+time=2024-10-01T07:54:38.593+04:00 level=ERROR msg="failed to load evirement variables" error="open .env: no such file or directory"
+time=2024-10-01T07:54:38.593+04:00 level=INFO msg="config for the project" cfg="{port:1234 projectPath:/home/butbkadrug/Music/REAPER/BaseProject/BaseProject.rpp single:false setlistPath:/home/butbkadrug/Music/REAPER/BaseProject/setlist defaultProjectDir:/home/butbkadrug/Music/REAPER oscIP: oscPort:0 logger:0xc0000a2190}"
+time=2024-10-01T07:54:40.032+04:00 level=DEBUG msg="about to start listening and serving"
+time=2024-10-01T07:54:43.958+04:00 level=DEBUG msg="new listener added" id=127.0.0.1:55546
+time=2024-10-01T07:54:43.958+04:00 level=DEBUG msg="events handler. client subscribed" params=map[]
+time=2024-10-01T07:54:46.062+04:00 level=DEBUG msg="new listener added" id=127.0.0.1:55538
+time=2024-10-01T07:54:46.062+04:00 level=DEBUG msg="events handler. client subscribed" params=map[]
