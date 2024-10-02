@@ -1,22 +1,11 @@
 {
-  "name": "osc-go",
-  "version": "1.0.0",
-  "description": "good stuff",
-  "main": "index.js",
-  "scripts": {
-    "test": "test",
-    "build": "tailwindcss build -o static/css/tailwind.css",
-    "watch": "tailwindcss build -o static/css/tailwind.css --watch"
-  },
-  "author": "",
-  "license": "ISC",
-<<<<<<< HEAD
-  "dependencies": {
-    "tailwindcss": "^3.4.1"
-=======
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "daisyui": "^4.12.10"
->>>>>>> advanced-switching
+    "@tailwindcss/typography": "^0.5.15",
+    "daisyui": "^4.12.10",
+    "tailwindcss": "^3.4.13"
+  },
+  "scripts": {
+    "build": "tailwindcss build -o pkg/templates/static/css/tailwind.css",
+    "watch": "tailwindcss build -o pkg/templates/static/css/tailwind.css --watch"
   }
 }

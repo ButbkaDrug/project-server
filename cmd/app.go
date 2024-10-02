@@ -126,11 +126,10 @@ func (app *app) getStats(path string) (os.FileInfo, error) {
 
 func (app *app) Watch(clients *sse.SSE) error {
 
-	//FIXME: I should swap the map to a slice. But still figure out why it is the case...
-
 	//BUG: I'm getting nil map sometimes which actually should not be possible
 	// so temporarly i leave this fix in place. But I want to figure out why
-	// I'm getting a nil.
+	//FIX: go rootens are asyncronys. and thus I can't rely on Stats to be initiated
+	// I should make Watcher it's own thisn and then run it in sub rooteen.
 	if app.reaper.Stats == nil {
 		app.reaper.Stats = make(map[string]time.Time)
 	}

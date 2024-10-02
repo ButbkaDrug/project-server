@@ -39,7 +39,7 @@ func (t *Templates) Render(w io.Writer, data interface{}, patterns ...string) er
 func (t *Templates) RenderPage(w io.Writer, data interface{}, name string) error {
 	var patterns []string
 
-	patterns = append(patterns, "page.html", "navbar.html", "components.html", name)
+	patterns = append(patterns, "page.html", "components.html", name)
 
 	return t.Render(w, data, patterns...)
 
