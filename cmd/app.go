@@ -13,7 +13,6 @@ import (
 	"sse"
 
 	"github.com/butbkadrug/reaper-lyrics/pkg/osc"
-	"github.com/butbkadrug/reaper-lyrics/pkg/projects"
 	"github.com/butbkadrug/reaper-lyrics/pkg/reaper"
 	"github.com/butbkadrug/reaper-lyrics/pkg/templates"
 )
@@ -29,7 +28,6 @@ type app struct {
 	SSEClients        *sse.SSE
 	startTime         time.Time
 	reaper            *reaper.Project
-	library           *projects.Library
 	updateCh          chan bool
 	logger            *slog.Logger
 }
@@ -73,7 +71,6 @@ func NewApp(cfg *config) *app {
 		Clients: clients,
 		Logger:  cfg.logger,
 	})
-	lib := projects.NewLibrary(cfg.defaultProjectDir)
 
 	app := &app{
 		config: cfg,
@@ -86,7 +83,6 @@ func NewApp(cfg *config) *app {
 		defaultProjectDir: cfg.defaultProjectDir,
 		SSEClients:        clients,
 		startTime:         time.Now(),
-		library:           lib,
 		logger:            cfg.logger,
 	}
 
@@ -190,8 +186,6 @@ func (app *app) serve() error {
 
 	//invoking watch to early. I should start watching only after I finished parsing
 	go app.Watch(app.SSEClients)
-
-	go app.library.ParseLibrary()
 
 	go app.oscClient.Server.ListenAndServe()
 
