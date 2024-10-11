@@ -59,7 +59,6 @@ type config struct {
 }
 
 func NewApp(cfg *config) *app {
-	log.Println("NewApp invoked")
 
 	clients := sse.NewSSE()
 
@@ -95,7 +94,6 @@ func NewApp(cfg *config) *app {
 }
 
 func NewReaperProject(c *config) *reaper.Project {
-	log.Println("NewReaperProject invoked")
 	config, err := reaper.NewDefauiltConfig()
 
 	if err != nil {
@@ -110,7 +108,6 @@ func NewReaperProject(c *config) *reaper.Project {
 }
 
 func (app *app) Restart() {
-	log.Println("Restart invoked")
 	app.reaper = NewReaperProject(app.config)
 }
 

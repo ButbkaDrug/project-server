@@ -4752,12 +4752,12 @@ html:has(.drawer-toggle:checked) {
   top: 0px;
 }
 
-.z-50 {
-  z-index: 50;
-}
-
 .z-40 {
   z-index: 40;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .mx-2 {
@@ -5395,10 +5395,6 @@ html:has(.drawer-toggle:checked) {
     display: block;
   }
 
-  .lg\:hidden {
-    display: none;
-  }
-
   .lg\:gap-y-10 {
     row-gap: 2.5rem;
   }
@@ -5423,6 +5419,10 @@ html:has(.drawer-toggle:checked) {
 
 .\[\&_p\]\:relative p {
   position: relative;
+}
+
+.\[\&_p\]\:leading-loose p {
+  line-height: 2;
 }
 
 .\[\&_span\]\:absolute span {

@@ -5,7 +5,6 @@ import (
 	"errors"
 	"html/template"
 	"io"
-	"log"
 )
 
 //go:embed html/*
@@ -71,7 +70,6 @@ func prefixNames(args []string) []string {
 }
 
 func NewTemplate() (*Templates, error) {
-	log.Println("new template init")
 
 	tmpls, err := template.ParseFS(templates, "html/*")
 

@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"log/slog"
 	"os"
@@ -16,6 +17,7 @@ func main() {
 
 	level := slog.LevelInfo
 	if slices.Contains(os.Args, "DEBUG") || slices.Contains(os.Args, "debug") {
+		fmt.Println("[RUNNING IN DEBUG MODE]")
 		level = slog.LevelDebug
 	}
 

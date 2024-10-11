@@ -20,7 +20,10 @@ func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Cache-Control", "no-cache")
 	w.Header().Set("Connection", "keep-alive")
 
-	defer app.SSEClients.RemoveClient(id)
+	defer func() {
+		app.SSEClients.RemoveClient(id)
+		app.logger.Debug("cmd/events.go -> eventsHandler() -> defer remove clients called", "id", id)
+	}()
 	flusher, ok := w.(http.Flusher)
 
 	if !ok {
@@ -28,13 +31,12 @@ func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	//WARN: why do I do this? There was a reason, but now I don't remember at all
 	go func(w http.ResponseWriter, flusher http.Flusher) {
-		select {
-		case <-time.After(200 * time.Millisecond):
-			if flusher != nil {
-				fmt.Fprint(w, "event: ping\ndata:{}\n\n")
-				flusher.Flush()
-			}
+		<-time.After(200 * time.Millisecond)
+		if flusher != nil {
+			fmt.Fprint(w, "event: ping\ndata:{}\n\n")
+			flusher.Flush()
 		}
 
 	}(w, flusher)
@@ -78,30 +80,13 @@ func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
 				//TODO: Update shuld return a map\slice of updates that happened and base on those updates i can dispatch nessesery events
 				app.reaper.Update(cursor)
 
-				app.logger.Debug("dispatching lineID event", "lineID", app.reaper.Line.ID)
+				app.logger.Debug("dispatching lineID event", "lineID", app.reaper.Line.ID, "id", id)
 				_, err := fmt.Fprintf(w, "event: line\ndata:%d\n\n", app.reaper.Line.ID)
 				flusher.Flush()
 
 				if err != nil {
 					app.logger.Error("dispatching failed", "error", err.Error())
 				}
-
-				// var data bytes.Buffer
-				//
-				// app.renderer.RenderComponent(&data, app.reaper.GetMapForCurrentItem(), "map")
-				//
-				// d := strings.ReplaceAll(data.String(), "\n", "")
-				//
-				// fmt.Fprintf(w, "event:songmap\ndata:%s\n\n", d)
-				// flusher.Flush()
-				//
-				// fmt.Fprintf(w, "event: map\ndata:%d", app.reaper.Section.ID)
-				// flusher.Flush()
-				//
-				// if app.reaper.Item.Length == 0 {
-				// 	sendCountdownEvent(w, app.reaper.PeekItem.Name, app.reaper.PeekItem.Position-app.reaper.Cursor)
-				// }
-
 			}
 
 			if err != nil {
@@ -109,31 +94,4 @@ func (app *app) eventsHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-}
-
-func sendAlertEvent(w http.ResponseWriter, msg string) error {
-
-	_, err := fmt.Fprintf(w, "event: alert\ndata:{\"message\":\"%s\"}\n\n", msg)
-	w.(http.Flusher).Flush()
-
-	return err
-}
-
-func sendCountdownEvent(w http.ResponseWriter, name string, time float64) error {
-
-	sec := int(time) % 60
-	min := int(time) / 60
-
-	if len(name) > 20 {
-		name = name[:20] + "..."
-	}
-
-	_, err := fmt.Fprintf(w, "event: cowntdown\ndata:{\"name\":\"%s\", \"min\":%v, \"sec\":%v}\n\n",
-		name,
-		min,
-		sec,
-	)
-	w.(http.Flusher).Flush()
-
-	return err
 }

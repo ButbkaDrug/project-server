@@ -60,7 +60,11 @@ func GetHelperProjectInProjectDir(p string) lyrics.Lyrics {
 
 	for _, source := range sources {
 		file := path.Join(path.Dir(p), source)
-		h := helper.NewHelper(file)
+		h, err := helper.NewHelper(file)
+
+		if err != nil {
+			continue
+		}
 
 		helper := h.Parse()
 

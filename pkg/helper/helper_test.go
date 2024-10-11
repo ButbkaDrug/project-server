@@ -7,7 +7,7 @@ import (
 
 func TestHelperOffsets(t *testing.T) {
 
-	h := NewHelper("./test.rpp")
+	h, _ := NewHelper("./test.rpp")
 
 	output := h.Parse()
 

@@ -7,6 +7,7 @@ import (
 	"log/slog"
 	"lp/pkg/comments"
 	"lp/pkg/lyrics"
+	"net/url"
 	"slices"
 	"strconv"
 	"strings"
@@ -38,8 +39,11 @@ func (app *app) ParseCapoArgument(s string) []int {
 }
 
 // parser song keys from a url params
-func (app *app) ParseKeysArgument(s string) []string {
-	keys := make([]string, len(app.reaper.Track.Items))
+func (app *app) ParseKeysArgument(v *url.Values) []string {
+	//FIXME: i put arbitraty value for now, which i not very lickly to cross, but it shuld be equal to number of items that are in the project
+	keys := make([]string, 10)
+
+	s := v.Get("keys")
 
 	checklist := []string{
 		"A",
@@ -59,8 +63,8 @@ func (app *app) ParseKeysArgument(s string) []string {
 	if k := strings.Split(s, ","); len(k) > 0 {
 
 		for i, key := range k {
-			key = strings.ToUpper(key)
-			if i >= len(keys) {
+			key = strings.Title(key)
+			if i >= len(k) {
 				break
 			}
 			if slices.Contains(checklist, key) {
@@ -69,6 +73,26 @@ func (app *app) ParseKeysArgument(s string) []string {
 			}
 			keys[i] = ""
 		}
+	}
+
+	for i := range 10 {
+		key := fmt.Sprintf("key%d", i)
+
+		if !v.Has(key) {
+			continue
+		}
+
+		val := strings.Title(v.Get(key))
+
+		if !slices.Contains(checklist, val) {
+			continue
+		}
+
+		if i < 1 {
+			continue
+		}
+
+		keys[i-1] = val
 	}
 
 	return keys
@@ -160,8 +184,11 @@ func RenderContent(cfg *RenderContentConfig) string {
 		}
 
 		if cfg.WithChords && cfg.WithLyrics {
-			//BUG: cfg.keys are broken!!
-			RenderChorded(s.Lines, content, render, "")
+			var key string
+			if len(cfg.Keys) > s.ItemID {
+				key = cfg.Keys[s.ItemID]
+			}
+			RenderChorded(s.Lines, content, render, key)
 		} else if cfg.WithLyrics {
 			RenderChordless(s.Lines, content, render)
 		} else if cfg.WithChords {

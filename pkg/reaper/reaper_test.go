@@ -580,731 +580,731 @@ func TestParseSectionName(t *testing.T) {
 }
 
 func TestCalculateOffsets(t *testing.T) {
-	OneThingRemains := lyrics.Lyrics{
-		Name: "One Thing Remains",
-		Sections: []lyrics.Section{
-			{
-				Name:     "Verse",
-				Number:   1,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{Offset: 0, Length: 0, Text: "Higher than the mountains that I face"},
-					{Offset: 0, Length: 0, Text: "Stronger than the power of the grave"},
-					{Offset: 0, Length: 0, Text: "Constant in the trial and the change"},
-					{Offset: 0, Length: 0, Text: "This one thing remains"},
-				},
-			},
-			{
-				Name:     "Chorus",
-				Number:   0,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Your love never fails"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "It never gives up"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "It never runs out on me"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Your love never fails"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "It never gives up"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "It never runs out on me"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Your love never fails"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "It never gives up"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "It never runs out on me"}}},
-			{
-				Name:     "Verse",
-				Number:   2,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "On and on and on and on it goes"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "It overwhelms and satisfies my soul"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "And I never ever have to be afraid"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "This one thing remains"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "This one thing remains"}}},
-			{
-				Name:     "Bridge",
-				Number:   0,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "In death In life"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "I'm confident and covered by"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "The power of Your great love"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "My debt is paid"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "There's nothing that can separate"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "My heart from Your great love"}}},
-			{
-				Name:     "Verse",
-				Number:   1,
-				Lang:     "R",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Выше всяких гор, что на пути."},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Сильнее силы смерти, власти тьмы."},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Скала среди бушующих морей"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Любовь сильней –"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "раза"}}},
-			{
-				Name:     "Chorus",
-				Number:   0,
-				Lang:     "R",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Любовь Твоя"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Не подведёт"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "И не предаст меня"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Любовь Твоя"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Не подведёт"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "И не предаст меня"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Любовь Твоя"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Не подведёт"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "И не предаст меня"}}},
-			{
-				Name:     "Verse",
-				Number:   2,
-				Lang:     "R",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Вновь, и вновь, и вновь, и вновь она"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Прольётся с неба, напоит меня"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Больше нечего теперь бояться мне"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Любовь сильней –"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "раза"}}},
-			{
-				Name:     "Bridge",
-				Number:   0,
-				Lang:     "R",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "И я всегда"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Уверен и наполнен силой"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Твоей любви"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Мой грех прощён,"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "И ничто не может отделить"},
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "Меня от Твоей любви."}}}}}
+	// OneThingRemains := lyrics.Lyrics{
+	// 	Name: "One Thing Remains",
+	// 	Sections: []lyrics.Section{
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   1,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{Offset: 0, Length: 0, Text: "Higher than the mountains that I face"},
+	// 				{Offset: 0, Length: 0, Text: "Stronger than the power of the grave"},
+	// 				{Offset: 0, Length: 0, Text: "Constant in the trial and the change"},
+	// 				{Offset: 0, Length: 0, Text: "This one thing remains"},
+	// 			},
+	// 		},
+	// 		{
+	// 			Name:     "Chorus",
+	// 			Number:   0,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Your love never fails"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "It never gives up"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "It never runs out on me"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Your love never fails"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "It never gives up"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "It never runs out on me"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Your love never fails"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "It never gives up"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "It never runs out on me"}}},
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   2,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "On and on and on and on it goes"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "It overwhelms and satisfies my soul"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "And I never ever have to be afraid"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "This one thing remains"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "This one thing remains"}}},
+	// 		{
+	// 			Name:     "Bridge",
+	// 			Number:   0,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "In death In life"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "I'm confident and covered by"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "The power of Your great love"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "My debt is paid"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "There's nothing that can separate"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "My heart from Your great love"}}},
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   1,
+	// 			Lang:     "R",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Выше всяких гор, что на пути."},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Сильнее силы смерти, власти тьмы."},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Скала среди бушующих морей"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Любовь сильней –"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "раза"}}},
+	// 		{
+	// 			Name:     "Chorus",
+	// 			Number:   0,
+	// 			Lang:     "R",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Любовь Твоя"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Не подведёт"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "И не предаст меня"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Любовь Твоя"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Не подведёт"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "И не предаст меня"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Любовь Твоя"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Не подведёт"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "И не предаст меня"}}},
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   2,
+	// 			Lang:     "R",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Вновь, и вновь, и вновь, и вновь она"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Прольётся с неба, напоит меня"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Больше нечего теперь бояться мне"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Любовь сильней –"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "раза"}}},
+	// 		{
+	// 			Name:     "Bridge",
+	// 			Number:   0,
+	// 			Lang:     "R",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "И я всегда"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Уверен и наполнен силой"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Твоей любви"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Мой грех прощён,"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "И ничто не может отделить"},
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "Меня от Твоей любви."}}}}}
 
-	BlessTheLord := lyrics.Lyrics{
-		Name: "10000 Reasons",
-		Sections: []lyrics.Section{
-			{
-				Name:     "Chorus",
-				Number:   0,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.934376352,
-						Length: 4.2447211796,
-						Text:   "Bless the Lord O my soul"},
-					{
-						Offset: 3.3103448276,
-						Length: 3.3103448276,
-						Text:   "O my soul"},
-					{
-						Offset: 6.6206896552,
-						Length: 5.6536462652,
-						Text:   "Worship His Holy name"},
-					{
-						Offset: 12.2743359204,
-						Length: 4.2773882175,
-						Text:   "Sing like never before"},
-					{
-						Offset: 16.5517241379,
-						Length: 3.168300811,
-						Text:   "O my soul"},
-					{
-						Offset: 19.7200249489,
-						Length: 9.2454922925,
-						Text:   "I'll worship Your Holy name"}}},
-			{
-				Name:     "Verse",
-				Number:   1,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.4763282443,
-						Length: 2.7106906812,
-						Text:   "The sun comes up"},
-					{
-						Offset: 2.2343624369,
-						Length: 4.3863272183,
-						Text:   "It's a new day dawning"},
-					{
-						Offset: 6.6206896552,
-						Length: 6.1750190239,
-						Text:   "It's time to sing Your song again"},
-					{
-						Offset: 12.7957086791,
-						Length: 2.9284292519,
-						Text:   "Whatever may pass"},
-					{
-						Offset: 15.724137931,
-						Length: 5.7931034483,
-						Text:   "And whatever lies before me"},
-					{
-						Offset: 21.5172413793,
-						Length: 2.0606200734,
-						Text:   "Let me be singing"},
-					{
-						Offset: 23.5778614527,
-						Length: 5.3876557887,
-						Text:   "When the evening comes"}}},
-			{
-				Name:     "Verse",
-				Number:   2,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.4763282443,
-						Length: 2.7106906812,
-						Text:   "You're rich in love"},
-					{
-						Offset: 2.2343624369,
-						Length: 4.3863272183,
-						Text:   "And You're slow to anger"},
-					{
-						Offset: 6.6206896552,
-						Length: 6.1750190239,
-						Text:   "Your name is great and Your heart is kind"},
-					{
-						Offset: 12.7957086791,
-						Length: 2.9284292519,
-						Text:   "For all Your goodness"},
-					{
-						Offset: 15.724137931,
-						Length: 5.7931034483,
-						Text:   "I will keep on singing"},
-					{
-						Offset: 21.5172413793,
-						Length: 2.0606200734,
-						Text:   "Ten thousand reasons"},
-					{
-						Offset: 23.5778614527,
-						Length: 5.3876557887,
-						Text:   "For my heart to find"}}},
-			{
-				Name:     "Verse",
-				Number:   3,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.4763282443,
-						Length: 2.7106906812,
-						Text:   "And on that day"},
-					{
-						Offset: 2.2343624369,
-						Length: 4.3863272183,
-						Text:   "When my strength is failing"},
-					{
-						Offset: 6.6206896552,
-						Length: 6.1750190239,
-						Text:   "The end draws near and my time has come"},
-					{
-						Offset: 12.7957086791,
-						Length: 2.9284292519,
-						Text:   "Still my soul will"},
-					{
-						Offset: 15.724137931,
-						Length: 5.7931034483,
-						Text:   "Sing Your praise unending"},
-					{
-						Offset: 21.5172413793,
-						Length: 2.0606200734,
-						Text:   "Ten thousand years"},
-					{
-						Offset: 23.5778614527,
-						Length: 5.3876557887,
-						Text:   "And then forevermore"}}},
-			{
-				Name:     "Tag",
-				Number:   0,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: 0,
-						Length: 0,
-						Text:   "I'll worship Your Holy name"}}},
-			{
-				Name:     "Verse",
-				Number:   1,
-				Lang:     "R",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.4763282443,
-						Length: 2.7106906812,
-						Text:   "Солнце встаёт"},
-					{
-						Offset: 2.2343624369,
-						Length: 4.3863272183,
-						Text:   "Новый день приходит"},
-					{
-						Offset: 6.6206896552,
-						Length: 6.1750190239,
-						Text:   "Время опять хвалу воздать"},
-					{
-						Offset: 12.7957086791,
-						Length: 2.9284292519,
-						Text:   "За всё, что Ты мне дал"},
-					{
-						Offset: 15.724137931,
-						Length: 5.7931034483,
-						Text:   "И за каждый новый вдох мой,"},
-					{
-						Offset: 21.5172413793,
-						Length: 2.0606200734,
-						Text:   "Буду петь"},
-					{
-						Offset: 23.5778614527,
-						Length: 5.3876557887,
-						Text:   "И на зака - те дня!"}}},
-			{
-				Name:     "Verse",
-				Number:   2,
-				Lang:     "R",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.4763282443,
-						Length: 2.7106906812,
-						Text:   "Велик в любви"},
-					{
-						Offset: 2.2343624369,
-						Length: 4.3863272183,
-						Text:   "И даёшь мне милость"},
-					{
-						Offset: 6.6206896552,
-						Length: 6.1750190239,
-						Text:   "Ты справедлив и так благ ко мне"},
-					{
-						Offset: 12.7957086791,
-						Length: 2.9284292519,
-						Text:   "За все Твои дела"},
-					{
-						Offset: 15.724137931,
-						Length: 5.7931034483,
-						Text:   "Я хочу прославить"},
-					{
-						Offset: 21.5172413793,
-						Length: 2.0606200734,
-						Text:   "Чтоб петь Тебе"},
-					{
-						Offset: 23.5778614527,
-						Length: 5.3876557887,
-						Text:   "Есть десять тысяч причин!"}}},
-			{
-				Name:     "Verse",
-				Number:   3,
-				Lang:     "R",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.4763282443,
-						Length: 2.7106906812,
-						Text:   "И когда"},
-					{
-						Offset: 2.2343624369,
-						Length: 4.3863272183,
-						Text:   "мои силы иссякнут"},
-					{
-						Offset: 6.6206896552,
-						Length: 6.1750190239,
-						Text:   "на закате дней, когда время придёт"},
-					{
-						Offset: 12.7957086791,
-						Length: 2.9284292519,
-						Text:   "Душа моя"},
-					{
-						Offset: 15.724137931,
-						Length: 5.7931034483,
-						Text:   "Тебя будет славить"},
-					{
-						Offset: 21.5172413793,
-						Length: 2.0606200734,
-						Text:   "Больше, чем даже"},
-					{
-						Offset: 23.5778614527,
-						Length: 5.3876557887,
-						Text:   "Десять ты - сяч лет!"}}},
-			{
-				Name:     "Chorus",
-				Number:   0,
-				Lang:     "R",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.934376352,
-						Length: 4.2447211796,
-						Text:   "Славь душа Господа"},
-					{
-						Offset: 3.3103448276,
-						Length: 3.3103448276,
-						Text:   "Cлавь душа"},
-					{
-						Offset: 6.6206896552,
-						Length: 5.6536462652,
-						Text:   "Имя святое его"},
-					{
-						Offset: 12.2743359204,
-						Length: 4.2773882175,
-						Text:   "Пой Ему, как никогда"},
-					{
-						Offset: 16.5517241379,
-						Length: 3.168300811,
-						Text:   "Пой душа"},
-					{
-						Offset: 19.7200249489,
-						Length: 9.2454922925,
-						Text:   "Благослови Господа"}}}}}
-	WhoYouSayIAm := lyrics.Lyrics{
-		Name: "Who You Say I Am",
-		Sections: []lyrics.Section{
-			{
-				Name:     "Verse",
-				Number:   1,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: 0.0157481992,
-						Length: 3.8214611031,
-						Text:   "Who am I that the highest King"},
-					{
-						Offset: 3.8372093023,
-						Length: 4.8837209302,
-						Text:   "Would welcome me"},
-					{
-						Offset: 8.7209302325,
-						Length: 3.1395348838,
-						Text:   "I was lost but He brought me in"},
-					{
-						Offset: 11.8604651163,
-						Length: 3.8372093023,
-						Text:   "Oh His love for me"}}},
-			{
-				Name:     "Chorus",
-				Number:   1,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.6976744186,
-						Length: 4.1860465116,
-						Text:   "Who the Son sets free"},
-					{
-						Offset: 3.488372093,
-						Length: 4.1860465117,
-						Text:   "Oh is free indeed"},
-					{
-						Offset: 7.6744186047,
-						Length: 8.0232558139,
-						Text:   "I'm a child of God yes I am"}}},
-			{
-				Name:     "Verse",
-				Number:   2,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: 0.3488372093,
-						Length: 3.4883720931,
-						Text:   "Free at last He has ransomed me"},
-					{
-						Offset: 3.8372093024,
-						Length: 4.8837209302,
-						Text:   "His grace runs deep"},
-					{
-						Offset: 8.7209302326,
-						Length: 3.1395348837,
-						Text:   "While I was a slave to sin"},
-					{
-						Offset: 11.8604651163,
-						Length: 3.8372093023,
-						Text:   "Jesus died for me"}}},
-			{
-				Name:     "Chorus",
-				Number:   2,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.6976744186,
-						Length: 4.1860465116,
-						Text:   "In my Father's house"},
-					{
-						Offset: 3.488372093,
-						Length: 4.1860465116,
-						Text:   "There's a place for me"},
-					{
-						Offset: 7.6744186046,
-						Length: 8.023255814,
-						Text:   "I'm a child of God yes I am"}}},
-			{
-				Name:     "Bridge",
-				Number:   0,
-				Lang:     "",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.6976744186,
-						Length: 4.5348837209,
-						Text:   "I am chosen not forsaken"},
-					{
-						Offset: 3.8372093023,
-						Length: 3.8372093023,
-						Text:   "I am who You say I am"},
-					{
-						Offset: 7.6744186046,
-						Length: 4.534883721,
-						Text:   "You are for me not against me"},
-					{
-						Offset: 12.2093023256,
-						Length: 3.488372093,
-						Text:   "I am who You say I am"}}},
-			{
-				Name:     "Verse",
-				Number:   1,
-				Lang:     "R",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: 0.0157481992,
-						Length: 3.8214611031,
-						Text:   "Кто же я, что Всевышний Царь"},
-					{
-						Offset: 3.8372093023,
-						Length: 4.8837209302,
-						Text:   "Меня призвал"},
-					{
-						Offset: 8.7209302325,
-						Length: 3.1395348838,
-						Text:   "Я блуждал, но любовь Твоя"},
-					{
-						Offset: 11.8604651163,
-						Length: 3.8372093023,
-						Text:   "Меня нашла"}}},
-			{
-				Name:     "Verse",
-				Number:   2,
-				Lang:     "R",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: 0.3488372093,
-						Length: 3.4883720931,
-						Text:   "Я свободен искуплен Им"},
-					{
-						Offset: 3.8372093024,
-						Length: 4.8837209302,
-						Text:   "Он ми — ло — стив"},
-					{
-						Offset: 8.7209302326,
-						Length: 3.1395348837,
-						Text:   "Был я в рабстве греха, но Ты"},
-					{
-						Offset: 11.8604651163,
-						Length: 3.8372093023,
-						Text:   "Жизнью за — пла - тил"}}},
-			{
-				Name:     "Chorus",
-				Number:   1,
-				Lang:     "R",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.6976744186,
-						Length: 4.1860465116,
-						Text:   "Дал свободу мне"},
-					{
-						Offset: 3.488372093,
-						Length: 4.1860465117,
-						Text:   "Иисус навек"},
-					{
-						Offset: 7.6744186047,
-						Length: 8.0232558139,
-						Text:   "Я дитя Ца - ря знаю я"}}},
-			{
-				Name:     "Chorus",
-				Number:   2,
-				Lang:     "R",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.6976744186,
-						Length: 4.1860465116,
-						Text:   "В Доме есть всегда"},
-					{
-						Offset: 3.488372093,
-						Length: 4.1860465116,
-						Text:   "Место для меня"},
-					{
-						Offset: 7.6744186046,
-						Length: 8.023255814,
-						Text:   "Я дитя Ца - ря знаю я"}}},
-			{
-				Name:     "Bridge",
-				Number:   0,
-				Lang:     "R",
-				Comments: []comments.Comment{},
-				Text: []lyrics.TextLine{
-					{
-						Offset: -0.6976744186,
-						Length: 4.5348837209,
-						Text:   "Богом избран не оставлен"},
-					{
-						Offset: 3.8372093023,
-						Length: 3.8372093023,
-						Text:   "Я знаю, кто я в Тебе"},
-					{
-						Offset: 7.6744186046,
-						Length: 4.534883721,
-						Text:   "Твоим другом был я назван"},
-					{
-						Offset: 12.2093023256,
-						Length: 3.488372093,
-						Text:   "Я знаю, кто я в Тебе"}}}}}
+	// BlessTheLord := lyrics.Lyrics{
+	// 	Name: "10000 Reasons",
+	// 	Sections: []lyrics.Section{
+	// 		{
+	// 			Name:     "Chorus",
+	// 			Number:   0,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.934376352,
+	// 					Length: 4.2447211796,
+	// 					Text:   "Bless the Lord O my soul"},
+	// 				{
+	// 					Offset: 3.3103448276,
+	// 					Length: 3.3103448276,
+	// 					Text:   "O my soul"},
+	// 				{
+	// 					Offset: 6.6206896552,
+	// 					Length: 5.6536462652,
+	// 					Text:   "Worship His Holy name"},
+	// 				{
+	// 					Offset: 12.2743359204,
+	// 					Length: 4.2773882175,
+	// 					Text:   "Sing like never before"},
+	// 				{
+	// 					Offset: 16.5517241379,
+	// 					Length: 3.168300811,
+	// 					Text:   "O my soul"},
+	// 				{
+	// 					Offset: 19.7200249489,
+	// 					Length: 9.2454922925,
+	// 					Text:   "I'll worship Your Holy name"}}},
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   1,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.4763282443,
+	// 					Length: 2.7106906812,
+	// 					Text:   "The sun comes up"},
+	// 				{
+	// 					Offset: 2.2343624369,
+	// 					Length: 4.3863272183,
+	// 					Text:   "It's a new day dawning"},
+	// 				{
+	// 					Offset: 6.6206896552,
+	// 					Length: 6.1750190239,
+	// 					Text:   "It's time to sing Your song again"},
+	// 				{
+	// 					Offset: 12.7957086791,
+	// 					Length: 2.9284292519,
+	// 					Text:   "Whatever may pass"},
+	// 				{
+	// 					Offset: 15.724137931,
+	// 					Length: 5.7931034483,
+	// 					Text:   "And whatever lies before me"},
+	// 				{
+	// 					Offset: 21.5172413793,
+	// 					Length: 2.0606200734,
+	// 					Text:   "Let me be singing"},
+	// 				{
+	// 					Offset: 23.5778614527,
+	// 					Length: 5.3876557887,
+	// 					Text:   "When the evening comes"}}},
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   2,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.4763282443,
+	// 					Length: 2.7106906812,
+	// 					Text:   "You're rich in love"},
+	// 				{
+	// 					Offset: 2.2343624369,
+	// 					Length: 4.3863272183,
+	// 					Text:   "And You're slow to anger"},
+	// 				{
+	// 					Offset: 6.6206896552,
+	// 					Length: 6.1750190239,
+	// 					Text:   "Your name is great and Your heart is kind"},
+	// 				{
+	// 					Offset: 12.7957086791,
+	// 					Length: 2.9284292519,
+	// 					Text:   "For all Your goodness"},
+	// 				{
+	// 					Offset: 15.724137931,
+	// 					Length: 5.7931034483,
+	// 					Text:   "I will keep on singing"},
+	// 				{
+	// 					Offset: 21.5172413793,
+	// 					Length: 2.0606200734,
+	// 					Text:   "Ten thousand reasons"},
+	// 				{
+	// 					Offset: 23.5778614527,
+	// 					Length: 5.3876557887,
+	// 					Text:   "For my heart to find"}}},
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   3,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.4763282443,
+	// 					Length: 2.7106906812,
+	// 					Text:   "And on that day"},
+	// 				{
+	// 					Offset: 2.2343624369,
+	// 					Length: 4.3863272183,
+	// 					Text:   "When my strength is failing"},
+	// 				{
+	// 					Offset: 6.6206896552,
+	// 					Length: 6.1750190239,
+	// 					Text:   "The end draws near and my time has come"},
+	// 				{
+	// 					Offset: 12.7957086791,
+	// 					Length: 2.9284292519,
+	// 					Text:   "Still my soul will"},
+	// 				{
+	// 					Offset: 15.724137931,
+	// 					Length: 5.7931034483,
+	// 					Text:   "Sing Your praise unending"},
+	// 				{
+	// 					Offset: 21.5172413793,
+	// 					Length: 2.0606200734,
+	// 					Text:   "Ten thousand years"},
+	// 				{
+	// 					Offset: 23.5778614527,
+	// 					Length: 5.3876557887,
+	// 					Text:   "And then forevermore"}}},
+	// 		{
+	// 			Name:     "Tag",
+	// 			Number:   0,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: 0,
+	// 					Length: 0,
+	// 					Text:   "I'll worship Your Holy name"}}},
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   1,
+	// 			Lang:     "R",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.4763282443,
+	// 					Length: 2.7106906812,
+	// 					Text:   "Солнце встаёт"},
+	// 				{
+	// 					Offset: 2.2343624369,
+	// 					Length: 4.3863272183,
+	// 					Text:   "Новый день приходит"},
+	// 				{
+	// 					Offset: 6.6206896552,
+	// 					Length: 6.1750190239,
+	// 					Text:   "Время опять хвалу воздать"},
+	// 				{
+	// 					Offset: 12.7957086791,
+	// 					Length: 2.9284292519,
+	// 					Text:   "За всё, что Ты мне дал"},
+	// 				{
+	// 					Offset: 15.724137931,
+	// 					Length: 5.7931034483,
+	// 					Text:   "И за каждый новый вдох мой,"},
+	// 				{
+	// 					Offset: 21.5172413793,
+	// 					Length: 2.0606200734,
+	// 					Text:   "Буду петь"},
+	// 				{
+	// 					Offset: 23.5778614527,
+	// 					Length: 5.3876557887,
+	// 					Text:   "И на зака - те дня!"}}},
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   2,
+	// 			Lang:     "R",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.4763282443,
+	// 					Length: 2.7106906812,
+	// 					Text:   "Велик в любви"},
+	// 				{
+	// 					Offset: 2.2343624369,
+	// 					Length: 4.3863272183,
+	// 					Text:   "И даёшь мне милость"},
+	// 				{
+	// 					Offset: 6.6206896552,
+	// 					Length: 6.1750190239,
+	// 					Text:   "Ты справедлив и так благ ко мне"},
+	// 				{
+	// 					Offset: 12.7957086791,
+	// 					Length: 2.9284292519,
+	// 					Text:   "За все Твои дела"},
+	// 				{
+	// 					Offset: 15.724137931,
+	// 					Length: 5.7931034483,
+	// 					Text:   "Я хочу прославить"},
+	// 				{
+	// 					Offset: 21.5172413793,
+	// 					Length: 2.0606200734,
+	// 					Text:   "Чтоб петь Тебе"},
+	// 				{
+	// 					Offset: 23.5778614527,
+	// 					Length: 5.3876557887,
+	// 					Text:   "Есть десять тысяч причин!"}}},
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   3,
+	// 			Lang:     "R",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.4763282443,
+	// 					Length: 2.7106906812,
+	// 					Text:   "И когда"},
+	// 				{
+	// 					Offset: 2.2343624369,
+	// 					Length: 4.3863272183,
+	// 					Text:   "мои силы иссякнут"},
+	// 				{
+	// 					Offset: 6.6206896552,
+	// 					Length: 6.1750190239,
+	// 					Text:   "на закате дней, когда время придёт"},
+	// 				{
+	// 					Offset: 12.7957086791,
+	// 					Length: 2.9284292519,
+	// 					Text:   "Душа моя"},
+	// 				{
+	// 					Offset: 15.724137931,
+	// 					Length: 5.7931034483,
+	// 					Text:   "Тебя будет славить"},
+	// 				{
+	// 					Offset: 21.5172413793,
+	// 					Length: 2.0606200734,
+	// 					Text:   "Больше, чем даже"},
+	// 				{
+	// 					Offset: 23.5778614527,
+	// 					Length: 5.3876557887,
+	// 					Text:   "Десять ты - сяч лет!"}}},
+	// 		{
+	// 			Name:     "Chorus",
+	// 			Number:   0,
+	// 			Lang:     "R",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.934376352,
+	// 					Length: 4.2447211796,
+	// 					Text:   "Славь душа Господа"},
+	// 				{
+	// 					Offset: 3.3103448276,
+	// 					Length: 3.3103448276,
+	// 					Text:   "Cлавь душа"},
+	// 				{
+	// 					Offset: 6.6206896552,
+	// 					Length: 5.6536462652,
+	// 					Text:   "Имя святое его"},
+	// 				{
+	// 					Offset: 12.2743359204,
+	// 					Length: 4.2773882175,
+	// 					Text:   "Пой Ему, как никогда"},
+	// 				{
+	// 					Offset: 16.5517241379,
+	// 					Length: 3.168300811,
+	// 					Text:   "Пой душа"},
+	// 				{
+	// 					Offset: 19.7200249489,
+	// 					Length: 9.2454922925,
+	// 					Text:   "Благослови Господа"}}}}}
+	// WhoYouSayIAm := lyrics.Lyrics{
+	// 	Name: "Who You Say I Am",
+	// 	Sections: []lyrics.Section{
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   1,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: 0.0157481992,
+	// 					Length: 3.8214611031,
+	// 					Text:   "Who am I that the highest King"},
+	// 				{
+	// 					Offset: 3.8372093023,
+	// 					Length: 4.8837209302,
+	// 					Text:   "Would welcome me"},
+	// 				{
+	// 					Offset: 8.7209302325,
+	// 					Length: 3.1395348838,
+	// 					Text:   "I was lost but He brought me in"},
+	// 				{
+	// 					Offset: 11.8604651163,
+	// 					Length: 3.8372093023,
+	// 					Text:   "Oh His love for me"}}},
+	// 		{
+	// 			Name:     "Chorus",
+	// 			Number:   1,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.6976744186,
+	// 					Length: 4.1860465116,
+	// 					Text:   "Who the Son sets free"},
+	// 				{
+	// 					Offset: 3.488372093,
+	// 					Length: 4.1860465117,
+	// 					Text:   "Oh is free indeed"},
+	// 				{
+	// 					Offset: 7.6744186047,
+	// 					Length: 8.0232558139,
+	// 					Text:   "I'm a child of God yes I am"}}},
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   2,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: 0.3488372093,
+	// 					Length: 3.4883720931,
+	// 					Text:   "Free at last He has ransomed me"},
+	// 				{
+	// 					Offset: 3.8372093024,
+	// 					Length: 4.8837209302,
+	// 					Text:   "His grace runs deep"},
+	// 				{
+	// 					Offset: 8.7209302326,
+	// 					Length: 3.1395348837,
+	// 					Text:   "While I was a slave to sin"},
+	// 				{
+	// 					Offset: 11.8604651163,
+	// 					Length: 3.8372093023,
+	// 					Text:   "Jesus died for me"}}},
+	// 		{
+	// 			Name:     "Chorus",
+	// 			Number:   2,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.6976744186,
+	// 					Length: 4.1860465116,
+	// 					Text:   "In my Father's house"},
+	// 				{
+	// 					Offset: 3.488372093,
+	// 					Length: 4.1860465116,
+	// 					Text:   "There's a place for me"},
+	// 				{
+	// 					Offset: 7.6744186046,
+	// 					Length: 8.023255814,
+	// 					Text:   "I'm a child of God yes I am"}}},
+	// 		{
+	// 			Name:     "Bridge",
+	// 			Number:   0,
+	// 			Lang:     "",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.6976744186,
+	// 					Length: 4.5348837209,
+	// 					Text:   "I am chosen not forsaken"},
+	// 				{
+	// 					Offset: 3.8372093023,
+	// 					Length: 3.8372093023,
+	// 					Text:   "I am who You say I am"},
+	// 				{
+	// 					Offset: 7.6744186046,
+	// 					Length: 4.534883721,
+	// 					Text:   "You are for me not against me"},
+	// 				{
+	// 					Offset: 12.2093023256,
+	// 					Length: 3.488372093,
+	// 					Text:   "I am who You say I am"}}},
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   1,
+	// 			Lang:     "R",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: 0.0157481992,
+	// 					Length: 3.8214611031,
+	// 					Text:   "Кто же я, что Всевышний Царь"},
+	// 				{
+	// 					Offset: 3.8372093023,
+	// 					Length: 4.8837209302,
+	// 					Text:   "Меня призвал"},
+	// 				{
+	// 					Offset: 8.7209302325,
+	// 					Length: 3.1395348838,
+	// 					Text:   "Я блуждал, но любовь Твоя"},
+	// 				{
+	// 					Offset: 11.8604651163,
+	// 					Length: 3.8372093023,
+	// 					Text:   "Меня нашла"}}},
+	// 		{
+	// 			Name:     "Verse",
+	// 			Number:   2,
+	// 			Lang:     "R",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: 0.3488372093,
+	// 					Length: 3.4883720931,
+	// 					Text:   "Я свободен искуплен Им"},
+	// 				{
+	// 					Offset: 3.8372093024,
+	// 					Length: 4.8837209302,
+	// 					Text:   "Он ми — ло — стив"},
+	// 				{
+	// 					Offset: 8.7209302326,
+	// 					Length: 3.1395348837,
+	// 					Text:   "Был я в рабстве греха, но Ты"},
+	// 				{
+	// 					Offset: 11.8604651163,
+	// 					Length: 3.8372093023,
+	// 					Text:   "Жизнью за — пла - тил"}}},
+	// 		{
+	// 			Name:     "Chorus",
+	// 			Number:   1,
+	// 			Lang:     "R",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.6976744186,
+	// 					Length: 4.1860465116,
+	// 					Text:   "Дал свободу мне"},
+	// 				{
+	// 					Offset: 3.488372093,
+	// 					Length: 4.1860465117,
+	// 					Text:   "Иисус навек"},
+	// 				{
+	// 					Offset: 7.6744186047,
+	// 					Length: 8.0232558139,
+	// 					Text:   "Я дитя Ца - ря знаю я"}}},
+	// 		{
+	// 			Name:     "Chorus",
+	// 			Number:   2,
+	// 			Lang:     "R",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.6976744186,
+	// 					Length: 4.1860465116,
+	// 					Text:   "В Доме есть всегда"},
+	// 				{
+	// 					Offset: 3.488372093,
+	// 					Length: 4.1860465116,
+	// 					Text:   "Место для меня"},
+	// 				{
+	// 					Offset: 7.6744186046,
+	// 					Length: 8.023255814,
+	// 					Text:   "Я дитя Ца - ря знаю я"}}},
+	// 		{
+	// 			Name:     "Bridge",
+	// 			Number:   0,
+	// 			Lang:     "R",
+	// 			Comments: []comments.Comment{},
+	// 			Text: []lyrics.TextLine{
+	// 				{
+	// 					Offset: -0.6976744186,
+	// 					Length: 4.5348837209,
+	// 					Text:   "Богом избран не оставлен"},
+	// 				{
+	// 					Offset: 3.8372093023,
+	// 					Length: 3.8372093023,
+	// 					Text:   "Я знаю, кто я в Тебе"},
+	// 				{
+	// 					Offset: 7.6744186046,
+	// 					Length: 4.534883721,
+	// 					Text:   "Твоим другом был я назван"},
+	// 				{
+	// 					Offset: 12.2093023256,
+	// 					Length: 3.488372093,
+	// 					Text:   "Я знаю, кто я в Тебе"}}}}}
 
 	Tremble := lyrics.Lyrics{
-		Name: "Tremble",
+		// Name: "Tremble",
 		Sections: []lyrics.Section{
 			{
 				Name:     "Verse",

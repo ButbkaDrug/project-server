@@ -1,7 +1,7 @@
 package helper
 
 import (
-	"log"
+	"fmt"
 	"log/slog"
 	lp "lp"
 	"lp/pkg/chords"
@@ -34,27 +34,25 @@ type helper struct {
 }
 
 // expects path to a project file to parse
-func NewHelper(p string) *helper {
+func NewHelper(p string) (*helper, error) {
 	f, err := os.Create("/tmp/helper.log")
 
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 
 	logger := slog.New(slog.NewTextHandler(f, &slog.HandlerOptions{
 		Level: slog.LevelDebug,
 	}))
 
-	logger.Info("logger initialized", "out", f)
-
 	if p == "" {
-		log.Fatal("you must provide path to a project")
+		return nil, fmt.Errorf("NewHelper: path must be provided!")
 	}
 
 	proj, err := rp.Parse(p)
 
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 
 	return &helper{
@@ -69,7 +67,7 @@ func NewHelper(p string) *helper {
 		logfile: f,
 		logger:  logger,
 		Lyrics:  &lyrics.Lyrics{},
-	}
+	}, nil
 
 }
 

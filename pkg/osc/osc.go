@@ -33,7 +33,7 @@ func NewClient(cfg *OscCongin) *OSC {
 	addr := fmt.Sprintf("%s:%d", cfg.IP, cfg.Port)
 	d := osc.NewStandardDispatcher()
 
-	d.AddMsgHandler("/time", func(msg *osc.Message) {
+	err := d.AddMsgHandler("/time", func(msg *osc.Message) {
 		val, ok := msg.Arguments[0].(float32)
 
 		cfg.Logger.Debug("OSC DISPATCHER: got /time message", "value", val)
@@ -45,6 +45,10 @@ func NewClient(cfg *OscCongin) *OSC {
 		go cfg.Clients.Broadcast(val)
 
 	})
+
+	if err != nil {
+		cfg.Logger.Error("pkg/osc/osc.go -> failed to addMsgHandler(/time)", "error", err.Error())
+	}
 
 	return &OSC{
 		Server: &osc.Server{

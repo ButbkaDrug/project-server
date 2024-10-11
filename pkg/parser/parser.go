@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
-	"log"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -107,10 +106,8 @@ func (p *Project) ParseReaperFile() error {
 
 	for s.Scan() {
 
-
-        //WARNING: Reaper on windows and on linux save region info differently
-        // current parser works for files saved under linux
-
+		//WARNING: Reaper on windows and on linux save region info differently
+		// current parser works for files saved under linux
 
 		tokens := strings.Fields(s.Text())
 
@@ -175,7 +172,6 @@ func (p *Project) ParseReaperFile() error {
 
 		l, err := parseLyrics(path)
 		if err != nil {
-			log.Println(err)
 			continue
 		}
 

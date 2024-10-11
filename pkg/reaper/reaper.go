@@ -1,7 +1,6 @@
 package reaper
 
 import (
-	"log"
 	"log/slog"
 	"lp/pkg/lyrics"
 	"os"
@@ -74,7 +73,6 @@ type Project struct {
 //TODO: Mesure how much network I ocupy? Is it me who ruined network on sunday?
 
 func NewProject() *Project {
-	log.Println("NewProject invoked")
 	config, err := NewDefauiltConfig()
 
 	if err != nil {
@@ -117,7 +115,6 @@ func NewProject() *Project {
 //
 // New Generator and NewLogger that outputs to os.Stdout.
 func NewDefauiltConfig() (*ProjectConfig, error) {
-	log.Println("NewDefaultConfig invoked")
 	homeDir, err := os.UserHomeDir()
 
 	if err != nil {
@@ -167,9 +164,7 @@ func ParseHostProject(config *ProjectConfig) ([]*Project, error) {
 }
 
 func NewProjectWithConfig(cfg *ProjectConfig) *Project {
-	log.Println("NewProjectWithConfig invoked")
 	p := NewProject()
-	log.Println("NewProejct returned", p.Stats == nil)
 
 	if cfg == nil {
 		p.logger.Error("pkg/reaper/reaper.go NewProjectWithConfig()", "error", "cfg == nil")
@@ -426,6 +421,7 @@ func (p *Project) UpdateLine() bool {
 			return true
 		}
 	}
+
 	p.Line = lyrics.LyricLine{ID: -1}
 	return true
 }

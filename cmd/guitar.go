@@ -27,7 +27,7 @@ func (app *app) guitarHandler(w http.ResponseWriter, r *http.Request) {
 		commentsType = ct
 	}
 
-	keys := app.ParseKeysArgument(params.Get("keys"))
+	keys := app.ParseKeysArgument(&params)
 
 	htmlString := RenderContent(
 		&RenderContentConfig{

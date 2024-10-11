@@ -28,7 +28,7 @@ func (app *app) drumsHandler(w http.ResponseWriter, r *http.Request) {
 		commentsType = ct
 	}
 
-	keys := app.ParseKeysArgument(params.Get("keys"))
+	keys := app.ParseKeysArgument(&params)
 	capo := app.ParseCapoArgument(params.Get("capo"))
 
 	htmlString := RenderContent(
