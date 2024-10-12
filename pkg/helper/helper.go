@@ -3,7 +3,6 @@ package helper
 import (
 	"fmt"
 	"log/slog"
-	lp "lp"
 	"lp/pkg/chords"
 	"lp/pkg/comments"
 	"lp/pkg/lyrics"
@@ -69,28 +68,6 @@ func NewHelper(p string) (*helper, error) {
 		Lyrics:  &lyrics.Lyrics{},
 	}, nil
 
-}
-
-func (h *helper) ParseLyricsFile() (lyrics.Lyrics, error) {
-	var err error
-	filenames := []string{"lyrics", "lyrics.txt", "lyrics-backup", "lyrics-backup.txt"}
-
-	for _, name := range filenames {
-		h.logger.Debug("trying to open lyrics file", "filename", name)
-
-		fullpath := path.Join(h.Path.Base, name)
-
-		l, err := lp.Parse(fullpath)
-
-		if err != nil {
-			h.logger.Error("file not found", "error", err.Error())
-			continue
-		}
-
-		return l, nil
-	}
-
-	return lyrics.Lyrics{}, err
 }
 
 func (h *helper) Parse() lyrics.Lyrics {
@@ -338,15 +315,7 @@ func (h *helper) GetOffsetsForRange(start, stop float64) []Position {
 	return result
 }
 
-// checks if x equal to y wiht presicion of 10 digits
-func (h *helper) isEqual(x, y float64) bool {
-	decX := decimal.NewFromFloatWithExponent(x, -10)
-	decY := decimal.NewFromFloatWithExponent(y, -10)
-
-	return decX.Equal(decY)
-}
-
-// checks if x greater of equal to y wiht presicion of 10 digits
+// checks if x greater of equal to y wiht presicion of 9 digits
 func (h *helper) isGreaterThenOrEqual(x, y float64) bool {
 	decX := decimal.NewFromFloatWithExponent(x, -10)
 	decY := decimal.NewFromFloatWithExponent(y, -10)

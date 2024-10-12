@@ -1,13 +1,13 @@
 package reaper
 
 import (
+	"fmt"
 	"log/slog"
 	lp "lp"
 	"lp/pkg/chords"
 	"lp/pkg/lyrics"
 	"os"
 	"path"
-	"rpp-parser/pkg/parser"
 
 	"github.com/butbkadrug/reaper-lyrics/pkg/generator"
 	"github.com/butbkadrug/reaper-lyrics/pkg/helper"
@@ -45,16 +45,9 @@ func MarkerToLyricLynes(section lyrics.Section, pos float64, gen *generator.Gene
 	return result
 }
 
-func GetLyricsForItem(i parser.Item) lyrics.Lyrics {
-	return GetLyricsFromProjectDir(i.SourceSection.Source.File)
-}
-
-func GetNotesForItem(i parser.Item) lyrics.Lyrics {
-	return GetNotesFromProjectDir(i.SourceSection.Source.File)
-}
-
 // expects path to a project file. With use path.Dir() from standart library to locat a directory and will search for a project files with the names markers.rpp, lyrics-markers.rpp. Or in the end will pare project itself to see if there is any helpful data in it
-func GetHelperProjectInProjectDir(p string) lyrics.Lyrics {
+func GetHelperProjectInProjectDir(p string) *lyrics.Lyrics {
+	fmt.Print("Star looking for helper project:\n|\n")
 
 	sources := []string{"markers.rpp", "markers.RPP", "lyrics-markers.rpp", "lyrics-markers.RPP", path.Base(p)}
 
@@ -66,18 +59,20 @@ func GetHelperProjectInProjectDir(p string) lyrics.Lyrics {
 			continue
 		}
 
+		fmt.Println("-->", source)
 		helper := h.Parse()
 
 		if !helper.Empty() {
+
 			helper.Path = file
-			return helper
+			return &helper
 		}
 	}
 
-	return lyrics.Lyrics{}
+	return &lyrics.Lyrics{}
 }
 
-func GetLyricsFromProjectDir(p string) lyrics.Lyrics {
+func GetLyricsFromProjectDir(p string) *lyrics.Lyrics {
 	dir := path.Dir(p)
 	l, err := getLyrics(dir)
 
@@ -85,10 +80,10 @@ func GetLyricsFromProjectDir(p string) lyrics.Lyrics {
 		slog.Error("GetLyricsFromProjectDir(): failed to parse lyrics file", "path", dir, "error", err.Error())
 	}
 
-	return l
+	return &l
 }
 
-func GetNotesFromProjectDir(p string) lyrics.Lyrics {
+func GetNotesFromProjectDir(p string) *lyrics.Lyrics {
 	dir := path.Dir(p)
 	l, err := getNotes(dir)
 
@@ -96,10 +91,10 @@ func GetNotesFromProjectDir(p string) lyrics.Lyrics {
 		slog.Error("GetLyricsFromProjectDir(): failed to parse lyrics file", "path", dir, "error", err.Error())
 	}
 
-	return l
+	return &l
 }
 
-func GetChordsFromProjectDir(p string) lyrics.Lyrics {
+func GetChordsFromProjectDir(p string) *lyrics.Lyrics {
 	slog.Debug("loading chords from path", "path", p)
 	dir := path.Dir(p)
 	l, err := getChordsFromDir(dir)
@@ -108,7 +103,7 @@ func GetChordsFromProjectDir(p string) lyrics.Lyrics {
 		slog.Error("GetLyricsFromProjectDir(): failed to parse lyrics file", "path", dir, "error", err.Error())
 	}
 
-	return l
+	return &l
 }
 
 func getLyrics(dirPath string) (lyrics.Lyrics, error) {
@@ -124,6 +119,7 @@ func getLyrics(dirPath string) (lyrics.Lyrics, error) {
 
 			continue
 		}
+		fmt.Println("-->", file)
 
 		l.Path = p
 
@@ -134,6 +130,8 @@ func getLyrics(dirPath string) (lyrics.Lyrics, error) {
 	return lyrics.Lyrics{}, err
 }
 
+// will scan dirPath and parse first file with the name matching one of the specified names
+// if no match found created a new file under give path
 func getNotes(dirPath string) (lyrics.Lyrics, error) {
 	var err error
 	var p string
@@ -148,6 +146,8 @@ func getNotes(dirPath string) (lyrics.Lyrics, error) {
 		if err != nil {
 			continue
 		}
+
+		fmt.Println("-->", file)
 	}
 
 	if err != nil {
@@ -182,6 +182,8 @@ func getChordsFromDir(dirPath string) (lyrics.Lyrics, error) {
 
 			continue
 		}
+
+		fmt.Println("-->", file)
 
 		l.Path = p
 

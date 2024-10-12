@@ -29,7 +29,6 @@ func (app *app) drumsHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	keys := app.ParseKeysArgument(&params)
-	capo := app.ParseCapoArgument(params.Get("capo"))
 
 	htmlString := RenderContent(
 		&RenderContentConfig{
@@ -41,7 +40,6 @@ func (app *app) drumsHandler(w http.ResponseWriter, r *http.Request) {
 			WithChords:   withChords,
 			WithLyrics:   withLyrics,
 			Keys:         keys,
-			Capo:         capo,
 		},
 	)
 

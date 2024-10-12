@@ -28,7 +28,6 @@ func (app *app) autoscrollHandler(w http.ResponseWriter, r *http.Request) {
 	cms := params.Get("comments")
 
 	keys := app.ParseKeysArgument(&params)
-	capo := app.ParseCapoArgument(params.Get("capo"))
 
 	htmlString := RenderContent(
 		&RenderContentConfig{
@@ -38,7 +37,6 @@ func (app *app) autoscrollHandler(w http.ResponseWriter, r *http.Request) {
 			WithChords:   displayChords,
 			WithLyrics:   displayLyrics,
 			Keys:         keys,
-			Capo:         capo,
 		},
 	)
 

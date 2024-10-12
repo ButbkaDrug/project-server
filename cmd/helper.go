@@ -9,34 +9,11 @@ import (
 	"lp/pkg/lyrics"
 	"net/url"
 	"slices"
-	"strconv"
 	"strings"
 
 	"github.com/butbkadrug/reaper-lyrics/pkg/reaper"
 	"github.com/butbkadrug/reaper-lyrics/pkg/templates"
 )
-
-func (app *app) ParseCapoArgument(s string) []int {
-	capo := make([]int, len(app.reaper.Track.Items))
-
-	if c := strings.Split(s, ","); len(c) > 0 {
-		for i, entry := range c {
-
-			if i >= len(capo) {
-				break
-			}
-
-			if num, err := strconv.Atoi(entry); err != nil {
-				capo[i] = 0
-			} else {
-				capo[i] = num
-			}
-		}
-
-	}
-
-	return capo
-}
 
 // parser song keys from a url params
 func (app *app) ParseKeysArgument(v *url.Values) []string {
@@ -143,7 +120,6 @@ type RenderContentConfig struct {
 	WithChords   bool
 	WithLyrics   bool
 	Keys         []string
-	Capo         []int
 }
 
 func RenderContent(cfg *RenderContentConfig) string {
@@ -205,7 +181,7 @@ func RenderContent(cfg *RenderContentConfig) string {
 
 func RenderChorded(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Templates, key string) *bytes.Buffer {
 	for _, line := range lines {
-		render.RenderComponent(
+		err := render.RenderComponent(
 			buf,
 			struct {
 				ID   int
@@ -214,6 +190,10 @@ func RenderChorded(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Temp
 				ID:   line.ID,
 				Text: template.HTML(line.WithChordsHTMLKey(key)),
 			}, "line")
+
+		if err != nil {
+			fmt.Println("cmd/helper.go", err)
+		}
 	}
 
 	return buf
@@ -221,7 +201,7 @@ func RenderChorded(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Temp
 
 func RenderChordless(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Templates) *bytes.Buffer {
 	for _, line := range lines {
-		render.RenderComponent(
+		err := render.RenderComponent(
 			buf,
 			struct {
 				ID   int
@@ -230,6 +210,10 @@ func RenderChordless(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Te
 				ID:   line.ID,
 				Text: strings.ToUpper(line.Chordless()),
 			}, "line")
+
+		if err != nil {
+			fmt.Println("cmd/helper.go", err)
+		}
 	}
 
 	return buf
@@ -237,7 +221,7 @@ func RenderChordless(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Te
 
 func RenderChords(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Templates, key string) *bytes.Buffer {
 	for _, line := range lines {
-		render.RenderComponent(
+		err := render.RenderComponent(
 			buf,
 			struct {
 				ID   int
@@ -246,6 +230,10 @@ func RenderChords(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Templ
 				ID:   line.ID,
 				Text: template.HTML(line.Chords.HTMLKey(key)),
 			}, "line")
+
+		if err != nil {
+			fmt.Println("cmd/helper.go", err)
+		}
 	}
 
 	return buf
@@ -253,7 +241,7 @@ func RenderChords(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Templ
 
 func RenderNotes(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Templates) *bytes.Buffer {
 	for _, line := range lines {
-		render.RenderComponent(
+		err := render.RenderComponent(
 			buf,
 			struct {
 				ID   int
@@ -262,6 +250,10 @@ func RenderNotes(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Templa
 				ID:   line.ID,
 				Text: "",
 			}, "line")
+
+		if err != nil {
+			fmt.Println("cmd/helper.go", err)
+		}
 	}
 
 	return buf

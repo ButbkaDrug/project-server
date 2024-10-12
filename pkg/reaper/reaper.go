@@ -1,12 +1,14 @@
 package reaper
 
 import (
+	"fmt"
 	"log/slog"
 	"lp/pkg/lyrics"
 	"os"
 	"path"
 	reaper "rpp-parser"
 	"rpp-parser/pkg/parser"
+	"sync"
 	"time"
 
 	"github.com/butbkadrug/reaper-lyrics/pkg/generator"
@@ -155,7 +157,6 @@ func ParseHostProject(config *ProjectConfig) ([]*Project, error) {
 			config.ItemID = i
 
 			subProject := NewSubProjectWithConfig(config)
-
 			subprojects = append(subprojects, subProject)
 
 		}
@@ -164,6 +165,7 @@ func ParseHostProject(config *ProjectConfig) ([]*Project, error) {
 }
 
 func NewProjectWithConfig(cfg *ProjectConfig) *Project {
+	start := time.Now()
 	p := NewProject()
 
 	if cfg == nil {
@@ -211,6 +213,8 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	p.Update(p.Cursor)
 
+	fmt.Println("NewProjectWithConfig -> ", time.Since(start))
+
 	return p
 
 }
@@ -218,6 +222,7 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 // parses .rpp project specified in the confin. Also, will look for the notes,
 // chords, lyrics and helper .rpp files. In the project directory.
 func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
+	start := time.Now()
 
 	p := NewProject()
 
@@ -232,38 +237,76 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 		TrackID: cfg.TrackID,
 	}
 
-	proj, err := reaper.Parse(cfg.Path)
+	var wg sync.WaitGroup
 
-	if err != nil {
-		p.logger.Error("SONG PROJECT: failed to parse project file", "error", err, "path", cfg.Path)
-		return p
-	}
+	var projHelper *lyrics.Lyrics
+	var projLyrics *lyrics.Lyrics
+	var projNotes *lyrics.Lyrics
+	var projChords *lyrics.Lyrics
+	var proj *parser.Project
 
-	p.Project = proj
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		rpp, err := reaper.Parse(cfg.Path)
+
+		if err != nil {
+			p.logger.Error("SONG PROJECT: failed to parse project file", "error", err, "path", cfg.Path)
+		}
+		proj = &rpp
+	}()
 
 	//NOTE: Getting helper project, notes, lyrics, chords
+	//TODO: Should move this bit into separate function
 
-	projHelper := GetHelperProjectInProjectDir(cfg.Path)
+	//TODO: What if I'll move parsin of all this files into
+	// Helper. Then I'll merge it into one project
+
+	// let's see if we can speed it up
+
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		projHelper = GetHelperProjectInProjectDir(cfg.Path)
+	}()
+
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		projLyrics = GetLyricsFromProjectDir(cfg.Path)
+	}()
+
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		projNotes = GetNotesFromProjectDir(cfg.Path)
+	}()
+
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		projChords = GetChordsFromProjectDir(cfg.Path)
+
+	}()
+
+	wg.Wait()
+	p.Project = *proj
+	p.Comments = append(p.Comments, projNotes)
 
 	if projHelper.Path != "" {
 		p.Watchlist = append(p.Watchlist, projHelper.Path)
 	}
 
-	projLyrics := GetLyricsFromProjectDir(cfg.Path)
 	if projLyrics.Path != "" {
 		p.Watchlist = append(p.Watchlist, projLyrics.Path)
 	}
 
-	projectNotes := GetNotesFromProjectDir(cfg.Path)
-
-	if projectNotes.Path != "" {
-		p.Watchlist = append(p.Watchlist, projectNotes.Path)
+	if projNotes.Path != "" {
+		p.Watchlist = append(p.Watchlist, projNotes.Path)
 	}
-	p.Comments = append(p.Comments, &projectNotes)
 
-	projectChords := GetChordsFromProjectDir(cfg.Path)
-	if projectChords.Path != "" {
-		p.Watchlist = append(p.Watchlist, projectChords.Path)
+	if projChords.Path != "" {
+		p.Watchlist = append(p.Watchlist, projChords.Path)
 	}
 
 	// END
@@ -289,10 +332,10 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 		//TODO: refactor this pice to keep notes structure within section
 
 		sec.ItemID = cfg.ItemID
-		sec.Comments = projectNotes.GetNotesWithNumber(m.ID)
+		sec.Comments = projNotes.GetNotesWithNumber(m.ID)
 		sec.Comments = append(sec.Comments, projHelper.GetNotesWithID(m.ID)...)
 
-		chords := projectChords.GetChordsWithID(m.ID)
+		chords := projChords.GetChordsWithID(m.ID)
 
 		for _, section := range projLyrics.Sections {
 			if section.GetFullName() != m.Name {
@@ -318,7 +361,7 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 
 			//FIXME: there should be a better way to do this
 			if chords.Empty() {
-				chords = projectChords.GetChordsForSection(section)
+				chords = projChords.GetChordsForSection(section)
 
 			}
 
@@ -362,19 +405,9 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 		p.Sections = append(p.Sections, sec)
 	}
 
+	fmt.Println("NewSubProj", path.Base(p.Path), "\t", time.Since(start))
+
 	return p
-}
-
-func (p *Project) GetMapForCurrentItem() []Section {
-	var result []Section
-
-	for _, s := range p.Sections {
-		if s.Position >= p.Item.Position && s.Position < p.Item.Position+p.Item.Length {
-			result = append(result, s)
-		}
-	}
-
-	return result
 }
 
 func (p *Project) UpdateCursor(pos float64) bool {
@@ -445,17 +478,6 @@ func (p *Project) UpdateSection() bool {
 	p.Section = Section{}
 
 	return true
-}
-
-// selects the track with given index. if track not exists no op
-func (p *Project) UpdateTrack(idx int) {
-
-	if idx < 0 || idx >= len(p.Tracks) {
-		return
-	}
-
-	p.TrackID = idx
-
 }
 
 // if cursor is still in range of current item and peekItem no op. otherwise searches for the first item to
