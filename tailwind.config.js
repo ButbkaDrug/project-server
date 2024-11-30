@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./pkg/templates/html/*", "./pkg/templates/static/js/*.js"],
   theme: {
-    extend: {},
+    extend: {
+      lineHeight: {
+        'extra-loose': '5',
+        '12': '3rem',
+      }
+    },
   },
   plugins: [
     require('daisyui'),
@@ -45,4 +50,3 @@ module.exports = {
     ],
   },
 }
-

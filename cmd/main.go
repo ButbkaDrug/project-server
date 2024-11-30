@@ -27,8 +27,10 @@ func main() {
 		log.Fatalf("faild parsing arguments: %v", err)
 	}
 
-	logfile, _ := os.Create("project.log")
+	logfile, _ := os.Create("/tmp/project.log")
 	defer logfile.Close()
+
+	// logfile := os.Stdout
 
 	logger := slog.New(slog.NewTextHandler(logfile, &slog.HandlerOptions{
 		Level: level,
@@ -44,7 +46,11 @@ func main() {
 
 	logger.Info("config for the project", "cfg", cfg)
 
-	app := NewApp(&cfg)
+	app, err := NewApp(&cfg)
+
+	if err != nil {
+		log.Fatal("failed to create new app", err)
+	}
 
 	if err = app.serve(); err != nil {
 		log.Fatal("failed to start server: ", err)

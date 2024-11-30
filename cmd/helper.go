@@ -15,13 +15,7 @@ import (
 	"github.com/butbkadrug/reaper-lyrics/pkg/templates"
 )
 
-// parser song keys from a url params
-func (app *app) ParseKeysArgument(v *url.Values) []string {
-	//FIXME: i put arbitraty value for now, which i not very lickly to cross, but it shuld be equal to number of items that are in the project
-	keys := make([]string, 10)
-
-	s := v.Get("keys")
-
+func (app *app) validateSongKey(key string) bool {
 	checklist := []string{
 		"A",
 		"Bb",
@@ -36,15 +30,25 @@ func (app *app) ParseKeysArgument(v *url.Values) []string {
 		"G",
 		"Ab",
 	}
+	return slices.Contains(checklist, key)
+
+}
+
+// parser song keys from a url params
+func (app *app) ParseKeysArgument(v *url.Values) []string {
+	//FIXME: i put arbitraty value for now, which i not very lickly to cross, but it shuld be equal to number of items that are in the project
+	keys := make([]string, 10)
+
+	s := v.Get("keys")
 
 	if k := strings.Split(s, ","); len(k) > 0 {
 
 		for i, key := range k {
-			key = strings.Title(key)
 			if i >= len(k) {
 				break
 			}
-			if slices.Contains(checklist, key) {
+			key = strings.Title(key)
+			if app.validateSongKey(key) {
 				keys[i] = key
 				continue
 			}
@@ -61,7 +65,7 @@ func (app *app) ParseKeysArgument(v *url.Values) []string {
 
 		val := strings.Title(v.Get(key))
 
-		if !slices.Contains(checklist, val) {
+		if !app.validateSongKey(val) {
 			continue
 		}
 
@@ -106,7 +110,7 @@ func GetCommentsOfType(c []comments.Comment, t string) []comments.Comment {
 		return requestedComments
 	}
 
-	//I want generic comments to be on top, that's why i reverse slices duren append
+	//I want generic comments to be on top, that's why i reverse slices during append
 	return append(comments.FilterComments(c, comments.GENERIC), requestedComments...)
 
 }
@@ -179,7 +183,7 @@ func RenderContent(cfg *RenderContentConfig) string {
 	return html.String()
 }
 
-func RenderChorded(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Templates, key string) *bytes.Buffer {
+func RenderChorded(lines lyrics.Lines, buf *bytes.Buffer, render Renderer, key string) *bytes.Buffer {
 	for _, line := range lines {
 		err := render.RenderComponent(
 			buf,
@@ -189,17 +193,26 @@ func RenderChorded(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Temp
 			}{
 				ID:   line.ID,
 				Text: template.HTML(line.WithChordsHTMLKey(key)),
-			}, "line")
+			}, "chorded-line")
 
 		if err != nil {
 			fmt.Println("cmd/helper.go", err)
 		}
 	}
+	html := template.HTML(buf.String())
+
+	buf.Reset()
+
+	err := render.RenderComponent(buf, html, "section-text-container")
+
+	if err != nil {
+		fmt.Println("cmd/helper.go", err)
+	}
 
 	return buf
 }
 
-func RenderChordless(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Templates) *bytes.Buffer {
+func RenderChordless(lines lyrics.Lines, buf *bytes.Buffer, render Renderer) *bytes.Buffer {
 	for _, line := range lines {
 		err := render.RenderComponent(
 			buf,
@@ -216,10 +229,20 @@ func RenderChordless(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Te
 		}
 	}
 
+	html := template.HTML(buf.String())
+
+	buf.Reset()
+
+	err := render.RenderComponent(buf, html, "section-text-container")
+
+	if err != nil {
+		fmt.Println("cmd/helper.go", err)
+	}
+
 	return buf
 }
 
-func RenderChords(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Templates, key string) *bytes.Buffer {
+func RenderChords(lines lyrics.Lines, buf *bytes.Buffer, render Renderer, key string) *bytes.Buffer {
 	for _, line := range lines {
 		err := render.RenderComponent(
 			buf,
@@ -239,7 +262,7 @@ func RenderChords(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Templ
 	return buf
 }
 
-func RenderNotes(lines lyrics.Lines, buf *bytes.Buffer, render *templates.Templates) *bytes.Buffer {
+func RenderNotes(lines lyrics.Lines, buf *bytes.Buffer, render Renderer) *bytes.Buffer {
 	for _, line := range lines {
 		err := render.RenderComponent(
 			buf,

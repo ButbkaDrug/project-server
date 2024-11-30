@@ -14,13 +14,14 @@ import (
 )
 
 // ranges through slice of lines with lyrics and adds chord lines of a same index. then returns new slice of lines
-func ApplyChords(ll []lyrics.LyricLine, c chords.Chords) []lyrics.LyricLine {
+func ApplyChords(ll []lyrics.LyricLine, chords chords.Chords) []lyrics.LyricLine {
 	for i := range ll {
-		if len(c) <= i {
+		if len(chords) <= i {
 			return ll
 		}
 
-		ll[i].Chords = c[i]
+		ll[i].Chords = chords[i]
+
 	}
 
 	return ll

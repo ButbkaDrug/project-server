@@ -1,22 +1,38 @@
-const activeLine = "font-bold"
+
+window.onload = (event) => {
+const tag = "active-line"
+const activeLine = [tag, "text-success" ]
 const activeSection = ["font-bold", "animate-pulse"]
 const scrollSettings = {behavior:"instant", block:"center", inline:"center"}
 const navbar = document.getElementById("navbar")
+const body = document.getElementById("body")
+
 
 let line = document.createElement("div");
 let e = document.createElement("div");
 let section = document.createElement("div");
 let scroll = true
+let playing = false
 
-const scrollToggle = document.getElementById("scroll")
+const alert = (message, duration) => {
+    const toast = document.getElementById("toast")
+    const d = duration || 2000
 
-try {
-    scrollToggle.addEventListener("click", (e)=>{
-        scroll = !scroll
-    })
-} catch (e) {
-    console.log(e)
-}
+    if(!toast){
+        console.log("toast not found")
+        return
+    }
+    try {
+
+    setTimeout(function() { toast.firstChild.classList.add("hidden") }, d);
+
+    toast.innerHTML = `<div id="message" class="alert alert-info animate-bounce transition duration-300 ease-in-out">
+        <span>${message}</span>
+    </div>`
+    }catch (e) {
+        console.error(e)
+    }
+};
 
 
 section.innerHTML = "<div></div>"
@@ -24,15 +40,18 @@ section.innerHTML = "<div></div>"
 
 const eventSource = new EventSource('/events');
 eventSource.onopen = (e) => {
-    navbar.classList.remove("bg-error")
+    body.classList.remove("border-red-500")
 };
 
 eventSource.onerror = (err) => {
-    navbar.classList.add("bg-error")
+    body.classList.add("border-red-500")
 };
 
 const playbackStopped = (element) => {
-    navbar.classList.remove("bg-success")
+    body.classList.remove("border-green-500")
+    if (playing === true) {
+        alert("connection is broken?", 3000)
+    }
 }
 
 
@@ -47,8 +66,8 @@ eventSource.addEventListener("line", (event) => {
     if ((Date.now() - lastEvent) < 200 ){
         clearTimeout(timeoutID)
         timeoutID = setTimeout(playbackStopped, 200)
-        if (!navbar.classList.contains("bg-success")) {
-            navbar.classList.add("bg-success")
+        if (!body.classList.contains("border-green-500")) {
+            body.classList.add("border-green-500")
         }
     }
     lastEvent = Date.now()
@@ -60,11 +79,11 @@ eventSource.addEventListener("line", (event) => {
     try {
 
     if (newLine != null && newLine != line) {
-        if (line.classList.contains(activeLine)) {
-                line.classList.remove(activeLine)
+        if (line.classList.contains(tag)) {
+                line.classList.remove(...activeLine)
             }
         line = newLine
-        line.classList.add(activeLine)
+        line.classList.add(...activeLine)
         line.scrollIntoView(scrollSettings)
         if (scrollSettings.behavior !== "smooth") scrollSettings.behavior = "smooth"
     } else { return }
@@ -76,24 +95,6 @@ eventSource.addEventListener("line", (event) => {
             section = newLine.parentElement
             section.classList.toggle("active")
     }
-
-    }catch (e) {
-        console.log(e)
-    }
-});
-
-eventSource.addEventListener("map", (event) => {
-    const eID = `map-${event.data}`
-    const newE = document.getElementById(eID)
-
-    try {
-
-    if (newE && newE != e) {
-        e = newE
-        line.scrollIntoView(scrollSettings)
-        if (scrollSettings.behavior !== "smooth") scrollSettings.behavior = "smooth"
-    }
-
 
     }catch (e) {
         console.log(e)
@@ -118,38 +119,37 @@ eventSource.addEventListener("update", (event) => {
 });
 
 
-eventSource.addEventListener("alert", (event) => {
-    console.log(event.data)
-    const toast = document.getElementById("toast")
-    const data = JSON.parse(event.data)
+eventSource.addEventListener("play", (event) => {
+    const message = event.data
 
+        alert(message, 1000)
+        playing = true
+});
 
-    if(!toast){
-        console.log("toast not found")
-        return
-    }
-    try {
-        toast.innerHTML = `<div class="alert alert-warning">
-                <span>${data.message}</span>
-        </div>`
-    }catch (e) {
-        console.error(e)
+eventSource.addEventListener("stop", (event) => {
+    const message = event.data
+
+        alert(message, 1000)
+        playing = false
+});
+
+window.addEventListener('keydown', function (e) {
+    switch (e.key) {
+    case "Escape":
+        try {
+                    console.log("escape activated")
+            checkbox = document.getElementById("my-drawer-3")
+            checkbox.checked = false
+        } catch (e) {
+            console.error(e)
+        }
+            case "1":
+            console.log("one have been pressed")
+            default:
+            console.log(e.key)
+
     }
 });
 
-eventSource.addEventListener("cowntdown", (event) => {
-    console.log(event.data)
-    const min = document.getElementById("cowntdown-min")
-    const sec = document.getElementById("cowntdown-sec")
-    const title = document.getElementById("countdown-title")
+};
 
-
-    try {
-        const data = JSON.parse(event.data)
-        title.innerHTML = `${data.name} starts in `
-        min.style=`--value:${data.min};`
-        sec.style=`--value:${data.sec};`
-    }catch (e) {
-        console.error(e)
-    }
-});

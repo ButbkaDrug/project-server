@@ -8,6 +8,7 @@ import (
 	"strconv"
 )
 
+// this endpoint will save a new comment
 func (app *app) commentHandler(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	if err != nil {

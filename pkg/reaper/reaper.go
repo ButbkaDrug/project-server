@@ -12,7 +12,17 @@ import (
 	"time"
 
 	"github.com/butbkadrug/reaper-lyrics/pkg/generator"
+	"github.com/butbkadrug/reaper-lyrics/pkg/osc"
 )
+
+type ConfigBuilder interface {
+	SetPath(string) ConfigBuilder
+	SetLogger(*slog.Logger) ConfigBuilder
+	SetTrackID(int) ConfigBuilder
+	SetItemID(int) ConfigBuilder
+	SetOffset(float64) ConfigBuilder
+	WithSingle() ConfigBuilder
+}
 
 type ProjectConfig struct {
 	Path           string
@@ -22,6 +32,51 @@ type ProjectConfig struct {
 	IDGen          *generator.Generator
 	PositionOffset float64
 	Logger         *slog.Logger
+}
+
+func (p *ProjectConfig) SetOffset(n float64) *ProjectConfig {
+	p.PositionOffset = n
+	return p
+}
+
+func (p *ProjectConfig) SetPath(s string) *ProjectConfig {
+	p.Path = s
+
+	return p
+}
+
+func (p *ProjectConfig) SetLogger(l *slog.Logger) *ProjectConfig {
+	p.Logger = l
+
+	return p
+}
+
+func (p *ProjectConfig) WithSingle() *ProjectConfig {
+	p.Single = true
+
+	return p
+}
+
+func (p *ProjectConfig) WithNewGenerator() *ProjectConfig {
+	p.IDGen = generator.New()
+	return p
+}
+
+func (p *ProjectConfig) SetGenerator(g *generator.Generator) *ProjectConfig {
+	p.IDGen = g
+	return p
+}
+
+func (p *ProjectConfig) SetTrackID(n int) *ProjectConfig {
+	p.TrackID = n
+
+	return p
+}
+
+func (p *ProjectConfig) SetItemID(n int) *ProjectConfig {
+	p.ItemID = n
+
+	return p
 }
 
 type Project struct {
@@ -122,24 +177,29 @@ func NewDefauiltConfig() (*ProjectConfig, error) {
 	if err != nil {
 		return nil, err
 	}
+	projPath := path.Join(homeDir, "Music", "REAPER", "BaseProject", "BaseProject.rpp")
+	logger := slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelDebug}))
 
-	return &ProjectConfig{
-		Path:           path.Join(homeDir, "Music", "REAPER", "BaseProject", "BaseProject.rpp"),
-		TrackID:        0,
-		ItemID:         0,
-		PositionOffset: 0,
-		IDGen:          generator.New(),
-		Logger:         slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelDebug})),
-	}, nil
+	conf := &ProjectConfig{}
+
+	conf.SetPath(projPath).
+		SetLogger(logger).
+		WithNewGenerator().
+		SetTrackID(0).
+		SetItemID(0).
+		SetOffset(0)
+
+	return conf, nil
+
 }
 
-func ParseHostProject(config *ProjectConfig) ([]*Project, error) {
+func ParseHostProject(config *ProjectConfig) (parser.Project, []*Project, error) {
 	subprojects := []*Project{}
 	track := parser.Track{}
 	proj, err := reaper.Parse(config.Path)
 
 	if err != nil {
-		return []*Project{}, err
+		return proj, []*Project{}, err
 	}
 
 	if config.TrackID >= len(proj.Tracks) {
@@ -152,16 +212,16 @@ func ParseHostProject(config *ProjectConfig) ([]*Project, error) {
 
 		if source := item.SourceSection.Source; source.Format == "RPP_PROJECT" {
 
-			config.Path = source.File
-			config.PositionOffset = item.Position
-			config.ItemID = i
+			config.SetPath(source.File).
+				SetOffset(item.Position).
+				SetItemID(i)
 
 			subProject := NewSubProjectWithConfig(config)
 			subprojects = append(subprojects, subProject)
 
 		}
 	}
-	return subprojects, nil
+	return proj, subprojects, nil
 }
 
 func NewProjectWithConfig(cfg *ProjectConfig) *Project {
@@ -180,6 +240,10 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 
 	subprojects := []*Project{}
 
+	//NOTE: if we start the server with a --single flag it means
+	//we will parse and display host project itself and not
+	//subprojects it's contains therefour we need separate
+	//flow for that.
 	if cfg.Single {
 		config, err := NewDefauiltConfig()
 		if err != nil {
@@ -187,21 +251,28 @@ func NewProjectWithConfig(cfg *ProjectConfig) *Project {
 			panic("NewProjectWithConfig failed to creat default project config")
 		}
 
-		config.Path = cfg.Path
-		config.IDGen = cfg.IDGen
-		config.Logger = cfg.Logger
+		config.SetPath(cfg.Path).
+			SetGenerator(cfg.IDGen).
+			SetLogger(cfg.Logger)
 
+		//NOTE: because for the most part parsing is the same
+		//we just add the our --single project to the list
+		//of subprojects, and from now on we can continue on
+		//our happy path
 		subProject := NewSubProjectWithConfig(config)
 		subprojects = append(subprojects, subProject)
+		p.Project = subProject.Project
 
 	} else {
 		p.Watchlist = append(p.Watchlist, cfg.Path)
-		s, err := ParseHostProject(cfg)
+		proj, s, err := ParseHostProject(cfg)
 		if err != nil {
 			slog.Error("NewHostProject() failed to parse host project", "error", err.Error())
 			panic("failed to parse host project!")
 		}
 		subprojects = append(subprojects, s...)
+
+		p.Project = proj
 	}
 
 	for _, sub := range subprojects {
@@ -336,6 +407,8 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 		sec.Comments = append(sec.Comments, projHelper.GetNotesWithID(m.ID)...)
 
 		chords := projChords.GetChordsWithID(m.ID)
+		chordSpecificLines := projChords.GetSectionByNumber(m.ID)
+		fmt.Println("chord specific", chordSpecificLines)
 
 		for _, section := range projLyrics.Sections {
 			if section.GetFullName() != m.Name {
@@ -349,6 +422,11 @@ func NewSubProjectWithConfig(cfg *ProjectConfig) *Project {
 
 			if offsets.Empty() {
 				offsets = CalculateOffsets(section.Text, proj.Markers, i)
+			}
+
+			//WARN: Can be buggy
+			if len(chordSpecificLines.Text) > 0 {
+				section.Text = chordSpecificLines.Text
 			}
 
 			section.Text = ApplyOffsets(section.Text, offsets)
@@ -417,7 +495,15 @@ func (p *Project) UpdateCursor(pos float64) bool {
 }
 
 // update cursor position and triggers the update of current item and marker and line
-func (p *Project) Update(pos float64) {
+func (p *Project) Update(v any) {
+
+	positionUpdate, ok := v.(osc.PositionUpdate)
+
+	if !ok {
+		return
+	}
+
+	pos := float64(positionUpdate)
 
 	//order is important!
 	for i, s := range p.Sections {

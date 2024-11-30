@@ -1,61 +1,140 @@
 package osc
 
 import (
+	"errors"
 	"fmt"
-	"log/slog"
 
 	"github.com/hypebeast/go-osc/osc"
-	"sse"
 )
+
+const defaultPort = 7400
+
+type PositionUpdate float64
+type StopUpdate float32
+type PlayUpdate float32
+
+type Observer interface {
+	Update(any)
+}
 
 type OSC struct {
 	Server  *osc.Server
-	Logger  *slog.Logger
-	Clients *sse.SSE
+	clients []Observer
 }
 
-type OscCongin struct {
-	IP      string
-	Port    int
-	Logger  *slog.Logger
-	Clients *sse.SSE
+type options struct {
+	port int
 }
 
-func NewClient(cfg *OscCongin) *OSC {
-	if cfg.IP == "" {
-		cfg.IP = "127.0.0.1"
+type Option func(*options) error
+
+func WithPort(port int) Option {
+	return func(options *options) error {
+		if port < 0 {
+			return errors.New("port must be a positive number!")
+		}
+		options.port = port
+		return nil
+	}
+}
+
+func NewClient(ip string, opts ...Option) (*OSC, error) {
+	var options options
+
+	for _, opt := range opts {
+		err := opt(&options)
+
+		if err != nil {
+			return nil, err
+		}
 	}
 
-	if cfg.Port == 0 {
-		cfg.Port = 7400
+	if ip == "" || ip == "localhost" {
+		ip = "127.0.0.1"
 	}
 
-	addr := fmt.Sprintf("%s:%d", cfg.IP, cfg.Port)
+	var port int
+
+	if options.port == 0 {
+		port = defaultPort
+	} else {
+		port = options.port
+	}
+
+	addr := fmt.Sprintf("%s:%d", ip, port)
+
+	server := &OSC{
+		Server: &osc.Server{
+			Addr: addr,
+		},
+	}
+
 	d := osc.NewStandardDispatcher()
 
 	err := d.AddMsgHandler("/time", func(msg *osc.Message) {
 		val, ok := msg.Arguments[0].(float32)
 
-		cfg.Logger.Debug("OSC DISPATCHER: got /time message", "value", val)
+		if !ok {
+			return
+		}
+
+		server.notify(PositionUpdate(val))
+
+	})
+
+	if err != nil {
+		return nil, err
+	}
+
+	err = d.AddMsgHandler("/play", func(msg *osc.Message) {
+		val, ok := msg.Arguments[0].(float32)
 
 		if !ok {
 			return
 		}
 
-		go cfg.Clients.Broadcast(val)
+		if val == 0 {
+			return
+		}
+
+		server.notify(PlayUpdate(val))
 
 	})
 
 	if err != nil {
-		cfg.Logger.Error("pkg/osc/osc.go -> failed to addMsgHandler(/time)", "error", err.Error())
+		return nil, err
 	}
 
-	return &OSC{
-		Server: &osc.Server{
-			Addr:       addr,
-			Dispatcher: d,
-		},
-		Logger:  cfg.Logger,
-		Clients: cfg.Clients,
+	err = d.AddMsgHandler("/stop", func(msg *osc.Message) {
+		val, ok := msg.Arguments[0].(float32)
+
+		if !ok {
+			return
+		}
+
+		if val == 0 {
+			return
+		}
+
+		server.notify(StopUpdate(val))
+
+	})
+
+	if err != nil {
+		fmt.Println("OSC ERROR:", err)
 	}
+
+	server.Server.Dispatcher = d
+
+	return server, nil
+}
+
+func (osc *OSC) notify(v any) {
+	for _, c := range osc.clients {
+		c.Update(v)
+	}
+}
+
+func (osc *OSC) Register(client Observer) {
+	osc.clients = append(osc.clients, client)
 }

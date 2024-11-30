@@ -10,14 +10,15 @@ func (app *app) routes() http.Handler {
 	router.HandleFunc("/", app.autoscrollHandler)
 	router.HandleFunc("/events", app.eventsHandler)
 	router.HandleFunc("/stats", app.statsHandler)
-	router.HandleFunc("/guitar", app.guitarHandler)
+	router.HandleFunc("GET /guitar", app.guitarHandler)
 	router.HandleFunc("/guitar/", app.guitarHandler)
-	router.HandleFunc("/drums", app.drumsHandler)
+	router.HandleFunc("GET /drums", app.drumsHandler)
 	router.HandleFunc("/drums/", app.drumsHandler)
 	router.HandleFunc("/comments", app.commentHandler)
 	router.HandleFunc("/comments/", app.commentHandler)
+	router.HandleFunc("/htmx/set-keys", app.htmxSetKeysHandler)
 
 	router.Handle("/static/", http.FileServer(http.FS(app.renderer.Static)))
 
-	return router
+	return app.loggerFunc(router)
 }

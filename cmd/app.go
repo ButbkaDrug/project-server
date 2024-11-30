@@ -28,7 +28,6 @@ type app struct {
 	SSEClients        *sse.SSE
 	startTime         time.Time
 	reaper            *reaper.Project
-	updateCh          chan bool
 	logger            *slog.Logger
 }
 
@@ -56,21 +55,20 @@ type config struct {
 	logger *slog.Logger
 }
 
-func NewApp(cfg *config) *app {
+func NewApp(cfg *config) (*app, error) {
 
-	clients := sse.NewSSE()
+	clients := sse.NewSSE(cfg.logger)
 
 	renderer, err := templates.NewTemplate()
 
 	if err != nil {
 		log.Fatal("failed to start renderer. aborting...", err)
 	}
-	osc := osc.NewClient(&osc.OscCongin{
-		IP:      cfg.oscIP,
-		Port:    cfg.oscPort,
-		Clients: clients,
-		Logger:  cfg.logger,
-	})
+	osc, err := osc.NewClient(cfg.oscIP, osc.WithPort(cfg.oscPort))
+
+	if err != nil {
+		return nil, err
+	}
 
 	app := &app{
 		config: cfg,
@@ -86,7 +84,10 @@ func NewApp(cfg *config) *app {
 		logger:            cfg.logger,
 	}
 
-	return app
+	osc.Register(clients)
+	osc.Register(app.reaper)
+
+	return app, nil
 }
 
 func NewReaperProject(c *config) *reaper.Project {
@@ -117,7 +118,7 @@ func (app *app) getStats(path string) (os.FileInfo, error) {
 	return info, nil
 }
 
-func (app *app) Watch(clients *sse.SSE) error {
+func (app *app) WatchFileChange() error {
 
 	//BUG: I'm getting nil map sometimes which actually should not be possible
 	// so temporarly i leave this fix in place. But I want to figure out why
@@ -157,9 +158,6 @@ func (app *app) Watch(clients *sse.SSE) error {
 				app.reaper.Stats[file] = info.ModTime()
 				app.logger.Debug("cmd/app.go: change detected. Restarting", "changed file", file)
 				app.Restart()
-
-				go clients.Broadcast(true)
-
 			}
 
 		}
@@ -167,6 +165,19 @@ func (app *app) Watch(clients *sse.SSE) error {
 
 	}
 }
+
+// func (app *app) ListenForUpdates() {
+// 	app.logger.Debug("start listening for updates from osc")
+// 	for c := range app.OscUpdateCh {
+// 		switch c := c.(type) {
+// 		case float32:
+// 			app.reaper.Update(float64(c))
+// 			app.SSEClients.Broadcast(c)
+// 		default:
+// 			fmt.Printf("%#v\n", c)
+// 		}
+// 	}
+// }
 
 func (app *app) getIP() string {
 	conn, err := net.Dial("udp", "8.8.8.8:80")
@@ -180,12 +191,15 @@ func (app *app) getIP() string {
 	return fmt.Sprintf("%v", addr.IP)
 }
 
+// serve will start OSC server which will listen and broadcast messages
+// also it will start http server which will serve the pages
+// it is main entry point of the program
 func (app *app) serve() error {
 
 	app.server.Handler = app.routes()
 
 	//invoking watch to early. I should start watching only after I finished parsing
-	go app.Watch(app.SSEClients)
+	go app.WatchFileChange()
 
 	go app.oscClient.Server.ListenAndServe()
 
